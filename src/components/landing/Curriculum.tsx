@@ -1,4 +1,5 @@
 import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
+import pitchDayImg from "@/assets/pitch-day.jpg";
 
 const phases = [
   {
@@ -37,17 +38,18 @@ const phases = [
     weeks: [
       { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
       { w: "08", q: "Set up ops, fulfilment & customer experience that retains.", o: "CX + ops playbook" },
+      { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
     ],
   },
   {
     id: "04",
-    name: "Defend",
+    name: "Pitch Day",
     icon: Shield,
     tagline: "Prove the model. Own the room.",
-    range: "Weeks 09 — 10",
+    range: "Week 10",
     tone: "blue",
+    image: pitchDayImg,
     weeks: [
-      { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
       { w: "10", q: "Final showcase: pitch your brand to founders & operators.", o: "Investor pitch" },
     ],
   },
@@ -157,7 +159,7 @@ const Curriculum = () => {
 
         {/* Phase cards — portrait, compact, themed */}
         <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => {
+          {phases.map(({ id, name, icon: Icon, tagline, range, weeks, image }: any) => {
             const tornEdge =
               "M0,8 L40,2 L70,12 L110,4 L150,14 L190,6 L230,12 L270,3 L310,11 L350,5 L390,13 L430,4 L470,10 L510,2 L550,12 L590,6 L630,14 L670,4 L710,10 L750,3 L790,12 L830,5 L870,11 L910,3 L950,12 L990,6 L1030,14 L1070,4 L1110,10 L1150,3 L1200,12 L1200,0 L0,0 Z";
 
@@ -191,7 +193,7 @@ const Curriculum = () => {
 
                   <div className="relative px-4 pt-4 pb-5">
                     <div className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.25em] rounded-full bg-background/40 border border-border/60 text-foreground/70">
-                      W {range.replace("Weeks ", "")}
+                      {range.startsWith("Weeks") ? `W ${range.replace("Weeks ", "")}` : range.startsWith("Week") ? `W ${range.replace("Week ", "")}` : range}
                     </div>
 
                     <h3
@@ -233,26 +235,39 @@ const Curriculum = () => {
                     <div className="h-px flex-1 bg-border/60" />
                   </div>
 
-                  <ul className="mt-2.5 space-y-1.5 flex-1">
-                    {weeks.map((wk) => (
-                      <li
-                        key={wk.w}
-                        className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
-                      >
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="inline-block font-mono text-[8px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
-                            W{wk.w}
-                          </span>
-                          <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
-                            ↗ {wk.o}
-                          </span>
-                        </div>
-                        <p className="mt-1 text-[11.5px] leading-snug text-foreground/80">
-                          {wk.q}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
+                  {image ? (
+                    <div className="mt-2.5 flex-1 overflow-hidden rounded-md border border-border/60 bg-background/40 grayscale">
+                      <img
+                        src={image}
+                        alt={`${name} — final showcase`}
+                        loading="lazy"
+                        width={768}
+                        height={1024}
+                        className="w-full h-full object-cover min-h-[180px]"
+                      />
+                    </div>
+                  ) : (
+                    <ul className="mt-2.5 space-y-1.5 flex-1">
+                      {weeks.map((wk) => (
+                        <li
+                          key={wk.w}
+                          className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="inline-block font-mono text-[8px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
+                              W{wk.w}
+                            </span>
+                            <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
+                              ↗ {wk.o}
+                            </span>
+                          </div>
+                          <p className="mt-1 text-[11.5px] leading-snug text-foreground/80">
+                            {wk.q}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
 
                   {/* Barcode footer */}
                   <div className="mt-3 flex items-end justify-between gap-2">
