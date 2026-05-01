@@ -13,7 +13,7 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 inset-x-0 z-50 text-[hsl(var(--paper))]">
+    <header className="fixed top-0 inset-x-0 z-50 text-[hsl(var(--paper))] bg-[hsl(155_60%_7%)]/70 backdrop-blur-md border-b border-white/10">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
           <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert" />
