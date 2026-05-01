@@ -23,10 +23,6 @@ const Footer = () => {
           <div className="lg:col-span-4">
             <a href="#" className="inline-flex items-center gap-3">
               <img src={muLogo} alt="Masters' Union" className="h-8 w-auto invert" />
-              <span className="h-6 w-px bg-border/60" aria-hidden />
-              <span className="font-display text-[15px] font-medium tracking-tight text-foreground/80">
-                d2c<span className="text-primary">.</span>immersion
-              </span>
             </a>
             <p className="mt-5 text-foreground/65 leading-relaxed max-w-sm text-[15px]">
               A 10-weekend immersion by Masters&apos; Union. Build a live D2C brand —
