@@ -1,3 +1,4 @@
+import { useState } from "react";
 import saksham from "@/assets/faculty/saksham-kotiya.webp";
 import swarup from "@/assets/faculty/swarup-potta.webp";
 import shubham from "@/assets/faculty/shubham-jain.webp";
@@ -22,59 +23,105 @@ const faculty = [
 ];
 
 const Faculty = () => {
-  return (
-    <section id="faculty" className="relative bg-background text-foreground py-24 lg:py-32 overflow-hidden">
-      <div aria-hidden className="absolute -top-40 right-0 h-[600px] w-[600px] rounded-full" style={{ background: "radial-gradient(closest-side, hsl(var(--mu-cyan) / 0.18), transparent)" }} />
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid lg:grid-cols-12 gap-10 items-start">
-          <div className="lg:col-span-8">
-            <h2 className="font-display font-light text-5xl lg:text-7xl leading-[0.98] tracking-tight text-balance">
-              <span className="text-muted-foreground">Our</span>{" "}
-              <span className="text-violet">faculty are</span>
-              <br />
-              operators &amp; <span className="text-violet">founders.</span>
-            </h2>
-            <p className="mt-6 max-w-xl text-muted-foreground leading-relaxed">
-              Founders, operators and brand builders behind some of India&apos;s most recognised D2C names. No tenured theorists. No guest lecturers.
-            </p>
-          </div>
+  const [active, setActive] = useState(0);
+  const current = faculty[active];
 
-          <div className="lg:col-span-4 flex lg:justify-end">
-            <a href="#" className="relative h-36 w-36 rounded-full badge-circle grid place-items-center group">
-              <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full animate-spin-slow text-foreground/85">
-                <defs>
-                  <path id="circlePath" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-                </defs>
-                <text className="font-mono uppercase" fontSize="9" letterSpacing="3" fill="currentColor">
-                  <textPath href="#circlePath">SEE ALL FACULTY · SEE ALL FACULTY · </textPath>
-                </text>
-              </svg>
-              <ArrowUpRight className="h-7 w-7 text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+  return (
+    <section id="faculty" className="relative bg-background text-foreground py-20 lg:py-28 overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute -top-40 right-0 h-[600px] w-[600px] rounded-full"
+        style={{ background: "radial-gradient(closest-side, hsl(var(--mu-cyan) / 0.18), transparent)" }}
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+        {/* Header */}
+        <div className="grid lg:grid-cols-12 gap-8 items-end mb-12">
+          <div className="lg:col-span-9">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Faculty</p>
+            <h2 className="mt-4 font-display font-light text-4xl lg:text-6xl leading-[0.98] tracking-tight text-balance">
+              <span className="text-violet">Operators</span> &amp; <span className="text-violet">founders.</span>
+              <span className="text-muted-foreground"> Not theorists.</span>
+            </h2>
           </div>
+          <p className="lg:col-span-3 text-sm text-muted-foreground leading-relaxed">
+            Behind India's most recognised D2C names.
+          </p>
         </div>
 
-        <ul className="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-5">
-          {faculty.map((f) => (
-            <li key={f.name} className="rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/50 transition group shadow-card">
-              <div className="relative aspect-[4/5] overflow-hidden bg-secondary">
+        {/* Spotlight + list */}
+        <div className="grid lg:grid-cols-12 gap-6 lg:gap-10">
+          {/* Spotlight image */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden bg-card border border-border shadow-card">
+              {faculty.map((f, i) => (
                 <img
+                  key={f.name}
                   src={f.photo}
-                  alt={`${f.name}, ${f.role} faculty at Masters Union D2C Immersion`}
+                  alt={`${f.name}, ${f.role}`}
                   loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-all duration-500 group-hover:scale-[1.03]"
+                  className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${
+                    i === active ? "opacity-100" : "opacity-0"
+                  }`}
                 />
-                <span className="absolute top-3 left-3 font-mono text-[10px] uppercase tracking-widest text-primary-foreground bg-primary px-2.5 py-1 rounded-full">
-                  Faculty
+              ))}
+              <div
+                aria-hidden
+                className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-background via-background/60 to-transparent"
+              />
+              <div className="absolute bottom-0 inset-x-0 p-6 lg:p-8">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                  Faculty · {String(active + 1).padStart(2, "0")} / {String(faculty.length).padStart(2, "0")}
                 </span>
+                <p className="mt-2 font-display font-light text-3xl lg:text-4xl leading-tight">
+                  {current.name}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">{current.role}</p>
               </div>
-              <div className="p-6 lg:p-7">
-                <p className="font-display text-2xl leading-tight text-foreground">{f.name}</p>
-                <p className="mt-1 text-sm text-muted-foreground">{f.role}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </div>
+
+          {/* List */}
+          <ul className="lg:col-span-7 lg:pl-4 self-center divide-y divide-border border-y border-border">
+            {faculty.map((f, i) => {
+              const isActive = i === active;
+              return (
+                <li key={f.name}>
+                  <button
+                    type="button"
+                    onMouseEnter={() => setActive(i)}
+                    onFocus={() => setActive(i)}
+                    onClick={() => setActive(i)}
+                    className={`w-full grid grid-cols-12 gap-3 items-baseline py-4 lg:py-5 text-left transition-colors ${
+                      isActive ? "text-foreground" : "text-foreground/60 hover:text-foreground"
+                    }`}
+                  >
+                    <span className="col-span-1 font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground pt-1.5">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={`col-span-7 font-display leading-none transition-all ${
+                        isActive
+                          ? "text-violet text-3xl lg:text-4xl"
+                          : "text-2xl lg:text-3xl"
+                      }`}
+                    >
+                      {f.name}
+                    </span>
+                    <span className="col-span-3 text-xs lg:text-sm text-muted-foreground">{f.role}</span>
+                    <span className="col-span-1 text-right">
+                      <ArrowUpRight
+                        className={`inline h-4 w-4 transition-all ${
+                          isActive ? "text-primary translate-x-0.5 -translate-y-0.5" : "text-muted-foreground/50"
+                        }`}
+                        strokeWidth={1.5}
+                      />
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );
