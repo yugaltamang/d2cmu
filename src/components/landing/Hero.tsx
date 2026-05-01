@@ -1,4 +1,4 @@
-import { Play } from "lucide-react";
+import { Play, ArrowUpRight } from "lucide-react";
 import heroImg from "@/assets/d2c-hero.jpg";
 
 
@@ -33,8 +33,9 @@ const Hero = () => {
           </p>
 
           <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3">
-            <a href="#apply" className="btn-pill-light !py-2.5 !px-5 !text-sm">
+            <a href="#apply" className="btn-pill-light !py-2.5 !px-5 !text-sm group">
               Start your brand
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
             </a>
             <a href="#curriculum" className="btn-pill-ghost !py-2.5 !px-5 !text-sm">
               <span className="grid place-items-center h-5 w-5 rounded-full bg-foreground/15">
