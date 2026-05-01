@@ -1,3 +1,5 @@
+import muLogo from "@/assets/mu-logo.svg";
+
 const cols = [
   {
     title: "Programme",
@@ -19,7 +21,7 @@ const Footer = () => {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-12 sm:py-16">
         <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/20 mb-10">
           <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white">
-            ▣ MU · D2C Immersion
+            ▣ Masters&apos; Union
           </span>
           <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white/55">
             End · Of · Feed
@@ -29,12 +31,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 lg:grid-cols-12 gap-8">
           <div className="col-span-2 lg:col-span-5">
             <a href="#" className="inline-flex items-center gap-2">
-              <span className="grid place-items-center h-10 w-10 bg-[hsl(var(--lime))] text-[hsl(var(--ink))] font-sans text-[18px] font-black tracking-[-0.02em]">
-                MU
-              </span>
-              <span className="font-sans text-[12px] uppercase tracking-[0.3em] font-bold">
-                Masters&apos; Union
-              </span>
+              <img src={muLogo} alt="Masters' Union" className="h-9 w-auto invert" />
             </a>
             <h3 className="mt-6 font-sans uppercase text-[hsl(var(--paper))] text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[0.95] tracking-[-0.04em] max-w-md" style={{ fontWeight: 900 }}>
               Build a live brand,{" "}
@@ -71,7 +68,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-5 border-t border-white/20 flex flex-wrap items-center justify-between gap-3 font-sans text-[10px] uppercase tracking-[0.3em] font-bold text-white/55">
-          <p>© Masters&apos; Union · D2C Immersion 2026</p>
+          <p>© Masters&apos; Union 2026</p>
           <p>Gurugram · Outcome-driven, by design</p>
         </div>
       </div>
