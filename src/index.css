@@ -147,18 +147,23 @@
     letter-spacing: -0.04em;
   }
 
-  /* Shopify white pill CTA */
+  /* Bottle green CTA */
   .btn-pill-light {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: hsl(0 0% 100%);
-    color: hsl(165 30% 6%);
+    background: linear-gradient(135deg, hsl(158 70% 18%), hsl(158 65% 26%));
+    color: hsl(60 30% 96%);
     border-radius: 9999px;
     padding: 0.875rem 1.5rem;
     font-weight: 500;
     font-size: 0.95rem;
-    transition: transform .2s ease, background .2s ease;
+    box-shadow: 0 8px 24px -8px hsl(158 70% 18% / 0.55), inset 0 1px 0 hsl(0 0% 100% / 0.12);
+    transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
   }
-  .btn-pill-light:hover { background: hsl(96 75% 85%); transform: translateY(-1px); }
+  .btn-pill-light:hover {
+    background: linear-gradient(135deg, hsl(158 75% 22%), hsl(158 70% 32%));
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px -8px hsl(158 75% 22% / 0.65), inset 0 1px 0 hsl(0 0% 100% / 0.18);
+  }
 
   .btn-pill-ghost {
     display: inline-flex; align-items: center; gap: 0.5rem;
