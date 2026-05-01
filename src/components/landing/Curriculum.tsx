@@ -7,7 +7,6 @@ const phases = [
     icon: Hammer,
     tagline: "Find the wedge. Engineer the product.",
     range: "Weeks 01 — 04",
-    tone: "blue",
     weeks: [
       { w: "01", q: "Identify & validate a high-potential D2C opportunity.", o: "Validated brief" },
       { w: "02", q: "Select product, source efficiently, build unit economics.", o: "Margin model" },
@@ -21,7 +20,6 @@ const phases = [
     icon: Rocket,
     tagline: "Go live. Take real money.",
     range: "Weeks 05 — 06",
-    tone: "dark",
     weeks: [
       { w: "05", q: "Build & launch a high-converting Shopify store.", o: "Live storefront" },
       { w: "06", q: "Launch & scale on Amazon, Flipkart & quick commerce.", o: "Live listings" },
@@ -33,7 +31,6 @@ const phases = [
     icon: TrendingUp,
     tagline: "Drive demand. Move units.",
     range: "Weeks 07 — 09",
-    tone: "dark",
     weeks: [
       { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
       { w: "08", q: "Set up ops, fulfilment & customer experience that retains.", o: "CX + ops playbook" },
@@ -46,278 +43,311 @@ const phases = [
     icon: Shield,
     tagline: "Prove the model. Own the room.",
     range: "Week 10",
-    tone: "blue",
     weeks: [
       { w: "10", q: "Final showcase: pitch your brand to founders & operators.", o: "Investor pitch" },
     ],
   },
 ];
 
-// Local theme tokens — aligned with the site's bottle-green + Shopify lime palette.
-const BLUE = "hsl(165 80% 45%)"; // emerald accent (kept name for compat)
-const NAVY = "hsl(165 25% 4%)"; // matches --background
-const LIME = "hsl(96 75% 55%)"; // matches --primary
+// Editorial poster palette — paper white sheets on near-black canvas, hot orange accent.
+const PAPER = "hsl(40 30% 96%)";
+const INK = "hsl(0 0% 7%)";
+const ORANGE = "hsl(14 95% 55%)";
+const RULE = "hsl(0 0% 12%)";
+
+const Hairline = ({ className = "" }: { className?: string }) => (
+  <div className={`bg-[hsl(0_0%_15%)] ${className}`} style={{ height: 1 }} />
+);
+
+const PaperHairline = ({ className = "" }: { className?: string }) => (
+  <div className={`${className}`} style={{ height: 1, background: "hsl(0 0% 80%)" }} />
+);
+
+// Tiny crosshair register marks (poster style)
+const Crosshair = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 16 16" className={className} aria-hidden>
+    <line x1="8" y1="0" x2="8" y2="16" stroke="currentColor" strokeWidth="0.75" />
+    <line x1="0" y1="8" x2="16" y2="8" stroke="currentColor" strokeWidth="0.75" />
+    <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="0.75" fill="none" />
+  </svg>
+);
 
 const Curriculum = () => {
   return (
     <section
       id="curriculum"
-      className="relative py-12 sm:py-20 lg:py-28 border-t border-border/40"
-      style={{ background: NAVY }}
+      className="relative py-16 sm:py-24 lg:py-32 border-t border-border/40"
+      style={{ background: "hsl(0 0% 6%)" }}
     >
-      {/* Soft blue glow */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-60"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 80% 0%, hsl(96 75% 55% / 0.18), transparent 60%), radial-gradient(50% 40% at 0% 100%, hsl(165 80% 45% / 0.15), transparent 60%)",
-        }}
-      />
-
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        {/* Eyebrow pill */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5">
-          <span className="h-1.5 w-1.5 rounded-full" style={{ background: LIME }} />
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/70">
-            The 10-weekend system
+        {/* TOP META BAR — like the thin index strip on editorial posters */}
+        <div className="flex items-center gap-3 text-white/60">
+          <Crosshair className="h-3 w-3" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
+            MU / Index No. 010 — The 10-weekend system
           </span>
+          <div className="h-px flex-1" style={{ background: RULE }} />
+          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
+            Build · Launch · Scale · Defend
+          </span>
+          <Crosshair className="h-3 w-3" />
         </div>
 
-        {/* Massive heading — sans display with italic serif accents, lime underline */}
-        <h2
-          className="mt-5 sm:mt-6 max-w-[20ch] font-sans text-white text-[clamp(2rem,8vw,5.75rem)] leading-[1] tracking-[-0.04em]"
-          style={{ fontWeight: 600 }}
-        >
-          Idea on{" "}
-          <span className="relative inline-block text-violet">
-            Friday
-            <svg
-              aria-hidden
-              viewBox="0 0 220 18"
-              preserveAspectRatio="none"
-              className="absolute left-0 right-0 -bottom-2 w-full h-[14px]"
+        {/* MASSIVE EDITORIAL HEADLINE */}
+        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-4">
+          <div className="col-span-12 lg:col-span-9">
+            <h2
+              className="font-sans uppercase text-white text-[clamp(2.5rem,11vw,9rem)] leading-[0.85] tracking-[-0.05em]"
+              style={{ fontWeight: 800 }}
             >
-              <path
-                d="M2 12 C 60 2, 160 2, 218 10"
-                stroke={LIME}
-                strokeWidth="5"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </span>
-          .
-          <br />
-          Brand by{" "}
-          <span className="relative inline-block text-violet">
-            Sunday
-            <svg
-              aria-hidden
-              viewBox="0 0 240 18"
-              preserveAspectRatio="none"
-              className="absolute left-0 right-0 -bottom-2 w-full h-[14px]"
-            >
-              <path
-                d="M2 10 C 80 18, 170 4, 238 12"
-                stroke={LIME}
-                strokeWidth="5"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </svg>
-          </span>
-          .
-          <br />
-          <span className="text-white/55">Repeat</span>{" "}
-          <span className="text-violet">ten</span>{" "}
-          <span className="text-white/55">times.</span>
-        </h2>
+              Idea
+              <span className="inline-block align-middle mx-3 sm:mx-5 h-[0.55em] w-[0.55em] rounded-full" style={{ background: ORANGE }} />
+              <br />
+              Friday<span style={{ color: ORANGE }}>.</span>
+              <br />
+              Brand
+              <br />
+              Sunday<span style={{ color: ORANGE }}>.</span>
+            </h2>
+          </div>
+          <div className="col-span-12 lg:col-span-3 flex lg:flex-col justify-between lg:justify-end gap-4 lg:pb-3">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/55">
+                ◷ 10 Weekends
+              </p>
+              <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.3em] text-white/55">
+                Issue · MU/26
+              </p>
+            </div>
+            <p className="text-[13px] sm:text-[14px] text-white/65 leading-relaxed max-w-[28ch]">
+              Build → Launch → Scale → Defend. Every weekend ends with something
+              <span className="text-white"> shipped, sold, or signed</span> — never a slide.
+            </p>
+          </div>
+        </div>
 
-        <p className="mt-6 sm:mt-8 max-w-2xl text-[15px] sm:text-[17px] text-white/70 leading-relaxed">
-          Build → Launch → Scale → Defend. Every weekend ends with something{" "}
-          <span className="text-white">shipped, sold, or signed</span> — never a slide.
-        </p>
+        <Hairline className="mt-10 sm:mt-14" />
 
-        {/* Phase chips row */}
-        <div className="mt-6 sm:mt-10 flex flex-wrap gap-2 sm:gap-2.5">
+        {/* PHASE INDEX BAR */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-[hsl(0_0%_15%)] border-b" style={{ borderColor: RULE }}>
           {phases.map((p) => (
-            <span
+            <a
               key={p.id}
-              className="rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white border border-white/15"
-              style={{ background: "rgba(255,255,255,0.04)" }}
+              href={`#phase-${p.id}`}
+              className="group flex items-center gap-3 px-4 py-4 hover:bg-white/[0.03] transition-colors"
             >
-              <span className="font-mono text-[10px] tracking-[0.25em] mr-2 text-white/55">
-                {p.id}
+              <span className="font-mono text-[10px] tracking-[0.3em] text-white/45">{p.id}</span>
+              <span className="font-sans uppercase text-white text-[15px] tracking-[-0.01em]" style={{ fontWeight: 700 }}>
+                {p.name}
               </span>
-              {p.name}
-            </span>
+              <span className="ml-auto h-1.5 w-1.5 rounded-full" style={{ background: ORANGE }} />
+            </a>
           ))}
         </div>
 
-        {/* Phase cards — portrait, compact, themed. Last card (Defend) is the FINALE — wider + featured. */}
-        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-7 gap-3 sm:gap-4">
+        {/* POSTER GRID — paper sheets, asymmetric layout */}
+        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-4 sm:gap-5">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }, idx) => {
-            const tornEdge =
-              "M0,8 L40,2 L70,12 L110,4 L150,14 L190,6 L230,12 L270,3 L310,11 L350,5 L390,13 L430,4 L470,10 L510,2 L550,12 L590,6 L630,14 L670,4 L710,10 L750,3 L790,12 L830,5 L870,11 L910,3 L950,12 L990,6 L1030,14 L1070,4 L1110,10 L1150,3 L1200,12 L1200,0 L0,0 Z";
+            // Asymmetric poster layout: 01 tall-left, 02 short, 03 tall, 04 BIG finale wide
             const isFinale = idx === phases.length - 1;
+            const layout = [
+              "col-span-12 sm:col-span-6 lg:col-span-4",
+              "col-span-12 sm:col-span-6 lg:col-span-3",
+              "col-span-12 sm:col-span-6 lg:col-span-5",
+              "col-span-12", // finale full width
+            ][idx];
+
+            // Variant: orange dominant for 02; ink/black for finale; paper for 01,03
+            const isOrange = idx === 1;
+            const isInk = isFinale;
+            const surface = isOrange ? ORANGE : isInk ? INK : PAPER;
+            const text = isInk ? "hsl(40 30% 96%)" : INK;
+            const subtext = isInk ? "hsl(40 10% 70%)" : "hsl(0 0% 25%)";
+            const ruleColor = isInk ? "hsl(0 0% 22%)" : "hsl(0 0% 80%)";
 
             return (
               <article
                 key={id}
-                className={`group relative flex flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] border transition-colors ${
-                  isFinale
-                    ? "lg:col-span-3 col-span-2 bg-card border-primary/50 shadow-[0_0_0_1px_hsl(var(--primary)/0.25),0_30px_80px_-30px_hsl(var(--primary)/0.45)]"
-                    : "lg:col-span-2 bg-card border-border/60 hover:border-primary/40"
-                }`}
+                id={`phase-${id}`}
+                className={`${layout} relative overflow-hidden border`}
+                style={{
+                  background: surface,
+                  color: text,
+                  borderColor: isInk ? "hsl(0 0% 18%)" : "hsl(0 0% 80%)",
+                  minHeight: isFinale ? 420 : 520,
+                }}
               >
-                {isFinale && (
-                  <>
-                    <div
-                      aria-hidden
-                      className="absolute inset-0 pointer-events-none opacity-80"
-                      style={{
-                        background:
-                          "radial-gradient(80% 60% at 100% 0%, hsl(var(--primary) / 0.18), transparent 60%), radial-gradient(60% 60% at 0% 100%, hsl(165 80% 45% / 0.14), transparent 60%)",
-                      }}
-                    />
-                    <div className="absolute top-3 left-3 z-20 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-mono text-[9px] uppercase tracking-[0.28em] shadow-md">
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground animate-pulse" />
-                      Finale
-                    </div>
-                  </>
-                )}
-                {/* TOP */}
-                <div className="relative bg-secondary text-foreground">
-                  {/* Ghost repeating name */}
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.06] leading-[0.9]"
-                  >
-                    {[0, 1, 2].map((r) => (
-                      <div
-                        key={r}
-                        className="font-display italic uppercase text-[28px] tracking-[-0.04em] whitespace-nowrap text-foreground"
-                        style={{ fontWeight: 700 }}
-                      >
-                        {(name + " ").repeat(20)}
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Phase sticker */}
-                  <div className="absolute top-3 right-3 -rotate-3 z-10 px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.22em] rounded-full bg-background/80 text-primary border border-border/60">
-                    P{id}
-                  </div>
-
-                  <div className="relative px-4 pt-4 pb-5">
-                    <div className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.25em] rounded-full bg-background/40 border border-border/60 text-foreground/70">
-                      W {range.replace("Weeks ", "")}
-                    </div>
-
-                    <h3
-                      className={`mt-3 font-display uppercase leading-[0.9] tracking-[-0.04em] text-foreground ${
-                        isFinale
-                          ? "text-[clamp(2.5rem,4.5vw,4.25rem)]"
-                          : "text-[clamp(2rem,3vw,2.75rem)]"
-                      }`}
-                      style={{ fontWeight: 600 }}
-                    >
-                      {name}
-                      <span className="text-primary">.</span>
-                    </h3>
-
-                    <div className="mt-3 flex items-start gap-2">
-                      <Icon className={`shrink-0 mt-[2px] text-primary ${isFinale ? "h-5 w-5" : "h-4 w-4"}`} strokeWidth={1.75} />
-                      <p
-                        className={`font-display leading-tight tracking-tight text-foreground/80 ${
-                          isFinale ? "text-[15px] sm:text-[16px]" : "text-[12.5px]"
-                        }`}
-                        style={{ fontWeight: 500 }}
-                      >
-                        {tagline}
-                      </p>
-                    </div>
-                  </div>
-
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 1200 16"
-                    preserveAspectRatio="none"
-                    className="block w-full h-[10px] -mb-px"
-                  >
-                    <path d={tornEdge} className="fill-card" />
-                  </svg>
+                {/* Top URL bar (poster meta) */}
+                <div
+                  className="flex items-center justify-between px-4 py-2 font-mono text-[9px] uppercase tracking-[0.3em]"
+                  style={{ borderBottom: `1px solid ${ruleColor}`, color: subtext }}
+                >
+                  <span>www.mu.school / phase-{id}</span>
+                  <span className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: isOrange ? INK : ORANGE }} />
+                    {range}
+                  </span>
                 </div>
 
-                {/* BOTTOM */}
-                <div className="relative flex flex-col flex-1 px-4 pt-3 pb-4 bg-card text-foreground">
-                  <div className="flex items-center gap-1.5">
-                    <span className="font-mono text-[10px] text-primary">▶▶</span>
-                    <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-foreground/50">
-                      Drops
-                    </span>
-                    <div className="h-px flex-1 bg-border/60" />
-                  </div>
+                {/* VERTICAL LABEL on left edge */}
+                <div
+                  className="absolute left-0 top-10 bottom-10 w-8 flex items-center justify-center"
+                  style={{ borderRight: `1px solid ${ruleColor}` }}
+                >
+                  <span
+                    className="font-mono text-[10px] uppercase tracking-[0.4em]"
+                    style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", color: subtext }}
+                  >
+                    Phase {id} · {name}
+                  </span>
+                </div>
 
-                  <ul className="mt-2.5 space-y-1.5 flex-1">
-                    {weeks.map((wk) => (
-                      <li
-                        key={wk.w}
-                        className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
+                <div className={`relative pl-12 pr-5 sm:pr-7 pt-6 pb-5 ${isFinale ? "lg:grid lg:grid-cols-12 lg:gap-8" : "flex flex-col h-[calc(100%-34px)]"}`}>
+                  {/* HEADLINE BLOCK */}
+                  <div className={isFinale ? "lg:col-span-6" : ""}>
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="font-mono text-[10px] uppercase tracking-[0.3em]"
+                        style={{ color: subtext }}
                       >
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="inline-block font-mono text-[8px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
-                            W{wk.w}
-                          </span>
-                          <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
-                            ↗ {wk.o}
-                          </span>
-                        </div>
-                        <p className="mt-1 text-[11.5px] leading-snug text-foreground/80">
-                          {wk.q}
+                        {id} / {name}
+                      </span>
+                      <span className="h-1 w-1 rounded-full" style={{ background: isOrange ? INK : ORANGE }} />
+                      <span className="font-mono text-[10px] uppercase tracking-[0.3em]" style={{ color: subtext }}>
+                        SS·26
+                      </span>
+                    </div>
+
+                    {/* The HUGE poster word */}
+                    <h3
+                      className="mt-4 font-sans uppercase leading-[0.82] tracking-[-0.05em]"
+                      style={{
+                        fontWeight: 800,
+                        fontSize: isFinale ? "clamp(3.5rem, 9vw, 7.5rem)" : "clamp(2.5rem, 5vw, 4.25rem)",
+                        color: text,
+                      }}
+                    >
+                      {name}
+                      <span style={{ color: isOrange ? INK : ORANGE }}>!</span>
+                    </h3>
+
+                    <p
+                      className="mt-4 font-sans uppercase tracking-[-0.01em] leading-[1.05] max-w-[18ch]"
+                      style={{
+                        fontWeight: 700,
+                        fontSize: isFinale ? "clamp(1.25rem, 1.8vw, 1.75rem)" : "1rem",
+                        color: text,
+                      }}
+                    >
+                      {tagline}
+                    </p>
+
+                    <div className="mt-5 inline-flex items-center gap-2 px-2.5 py-1 border" style={{ borderColor: ruleColor }}>
+                      <Icon className="h-3.5 w-3.5" strokeWidth={2} style={{ color: isOrange ? INK : ORANGE }} />
+                      <span className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: subtext }}>
+                        {range}
+                      </span>
+                    </div>
+
+                    {isFinale && (
+                      <div className="hidden lg:block mt-8">
+                        <p className="font-mono text-[10px] uppercase tracking-[0.4em]" style={{ color: ORANGE }}>
+                          ★ Showcase Day · Live
                         </p>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {isFinale && (
-                    <div className="mt-3 rounded-lg border border-primary/40 bg-primary/[0.07] px-3 py-2.5">
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary font-bold">
-                          ★ Showcase day
-                        </span>
-                        <div className="h-px flex-1 bg-primary/30" />
+                        <p className="mt-2 text-[14px] leading-relaxed max-w-[36ch]" style={{ color: text }}>
+                          Final pitch — your brand, your numbers, defended live in front of{" "}
+                          <span style={{ fontWeight: 700 }}>founders & operators</span>.
+                        </p>
                       </div>
-                      <p className="mt-1.5 text-[12.5px] leading-snug text-foreground/85">
-                        Final pitch — your brand, your numbers, defended live in front of{" "}
-                        <span className="text-foreground font-semibold">founders & operators</span>.
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Barcode footer */}
-                  <div className="mt-3 flex items-end justify-between gap-2">
-                    <div className="flex gap-[1.5px] h-[16px] flex-1 max-w-[100px]">
-                      {Array.from({ length: 32 }).map((_, k) => (
-                        <span
-                          key={k}
-                          className="block h-full bg-foreground/70"
-                          style={{
-                            width: (k * 13) % 4 === 0 ? 2 : 1,
-                            opacity: k % 3 === 0 ? 0.9 : 0.4,
-                          }}
-                        />
-                      ))}
-                    </div>
-                    <div className="font-mono text-[8px] uppercase tracking-[0.22em] text-foreground/40">
-                      MU·{id} <span className="text-primary font-bold">●</span>
-                    </div>
+                    )}
                   </div>
+
+                  {/* DROPS LIST */}
+                  <div className={isFinale ? "lg:col-span-6 mt-8 lg:mt-0" : "mt-auto pt-6"}>
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="font-mono text-[10px] uppercase tracking-[0.35em]" style={{ color: subtext }}>
+                        ▸ Drops · Weekend Output
+                      </span>
+                      <div className="h-px flex-1" style={{ background: ruleColor }} />
+                    </div>
+
+                    <ul className="space-y-0">
+                      {weeks.map((wk, i) => (
+                        <li
+                          key={wk.w}
+                          className="grid grid-cols-12 gap-3 py-2.5"
+                          style={{ borderTop: i === 0 ? "none" : `1px solid ${ruleColor}` }}
+                        >
+                          <div className="col-span-2 sm:col-span-1">
+                            <span
+                              className="inline-block font-mono text-[10px] tracking-[0.1em] px-1.5 py-0.5"
+                              style={{
+                                background: isOrange ? INK : isInk ? ORANGE : INK,
+                                color: isOrange ? ORANGE : isInk ? INK : PAPER,
+                              }}
+                            >
+                              W{wk.w}
+                            </span>
+                          </div>
+                          <p
+                            className="col-span-7 sm:col-span-8 text-[12.5px] sm:text-[13px] leading-snug"
+                            style={{ color: text }}
+                          >
+                            {wk.q}
+                          </p>
+                          <div className="col-span-3 text-right">
+                            <span
+                              className="font-mono text-[9px] uppercase tracking-[0.2em]"
+                              style={{ color: isOrange ? INK : ORANGE, fontWeight: 700 }}
+                            >
+                              ↗ {wk.o}
+                            </span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+
+                    {isFinale && (
+                      <div className="lg:hidden mt-6 pt-5" style={{ borderTop: `1px solid ${ruleColor}` }}>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.4em]" style={{ color: ORANGE }}>
+                          ★ Showcase Day · Live
+                        </p>
+                        <p className="mt-2 text-[13px] leading-relaxed" style={{ color: text }}>
+                          Final pitch — your brand, your numbers, defended live in front of{" "}
+                          <span style={{ fontWeight: 700 }}>founders & operators</span>.
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Bottom footer bar */}
+                <div
+                  className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 py-2 font-mono text-[9px] uppercase tracking-[0.3em]"
+                  style={{ borderTop: `1px solid ${ruleColor}`, color: subtext, background: surface }}
+                >
+                  <span>MU · {id} / 04</span>
+                  <span className="flex items-center gap-2">
+                    {name}
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: isOrange ? INK : ORANGE }} />
+                  </span>
                 </div>
               </article>
             );
           })}
+        </div>
+
+        {/* BOTTOM META STRIP */}
+        <div className="mt-10 flex items-center gap-3 text-white/50">
+          <Crosshair className="h-3 w-3" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
+            End of system · 10 weekends · 4 phases
+          </span>
+          <div className="h-px flex-1" style={{ background: RULE }} />
+          <span className="h-1.5 w-1.5 rounded-full" style={{ background: ORANGE }} />
+          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
+            Shipped · Sold · Signed
+          </span>
         </div>
       </div>
     </section>
