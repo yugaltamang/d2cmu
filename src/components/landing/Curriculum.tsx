@@ -354,7 +354,7 @@ const Curriculum = () => {
                           <div className="col-span-12 sm:col-span-3 sm:text-right">
                             <span
                               className="font-sans text-[9px] uppercase tracking-[0.2em] font-bold"
-                              style={{ color: accent === LIME ? (variant === "lime" ? INK : LIME) : INK }}
+                              style={{ color: variant === "paper" ? INK : accent === LIME ? (variant === "lime" ? INK : LIME) : INK }}
                             >
                               ↗ {wk.o}
                             </span>
