@@ -19,33 +19,10 @@ const Footer = () => {
   return (
     <footer className="bg-background border-t border-border/60">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-10 sm:py-12">
-        <div className="grid grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8">
-          <div className="col-span-2 lg:col-span-4">
-            <a href="#" className="inline-flex items-center gap-3">
-              <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert" />
-            </a>
-            <p className="mt-4 sm:mt-5 text-foreground/65 leading-relaxed max-w-sm text-sm sm:text-[15px]">
-              A 10-weekend immersion by Masters&apos; Union. Build a live D2C brand —
-              not a case study.
-            </p>
-          </div>
-
-          {cols.map((c) => (
-            <div key={c.title} className="lg:col-span-2">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
-                {c.title}
-              </p>
-              <ul className="mt-4 sm:mt-5 space-y-2.5 sm:space-y-3">
-                {c.links.map((l) => (
-                  <li key={l}>
-                    <a href="#" className="text-sm sm:text-[15px] text-foreground/80 hover:text-primary transition">
-                      {l}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="flex">
+          <a href="#" className="inline-flex items-center gap-3">
+            <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert" />
+          </a>
         </div>
 
         <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-border/60 flex flex-wrap items-center justify-between gap-3 text-xs text-foreground/55">
