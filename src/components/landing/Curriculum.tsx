@@ -216,7 +216,11 @@ const Curriculum = () => {
                     </div>
 
                     <h3
-                      className="mt-3 font-display uppercase leading-[0.9] tracking-[-0.04em] text-[clamp(2rem,3vw,2.75rem)] text-foreground"
+                      className={`mt-3 font-display uppercase leading-[0.9] tracking-[-0.04em] text-foreground ${
+                        isFinale
+                          ? "text-[clamp(2.5rem,4.5vw,4.25rem)]"
+                          : "text-[clamp(2rem,3vw,2.75rem)]"
+                      }`}
                       style={{ fontWeight: 600 }}
                     >
                       {name}
@@ -224,9 +228,11 @@ const Curriculum = () => {
                     </h3>
 
                     <div className="mt-3 flex items-start gap-2">
-                      <Icon className="h-4 w-4 shrink-0 mt-[2px] text-primary" strokeWidth={1.75} />
+                      <Icon className={`shrink-0 mt-[2px] text-primary ${isFinale ? "h-5 w-5" : "h-4 w-4"}`} strokeWidth={1.75} />
                       <p
-                        className="font-display text-[12.5px] leading-tight tracking-tight text-foreground/80"
+                        className={`font-display leading-tight tracking-tight text-foreground/80 ${
+                          isFinale ? "text-[15px] sm:text-[16px]" : "text-[12.5px]"
+                        }`}
                         style={{ fontWeight: 500 }}
                       >
                         {tagline}
