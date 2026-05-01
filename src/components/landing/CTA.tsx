@@ -18,6 +18,16 @@ const prerequisites = [
 const CTA = () => {
   return (
     <section id="apply" className="relative py-28 lg:py-40 bg-background text-foreground overflow-hidden">
+      <img
+        src={bgCta}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        width={1920}
+        height={1280}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50"
+      />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
       <div
         aria-hidden
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full"
