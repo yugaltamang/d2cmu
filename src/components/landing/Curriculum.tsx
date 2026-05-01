@@ -171,7 +171,7 @@ const Curriculum = () => {
 
             const surface = variant === "lime" ? LIME : variant === "ink" ? INK : PAPER;
             const text = variant === "ink" ? PAPER : INK;
-            const subtext = variant === "ink" ? "hsl(0 0% 65%)" : variant === "lime" ? "hsl(0 0% 15%)" : "hsl(0 0% 35%)";
+            const subtext = variant === "ink" ? "hsl(0 0% 65%)" : variant === "lime" ? "hsl(0 0% 15%)" : INK;
             const accent = variant === "lime" ? INK : LIME;
             const ruleColor = variant === "ink" ? "hsl(0 0% 18%)" : variant === "lime" ? "hsl(0 0% 12%)" : "hsl(0 0% 75%)";
 
