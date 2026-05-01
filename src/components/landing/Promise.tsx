@@ -51,12 +51,12 @@ const cards = [
 
 const Promise = () => {
   return (
-    <section id="outcomes" className="relative bg-background py-16 lg:py-24 overflow-hidden">
+    <section id="outcomes" className="relative bg-background py-12 sm:py-16 lg:py-24 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
       </div>
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Shopify-style massive section header */}
         <h2
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
@@ -69,11 +69,11 @@ const Promise = () => {
         </h2>
 
         {/* Big rounded image-style cards */}
-        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-4 lg:gap-5">
+        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}
-              className={`${span} group relative overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
+              className={`${span} group relative overflow-hidden bg-card border border-border/60 p-5 sm:p-6 lg:p-7 hover:border-primary/40 transition-colors`}
             >
               <div
                 aria-hidden
@@ -81,7 +81,7 @@ const Promise = () => {
                 style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.2), transparent)" }}
               />
 
-              <div className="relative flex flex-col h-full min-h-[240px]">
+              <div className="relative flex flex-col h-full min-h-[200px] sm:min-h-[240px]">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center gap-2 border border-border/60 px-3 py-1.5">
                     <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
@@ -92,17 +92,17 @@ const Promise = () => {
                   <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" strokeWidth={1.5} />
                 </div>
 
-                <div className="mt-auto pt-8">
-                  <p className="font-display text-foreground text-[clamp(3rem,6vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
+                <div className="mt-auto pt-6 sm:pt-8">
+                  <p className="font-display text-foreground text-[clamp(2.5rem,9vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
                     {big}
                   </p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mt-3">
                     {bigSub}
                   </p>
-                  <h3 className="mt-4 font-display text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
+                  <h3 className="mt-3 sm:mt-4 font-display text-lg sm:text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
                     {title}
                   </h3>
-                  <p className="mt-3 text-[15px] text-foreground/65 leading-relaxed max-w-lg">
+                  <p className="mt-2 sm:mt-3 text-sm sm:text-[15px] text-foreground/65 leading-relaxed max-w-lg">
                     {body}
                   </p>
                 </div>

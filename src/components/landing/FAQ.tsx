@@ -34,16 +34,16 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="bg-background py-16 lg:py-24 border-t border-border/40">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
+    <section id="faq" className="bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-16">
         <div className="lg:col-span-5">
           <h2
-            className="font-display text-foreground text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] tracking-[-0.035em]"
+            className="font-display text-foreground text-[clamp(1.75rem,5.5vw,3.5rem)] leading-[1.05] tracking-[-0.035em]"
             style={{ fontWeight: 500 }}
           >
             The fine print, <span className="text-violet">in plain words.</span>
           </h2>
-          <p className="mt-4 text-foreground/65 leading-relaxed text-base max-w-md">
+          <p className="mt-3 sm:mt-4 text-foreground/65 leading-relaxed text-sm sm:text-base max-w-md">
             Everything you&apos;d ask before sending an application. Still curious? Write to us.
           </p>
         </div>

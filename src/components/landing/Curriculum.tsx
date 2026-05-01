@@ -62,7 +62,7 @@ const Curriculum = () => {
   return (
     <section
       id="curriculum"
-      className="relative py-20 lg:py-28 border-t border-border/40"
+      className="relative py-12 sm:py-20 lg:py-28 border-t border-border/40"
       style={{ background: NAVY }}
     >
       {/* Soft blue glow */}
@@ -75,9 +75,9 @@ const Curriculum = () => {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Eyebrow pill */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-4 py-1.5">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5">
           <span className="h-1.5 w-1.5 rounded-full" style={{ background: LIME }} />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/70">
             The 10-weekend system
@@ -86,7 +86,7 @@ const Curriculum = () => {
 
         {/* Massive heading — sans display with italic serif accents, lime underline */}
         <h2
-          className="mt-6 max-w-[20ch] font-sans text-white text-[clamp(2.5rem,6.4vw,5.75rem)] leading-[0.95] tracking-[-0.04em]"
+          className="mt-5 sm:mt-6 max-w-[20ch] font-sans text-white text-[clamp(2rem,8vw,5.75rem)] leading-[1] tracking-[-0.04em]"
           style={{ fontWeight: 600 }}
         >
           Idea on{" "}
@@ -134,17 +134,17 @@ const Curriculum = () => {
           <span className="text-white/55">times.</span>
         </h2>
 
-        <p className="mt-8 max-w-2xl text-[17px] text-white/70 leading-relaxed">
+        <p className="mt-6 sm:mt-8 max-w-2xl text-[15px] sm:text-[17px] text-white/70 leading-relaxed">
           Build → Launch → Scale → Defend. Every weekend ends with something{" "}
           <span className="text-white">shipped, sold, or signed</span> — never a slide.
         </p>
 
         {/* Phase chips row */}
-        <div className="mt-10 flex flex-wrap gap-2.5">
+        <div className="mt-6 sm:mt-10 flex flex-wrap gap-2 sm:gap-2.5">
           {phases.map((p) => (
             <span
               key={p.id}
-              className="rounded-full px-4 py-2 text-sm font-medium text-white border border-white/15"
+              className="rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white border border-white/15"
               style={{ background: "rgba(255,255,255,0.04)" }}
             >
               <span className="font-mono text-[10px] tracking-[0.25em] mr-2 text-white/55">
@@ -156,7 +156,7 @@ const Curriculum = () => {
         </div>
 
         {/* Phase cards — portrait, compact, themed */}
-        <div className="mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => {
             const tornEdge =
               "M0,8 L40,2 L70,12 L110,4 L150,14 L190,6 L230,12 L270,3 L310,11 L350,5 L390,13 L430,4 L470,10 L510,2 L550,12 L590,6 L630,14 L670,4 L710,10 L750,3 L790,12 L830,5 L870,11 L910,3 L950,12 L990,6 L1030,14 L1070,4 L1110,10 L1150,3 L1200,12 L1200,0 L0,0 Z";
@@ -164,7 +164,7 @@ const Curriculum = () => {
             return (
               <article
                 key={id}
-                className="group relative flex flex-col overflow-hidden rounded-[24px] bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                className="group relative flex flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-card border border-border/60 hover:border-primary/40 transition-colors"
                 style={{ aspectRatio: "3 / 4" }}
               >
                 {/* TOP */}
