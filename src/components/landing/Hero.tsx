@@ -24,6 +24,29 @@ const Scribble = ({ className = "" }: { className?: string }) => (
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-[hsl(var(--ink))] text-[hsl(var(--paper))]">
+      {/* Background hero image — blended into ink */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden>
+        <img
+          src={heroImg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover grayscale contrast-125 opacity-30 mix-blend-luminosity"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, hsl(var(--ink)/0.55) 0%, hsl(var(--ink)/0.85) 60%, hsl(var(--ink)) 100%)",
+          }}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 70% 30%, hsl(var(--lime)/0.18), transparent 55%)",
+          }}
+        />
+      </div>
+
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-12 lg:pb-16">
         {/* Top meta strip */}
         <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/20">
