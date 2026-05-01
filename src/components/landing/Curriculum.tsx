@@ -1,4 +1,4 @@
-import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
+import { Hammer, Rocket, TrendingUp, Shield, ArrowRight } from "lucide-react";
 
 const phases = [
   {
@@ -55,77 +55,78 @@ const phases = [
 
 const Curriculum = () => {
   return (
-    <section id="curriculum" className="py-24 lg:py-32 bg-background">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid lg:grid-cols-12 gap-10 mb-14">
-          <div className="lg:col-span-6">
-            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">Curriculum</p>
-            <h2 className="mt-4 font-display font-light text-5xl lg:text-6xl leading-[0.95] tracking-tight text-balance">
-              Four phases. Ten weekends. <span className="italic text-violet">One live brand.</span>
-            </h2>
-          </div>
-          <p className="lg:col-span-5 lg:col-start-8 text-muted-foreground leading-relaxed lg:text-lg self-end">
-            The journey compounds: <span className="text-foreground">Build → Launch → Scale → Defend.</span> Each phase is an operator sprint that ends with something shipped, sold, or signed.
+    <section id="curriculum" className="py-24 lg:py-36 bg-background">
+      <div className="mx-auto max-w-6xl px-6 lg:px-10">
+        {/* Header */}
+        <div className="max-w-3xl">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Curriculum</p>
+          <h2 className="mt-5 font-display font-light text-5xl lg:text-7xl leading-[0.95] tracking-tight text-balance">
+            Four phases. Ten weekends.
+            <br />
+            <span className="italic text-violet">One live brand.</span>
+          </h2>
+          <p className="mt-6 text-muted-foreground leading-relaxed lg:text-lg">
+            Build → Launch → Scale → Defend. Each phase ends with something shipped, sold, or signed.
           </p>
         </div>
 
-        <div className="hidden lg:grid grid-cols-4 gap-4 mb-6">
-          {phases.map((p, i) => (
-            <div key={p.id} className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-              <span className="text-foreground">{p.id}</span>
-              <span>{p.name}</span>
-              {i < phases.length - 1 && <span className="flex-1 h-px bg-border ml-2" />}
-            </div>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-5">
-          {phases.map(({ id, name, icon: Icon, tagline, range, outcome, weeks }) => (
-            <article
+        {/* Phase rail */}
+        <ol className="mt-20 space-y-px border-t border-border">
+          {phases.map(({ id, name, icon: Icon, tagline, range, outcome, weeks }, idx) => (
+            <li
               key={id}
-              className="rounded-3xl bg-card border border-border p-7 lg:p-10 group hover:border-primary/50 transition-colors flex flex-col shadow-card"
+              className="group relative border-b border-border py-10 lg:py-14 transition-colors hover:bg-card/40"
             >
-              <header className="flex items-start justify-between gap-6">
-                <div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                    Phase {id} · {range}
-                  </p>
-                  <h3 className="mt-3 font-display text-4xl lg:text-5xl leading-none tracking-tight">
-                    {name}.
-                  </h3>
-                  <p className="mt-3 text-foreground/80 leading-snug max-w-sm">{tagline}</p>
-                </div>
-                <div className="shrink-0 h-14 w-14 rounded-full border border-primary/30 flex items-center justify-center bg-primary/15 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
-                  <Icon className="h-6 w-6 text-primary group-hover:text-primary-foreground" strokeWidth={1.75} />
-                </div>
-              </header>
-
-              <div className="mt-8 grid grid-cols-2 gap-3">
-                {weeks.map((wk) => (
-                  <div key={wk.w} className="rounded-2xl bg-background/60 border border-border p-4 lg:p-5 hover:border-primary/40 transition-colors">
-                    <div className="flex items-center justify-between">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                        Week {wk.w}
-                      </span>
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                {/* Left: phase id + name */}
+                <div className="lg:col-span-4 flex items-start gap-5">
+                  <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground pt-2">
+                    {id}
+                  </span>
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <Icon className="h-5 w-5 text-primary" strokeWidth={1.5} />
+                      <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+                        {range}
+                      </p>
                     </div>
-                    <p className="mt-3 font-display text-base leading-snug text-balance">{wk.q}</p>
-                    <p className="mt-3 text-[11px] font-mono uppercase tracking-[0.18em] text-foreground/60">
-                      → {wk.o}
-                    </p>
+                    <h3 className="mt-3 font-display font-light text-5xl lg:text-6xl leading-none tracking-tight">
+                      {name}.
+                    </h3>
+                    <p className="mt-4 text-foreground/80 leading-snug max-w-xs">{tagline}</p>
                   </div>
-                ))}
-              </div>
+                </div>
 
-              <footer className="mt-6 pt-5 border-t border-border flex items-baseline justify-between gap-4">
-                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-                  Phase outcome
-                </span>
-                <span className="text-sm text-foreground/85 text-right max-w-[60%]">{outcome}</span>
-              </footer>
-            </article>
+                {/* Right: weeks list */}
+                <div className="lg:col-span-8">
+                  <ul className="divide-y divide-border/60">
+                    {weeks.map((wk) => (
+                      <li
+                        key={wk.w}
+                        className="grid grid-cols-12 gap-4 py-4 items-baseline"
+                      >
+                        <span className="col-span-2 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
+                          Wk {wk.w}
+                        </span>
+                        <p className="col-span-7 font-display text-lg lg:text-xl leading-snug text-foreground text-balance">
+                          {wk.q}
+                        </p>
+                        <span className="col-span-3 text-right text-[11px] font-mono uppercase tracking-[0.2em] text-primary/90">
+                          {wk.o}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
+                    <ArrowRight className="h-4 w-4 text-primary" strokeWidth={1.5} />
+                    <span className="text-foreground/85">{outcome}</span>
+                  </div>
+                </div>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
     </section>
   );
