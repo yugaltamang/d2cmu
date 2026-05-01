@@ -165,7 +165,6 @@ const Curriculum = () => {
               <article
                 key={id}
                 className="group relative flex flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-card border border-border/60 hover:border-primary/40 transition-colors"
-                style={{ aspectRatio: "3 / 4" }}
               >
                 {/* TOP */}
                 <div className="relative bg-secondary text-foreground">
