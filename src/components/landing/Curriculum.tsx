@@ -108,7 +108,7 @@ const Curriculum = () => {
                         <span className="col-span-2 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
                           Wk {wk.w}
                         </span>
-                        <p className="col-span-7 font-display text-lg lg:text-xl leading-snug text-foreground text-balance">
+                        <p className="col-span-7 font-sans text-base lg:text-lg leading-snug text-foreground text-pretty font-normal">
                           {wk.q}
                         </p>
                         <span className="col-span-3 text-right text-[11px] font-mono uppercase tracking-[0.2em] text-primary/90">
