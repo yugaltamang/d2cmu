@@ -98,8 +98,9 @@
     to { transform: translateX(-50%); }
   }
 
-  .text-violet { color: hsl(var(--primary)); }
+  .text-violet { color: hsl(var(--primary)); font-family: 'ivyPresto Display', 'Italiana', serif; font-weight: 400; letter-spacing: -0.01em; }
   .bg-violet { background-color: hsl(var(--primary)); }
+  .font-presto { font-family: 'ivyPresto Display', 'Italiana', serif; }
 
   .tape {
     background: hsl(var(--primary));
