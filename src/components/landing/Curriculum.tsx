@@ -397,16 +397,6 @@ const Curriculum = () => {
           })}
         </div>
 
-        {/* BOTTOM FEED FOOTER */}
-        <div className="mt-10 pt-4 border-t border-black/30 flex items-center justify-between">
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-black font-bold">
-            ▣ Curriculum Feed
-          </span>
-          <span className="flex items-center gap-2 font-sans text-[11px] uppercase tracking-[0.4em] text-black font-bold">
-            Shipped · Sold · Signed
-            <span className="h-2 w-2 rounded-full" style={{ background: LIME }} />
-          </span>
-        </div>
       </div>
     </section>
   );
