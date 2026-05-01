@@ -16,7 +16,7 @@ const Nav = () => {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 group">
-          <img src={muLogo} alt="Masters' Union" className="h-6 sm:h-7 w-auto invert" />
+          <img src={muLogo} alt="Masters' Union" width={140} height={28} decoding="async" className="h-6 sm:h-7 w-auto invert" />
         </a>
 
         <nav className="hidden md:flex items-center gap-1 text-[15px] text-foreground/85">
