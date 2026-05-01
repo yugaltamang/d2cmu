@@ -189,7 +189,7 @@ const Curriculum = () => {
                   background: surface,
                   color: text,
                   aspectRatio: isFinale ? "auto" : "1 / 1.05",
-                  minHeight: isFinale ? 480 : undefined,
+                  minHeight: isFinale ? 640 : undefined,
                 }}
               >
                 {/* Finale: grayscale pitch-day image on right half */}
@@ -201,13 +201,14 @@ const Curriculum = () => {
                       loading="lazy"
                       width={1280}
                       height={896}
-                      className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 opacity-50 lg:opacity-90"
+                      className="absolute inset-0 h-full w-full object-cover grayscale contrast-125"
                     />
+                    {/* Subtle left fade only — keep image clearly visible */}
                     <div
-                      className="absolute inset-0"
+                      className="absolute inset-y-0 left-0 w-2/5 lg:w-1/3"
                       style={{
                         background:
-                          "linear-gradient(90deg, hsl(0 0% 6%) 0%, hsl(0 0% 6% / 0.85) 35%, hsl(0 0% 6% / 0.35) 70%, hsl(0 0% 6% / 0.15) 100%)",
+                          "linear-gradient(90deg, hsl(0 0% 6%) 0%, hsl(0 0% 6% / 0.6) 60%, hsl(0 0% 6% / 0) 100%)",
                       }}
                     />
                   </div>
