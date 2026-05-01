@@ -1,4 +1,5 @@
 import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-react";
+import bg from "@/assets/bg-abstract-3.jpg";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs in-room" },
@@ -7,103 +8,51 @@ const details = [
   { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree" },
 ];
 
-const Burst = ({ className = "", color = "hsl(var(--lime))" }: { className?: string; color?: string }) => (
-  <svg viewBox="0 0 40 40" className={className} aria-hidden>
-    <polygon
-      points="20,2 23,15 36,12 26,22 38,28 24,27 27,40 20,30 13,40 16,27 2,28 14,22 4,12 17,15"
-      fill={color}
-    />
-  </svg>
-);
-
-const Scribble = ({ className = "", color = "hsl(var(--lime))" }: { className?: string; color?: string }) => (
-  <svg viewBox="0 0 120 60" className={className} aria-hidden fill="none">
-    <path
-      d="M4 30 C 18 8, 32 52, 50 24 S 80 50, 96 22 S 118 38, 116 30"
-      stroke={color}
-      strokeWidth="3"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-
 const CTA = () => {
   return (
-    <section
-      id="apply"
-      className="relative py-16 sm:py-20 lg:py-28 border-t-2 border-[hsl(var(--ink))] overflow-hidden"
-      style={{ background: "hsl(var(--ink))" }}
-    >
-      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 text-[hsl(var(--paper))]">
-        <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/20">
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-[hsl(var(--paper))]">
-            ▣ Apply · Cohort 01
-          </span>
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white/60">
-            June 2026 · Limited Seats
-          </span>
-        </div>
+    <section id="apply" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+      </div>
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+        <div className="max-w-5xl">
+          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
+            Cohort 01 / June 2026
+          </p>
+          <h2
+            className="mt-5 sm:mt-6 font-display text-foreground text-[clamp(2rem,7vw,4.5rem)] leading-[1.05] tracking-[-0.04em]"
+            style={{ fontWeight: 500 }}
+          >
+            Stop reading. <br /><span className="text-violet">Start selling.</span>
+          </h2>
+          <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-foreground/70 leading-relaxed">
+            Limited seats. Application-based. Cohort 01 begins June 2026 at the Masters&apos; Union campus, Gurugram.
+          </p>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-6 items-end">
-          <div className="col-span-12 lg:col-span-9 relative">
-            <h2
-              className="font-sans uppercase text-[hsl(var(--paper))] text-[clamp(2.5rem,9vw,7.5rem)] leading-[0.85] tracking-[-0.05em]"
-              style={{ fontWeight: 900 }}
-            >
-              Stop reading.
-              <br />
-              <span className="relative inline-block">
-                <span style={{ background: "hsl(var(--lime))", color: "hsl(var(--ink))", padding: "0 0.12em" }}>
-                  Start
-                </span>{" "}
-                selling
-                <Scribble className="absolute -bottom-3 sm:-bottom-5 left-0 w-full h-[24px] sm:h-[36px]" color="hsl(var(--lime))" />
-              </span>
-              .
-            </h2>
-            <Burst className="absolute -top-4 right-0 sm:top-2 sm:right-12 h-12 w-12 rotate-12" color="hsl(var(--lime))" />
-          </div>
-          <div className="col-span-12 lg:col-span-3">
-            <div className="bg-[hsl(var(--lime))] text-[hsl(var(--ink))] px-4 py-3">
-              <p className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold">
-                ◷ Cohort 01
-              </p>
-              <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.35em] font-semibold opacity-80">
-                Application-based
-              </p>
-            </div>
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
+            <a href="#" className="btn-pill-light group">
+              Start your brand
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
+            </a>
+            <a href="#" className="btn-pill-ghost">
+              Download brochure (PDF)
+            </a>
           </div>
         </div>
 
-        <p className="mt-8 max-w-xl text-white/75 leading-relaxed text-sm sm:text-base">
-          Limited seats. Application-based. Cohort 01 begins{" "}
-          <span className="font-bold text-[hsl(var(--paper))]">June 2026</span> at the Masters&apos; Union campus, Gurugram.
-        </p>
-
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <a href="#" className="btn-pill-light group">
-            Start your brand
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
-          </a>
-          <a href="#" className="btn-pill-ghost">
-            Download brochure (PDF)
-          </a>
-        </div>
-
-        <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <div className="mt-10 sm:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
-              className="bg-[hsl(0_0%_10%)] border-2 border-white/15 p-4 sm:p-5"
+              className="rounded-[18px] sm:rounded-[24px] bg-card border border-border/60 p-4 sm:p-5 hover:border-primary/40 transition-colors"
             >
-              <div className="flex items-center justify-between">
-                <Icon className="h-5 w-5 text-[hsl(var(--lime))]" strokeWidth={2.25} />
-                <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(var(--lime))" }} />
-              </div>
-              <p className="mt-4 font-sans text-[10px] uppercase tracking-[0.3em] text-white/55 font-bold">
+              <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
+              <p className="mt-3 sm:mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
                 {label}
               </p>
-              <p className="mt-2 font-sans uppercase text-[hsl(var(--paper))] text-[15px] sm:text-[17px] leading-tight tracking-[-0.01em]" style={{ fontWeight: 800 }}>
+              <p className="mt-2 font-display text-base sm:text-xl text-foreground leading-snug" style={{ fontWeight: 500 }}>
                 {value}
               </p>
             </div>

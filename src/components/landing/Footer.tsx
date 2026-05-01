@@ -1,19 +1,56 @@
 import muLogo from "@/assets/mu-logo.svg";
 
+const cols = [
+  {
+    title: "Programme",
+    links: ["Outcomes", "Curriculum", "Faculty", "FAQ", "Apply"],
+  },
+  {
+    title: "Masters' Union",
+    links: ["About", "Campus", "Other programmes", "Careers", "Press"],
+  },
+  {
+    title: "Resources",
+    links: ["D2C playbook", "Brochure", "Alumni stories", "Blog", "Contact"],
+  },
+];
+
 const Footer = () => {
   return (
-    <footer className="bg-[hsl(var(--ink))] text-[hsl(var(--paper))] border-t-2 border-[hsl(var(--ink))]">
+    <footer className="bg-background border-t border-border/60">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-10 sm:py-12">
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
-          <a href="#" className="inline-flex items-center gap-2">
-            <img src={muLogo} alt="Masters' Union" className="h-8 w-auto invert" />
-          </a>
-          <span className="h-3 w-3 rounded-full" style={{ background: "hsl(var(--lime))" }} />
+        <div className="grid grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8">
+          <div className="col-span-2 lg:col-span-4">
+            <a href="#" className="inline-flex items-center gap-3">
+              <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert" />
+            </a>
+            <p className="mt-4 sm:mt-5 text-foreground/65 leading-relaxed max-w-sm text-sm sm:text-[15px]">
+              A 10-weekend immersion by Masters&apos; Union. Build a live D2C brand —
+              not a case study.
+            </p>
+          </div>
+
+          {cols.map((c) => (
+            <div key={c.title} className="lg:col-span-2">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
+                {c.title}
+              </p>
+              <ul className="mt-4 sm:mt-5 space-y-2.5 sm:space-y-3">
+                {c.links.map((l) => (
+                  <li key={l}>
+                    <a href="#" className="text-sm sm:text-[15px] text-foreground/80 hover:text-primary transition">
+                      {l}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-8 pt-5 border-t border-white/20 flex flex-wrap items-center justify-between gap-3 font-sans text-[10px] uppercase tracking-[0.3em] font-bold text-white/55">
-          <p>© Masters&apos; Union 2026</p>
-          <p>Gurugram · Outcome-driven, by design</p>
+        <div className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-border/60 flex flex-wrap items-center justify-between gap-3 text-xs text-foreground/55">
+          <p>&copy; Masters&apos; Union / D2C Immersion 2026</p>
+          <p>Gurugram, India · Outcome-driven, by design.</p>
         </div>
       </div>
     </footer>

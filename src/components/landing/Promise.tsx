@@ -1,197 +1,105 @@
-import { Store, TrendingUp, ShoppingBag, Instagram, ArrowUpRight } from "lucide-react";
+import { Store, Users, TrendingUp, ShoppingBag, Instagram, ArrowUpRight } from "lucide-react";
+import bg from "@/assets/bg-abstract-1.jpg";
 
-const Burst = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 40 40" className={className} aria-hidden>
-    <polygon
-      points="20,2 23,15 36,12 26,22 38,28 24,27 27,40 20,30 13,40 16,27 2,28 14,22 4,12 17,15"
-      fill="hsl(var(--lime))"
-    />
-  </svg>
-);
-
-const Scribble = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 120 60" className={className} aria-hidden fill="none">
-    <path
-      d="M4 30 C 18 8, 32 52, 50 24 S 80 50, 96 22 S 118 38, 116 30"
-      stroke="hsl(var(--lime))"
-      strokeWidth="3"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-
-type Variant = "ink" | "lime" | "paper";
-
-const cards: {
-  icon: typeof Store;
-  eyebrow: string;
-  big: string;
-  bigSub: string;
-  title: string;
-  body: string;
-  variant: Variant;
-}[] = [
+const cards = [
   {
     icon: Store,
     eyebrow: "01 / Storefront",
     big: "35",
-    bigSub: "Days to live",
+    bigSub: "days to live",
     title: "Live Shopify store, taking real orders.",
     body: "By Week 5 your store is live on a custom domain — products listed, payments wired, checkout tested. Not a Figma. A URL you can share.",
-    variant: "ink",
+    span: "lg:col-span-6",
   },
   {
     icon: TrendingUp,
     eyebrow: "02 / Customers & Revenue",
     big: "₹1L+",
-    bigSub: "Revenue · 100+ orders",
+    bigSub: "revenue · 100+ orders",
     title: "Real customers. Real revenue. Defended live.",
-    body: "Live Meta & Google campaigns with real budget — your first 100 paying customers, then CAC, AOV & margin defended at the showcase.",
-    variant: "lime",
+    body: "Live Meta & Google campaigns with real budget — your first 100 paying customers, then CAC, AOV & margin defended at the showcase in front of operators. Not projected. Owned by you.",
+    span: "lg:col-span-6",
   },
   {
     icon: ShoppingBag,
     eyebrow: "03 / Distribution",
     big: "3+",
-    bigSub: "Channels live",
+    bigSub: "channels live",
     title: "Live across Amazon, Flipkart & socials.",
     body: "Listings shipped on the marketplaces that matter. Distribution you've operated, not studied.",
-    variant: "paper",
+    span: "lg:col-span-6",
   },
   {
     icon: Instagram,
     eyebrow: "04 / Brand",
     big: "1K+",
-    bigSub: "Followers earned",
+    bigSub: "followers earned",
     title: "Instagram brand store with a real audience.",
     body: "Build your Instagram storefront from zero — content calendar shipped, reels live, DMs converting. Turn the feed into a sales channel.",
-    variant: "ink",
+    span: "lg:col-span-6",
   },
 ];
 
 const Promise = () => {
   return (
-    <section
-      id="outcomes"
-      className="relative py-16 sm:py-20 lg:py-28 border-t-2 border-[hsl(var(--ink))]"
-      style={{ background: "hsl(var(--ink))" }}
-    >
+    <section id="outcomes" className="relative bg-background py-12 sm:py-16 lg:py-24 overflow-hidden">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
+      </div>
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/20">
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-[hsl(var(--paper))]">
-            ▣ Outcomes Feed
+        {/* Shopify-style massive section header */}
+        <h2
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
+          style={{ fontWeight: 500 }}
+        >
+          Four things you walk out with.{" "}
+          <span className="text-foreground/45">
+            Not a slide deck. A live brand, real revenue, customers you earned.
           </span>
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white/60">
-            Four · Things · Walked · Out
-          </span>
-        </div>
+        </h2>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-6 items-end">
-          <h2
-            className="col-span-12 lg:col-span-9 relative font-sans uppercase text-[hsl(var(--paper))] text-[clamp(2rem,7vw,5.5rem)] leading-[0.88] tracking-[-0.045em]"
-            style={{ fontWeight: 900 }}
-          >
-            Four things you{" "}
-            <span className="relative inline-block">
-              walk out
-              <Scribble className="absolute -bottom-3 sm:-bottom-5 left-0 w-full h-[24px] sm:h-[36px]" />
-            </span>{" "}
-            with.{" "}
-            <span className="text-white/45">
-              Not a slide deck. A live brand, real revenue, customers you earned.
-            </span>
-          </h2>
-          <div className="col-span-12 lg:col-span-3">
-            <div className="bg-[hsl(var(--lime))] text-[hsl(var(--ink))] px-4 py-3 border-2 border-[hsl(var(--lime))]">
-              <p className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold">
-                ▸ Outputs · 04
-              </p>
-              <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.35em] font-semibold opacity-80">
-                Shipped · Sold · Signed
-              </p>
-            </div>
-          </div>
-        </div>
+        {/* Big rounded image-style cards */}
+        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
+          {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
+            <article
+              key={eyebrow}
+              className={`${span} group relative overflow-hidden bg-card border border-border/60 p-5 sm:p-6 lg:p-7 hover:border-primary/40 transition-colors`}
+            >
+              <div
+                aria-hidden
+                className="absolute -top-32 -right-24 h-[380px] w-[380px] rounded-full opacity-50 blur-2xl"
+                style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.2), transparent)" }}
+              />
 
-        <div className="mt-10 sm:mt-12 grid grid-cols-12 gap-3 sm:gap-4">
-          {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, variant }, idx) => {
-            const surface =
-              variant === "lime"
-                ? "hsl(var(--lime))"
-                : variant === "ink"
-                ? "hsl(var(--ink))"
-                : "hsl(var(--paper))";
-            const text = variant === "ink" ? "hsl(var(--paper))" : "hsl(var(--ink))";
-            const sub = variant === "ink" ? "hsl(0 0% 65%)" : variant === "lime" ? "hsl(0 0% 15%)" : "hsl(0 0% 35%)";
-            const accent = variant === "lime" ? "hsl(var(--ink))" : "hsl(var(--lime))";
-            const ruleColor = variant === "ink" ? "hsl(0 0% 18%)" : variant === "lime" ? "hsl(0 0% 12%)" : "hsl(0 0% 75%)";
-
-            return (
-              <article
-                key={eyebrow}
-                className="col-span-12 sm:col-span-6 relative overflow-hidden"
-                style={{ background: surface, color: text, minHeight: 360 }}
-              >
-                {/* Top strip */}
-                <div
-                  className="flex items-center justify-between px-4 py-2 font-sans text-[10px] uppercase tracking-[0.3em] font-bold"
-                  style={{ borderBottom: `1px solid ${ruleColor}`, color: sub }}
-                >
-                  <span className="inline-flex items-center gap-2">
-                    <Icon className="h-3.5 w-3.5" strokeWidth={2.5} style={{ color: accent }} />
-                    {eyebrow}
-                  </span>
-                  <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} style={{ color: accent }} />
-                </div>
-
-                {(variant === "ink" || variant === "paper") && (
-                  <Burst className="absolute top-12 right-4 h-9 w-9 rotate-12" />
-                )}
-
-                <div className="relative px-5 sm:px-7 pt-6 pb-14 flex flex-col h-[calc(100%-34px)]">
-                  <div>
-                    <p
-                      className="font-sans uppercase tracking-[-0.045em] leading-[0.85]"
-                      style={{ fontWeight: 900, fontSize: "clamp(3rem, 6vw, 5rem)", color: text }}
-                    >
-                      {big}
-                      <span style={{ color: accent }}>.</span>
-                    </p>
-                    <p
-                      className="mt-3 font-sans text-[10px] uppercase tracking-[0.3em] font-bold"
-                      style={{ color: sub }}
-                    >
-                      {bigSub}
-                    </p>
+              <div className="relative flex flex-col h-full min-h-[200px] sm:min-h-[240px]">
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center gap-2 border border-border/60 px-3 py-1.5">
+                    <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
+                      {eyebrow}
+                    </span>
                   </div>
-
-                  <div className="mt-auto pt-6">
-                    <h3
-                      className="font-sans uppercase tracking-[-0.02em] leading-[1.05] max-w-md"
-                      style={{ fontWeight: 800, fontSize: "1.1rem", color: text }}
-                    >
-                      {title}
-                    </h3>
-                    <p
-                      className="mt-2 sm:mt-3 text-[13px] sm:text-[14px] leading-relaxed max-w-lg"
-                      style={{ color: variant === "ink" ? "hsl(0 0% 75%)" : variant === "lime" ? "hsl(0 0% 12%)" : "hsl(0 0% 25%)" }}
-                    >
-                      {body}
-                    </p>
-                  </div>
+                  <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" strokeWidth={1.5} />
                 </div>
 
-                {/* Bottom strip */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 py-2 font-sans text-[9px] uppercase tracking-[0.3em] font-bold"
-                  style={{ borderTop: `1px solid ${ruleColor}`, color: sub, background: surface }}
-                >
-                  <span>@mu.school / outcome·{String(idx + 1).padStart(2, "0")}</span>
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
+                <div className="mt-auto pt-6 sm:pt-8">
+                  <p className="font-display text-foreground text-[clamp(2.5rem,9vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
+                    {big}
+                  </p>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mt-3">
+                    {bigSub}
+                  </p>
+                  <h3 className="mt-3 sm:mt-4 font-display text-lg sm:text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
+                    {title}
+                  </h3>
+                  <p className="mt-2 sm:mt-3 text-sm sm:text-[15px] text-foreground/65 leading-relaxed max-w-lg">
+                    {body}
+                  </p>
                 </div>
-              </article>
-            );
-          })}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
