@@ -1,5 +1,4 @@
 import { Play, ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/d2c-hero.jpg";
 
 const Burst = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 40 40" className={className} aria-hidden>
@@ -24,28 +23,14 @@ const Scribble = ({ className = "" }: { className?: string }) => (
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-[hsl(var(--ink))] text-[hsl(var(--paper))]">
-      {/* Background hero image — blended into ink */}
-      <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        <img
-          src={heroImg}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover grayscale contrast-125 opacity-30 mix-blend-luminosity"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, hsl(var(--ink)/0.55) 0%, hsl(var(--ink)/0.85) 60%, hsl(var(--ink)) 100%)",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 70% 30%, hsl(var(--lime)/0.18), transparent 55%)",
-          }}
-        />
-      </div>
+      <div
+        className="absolute inset-0 pointer-events-none"
+        aria-hidden
+        style={{
+          background:
+            "radial-gradient(ellipse at 70% 30%, hsl(var(--lime)/0.15), transparent 55%)",
+        }}
+      />
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-12 lg:pb-16">
         {/* Top meta strip */}
@@ -58,66 +43,43 @@ const Hero = () => {
           </span>
         </div>
 
-        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-6 lg:gap-10 items-end">
-          {/* HEADLINE COLUMN */}
-          <div className="col-span-12 lg:col-span-8 relative">
-            <h1
-              className="font-sans uppercase text-[hsl(var(--paper))] text-[clamp(2.5rem,9.5vw,8rem)] leading-[0.85] tracking-[-0.05em]"
-              style={{ fontWeight: 900 }}
-            >
-              B-Schools{" "}
-              <span className="text-white/40">teach</span>{" "}
-              <span style={{ background: "hsl(var(--lime))", color: "hsl(var(--ink))", padding: "0 0.12em" }}>
-                D2C
+        <div className="mt-10 sm:mt-14 relative">
+          <h1
+            className="font-sans uppercase text-[hsl(var(--paper))] text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.85] tracking-[-0.05em]"
+            style={{ fontWeight: 900 }}
+          >
+            B-Schools{" "}
+            <span className="text-white/40">teach</span>{" "}
+            <span style={{ background: "hsl(var(--lime))", color: "hsl(var(--ink))", padding: "0 0.12em" }}>
+              D2C
+            </span>
+            .
+            <br />
+            We{" "}
+            <span className="relative inline-block">
+              ship
+              <Scribble className="absolute -bottom-3 sm:-bottom-5 left-0 w-full h-[24px] sm:h-[36px]" />
+            </span>{" "}
+            it.
+          </h1>
+          <Burst className="absolute -top-4 right-0 sm:top-2 sm:right-8 h-10 w-10 sm:h-14 sm:w-14 rotate-12" />
+
+          <p className="mt-8 sm:mt-10 max-w-2xl text-sm sm:text-base lg:text-lg text-white/75 leading-relaxed">
+            Ten weekends. One live D2C brand — sourced, branded, on Shopify, with paid ads running and{" "}
+            <span className="text-white font-bold">real customers</span> in your CRM.
+          </p>
+
+          <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3">
+            <a href="#apply" className="btn-pill-light group">
+              Start your brand
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
+            </a>
+            <a href="#curriculum" className="btn-pill-ghost group">
+              <span className="grid place-items-center h-5 w-5 bg-[hsl(var(--lime))] text-[hsl(var(--ink))]">
+                <Play className="h-2.5 w-2.5 fill-current" />
               </span>
-              .
-              <br />
-              We{" "}
-              <span className="relative inline-block">
-                ship
-                <Scribble className="absolute -bottom-3 sm:-bottom-5 left-0 w-full h-[24px] sm:h-[36px]" />
-              </span>{" "}
-              it.
-            </h1>
-            <Burst className="absolute -top-4 right-0 sm:top-2 sm:right-8 h-10 w-10 sm:h-14 sm:w-14 rotate-12" />
-
-            <p className="mt-8 sm:mt-10 max-w-xl text-sm sm:text-base lg:text-lg text-white/75 leading-relaxed">
-              Ten weekends. One live D2C brand — sourced, branded, on Shopify, with paid ads running and{" "}
-              <span className="text-white font-bold">real customers</span> in your CRM.
-            </p>
-
-            <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3">
-              <a href="#apply" className="btn-pill-light group">
-                Start your brand
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.5} />
-              </a>
-              <a href="#curriculum" className="btn-pill-ghost group">
-                <span className="grid place-items-center h-5 w-5 bg-[hsl(var(--lime))] text-[hsl(var(--ink))]">
-                  <Play className="h-2.5 w-2.5 fill-current" />
-                </span>
-                Why we built this
-              </a>
-            </div>
-          </div>
-
-          {/* IMAGE TILE — feed-style square */}
-          <div className="col-span-12 lg:col-span-4 relative">
-            <div className="relative border-2 border-white overflow-hidden aspect-[4/5]">
-              <img
-                src={heroImg}
-                alt="D2C operators at work"
-                className="absolute inset-0 h-full w-full object-cover grayscale contrast-110"
-              />
-              {/* lime tag */}
-              <div className="absolute top-3 left-3 bg-[hsl(var(--lime))] text-[hsl(var(--ink))] font-sans text-[10px] uppercase tracking-[0.3em] font-black px-2 py-1">
-                ▸ Live · 26
-              </div>
-              <div className="absolute bottom-0 left-0 right-0 bg-[hsl(var(--ink))] text-[hsl(var(--paper))] px-3 py-2 font-sans text-[10px] uppercase tracking-[0.3em] font-bold flex items-center justify-between border-t border-white/20">
-                <span>@mu.school</span>
-                <span style={{ color: "hsl(var(--lime))" }}>D2C / 010</span>
-              </div>
-              <Burst className="absolute -top-4 -right-4 h-12 w-12 rotate-[-12deg]" />
-            </div>
+              Why we built this
+            </a>
           </div>
         </div>
 
