@@ -1,4 +1,5 @@
 import { ArrowUpRight, Calendar, Clock, MapPin, GraduationCap, Check } from "lucide-react";
+import bgCta from "@/assets/bg-cta.jpg";
 
 const details: { icon: typeof Calendar; label: string; value: string }[] = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 9 Sessions · 18 Hours" },
