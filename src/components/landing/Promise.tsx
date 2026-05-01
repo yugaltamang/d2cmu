@@ -74,21 +74,21 @@ const Promise = () => {
     <section
       id="outcomes"
       className="relative py-16 sm:py-20 lg:py-28 border-t-2 border-[hsl(var(--ink))]"
-      style={{ background: "hsl(0 0% 88%)" }}
+      style={{ background: "hsl(var(--ink))" }}
     >
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        <div className="flex items-center justify-between gap-3 pb-4 border-b-2 border-[hsl(var(--ink))]">
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-[hsl(var(--ink))]">
+        <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/20">
+          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-[hsl(var(--paper))]">
             ▣ Outcomes Feed
           </span>
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-[hsl(var(--ink))]/60">
+          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white/60">
             Four · Things · Walked · Out
           </span>
         </div>
 
         <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-6 items-end">
           <h2
-            className="col-span-12 lg:col-span-9 relative font-sans uppercase text-[hsl(var(--ink))] text-[clamp(2rem,7vw,5.5rem)] leading-[0.88] tracking-[-0.045em]"
+            className="col-span-12 lg:col-span-9 relative font-sans uppercase text-[hsl(var(--paper))] text-[clamp(2rem,7vw,5.5rem)] leading-[0.88] tracking-[-0.045em]"
             style={{ fontWeight: 900 }}
           >
             Four things you{" "}
@@ -97,16 +97,16 @@ const Promise = () => {
               <Scribble className="absolute -bottom-3 sm:-bottom-5 left-0 w-full h-[24px] sm:h-[36px]" />
             </span>{" "}
             with.{" "}
-            <span className="text-[hsl(var(--ink))]/40">
+            <span className="text-white/45">
               Not a slide deck. A live brand, real revenue, customers you earned.
             </span>
           </h2>
           <div className="col-span-12 lg:col-span-3">
-            <div className="bg-[hsl(var(--ink))] text-[hsl(var(--paper))] px-4 py-3">
-              <p className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold" style={{ color: "hsl(var(--lime))" }}>
+            <div className="bg-[hsl(var(--lime))] text-[hsl(var(--ink))] px-4 py-3 border-2 border-[hsl(var(--lime))]">
+              <p className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold">
                 ▸ Outputs · 04
               </p>
-              <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.35em] text-white/70 font-semibold">
+              <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.35em] font-semibold opacity-80">
                 Shipped · Sold · Signed
               </p>
             </div>
