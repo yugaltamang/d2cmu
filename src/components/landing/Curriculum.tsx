@@ -201,7 +201,8 @@ const Curriculum = () => {
                       loading="lazy"
                       width={1280}
                       height={896}
-                      className="absolute inset-0 h-full w-full object-cover object-right grayscale contrast-125 scale-110"
+                      className="absolute inset-0 h-full w-full object-cover grayscale contrast-125 scale-[2] origin-center"
+                      style={{ objectPosition: "50% 55%" }}
                     />
                     {/* Subtle left fade only — keep image clearly visible */}
                     <div
