@@ -1,4 +1,4 @@
-import { ShoppingBag } from "lucide-react";
+import muLogo from "@/assets/mu-logo.svg";
 
 const cols = [
   {
@@ -21,11 +21,10 @@ const Footer = () => {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-12">
         <div className="grid lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
-            <a href="#" className="inline-flex items-center gap-2.5">
-              <div className="h-8 w-8 rounded-md bg-primary text-primary-foreground grid place-items-center">
-                <ShoppingBag className="h-4 w-4" strokeWidth={2.25} />
-              </div>
-              <span className="font-display text-xl font-semibold tracking-tight text-foreground">
+            <a href="#" className="inline-flex items-center gap-3">
+              <img src={muLogo} alt="Masters' Union" className="h-8 w-auto invert" />
+              <span className="h-6 w-px bg-border/60" aria-hidden />
+              <span className="font-display text-[15px] font-medium tracking-tight text-foreground/80">
                 d2c<span className="text-primary">.</span>immersion
               </span>
             </a>
