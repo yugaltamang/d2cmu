@@ -1,4 +1,5 @@
 import { Play, ArrowUpRight } from "lucide-react";
+import heroBg from "@/assets/hero-bg-green.png";
 
 const Burst = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 40 40" className={className} aria-hidden>
@@ -24,91 +25,32 @@ const Hero = () => {
   return (
     <section
       className="relative overflow-hidden text-[hsl(var(--paper))]"
-      style={{ background: "hsl(155 55% 9%)" }}
+      style={{ background: "hsl(155 55% 7%)" }}
     >
-      {/* Abstract bottle-green flow background */}
+      {/* Hero background image */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden>
-        {/* Deep base wash */}
+        <img
+          src={heroBg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Darken left side for headline legibility */}
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 20% 10%, hsl(155 60% 14%) 0%, transparent 55%), radial-gradient(ellipse at 90% 90%, hsl(160 70% 7%) 0%, transparent 60%)",
+              "linear-gradient(90deg, hsl(155 60% 5% / 0.85) 0%, hsl(155 60% 5% / 0.55) 45%, hsl(155 60% 5% / 0.25) 100%)",
           }}
         />
-
-        {/* Soft bottle-green blobs */}
-        <div
-          className="absolute -top-40 -left-32 h-[60vw] w-[60vw] max-h-[820px] max-w-[820px] rounded-full blur-3xl opacity-60"
-          style={{ background: "radial-gradient(circle at 30% 30%, hsl(155 70% 22% / 0.85), transparent 65%)" }}
-        />
-        <div
-          className="absolute top-1/3 -right-40 h-[55vw] w-[55vw] max-h-[760px] max-w-[760px] rounded-full blur-3xl opacity-50"
-          style={{ background: "radial-gradient(circle at 50% 50%, hsl(160 75% 18% / 0.9), transparent 70%)" }}
-        />
-        <div
-          className="absolute bottom-[-20%] left-1/4 h-[50vw] w-[50vw] max-h-[700px] max-w-[700px] rounded-full blur-3xl opacity-40"
-          style={{ background: "radial-gradient(circle at 50% 50%, hsl(150 60% 28% / 0.7), transparent 70%)" }}
-        />
-
-        {/* Flowing SVG curves — thick bottle-green ribbons */}
-        <svg
-          className="absolute inset-0 h-full w-full"
-          viewBox="0 0 1440 900"
-          preserveAspectRatio="xMidYMid slice"
-          fill="none"
-        >
-          <defs>
-            <linearGradient id="flow1" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stopColor="hsl(150 65% 35%)" stopOpacity="0.7" />
-              <stop offset="100%" stopColor="hsl(150 65% 35%)" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient id="flow2" x1="1" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="hsl(160 70% 28%)" stopOpacity="0.65" />
-              <stop offset="100%" stopColor="hsl(160 70% 28%)" stopOpacity="0" />
-            </linearGradient>
-            <linearGradient id="flow3" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0%" stopColor="hsl(140 50% 22%)" stopOpacity="0.6" />
-              <stop offset="100%" stopColor="hsl(140 50% 22%)" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M-50 250 C 250 100, 500 450, 800 280 S 1300 150, 1500 350"
-            stroke="url(#flow1)"
-            strokeWidth="48"
-            strokeLinecap="round"
-            fill="none"
-          />
-          <path
-            d="M-50 420 C 280 350, 520 620, 820 500 S 1280 380, 1500 540"
-            stroke="url(#flow2)"
-            strokeWidth="56"
-            strokeLinecap="round"
-            fill="none"
-          />
-          <path
-            d="M-50 640 C 240 560, 520 800, 820 700 S 1300 600, 1500 760"
-            stroke="url(#flow3)"
-            strokeWidth="40"
-            strokeLinecap="round"
-            fill="none"
-            opacity="0.85"
-          />
-        </svg>
-
-        {/* Grain noise overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.08] mix-blend-overlay"
-          style={{
-            backgroundImage:
-              "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
-          }}
-        />
-
         {/* Top fade for nav legibility */}
         <div
           className="absolute inset-x-0 top-0 h-40"
-          style={{ background: "linear-gradient(180deg, hsl(155 60% 7%) 0%, transparent 100%)" }}
+          style={{ background: "linear-gradient(180deg, hsl(155 60% 5%) 0%, transparent 100%)" }}
+        />
+        {/* Bottom fade into next section */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-32"
+          style={{ background: "linear-gradient(0deg, hsl(155 60% 5%) 0%, transparent 100%)" }}
         />
       </div>
 
