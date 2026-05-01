@@ -1,8 +1,19 @@
 import { Store, Users, TrendingUp, ShoppingBag, Instagram, ArrowUpRight } from "lucide-react";
+import bgPromise from "@/assets/bg-promise.jpg";
 
 const Promise = () => {
   return (
     <section className="relative py-24 lg:py-32 bg-background overflow-hidden">
+      <img
+        src={bgPromise}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        width={1920}
+        height={1280}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30"
+      />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background via-background/85 to-background" />
       <div
         aria-hidden
         className="absolute -top-40 right-0 h-[480px] w-[680px] rounded-full opacity-60"
