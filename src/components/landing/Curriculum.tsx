@@ -60,7 +60,7 @@ const Curriculum = () => {
         <div className="grid lg:grid-cols-12 gap-10 mb-14">
           <div className="lg:col-span-6">
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">Curriculum</p>
-            <h2 className="mt-4 font-display font-bold text-5xl lg:text-6xl leading-[0.95] tracking-tight text-balance">
+            <h2 className="mt-4 font-display font-light text-5xl lg:text-6xl leading-[0.95] tracking-tight text-balance">
               Four phases. Ten weekends. <span className="italic text-violet">One live brand.</span>
             </h2>
           </div>

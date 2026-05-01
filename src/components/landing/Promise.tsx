@@ -52,7 +52,7 @@ const Promise = () => {
             <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">
               The promise
             </p>
-            <h2 className="mt-4 font-display font-bold text-5xl lg:text-6xl leading-[0.95] tracking-tight">
+            <h2 className="mt-4 font-display font-light text-5xl lg:text-6xl leading-[0.95] tracking-tight">
               Outcomes <span className="italic text-violet">over</span> theory.
             </h2>
             <p className="mt-6 text-muted-foreground leading-relaxed max-w-md">

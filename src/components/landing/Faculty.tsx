@@ -24,11 +24,11 @@ const faculty = [
 const Faculty = () => {
   return (
     <section id="faculty" className="relative bg-background text-foreground py-24 lg:py-32 overflow-hidden">
-      <div aria-hidden className="absolute -top-40 right-0 h-[600px] w-[600px] rounded-full" style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.22), transparent)" }} />
+      <div aria-hidden className="absolute -top-40 right-0 h-[600px] w-[600px] rounded-full" style={{ background: "radial-gradient(closest-side, hsl(var(--mu-cyan) / 0.18), transparent)" }} />
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-8">
-            <h2 className="font-display font-bold text-5xl lg:text-7xl leading-[0.98] tracking-tight text-balance">
+            <h2 className="font-display font-light text-5xl lg:text-7xl leading-[0.98] tracking-tight text-balance">
               <span className="text-muted-foreground">Our</span>{" "}
               <span className="text-violet">faculty are</span>
               <br />
@@ -41,7 +41,7 @@ const Faculty = () => {
 
           <div className="lg:col-span-4 flex lg:justify-end">
             <a href="#" className="relative h-36 w-36 rounded-full badge-circle grid place-items-center group">
-              <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full animate-spin-slow text-primary-foreground/90">
+              <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full animate-spin-slow text-foreground/85">
                 <defs>
                   <path id="circlePath" d="M 50,50 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
                 </defs>
@@ -49,7 +49,7 @@ const Faculty = () => {
                   <textPath href="#circlePath">SEE ALL FACULTY · SEE ALL FACULTY · </textPath>
                 </text>
               </svg>
-              <ArrowUpRight className="h-7 w-7 text-primary-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <ArrowUpRight className="h-7 w-7 text-foreground transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </div>
         </div>

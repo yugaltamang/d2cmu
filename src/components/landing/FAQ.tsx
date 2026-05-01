@@ -37,7 +37,7 @@ const FAQ = () => {
     <section id="faq" className="py-24 lg:py-32 bg-card border-y border-border">
       <div className="mx-auto max-w-5xl px-6 lg:px-10">
         <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">FAQ</p>
-        <h2 className="mt-4 font-display font-bold text-5xl lg:text-6xl leading-[0.95] tracking-tight">
+        <h2 className="mt-4 font-display font-light text-5xl lg:text-6xl leading-[0.95] tracking-tight">
           Honest <span className="italic text-violet">answers.</span>
         </h2>
         <Accordion type="single" collapsible className="mt-12">

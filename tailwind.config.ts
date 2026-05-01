@@ -62,8 +62,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ["IvyPresto Display", "Iowan Old Style", "Georgia", "Times New Roman", "serif"],
+        serif: ["IvyPresto Display", "Iowan Old Style", "Georgia", "Times New Roman", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       keyframes: {

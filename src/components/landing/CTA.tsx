@@ -20,11 +20,11 @@ const CTA = () => {
       <div
         aria-hidden
         className="absolute -top-40 left-1/2 -translate-x-1/2 h-[600px] w-[900px] rounded-full"
-        style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.35), transparent)" }}
+        style={{ background: "radial-gradient(closest-side, hsl(var(--mu-cyan) / 0.22), transparent)" }}
       />
       <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-10 text-center">
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">Cohort 01 / June 2026</p>
-        <h2 className="mt-6 font-display font-bold text-5xl lg:text-8xl leading-[0.92] tracking-tight text-balance">
+        <h2 className="mt-6 font-display font-light text-5xl lg:text-8xl leading-[0.92] tracking-tight text-balance">
           Stop reading about D2C. <br />
           <span className="italic text-violet">Go build one.</span>
         </h2>
