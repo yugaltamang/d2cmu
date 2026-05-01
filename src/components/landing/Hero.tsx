@@ -12,14 +12,14 @@ const Hero = () => {
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-16 lg:pb-20">
         <p className="mb-3 sm:mb-4">
-          <span className="inline-block bg-secondary px-2 py-1 font-display text-[11px] font-semibold uppercase tracking-wider text-foreground sm:text-xs">
+          <span className="inline-block bg-foreground text-background px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] sm:text-xs">
             Cohort 01 · Starts June 2026 · Masters' Union, Gurugram
           </span>
         </p>
 
         <div className="mt-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
           <div className="lg:col-span-8 animate-fade-up" style={{ animationDelay: "80ms" }}>
-            <h1 className="font-display font-bold text-[clamp(3rem,8vw,7.5rem)] leading-[1.02] tracking-[-0.04em] text-balance text-foreground">
+            <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[1.02] tracking-[-0.03em] text-balance text-foreground" style={{ fontWeight: 300 }}>
               Don't study D2C.
               <br />
               Ship a brand
