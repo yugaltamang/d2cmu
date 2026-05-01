@@ -36,80 +36,80 @@
 
 @layer base {
   :root {
-    /* Light editorial canvas — Masters' Union TBM theme */
-    --background: 0 0% 100%;
-    --foreground: 0 0% 7%;
+    /* Dark editorial canvas — green gradient theme */
+    --background: 160 20% 5%;
+    --foreground: 150 15% 96%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 7%;
+    --card: 160 18% 8%;
+    --card-foreground: 150 15% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 7%;
+    --popover: 160 18% 8%;
+    --popover-foreground: 150 15% 96%;
 
-    /* Primary = MU ink black (used for buttons, ring) */
-    --primary: 0 0% 7%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary = vibrant emerald green */
+    --primary: 152 75% 50%;
+    --primary-foreground: 160 30% 6%;
 
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 7%;
+    --secondary: 160 15% 12%;
+    --secondary-foreground: 150 15% 96%;
 
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 160 15% 12%;
+    --muted-foreground: 150 10% 65%;
 
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 7%;
+    --accent: 152 75% 50%;
+    --accent-foreground: 160 30% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 7%;
+    --border: 160 15% 16%;
+    --input: 160 15% 16%;
+    --ring: 152 75% 50%;
 
     --radius: 0.25rem;
 
-    /* MU brand tokens */
-    --mu-black: 0 0% 7%;
-    --mu-dark-surface: 0 0% 11%;
-    --mu-gray-100: 0 0% 96%;
-    --mu-gray-200: 0 0% 90%;
-    --mu-gray-300: 0 0% 82%;
-    --mu-gray-400: 0 0% 64%;
-    --mu-gray-500: 0 0% 45%;
+    /* MU brand tokens — dark green palette */
+    --mu-black: 160 20% 5%;
+    --mu-dark-surface: 160 18% 8%;
+    --mu-gray-100: 160 15% 12%;
+    --mu-gray-200: 160 15% 16%;
+    --mu-gray-300: 150 10% 35%;
+    --mu-gray-400: 150 10% 55%;
+    --mu-gray-500: 150 10% 65%;
 
-    /* MU signature gradient stops */
-    --mu-cyan: 192 65% 53%;   /* #39B5D7 */
-    --mu-yellow: 49 92% 62%;  /* #F7D544 */
-    --mu-orange: 25 76% 54%;  /* #E38330 */
-    --mu-gold: 45 100% 50%;
+    /* Green signature gradient stops */
+    --mu-cyan: 165 80% 45%;     /* teal-emerald */
+    --mu-yellow: 142 70% 55%;   /* mid green */
+    --mu-orange: 130 60% 45%;   /* deep lime-green */
+    --mu-gold: 152 75% 50%;
 
-    /* Legacy aliases used by existing components — remap to MU palette */
-    --ink: 0 0% 7%;
-    --ink-deep: 0 0% 0%;
-    --cream: 0 0% 100%;
-    --cream-deep: 0 0% 96%;
+    /* Legacy aliases */
+    --ink: 150 15% 96%;
+    --ink-deep: 0 0% 100%;
+    --cream: 160 20% 5%;
+    --cream-deep: 160 18% 8%;
     --lime: var(--mu-cyan);
     --rust: var(--mu-orange);
 
-    /* Editorial gradients (light) */
-    --gradient-spotlight: radial-gradient(ellipse at top, hsl(var(--mu-cyan) / 0.18), transparent 60%);
-    --gradient-ink: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 96%));
-    --mu-gradient: linear-gradient(91deg, #39B5D7 -6.14%, #F7D544 47.02%, #E38330 99.71%);
-    --shadow-editorial: 0 30px 80px -30px hsl(0 0% 0% / 0.18);
-    --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.02), 0 18px 40px -24px hsl(0 0% 0% / 0.18);
+    /* Editorial gradients (dark green) */
+    --gradient-spotlight: radial-gradient(ellipse at top, hsl(152 75% 50% / 0.25), transparent 60%);
+    --gradient-ink: linear-gradient(180deg, hsl(160 20% 5%), hsl(160 18% 8%));
+    --mu-gradient: linear-gradient(91deg, #10B981 -6.14%, #34D399 47.02%, #84CC16 99.71%);
+    --shadow-editorial: 0 30px 80px -30px hsl(152 75% 30% / 0.55);
+    --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.4), 0 18px 40px -24px hsl(152 75% 20% / 0.6);
 
     --font-display: 'IvyPresto Display', 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
     --font-sans: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 26%;
-    --sidebar-primary: 0 0% 7%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 96%;
-    --sidebar-accent-foreground: 0 0% 7%;
-    --sidebar-border: 0 0% 91%;
-    --sidebar-ring: 0 0% 7%;
+    --sidebar-background: 160 18% 8%;
+    --sidebar-foreground: 150 15% 90%;
+    --sidebar-primary: 152 75% 50%;
+    --sidebar-primary-foreground: 160 30% 6%;
+    --sidebar-accent: 160 15% 12%;
+    --sidebar-accent-foreground: 150 15% 96%;
+    --sidebar-border: 160 15% 16%;
+    --sidebar-ring: 152 75% 50%;
   }
 }
 
