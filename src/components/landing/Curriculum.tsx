@@ -226,10 +226,11 @@ const Curriculum = () => {
                       style={{ fontWeight: 800, color: topInk }}
                     >
                       {name}
+                      <span style={{ color: accent }}>.</span>
                     </h3>
 
                     <div className="mt-4 flex items-start gap-3 max-w-md">
-                      <Icon className="h-6 w-6 shrink-0 mt-1" strokeWidth={2.5} style={{ color: topInk }} />
+                      <Icon className="h-6 w-6 shrink-0 mt-1" strokeWidth={2.5} style={{ color: accent }} />
                       <p
                         className="font-display uppercase text-base lg:text-lg leading-tight tracking-tight"
                         style={{ fontWeight: 700, color: topInk, opacity: 0.92 }}
