@@ -34,7 +34,7 @@ const Hero = () => {
 
           <div className="mt-6 sm:mt-7 flex flex-wrap items-center gap-3">
             <a href="#apply" className="btn-pill-light !py-2.5 !px-5 !text-sm">
-              Start for free
+              Start your brand
             </a>
             <a href="#curriculum" className="btn-pill-ghost !py-2.5 !px-5 !text-sm">
               <span className="grid place-items-center h-5 w-5 rounded-full bg-foreground/15">

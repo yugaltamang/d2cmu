@@ -33,7 +33,7 @@ const CTA = () => {
 
           <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
             <a href="#" className="btn-pill-light">
-              Start your application
+              Start your brand
             </a>
             <a href="#" className="btn-pill-ghost">
               Download brochure (PDF)
