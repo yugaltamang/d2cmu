@@ -161,13 +161,14 @@ const Curriculum = () => {
         <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-5">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }, i) => {
             const LIME = "#B6FF1A";
-            const GRAY = "#2A2A2A";
-            const LIGHT_GRAY = "#3A3A3A";
-            const limeOnTop = i % 2 === 0;
-            const topBg = limeOnTop ? LIME : GRAY;
-            const topInk = limeOnTop ? "#000" : LIME;
-            const bottomBg = limeOnTop ? GRAY : LIME;
-            const bottomInk = limeOnTop ? "#fff" : "#000";
+            const GRAY = "#1F1F1F";
+            const LIGHT_GRAY = "#2A2A2A";
+            // Gray-dominant: all cards use gray panels, lime only as accent ink
+            const limeOnTop = true;
+            const topBg = GRAY;
+            const topInk = "#fff";
+            const bottomBg = LIGHT_GRAY;
+            const bottomInk = "#fff";
             const accent = LIME;
 
             const tornEdge =
