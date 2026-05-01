@@ -1,4 +1,5 @@
-import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
+import { Hammer, Rocket, TrendingUp, Mic } from "lucide-react";
+import pitchDayImg from "@/assets/pitch-day.jpg";
 
 const phases = [
   {
@@ -39,8 +40,8 @@ const phases = [
   },
   {
     id: "04",
-    name: "Defend",
-    icon: Shield,
+    name: "Pitch Day",
+    icon: Mic,
     tagline: "Prove the model. Own the room.",
     range: "Week 10",
     weeks: [
@@ -128,7 +129,7 @@ const Curriculum = () => {
               </p>
             </div>
             <p className="text-[13px] sm:text-[14px] text-black/75 leading-relaxed">
-              Build → Launch → Scale → Defend. Every weekend ends with something{" "}
+              Build → Launch → Scale → Pitch. Every weekend ends with something{" "}
               <span className="text-black font-bold">shipped, sold, or signed</span> — never a slide.
             </p>
           </div>
@@ -191,6 +192,27 @@ const Curriculum = () => {
                   minHeight: isFinale ? 480 : undefined,
                 }}
               >
+                {/* Finale: grayscale pitch-day image on right half */}
+                {isFinale && (
+                  <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none" aria-hidden>
+                    <img
+                      src={pitchDayImg}
+                      alt=""
+                      loading="lazy"
+                      width={1280}
+                      height={896}
+                      className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 opacity-50 lg:opacity-90"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, hsl(0 0% 6%) 0%, hsl(0 0% 6% / 0.85) 35%, hsl(0 0% 6% / 0.35) 70%, hsl(0 0% 6% / 0.15) 100%)",
+                      }}
+                    />
+                  </div>
+                )}
+
                 {/* Top thin strip */}
                 <div
                   className="flex items-center justify-between px-4 py-2 font-sans text-[10px] uppercase tracking-[0.3em] font-bold"
