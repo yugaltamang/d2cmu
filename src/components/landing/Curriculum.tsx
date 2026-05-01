@@ -54,7 +54,7 @@ const Curriculum = () => {
     <section id="curriculum" className="bg-background py-16 lg:py-24 border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
-          className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
           For anyone from idea to <span className="text-violet">income</span>.
@@ -67,7 +67,7 @@ const Curriculum = () => {
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => (
             <article
               key={id}
-              className="rounded-[28px] bg-card border border-border/60 p-8 lg:p-10 hover:border-primary/40 transition-colors"
+              className="rounded-[28px] bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors"
             >
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50">

@@ -54,7 +54,7 @@ const Promise = () => {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Shopify-style massive section header */}
         <h2
-          className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
           Sell everywhere people shop.{" "}
@@ -68,7 +68,7 @@ const Promise = () => {
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}
-              className={`${span} group relative rounded-[28px] overflow-hidden bg-card border border-border/60 p-8 lg:p-10 hover:border-primary/40 transition-colors`}
+              className={`${span} group relative rounded-[28px] overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
             >
               <div
                 aria-hidden

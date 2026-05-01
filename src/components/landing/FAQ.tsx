@@ -38,7 +38,7 @@ const FAQ = () => {
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
         <div className="lg:col-span-5">
           <h2
-            className="font-display text-foreground text-[clamp(2.5rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.04em]"
+            className="font-display text-foreground text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] tracking-[-0.035em]"
             style={{ fontWeight: 500 }}
           >
             Questions, <span className="text-violet">answered.</span>

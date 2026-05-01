@@ -27,7 +27,7 @@ const Faculty = () => {
     <section id="faculty" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
-          className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
           Meet your secret weapon. <span className="text-foreground/45">Operators.</span>

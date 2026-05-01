@@ -22,7 +22,7 @@ const CTA = () => {
             Cohort 01 / June 2026
           </p>
           <h2
-            className="mt-6 font-display text-foreground text-[clamp(3rem,8vw,8rem)] leading-[0.95] tracking-[-0.045em]"
+            className="mt-6 font-display text-foreground text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1] tracking-[-0.04em]"
             style={{ fontWeight: 500 }}
           >
             Build fast on{" "}
@@ -46,7 +46,7 @@ const CTA = () => {
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
-              className="rounded-[24px] bg-card border border-border/60 p-7 hover:border-primary/40 transition-colors"
+              className="rounded-[24px] bg-card border border-border/60 p-5 hover:border-primary/40 transition-colors"
             >
               <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
               <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
