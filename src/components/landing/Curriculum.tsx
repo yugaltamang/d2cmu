@@ -90,7 +90,7 @@ const Curriculum = () => {
           style={{ fontWeight: 600 }}
         >
           Idea on{" "}
-          <span className="relative inline-block font-serif italic font-normal">
+          <span className="relative inline-block text-violet">
             Friday
             <svg
               aria-hidden
@@ -110,7 +110,7 @@ const Curriculum = () => {
           .
           <br />
           Brand by{" "}
-          <span className="relative inline-block font-serif italic font-normal">
+          <span className="relative inline-block text-violet">
             Sunday
             <svg
               aria-hidden
@@ -130,9 +130,7 @@ const Curriculum = () => {
           .
           <br />
           <span className="text-white/55">Repeat</span>{" "}
-          <span style={{ color: LIME }} className="font-serif italic font-normal">
-            ten
-          </span>{" "}
+          <span className="text-violet">ten</span>{" "}
           <span className="text-white/55">times.</span>
         </h2>
 
