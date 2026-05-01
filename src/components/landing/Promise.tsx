@@ -73,7 +73,7 @@ const Promise = () => {
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}
-              className={`${span} group relative rounded-[28px] overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
+              className={`${span} group relative overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
             >
               <div
                 aria-hidden
