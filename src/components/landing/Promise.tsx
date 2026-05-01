@@ -76,7 +76,7 @@ const Promise = () => {
                 style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.2), transparent)" }}
               />
 
-              <div className="relative flex flex-col h-full min-h-[320px]">
+              <div className="relative flex flex-col h-full min-h-[240px]">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 px-3 py-1.5">
                     <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
@@ -87,14 +87,14 @@ const Promise = () => {
                   <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" strokeWidth={1.5} />
                 </div>
 
-                <div className="mt-auto pt-12">
-                  <p className="font-display text-foreground text-[clamp(4rem,9vw,8rem)] leading-[0.85] tracking-[-0.05em]" style={{ fontWeight: 500 }}>
+                <div className="mt-auto pt-8">
+                  <p className="font-display text-foreground text-[clamp(3rem,6vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
                     {big}
                   </p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mt-3">
                     {bigSub}
                   </p>
-                  <h3 className="mt-6 font-display text-2xl lg:text-[28px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
+                  <h3 className="mt-4 font-display text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
                     {title}
                   </h3>
                   <p className="mt-3 text-[15px] text-foreground/65 leading-relaxed max-w-lg">

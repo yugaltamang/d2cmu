@@ -43,7 +43,7 @@ const FAQ = () => {
           >
             Questions, <span className="text-violet">answered.</span>
           </h2>
-          <p className="mt-6 text-foreground/65 leading-relaxed text-lg max-w-md">
+          <p className="mt-4 text-foreground/65 leading-relaxed text-base max-w-md">
             Everything you need to know before you apply. Still curious? Drop us a line.
           </p>
         </div>
@@ -55,10 +55,10 @@ const FAQ = () => {
                 value={`item-${i}`}
                 className="border-b border-border/60 first:border-t"
               >
-                <AccordionTrigger className="py-6 text-left font-display text-lg lg:text-xl hover:no-underline" style={{ fontWeight: 500 }}>
+                <AccordionTrigger className="py-4 text-left font-display text-base lg:text-lg hover:no-underline" style={{ fontWeight: 500 }}>
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-foreground/70 leading-relaxed pb-6 max-w-3xl">
+                <AccordionContent className="text-sm text-foreground/70 leading-relaxed pb-5 max-w-3xl">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>

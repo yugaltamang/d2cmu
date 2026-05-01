@@ -32,7 +32,7 @@ const Faculty = () => {
         >
           Meet your secret weapon. <span className="text-foreground/45">Operators.</span>
         </h2>
-        <p className="mt-6 max-w-2xl text-lg text-foreground/65 leading-relaxed">
+        <p className="mt-4 max-w-2xl text-base text-foreground/65 leading-relaxed">
           Nine founders, brand-builders and growth operators behind India&apos;s most recognised D2C names.
           They lead sessions, review your build, and sit on your final pitch panel.
         </p>
@@ -55,7 +55,7 @@ const Faculty = () => {
             {loop.map((f, i) => (
               <li
                 key={`${f.name}-${i}`}
-                className="shrink-0 w-[260px] lg:w-[300px] rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                className="shrink-0 w-[200px] lg:w-[230px] rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
               >
                 <div className="aspect-[4/5] overflow-hidden">
                   <img

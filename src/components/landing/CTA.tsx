@@ -28,11 +28,11 @@ const CTA = () => {
             Build fast on{" "}
             <span className="text-violet">your idea.</span>
           </h2>
-          <p className="mt-8 max-w-xl text-lg text-foreground/70 leading-relaxed">
+          <p className="mt-5 max-w-xl text-base text-foreground/70 leading-relaxed">
             Limited seats, application-based. The next cohort begins June 2026 at the Masters&apos; Union campus in Gurugram.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <a href="#" className="btn-pill-light">
               Start your application
             </a>
@@ -42,14 +42,14 @@ const CTA = () => {
           </div>
         </div>
 
-        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
               className="rounded-[24px] bg-card border border-border/60 p-5 hover:border-primary/40 transition-colors"
             >
               <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
-              <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
+              <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
                 {label}
               </p>
               <p className="mt-2 font-display text-xl text-foreground leading-snug" style={{ fontWeight: 500 }}>

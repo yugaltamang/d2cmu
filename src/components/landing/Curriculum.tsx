@@ -59,7 +59,7 @@ const Curriculum = () => {
         >
           For anyone from idea to <span className="text-violet">income</span>.
         </h2>
-        <p className="mt-6 max-w-2xl text-lg text-foreground/65 leading-relaxed">
+        <p className="mt-4 max-w-2xl text-base text-foreground/65 leading-relaxed">
           Build → Launch → Scale → Defend. Four phases, ten weekends. Each phase ends with something shipped, sold, or signed.
         </p>
 
@@ -81,12 +81,12 @@ const Curriculum = () => {
 
               <div className="mt-5 flex items-start gap-4">
                 <Icon className="h-7 w-7 text-primary mt-2" strokeWidth={1.75} />
-                <h3 className="font-display text-foreground text-5xl lg:text-6xl leading-none tracking-[-0.04em]" style={{ fontWeight: 500 }}>
+                <h3 className="font-display text-foreground text-4xl lg:text-5xl leading-none tracking-[-0.035em]" style={{ fontWeight: 500 }}>
                   {name}.
                 </h3>
               </div>
 
-              <p className="mt-5 font-display text-xl lg:text-2xl text-foreground/85 leading-snug" style={{ fontWeight: 500 }}>
+              <p className="mt-4 font-display text-lg lg:text-xl text-foreground/85 leading-snug" style={{ fontWeight: 500 }}>
                 {tagline}
               </p>
 
