@@ -63,7 +63,7 @@ export default {
       },
       fontFamily: {
         display: ["Ivy Presto Display", "Times New Roman", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["DM Sans", "Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
       keyframes: {
