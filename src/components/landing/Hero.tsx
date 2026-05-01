@@ -14,10 +14,10 @@ const Hero = () => {
           src={heroImg}
           alt=""
           aria-hidden
-          className="h-full w-full object-cover opacity-50"
+          className="h-full w-full object-cover opacity-100"
         />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/30" />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 pt-14 lg:pt-20 pb-12 lg:pb-16">
