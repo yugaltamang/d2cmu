@@ -71,7 +71,7 @@ const Curriculum = () => {
         className="absolute inset-0 pointer-events-none opacity-60"
         style={{
           background:
-            "radial-gradient(60% 50% at 80% 0%, rgba(31,91,255,0.35), transparent 60%), radial-gradient(50% 40% at 0% 100%, rgba(31,91,255,0.22), transparent 60%)",
+            "radial-gradient(60% 50% at 80% 0%, hsl(96 75% 55% / 0.18), transparent 60%), radial-gradient(50% 40% at 0% 100%, hsl(165 80% 45% / 0.15), transparent 60%)",
         }}
       />
 
