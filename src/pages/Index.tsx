@@ -1,6 +1,6 @@
 import Nav from "@/components/landing/Nav";
 import Hero from "@/components/landing/Hero";
-import OutcomeBar from "@/components/landing/OutcomeBar";
+
 import Promise from "@/components/landing/Promise";
 import Curriculum from "@/components/landing/Curriculum";
 import Faculty from "@/components/landing/Faculty";
