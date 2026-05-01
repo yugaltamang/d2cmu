@@ -39,8 +39,9 @@ const Nav = () => {
           >
             Log in
           </a>
-          <a href="#apply" className="btn-pill-light group !py-1.5 sm:!py-2 !px-3.5 sm:!px-4 !text-[13px] sm:!text-[14px]">
-            Start your brand
+          <a href="#apply" className="btn-pill-light group !py-1.5 sm:!py-2 !px-3 sm:!px-4 !text-[13px] sm:!text-[14px] whitespace-nowrap">
+            <span className="hidden xs:inline sm:inline">Start your brand</span>
+            <span className="inline xs:hidden sm:hidden">Apply</span>
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
           </a>
           <button
