@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import muLogo from "@/assets/mu-logo.svg";
 
 const links: { label: string; href: string }[] = [
@@ -39,8 +39,9 @@ const Nav = () => {
           >
             Log in
           </a>
-          <a href="#apply" className="btn-pill-light !py-1.5 sm:!py-2 !px-3 sm:!px-4 !text-[13px] sm:!text-[14px]">
+          <a href="#apply" className="btn-pill-light group !py-1.5 sm:!py-2 !px-3.5 sm:!px-4 !text-[13px] sm:!text-[14px]">
             Start your brand
+            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
           </a>
           <button
             type="button"

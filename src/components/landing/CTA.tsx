@@ -1,4 +1,4 @@
-import { Calendar, Clock, MapPin, GraduationCap } from "lucide-react";
+import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-react";
 import bg from "@/assets/bg-abstract-3.jpg";
 
 const details = [
@@ -32,8 +32,9 @@ const CTA = () => {
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-wrap items-center gap-3">
-            <a href="#" className="btn-pill-light">
+            <a href="#" className="btn-pill-light group">
               Start your brand
+              <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
             </a>
             <a href="#" className="btn-pill-ghost">
               Download brochure (PDF)
