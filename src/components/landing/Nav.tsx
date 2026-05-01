@@ -1,4 +1,5 @@
-import { ChevronDown, ShoppingBag } from "lucide-react";
+import { ChevronDown } from "lucide-react";
+import muLogo from "@/assets/mu-logo.svg";
 
 const links: { label: string; href: string }[] = [
   { label: "Outcomes", href: "#outcomes" },
@@ -11,11 +12,10 @@ const Nav = () => {
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="h-7 w-7 rounded-md bg-primary text-primary-foreground grid place-items-center">
-            <ShoppingBag className="h-4 w-4" strokeWidth={2.25} />
-          </div>
-          <span className="font-display text-[19px] font-semibold tracking-tight text-foreground">
+        <a href="#" className="flex items-center gap-3 group">
+          <img src={muLogo} alt="Masters' Union" className="h-7 w-auto invert" />
+          <span className="hidden sm:inline-block h-5 w-px bg-border/60" aria-hidden />
+          <span className="hidden sm:inline font-display text-[15px] font-medium tracking-tight text-foreground/80">
             d2c<span className="text-primary">.</span>immersion
           </span>
         </a>
