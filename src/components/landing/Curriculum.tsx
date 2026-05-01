@@ -236,15 +236,19 @@ const Curriculum = () => {
                   </div>
 
                   {image ? (
-                    <div className="mt-2.5 flex-1 overflow-hidden rounded-md border border-border/60 bg-background/40 grayscale">
+                    <div className="relative mt-2.5 flex-1 overflow-hidden rounded-md border border-border/60 bg-background/40 min-h-[220px]">
                       <img
                         src={image}
                         alt={`${name} — final showcase`}
                         loading="lazy"
                         width={768}
                         height={1024}
-                        className="w-full h-full object-cover min-h-[180px]"
+                        className="absolute inset-0 w-full h-full object-cover grayscale"
                       />
+                      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                      <p className="absolute inset-x-0 bottom-0 p-3 font-display uppercase text-white text-[15px] sm:text-[17px] leading-[0.95] tracking-[-0.02em]" style={{ fontWeight: 800 }}>
+                        Pitch your brand to founders &amp; operators.
+                      </p>
                     </div>
                   ) : (
                     <ul className="mt-2.5 space-y-1.5 flex-1">
