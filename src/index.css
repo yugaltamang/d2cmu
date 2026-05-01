@@ -88,12 +88,9 @@
     --mu-orange: 152 70% 45%;
     --mu-gold: 96 75% 55%;
 
-    /* Legacy aliases */
-    --ink: 150 15% 96%;
-    --ink-deep: 0 0% 100%;
-    --cream: 160 20% 5%;
-    --cream-deep: 160 18% 8%;
-    --lime: var(--mu-cyan);
+    /* Legacy aliases — kept for backward compat, do NOT redefine ink/paper/lime */
+    --cream: 0 0% 96%;
+    --cream-deep: 0 0% 9%;
     --rust: var(--mu-orange);
 
     /* Shopify-style spotlight + gradients */
