@@ -51,12 +51,12 @@ const cards = [
 
 const Promise = () => {
   return (
-    <section id="outcomes" className="relative bg-background py-16 lg:py-24 overflow-hidden">
+    <section id="outcomes" className="relative bg-background py-12 sm:py-16 lg:py-24 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
         <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-25" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/70 to-background" />
       </div>
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Shopify-style massive section header */}
         <h2
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
