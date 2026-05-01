@@ -92,17 +92,17 @@ const Promise = () => {
                   <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" strokeWidth={1.5} />
                 </div>
 
-                <div className="mt-auto pt-8">
-                  <p className="font-display text-foreground text-[clamp(3rem,6vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
+                <div className="mt-auto pt-6 sm:pt-8">
+                  <p className="font-display text-foreground text-[clamp(2.5rem,9vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
                     {big}
                   </p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mt-3">
                     {bigSub}
                   </p>
-                  <h3 className="mt-4 font-display text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
+                  <h3 className="mt-3 sm:mt-4 font-display text-lg sm:text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
                     {title}
                   </h3>
-                  <p className="mt-3 text-[15px] text-foreground/65 leading-relaxed max-w-lg">
+                  <p className="mt-2 sm:mt-3 text-sm sm:text-[15px] text-foreground/65 leading-relaxed max-w-lg">
                     {body}
                   </p>
                 </div>
