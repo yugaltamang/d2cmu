@@ -59,12 +59,23 @@ const Hero = () => {
               </a>
             </div>
 
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-muted-foreground font-display">
-              <span><b className="text-foreground font-semibold">10</b> Weekends</span>
-              <span><b className="text-foreground font-semibold">9</b> Sessions · 18 hrs in-room</span>
-              <span><b className="text-foreground font-semibold">1</b> Live brand shipped</span>
-              <span><b className="text-foreground font-semibold">9</b> Operator-faculty</span>
-            </div>
+            <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 max-w-2xl border-t border-border/60 pt-6">
+              {[
+                { n: "10", l: "Weekends" },
+                { n: "9", l: "Sessions · 18 hrs" },
+                { n: "1", l: "Live brand shipped" },
+                { n: "9", l: "Operator-faculty" },
+              ].map((s) => (
+                <div key={s.l} className="flex flex-col">
+                  <dt className="font-display font-light text-3xl lg:text-4xl leading-none text-foreground">
+                    {s.n}
+                  </dt>
+                  <dd className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
+                    {s.l}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
 
           <div className="lg:col-span-4 animate-scale-in" style={{ animationDelay: "200ms" }}>
