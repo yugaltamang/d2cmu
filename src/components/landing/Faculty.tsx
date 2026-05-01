@@ -70,14 +70,6 @@ const Faculty = () => {
                     className="h-full w-full object-cover grayscale-[0.15] hover:grayscale-0 transition"
                   />
                 </div>
-                <div className="p-5">
-                  <p className="font-display text-lg text-foreground" style={{ fontWeight: 500 }}>
-                    {f.name}
-                  </p>
-                  <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
-                    {f.role}
-                  </p>
-                </div>
               </li>
             ))}
           </ul>
