@@ -70,16 +70,13 @@ const Curriculum = () => {
           </p>
         </div>
 
-        {/* Phase rail */}
-        <ol className="mt-20 space-y-px border-t border-border">
-          {phases.map(({ id, name, icon: Icon, tagline, range, outcome, weeks }, idx) => (
-            <li
-              key={id}
-              className="group relative border-b border-border py-10 lg:py-14 transition-colors hover:bg-card/40"
-            >
-              <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-start">
-                {/* Left: phase id + name */}
-                <div className="lg:col-span-4 flex items-start gap-5">
+        {/* Phases */}
+        <div className="mt-20 space-y-16 lg:space-y-24">
+          {phases.map(({ id, name, icon: Icon, tagline, range, outcome, weeks }) => (
+            <section key={id} className="border-t border-border pt-10 lg:pt-14">
+              {/* Phase header */}
+              <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 mb-10 lg:mb-12">
+                <div className="lg:col-span-5 flex items-start gap-5">
                   <span className="font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground pt-2">
                     {id}
                   </span>
@@ -93,40 +90,48 @@ const Curriculum = () => {
                     <h3 className="mt-3 font-display font-light text-5xl lg:text-6xl leading-none tracking-tight">
                       {name}.
                     </h3>
-                    <p className="mt-4 text-foreground/80 leading-snug max-w-xs">{tagline}</p>
                   </div>
                 </div>
-
-                {/* Right: weeks list */}
-                <div className="lg:col-span-8">
-                  <ul className="divide-y divide-border/60">
-                    {weeks.map((wk) => (
-                      <li
-                        key={wk.w}
-                        className="grid grid-cols-12 gap-4 py-4 items-baseline"
-                      >
-                        <span className="col-span-2 font-mono text-[11px] uppercase tracking-[0.25em] text-muted-foreground">
-                          Wk {wk.w}
-                        </span>
-                        <p className="col-span-7 font-sans text-base lg:text-lg leading-snug text-foreground text-pretty font-normal">
-                          {wk.q}
-                        </p>
-                        <span className="col-span-3 text-right text-[11px] font-mono uppercase tracking-[0.2em] text-primary/90">
-                          {wk.o}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
+                <div className="lg:col-span-6 lg:col-start-7 self-end">
+                  <p className="font-display font-light text-2xl lg:text-3xl leading-snug text-foreground/90 text-balance">
+                    {tagline}
+                  </p>
+                  <div className="mt-4 flex items-center gap-3 text-sm text-muted-foreground">
                     <ArrowRight className="h-4 w-4 text-primary" strokeWidth={1.5} />
                     <span className="text-foreground/85">{outcome}</span>
                   </div>
                 </div>
               </div>
-            </li>
+
+              {/* Weekends — full-width rows */}
+              <ul className="border-t border-border">
+                {weeks.map((wk) => (
+                  <li
+                    key={wk.w}
+                    className="group grid lg:grid-cols-12 gap-4 lg:gap-10 items-baseline border-b border-border py-6 lg:py-8 hover:bg-card/40 transition-colors px-2 -mx-2 rounded-sm"
+                  >
+                    <div className="lg:col-span-3 flex items-baseline gap-4">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-muted-foreground">
+                        Weekend
+                      </span>
+                      <span className="font-display font-thin text-4xl lg:text-5xl leading-none text-violet">
+                        {wk.w}
+                      </span>
+                    </div>
+                    <p className="lg:col-span-6 font-sans text-base lg:text-xl leading-snug text-foreground text-pretty">
+                      {wk.q}
+                    </p>
+                    <div className="lg:col-span-3 lg:text-right">
+                      <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary/90">
+                        → {wk.o}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   );
