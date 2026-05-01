@@ -161,13 +161,14 @@ const Curriculum = () => {
         <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-5">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }, i) => {
             const LIME = "#B6FF1A";
-            const GRAY = "#2A2A2A";
-            const LIGHT_GRAY = "#3A3A3A";
-            const limeOnTop = i % 2 === 0;
-            const topBg = limeOnTop ? LIME : GRAY;
-            const topInk = limeOnTop ? "#000" : LIME;
-            const bottomBg = limeOnTop ? GRAY : LIME;
-            const bottomInk = limeOnTop ? "#fff" : "#000";
+            const GRAY = "#1F1F1F";
+            const LIGHT_GRAY = "#2A2A2A";
+            // Gray-dominant: all cards use gray panels, lime only as accent ink
+            const limeOnTop = true;
+            const topBg = GRAY;
+            const topInk = "#fff";
+            const bottomBg = LIGHT_GRAY;
+            const bottomInk = "#fff";
             const accent = LIME;
 
             const tornEdge =
@@ -225,10 +226,11 @@ const Curriculum = () => {
                       style={{ fontWeight: 800, color: topInk }}
                     >
                       {name}
+                      <span style={{ color: accent }}>.</span>
                     </h3>
 
                     <div className="mt-4 flex items-start gap-3 max-w-md">
-                      <Icon className="h-6 w-6 shrink-0 mt-1" strokeWidth={2.5} style={{ color: topInk }} />
+                      <Icon className="h-6 w-6 shrink-0 mt-1" strokeWidth={2.5} style={{ color: accent }} />
                       <p
                         className="font-display uppercase text-base lg:text-lg leading-tight tracking-tight"
                         style={{ fontWeight: 700, color: topInk, opacity: 0.92 }}
