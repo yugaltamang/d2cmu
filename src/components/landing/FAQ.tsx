@@ -34,24 +34,37 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-card border-y border-border">
-      <div className="mx-auto max-w-5xl px-6 lg:px-10">
-        <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted-foreground">FAQ</p>
-        <h2 className="mt-4 font-display font-light text-5xl lg:text-6xl leading-[0.95] tracking-tight">
-          Honest <span className="italic text-violet">answers.</span>
-        </h2>
-        <Accordion type="single" collapsible className="mt-12">
-          {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`item-${i}`} className="border-b border-border first:border-t">
-              <AccordionTrigger className="py-6 text-left font-display text-xl lg:text-2xl hover:no-underline">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-base text-muted-foreground leading-relaxed pb-6 max-w-3xl">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+    <section id="faq" className="bg-background py-28 lg:py-40 border-t border-border/40">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="lg:col-span-5">
+          <h2
+            className="font-display text-foreground text-[clamp(2.5rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.04em]"
+            style={{ fontWeight: 500 }}
+          >
+            Questions, <span className="text-violet">answered.</span>
+          </h2>
+          <p className="mt-6 text-foreground/65 leading-relaxed text-lg max-w-md">
+            Everything you need to know before you apply. Still curious? Drop us a line.
+          </p>
+        </div>
+        <div className="lg:col-span-7">
+          <Accordion type="single" collapsible>
+            {faqs.map((f, i) => (
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className="border-b border-border/60 first:border-t"
+              >
+                <AccordionTrigger className="py-6 text-left font-display text-lg lg:text-xl hover:no-underline" style={{ fontWeight: 500 }}>
+                  {f.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-[15px] text-foreground/70 leading-relaxed pb-6 max-w-3xl">
+                  {f.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

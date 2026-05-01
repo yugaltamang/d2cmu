@@ -36,37 +36,37 @@
 
 @layer base {
   :root {
-    /* Dark editorial canvas — green gradient theme */
-    --background: 160 20% 5%;
-    --foreground: 150 15% 96%;
+    /* Shopify-style near-black with subtle green tint */
+    --background: 165 25% 4%;
+    --foreground: 0 0% 100%;
 
-    --card: 160 18% 8%;
-    --card-foreground: 150 15% 96%;
+    --card: 165 22% 7%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 160 18% 8%;
-    --popover-foreground: 150 15% 96%;
+    --popover: 165 22% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Primary = vibrant emerald green */
-    --primary: 152 75% 50%;
-    --primary-foreground: 160 30% 6%;
+    /* Primary = Shopify lime/emerald accent */
+    --primary: 96 75% 55%;
+    --primary-foreground: 165 30% 6%;
 
     --secondary: 160 15% 12%;
     --secondary-foreground: 150 15% 96%;
 
-    --muted: 160 15% 12%;
-    --muted-foreground: 150 10% 65%;
+    --muted: 165 18% 11%;
+    --muted-foreground: 150 8% 70%;
 
-    --accent: 152 75% 50%;
-    --accent-foreground: 160 30% 6%;
+    --accent: 96 75% 55%;
+    --accent-foreground: 165 30% 6%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 160 15% 16%;
-    --input: 160 15% 16%;
-    --ring: 152 75% 50%;
+    --border: 165 18% 14%;
+    --input: 165 18% 14%;
+    --ring: 96 75% 55%;
 
-    --radius: 0.25rem;
+    --radius: 1rem;
 
     /* MU brand tokens — dark green palette */
     --mu-black: 160 20% 5%;
@@ -77,11 +77,11 @@
     --mu-gray-400: 150 10% 55%;
     --mu-gray-500: 150 10% 65%;
 
-    /* Green signature gradient stops */
-    --mu-cyan: 165 80% 45%;     /* teal-emerald */
-    --mu-yellow: 142 70% 55%;   /* mid green */
-    --mu-orange: 130 60% 45%;   /* deep lime-green */
-    --mu-gold: 152 75% 50%;
+    /* Shopify gradient stops — lime → emerald */
+    --mu-cyan: 165 80% 45%;
+    --mu-yellow: 96 75% 55%;
+    --mu-orange: 152 70% 45%;
+    --mu-gold: 96 75% 55%;
 
     /* Legacy aliases */
     --ink: 150 15% 96%;
@@ -91,12 +91,12 @@
     --lime: var(--mu-cyan);
     --rust: var(--mu-orange);
 
-    /* Editorial gradients (dark green) */
-    --gradient-spotlight: radial-gradient(ellipse at top, hsl(152 75% 50% / 0.25), transparent 60%);
-    --gradient-ink: linear-gradient(180deg, hsl(160 20% 5%), hsl(160 18% 8%));
-    --mu-gradient: linear-gradient(91deg, #10B981 -6.14%, #34D399 47.02%, #84CC16 99.71%);
-    --shadow-editorial: 0 30px 80px -30px hsl(152 75% 30% / 0.55);
-    --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.4), 0 18px 40px -24px hsl(152 75% 20% / 0.6);
+    /* Shopify-style spotlight + gradients */
+    --gradient-spotlight: radial-gradient(ellipse at top, hsl(96 75% 55% / 0.18), transparent 60%);
+    --gradient-ink: linear-gradient(180deg, hsl(165 25% 4%), hsl(165 22% 7%));
+    --mu-gradient: linear-gradient(91deg, #84CC16 -6%, #4ADE80 47%, #10B981 100%);
+    --shadow-editorial: 0 30px 80px -30px hsl(96 75% 30% / 0.55);
+    --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.4), 0 18px 40px -24px hsl(96 75% 20% / 0.6);
 
     --font-display: 'IvyPresto Display', 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
     --font-sans: 'Inter', system-ui, sans-serif;
@@ -124,26 +124,54 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    font-weight: 300;
-    letter-spacing: -0.02em;
+    font-family: var(--font-sans);
+    font-weight: 500;
+    letter-spacing: -0.035em;
     text-wrap: balance;
   }
 }
 
 @layer utilities {
-  .font-display { font-family: var(--font-display); font-weight: 300; letter-spacing: -0.02em; }
+  /* Shopify-style: display = sans, tight tracking, medium weight */
+  .font-display { font-family: var(--font-sans); font-weight: 500; letter-spacing: -0.035em; }
   .font-sans { font-family: var(--font-sans); }
   .font-mono { font-family: var(--font-mono); }
 
-  /* Stronger italic for serif display on mobile */
+  /* Italic accent — kept serif for editorial highlight inside sans display */
   .font-display.italic,
   .font-display em {
     font-family: var(--font-display);
-    font-style: oblique 14deg;
+    font-style: italic;
     font-weight: 300;
     font-synthesis: style;
+    letter-spacing: -0.04em;
   }
+
+  /* Shopify white pill CTA */
+  .btn-pill-light {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: hsl(0 0% 100%);
+    color: hsl(165 30% 6%);
+    border-radius: 9999px;
+    padding: 0.875rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .btn-pill-light:hover { background: hsl(96 75% 85%); transform: translateY(-1px); }
+
+  .btn-pill-ghost {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent;
+    color: hsl(0 0% 100%);
+    border: 1px solid hsl(0 0% 100% / 0.25);
+    border-radius: 9999px;
+    padding: 0.875rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background .2s ease, border-color .2s ease;
+  }
+  .btn-pill-ghost:hover { background: hsl(0 0% 100% / 0.08); border-color: hsl(0 0% 100% / 0.5); }
 
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
@@ -159,7 +187,7 @@
     to { transform: translateX(-50%); }
   }
 
-  /* Highlight treatment — was green; now MU signature gradient text */
+  /* Highlight — Shopify lime accent (kept as utility class name for compat) */
   .text-violet,
   .mu-gradient-text {
     background: var(--mu-gradient);
@@ -168,7 +196,8 @@
     background-clip: text;
     color: transparent;
     font-family: var(--font-display);
-    font-weight: 200;
+    font-style: italic;
+    font-weight: 300;
   }
 
   .bg-violet { background: var(--mu-gradient); }
