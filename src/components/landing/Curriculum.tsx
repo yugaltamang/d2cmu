@@ -53,10 +53,10 @@ const phases = [
   },
 ];
 
-// Local theme tokens (electric blue + lime + deep navy) — scoped to this section only.
-const BLUE = "#1F5BFF";
-const NAVY = "#0B1220";
-const LIME = "#C6F24E";
+// Local theme tokens — aligned with the site's bottle-green + Shopify lime palette.
+const BLUE = "hsl(165 80% 45%)"; // emerald accent (kept name for compat)
+const NAVY = "hsl(165 25% 4%)"; // matches --background
+const LIME = "hsl(96 75% 55%)"; // matches --primary
 
 const Curriculum = () => {
   return (
