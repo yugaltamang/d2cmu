@@ -189,19 +189,19 @@ const Curriculum = () => {
                   background: surface,
                   color: text,
                   aspectRatio: isFinale ? "auto" : "1 / 1.05",
-                  minHeight: isFinale ? 640 : undefined,
+                  minHeight: isFinale ? 480 : undefined,
                 }}
               >
-                {/* Finale: grayscale pitch-day image on right half */}
+                {/* Finale: grayscale pitch-day image — large, right-aligned */}
                 {isFinale && (
-                  <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none" aria-hidden>
+                  <div className="absolute inset-y-0 right-0 w-full lg:w-[58%] pointer-events-none" aria-hidden>
                     <img
                       src={pitchDayImg}
                       alt=""
                       loading="lazy"
                       width={1280}
                       height={896}
-                      className="absolute inset-0 h-full w-full object-cover grayscale contrast-125"
+                      className="absolute inset-0 h-full w-full object-cover object-right grayscale contrast-125 scale-110"
                     />
                     {/* Subtle left fade only — keep image clearly visible */}
                     <div
