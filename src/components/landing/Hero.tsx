@@ -1,5 +1,5 @@
 import { Play, ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/d2c-hero.jpg";
+import heroImg from "@/assets/d2c-hero.webp";
 
 
 const Hero = () => {

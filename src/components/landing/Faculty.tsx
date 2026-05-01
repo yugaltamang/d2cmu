@@ -7,7 +7,7 @@ import pranay from "@/assets/faculty/pranay-jindal.webp";
 import upamanyu from "@/assets/faculty/upamanyu-chatterjee.webp";
 import alok from "@/assets/faculty/alok-srivastava.webp";
 import mohit from "@/assets/faculty/mohit-gulati.webp";
-import bg from "@/assets/bg-abstract-2.jpg";
+import bg from "@/assets/bg-abstract-2.webp";
 
 const faculty = [
   { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },

@@ -1,5 +1,5 @@
 import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
-import pitchDayImg from "@/assets/pitch-day.jpg";
+import pitchDayImg from "@/assets/pitch-day.webp";
 
 const phases = [
   {

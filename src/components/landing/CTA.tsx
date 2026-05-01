@@ -1,5 +1,5 @@
 import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-react";
-import bg from "@/assets/bg-abstract-3.jpg";
+import bg from "@/assets/bg-abstract-3.webp";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs in-room" },

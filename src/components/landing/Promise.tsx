@@ -1,5 +1,5 @@
 import { Store, Users, TrendingUp, ShoppingBag, Instagram, ArrowUpRight } from "lucide-react";
-import bg from "@/assets/bg-abstract-1.jpg";
+import bg from "@/assets/bg-abstract-1.webp";
 
 const cards = [
   {
