@@ -276,7 +276,7 @@ const Curriculum = () => {
                         </>
                       ) : (
                         <>
-                          <span style={{ background: accent, color: variant === "ink" ? INK : PAPER, padding: "0 0.12em" }}>
+                          <span style={{ background: accent, color: INK, padding: "0 0.12em" }}>
                             {name}
                           </span>
                           <span style={{ color: accent }}>!</span>
