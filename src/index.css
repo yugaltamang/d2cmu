@@ -130,85 +130,93 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans);
-    font-weight: 500;
-    letter-spacing: -0.035em;
+    font-weight: 800;
+    letter-spacing: -0.04em;
     text-wrap: balance;
+    text-transform: none;
   }
 }
 
 @layer utilities {
-  /* Shopify-style: display = sans, tight tracking, medium weight */
-  .font-display { font-family: var(--font-sans); font-weight: 500; letter-spacing: -0.035em; }
+  /* Display = bold uppercase sans (editorial poster) */
+  .font-display { font-family: var(--font-sans); font-weight: 800; letter-spacing: -0.04em; }
   .font-sans { font-family: var(--font-sans); }
   .font-mono { font-family: var(--font-mono); }
 
-  /* Italic accent — kept serif for editorial highlight inside sans display */
+  /* Italic accent kept for any legacy use */
   .font-display.italic,
   .font-display em {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 300;
-    font-synthesis: style;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 900;
     letter-spacing: -0.04em;
   }
 
-  /* Solid white pill CTA with arrow badge */
+  /* PRIMARY CTA — solid lime block, hard-edged, hover flips to ink */
   .btn-pill-light {
     display: inline-flex; align-items: center; gap: 0.625rem;
-    background: hsl(0 0% 100%);
-    color: hsl(165 30% 6%);
-    border-radius: 9999px;
-    padding: 0.55rem 0.55rem 0.55rem 1.25rem;
-    font-weight: 600;
+    background: hsl(var(--lime));
+    color: hsl(var(--ink));
+    border-radius: 0;
+    padding: 0.7rem 0.7rem 0.7rem 1.25rem;
+    font-weight: 800;
     font-size: 0.95rem;
-    letter-spacing: -0.005em;
-    border: 1px solid hsl(165 30% 6% / 0.08);
-    box-shadow: 0 1px 0 hsl(0 0% 100% / 0.6) inset, 0 1px 2px hsl(165 30% 6% / 0.08);
-    transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    border: 2px solid hsl(var(--ink));
+    box-shadow: 4px 4px 0 hsl(var(--ink));
+    transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
   }
   .btn-pill-light > svg,
   .btn-pill-light > .arrow {
     display: inline-flex; align-items: center; justify-content: center;
-    height: 1.75rem; width: 1.75rem;
-    border-radius: 9999px;
-    background: hsl(165 30% 6%);
-    color: hsl(0 0% 100%);
-    transition: transform .25s ease, background .2s ease;
+    height: 1.6rem; width: 1.6rem;
+    border-radius: 0;
+    background: hsl(var(--ink));
+    color: hsl(var(--lime));
+    transition: transform .25s ease, background .2s ease, color .2s ease;
   }
   .btn-pill-light:hover {
-    background: hsl(165 30% 6%);
-    color: hsl(0 0% 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px -10px hsl(165 30% 6% / 0.5);
+    background: hsl(var(--ink));
+    color: hsl(var(--lime));
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 hsl(var(--lime));
   }
   .btn-pill-light:hover > svg,
   .btn-pill-light:hover > .arrow {
-    background: hsl(0 0% 100%);
-    color: hsl(165 30% 6%);
+    background: hsl(var(--lime));
+    color: hsl(var(--ink));
     transform: translate(2px, -2px);
   }
-  .btn-pill-light:active { transform: translateY(0); }
+  .btn-pill-light:active { transform: translate(0,0); box-shadow: 2px 2px 0 hsl(var(--ink)); }
 
+  /* SECONDARY CTA — outlined paper, hover fills */
   .btn-pill-ghost {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: transparent;
-    color: hsl(0 0% 100%);
-    border: 1px solid hsl(0 0% 100% / 0.25);
-    border-radius: 9999px;
-    padding: 0.875rem 1.5rem;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: background .2s ease, border-color .2s ease;
+    color: hsl(var(--paper));
+    border: 2px solid hsl(var(--paper));
+    border-radius: 0;
+    padding: 0.7rem 1.25rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: background .2s ease, color .2s ease, transform .15s ease;
   }
-  .btn-pill-ghost:hover { background: hsl(0 0% 100% / 0.08); border-color: hsl(0 0% 100% / 0.5); }
+  .btn-pill-ghost:hover {
+    background: hsl(var(--paper));
+    color: hsl(var(--ink));
+    transform: translate(-1px, -1px);
+  }
 
   .text-balance { text-wrap: balance; }
   .text-pretty { text-wrap: pretty; }
 
   .bg-cream-deep { background-color: hsl(var(--cream-deep)); }
 
-  .shadow-editorial { box-shadow: var(--shadow-editorial); }
-  .shadow-card { box-shadow: var(--shadow-card); }
+  .shadow-editorial { box-shadow: 6px 6px 0 hsl(var(--lime)); }
+  .shadow-card { box-shadow: 4px 4px 0 hsl(var(--ink)); }
 
   .marquee { animation: marquee 40s linear infinite; }
   @keyframes marquee {
@@ -216,25 +224,29 @@
     to { transform: translateX(-50%); }
   }
 
-  /* Highlight — Shopify lime accent (kept as utility class name for compat) */
+  /* Highlight — solid lime block (replaces previous gradient text) */
   .text-violet,
   .mu-gradient-text {
-    background: var(--mu-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 300;
+    background: hsl(var(--lime));
+    color: hsl(var(--ink));
+    padding: 0 0.18em;
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    -webkit-background-clip: border-box;
+    -webkit-text-fill-color: hsl(var(--ink));
+    background-clip: border-box;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
 
-  .bg-violet { background: var(--mu-gradient); }
+  .bg-violet { background: hsl(var(--lime)); color: hsl(var(--ink)); }
 
-  /* Gradient pill / tape used by OutcomeBar */
+  /* Tape used by OutcomeBar */
   .tape {
-    background: var(--mu-gradient);
-    color: hsl(var(--mu-black));
+    background: hsl(var(--lime));
+    color: hsl(var(--ink));
   }
 
   /* Circular badge — gradient orb */
