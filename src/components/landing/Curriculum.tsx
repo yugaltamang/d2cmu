@@ -281,6 +281,21 @@ const Curriculum = () => {
                     ))}
                   </ul>
 
+                  {isFinale && (
+                    <div className="mt-3 rounded-lg border border-primary/40 bg-primary/[0.07] px-3 py-2.5">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-[9px] uppercase tracking-[0.28em] text-primary font-bold">
+                          ★ Showcase day
+                        </span>
+                        <div className="h-px flex-1 bg-primary/30" />
+                      </div>
+                      <p className="mt-1.5 text-[12.5px] leading-snug text-foreground/85">
+                        Final pitch — your brand, your numbers, defended live in front of{" "}
+                        <span className="text-foreground font-semibold">founders & operators</span>.
+                      </p>
+                    </div>
+                  )}
+
                   {/* Barcode footer */}
                   <div className="mt-3 flex items-end justify-between gap-2">
                     <div className="flex gap-[1.5px] h-[16px] flex-1 max-w-[100px]">
