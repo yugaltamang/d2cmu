@@ -12,7 +12,7 @@ import bg from "@/assets/bg-abstract-2.jpg";
 const faculty = [
   { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
   { name: "Swarup Potta", role: "Brand Strategy", photo: swarup },
-  { name: "Shubham Jain", role: "Performance Mktg", photo: shubham },
+  
   { name: "Mansi Khandelwal", role: "Ecommerce Lead", photo: mansi },
   { name: "Ankit Aggarwal", role: "Growth", photo: ankit },
   { name: "Pranay Jindal", role: "Founder", photo: pranay },
