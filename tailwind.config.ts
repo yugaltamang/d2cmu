@@ -62,7 +62,7 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        display: ["Space Grotesk", "system-ui", "sans-serif"],
+        display: ["Ivy Presto Display", "Times New Roman", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
       },
