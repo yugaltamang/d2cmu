@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import muLogo from "@/assets/mu-logo.svg";
 
 const links: { label: string; href: string }[] = [
   { label: "Outcomes", href: "#outcomes" },
@@ -15,12 +16,7 @@ const Nav = () => {
     <header className="sticky top-0 z-50 bg-[hsl(var(--paper))] text-[hsl(var(--ink))] border-b-2 border-[hsl(var(--ink))]">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <span className="grid place-items-center h-8 w-8 bg-[hsl(var(--ink))] text-[hsl(var(--lime))] font-sans text-[14px] font-black tracking-[-0.02em]">
-            MU
-          </span>
-          <span className="font-sans text-[12px] uppercase tracking-[0.3em] font-bold hidden sm:inline">
-            D2C · Immersion
-          </span>
+          <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto" />
         </a>
 
         <nav className="hidden md:flex items-center gap-1 text-[12px] uppercase tracking-[0.2em] font-bold">
