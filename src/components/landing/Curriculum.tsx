@@ -62,7 +62,7 @@ const Curriculum = () => {
   return (
     <section
       id="curriculum"
-      className="relative py-20 lg:py-28 border-t border-border/40"
+      className="relative py-12 sm:py-20 lg:py-28 border-t border-border/40"
       style={{ background: NAVY }}
     >
       {/* Soft blue glow */}
