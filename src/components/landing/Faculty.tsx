@@ -28,7 +28,7 @@ const Faculty = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-8">
-            <h2 className="font-display font-bold text-5xl lg:text-7xl leading-[0.98] tracking-tight text-balance">
+            <h2 className="font-display font-light text-5xl lg:text-7xl leading-[0.98] tracking-tight text-balance">
               <span className="text-muted-foreground">Our</span>{" "}
               <span className="text-violet">faculty are</span>
               <br />
