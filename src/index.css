@@ -117,11 +117,19 @@
   * {
     @apply border-border;
   }
+  html, body {
+    /* Prevent any horizontal scroll on mobile from rotated/marquee elements */
+    overflow-x: hidden;
+    /* Disable iOS text-size auto-inflation in landscape */
+    -webkit-text-size-adjust: 100%;
+  }
   body {
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /* Better tap response on iOS */
+    -webkit-tap-highlight-color: transparent;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans);
@@ -129,6 +137,10 @@
     letter-spacing: -0.035em;
     text-wrap: balance;
   }
+  /* Ensure media never blows out viewport width */
+  img, video, svg { max-width: 100%; height: auto; }
+  /* Prevent long unbroken strings (URLs, etc.) from forcing horizontal scroll */
+  p, li, a, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 }
 
 @layer utilities {
