@@ -20,7 +20,7 @@ const Hero = () => {
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
       </div>
 
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 pt-24 lg:pt-36 pb-20 lg:pb-28">
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10 pt-14 lg:pt-20 pb-12 lg:pb-16">
         <div className="max-w-4xl">
           <h1
             className="font-display text-foreground text-[clamp(3.25rem,9vw,9rem)] leading-[0.95] tracking-[-0.045em]"
@@ -51,7 +51,7 @@ const Hero = () => {
         </div>
 
         {/* Stats strip — Shopify-style flat */}
-        <dl className="mt-20 lg:mt-28 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-8 max-w-4xl">
+        <dl className="mt-12 lg:mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-8 max-w-4xl">
           {[
             { n: "10", l: "Weekends" },
             { n: "9", l: "Sessions · 18 hrs" },

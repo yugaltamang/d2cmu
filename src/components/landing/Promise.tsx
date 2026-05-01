@@ -50,7 +50,7 @@ const cards = [
 
 const Promise = () => {
   return (
-    <section id="outcomes" className="relative bg-background py-28 lg:py-40">
+    <section id="outcomes" className="relative bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Shopify-style massive section header */}
         <h2
@@ -64,7 +64,7 @@ const Promise = () => {
         </h2>
 
         {/* Big rounded image-style cards */}
-        <div className="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-4 lg:gap-5">
+        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-4 lg:gap-5">
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}

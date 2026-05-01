@@ -24,7 +24,7 @@ const Faculty = () => {
   const loop = [...faculty, ...faculty];
 
   return (
-    <section id="faculty" className="relative bg-background py-28 lg:py-40 border-t border-border/40 overflow-hidden">
+    <section id="faculty" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
           className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
@@ -39,7 +39,7 @@ const Faculty = () => {
       </div>
 
       {/* Marquee */}
-      <div className="relative group mt-14 lg:mt-20">
+      <div className="relative group mt-8 lg:mt-12">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-y-0 left-0 w-24 lg:w-40 z-10"

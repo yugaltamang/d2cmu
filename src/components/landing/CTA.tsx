@@ -9,7 +9,7 @@ const details = [
 
 const CTA = () => {
   return (
-    <section id="apply" className="relative bg-background py-28 lg:py-40 border-t border-border/40 overflow-hidden">
+    <section id="apply" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 h-[600px]"

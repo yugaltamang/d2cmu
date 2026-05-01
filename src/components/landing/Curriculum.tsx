@@ -51,7 +51,7 @@ const phases = [
 
 const Curriculum = () => {
   return (
-    <section id="curriculum" className="bg-background py-28 lg:py-40 border-t border-border/40">
+    <section id="curriculum" className="bg-background py-16 lg:py-24 border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
           className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
@@ -63,7 +63,7 @@ const Curriculum = () => {
           Build → Launch → Scale → Defend. Four phases, ten weekends. Each phase ends with something shipped, sold, or signed.
         </p>
 
-        <div className="mt-16 lg:mt-20 grid lg:grid-cols-2 gap-4 lg:gap-5">
+        <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-4 lg:gap-5">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => (
             <article
               key={id}
