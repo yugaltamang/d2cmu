@@ -12,26 +12,17 @@ const cards = [
     span: "lg:col-span-7",
   },
   {
-    icon: Users,
-    eyebrow: "02 / Customers",
-    big: "100+",
-    bigSub: "paying orders",
-    title: "Your first 100 paying customers.",
-    body: "Live Meta & Google campaigns with real budget. Measured, attributed, owned by you.",
-    span: "lg:col-span-5",
-  },
-  {
     icon: TrendingUp,
-    eyebrow: "03 / Revenue",
-    big: "₹1L+",
-    bigSub: "tracked revenue",
-    title: "Real revenue, defended live.",
-    body: "Not projected. CAC, AOV & margin defended at the showcase in front of operators.",
+    eyebrow: "02 / Customers & Revenue",
+    big: "100+",
+    bigSub: "orders · ₹1L+ revenue",
+    title: "Real customers. Real revenue. Defended live.",
+    body: "Live Meta & Google campaigns with real budget — your first 100 paying customers, then CAC, AOV & margin defended at the showcase in front of operators. Not projected. Owned by you.",
     span: "lg:col-span-5",
   },
   {
     icon: ShoppingBag,
-    eyebrow: "04 / Distribution",
+    eyebrow: "03 / Distribution",
     big: "3+",
     bigSub: "channels live",
     title: "Live across Amazon, Flipkart & socials.",
@@ -40,7 +31,7 @@ const cards = [
   },
   {
     icon: Instagram,
-    eyebrow: "05 / Brand",
+    eyebrow: "04 / Brand",
     big: "1K+",
     bigSub: "followers earned",
     title: "Instagram brand store with a real audience.",
@@ -62,7 +53,7 @@ const Promise = () => {
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
-          Five things you walk out with.{" "}
+          Four things you walk out with.{" "}
           <span className="text-foreground/45">
             Not a slide deck. A live brand, real revenue, customers you earned.
           </span>
