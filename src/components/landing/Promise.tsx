@@ -22,7 +22,7 @@ const cards = [
   },
   {
     icon: ShoppingBag,
-    eyebrow: "04 / Distribution",
+    eyebrow: "03 / Distribution",
     big: "3+",
     bigSub: "channels live",
     title: "Live across Amazon, Flipkart & socials.",
@@ -31,7 +31,7 @@ const cards = [
   },
   {
     icon: Instagram,
-    eyebrow: "05 / Brand",
+    eyebrow: "04 / Brand",
     big: "1K+",
     bigSub: "followers earned",
     title: "Instagram brand store with a real audience.",
