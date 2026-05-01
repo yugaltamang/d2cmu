@@ -1,5 +1,5 @@
 import { Play, ArrowUpRight } from "lucide-react";
-import heroImg from "@/assets/d2c-hero.jpg";
+import heroImg from "@/assets/d2c-hero.webp";
 
 
 const Hero = () => {
@@ -11,6 +11,10 @@ const Hero = () => {
           src={heroImg}
           alt=""
           aria-hidden
+          width={1920}
+          height={1080}
+          fetchPriority="high"
+          decoding="async"
           className="h-full w-full object-cover opacity-100"
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />

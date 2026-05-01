@@ -21,7 +21,7 @@ const Footer = () => {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-10 sm:py-12">
         <div className="flex">
           <a href="#" className="inline-flex items-center gap-3">
-            <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert" />
+            <img src={muLogo} alt="Masters' Union" width={140} height={28} loading="lazy" decoding="async" className="h-7 sm:h-8 w-auto invert" />
           </a>
         </div>
 
