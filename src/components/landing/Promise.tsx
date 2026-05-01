@@ -84,7 +84,7 @@ const Promise = () => {
                 </div>
 
                 <div className="mt-auto pt-6 sm:pt-8">
-                  <p className="font-display text-foreground text-[clamp(2.5rem,9vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
+                  <p className="font-display text-foreground text-[clamp(2.25rem,7vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
                     {big}
                   </p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mt-3">
