@@ -9,7 +9,7 @@ const cards = [
     bigSub: "days to live",
     title: "Live Shopify store, taking real orders.",
     body: "By Week 5 your store is live on a custom domain — products listed, payments wired, checkout tested. Not a Figma. A URL you can share.",
-    span: "lg:col-span-7",
+    span: "lg:col-span-6",
   },
   {
     icon: TrendingUp,
@@ -18,7 +18,7 @@ const cards = [
     bigSub: "revenue · 100+ orders",
     title: "Real customers. Real revenue. Defended live.",
     body: "Live Meta & Google campaigns with real budget — your first 100 paying customers, then CAC, AOV & margin defended at the showcase in front of operators. Not projected. Owned by you.",
-    span: "lg:col-span-5",
+    span: "lg:col-span-6",
   },
   {
     icon: ShoppingBag,
@@ -27,7 +27,7 @@ const cards = [
     bigSub: "channels live",
     title: "Live across Amazon, Flipkart & socials.",
     body: "Listings shipped on the marketplaces that matter. Distribution you've operated, not studied.",
-    span: "lg:col-span-7",
+    span: "lg:col-span-6",
   },
   {
     icon: Instagram,
@@ -36,7 +36,7 @@ const cards = [
     bigSub: "followers earned",
     title: "Instagram brand store with a real audience.",
     body: "Build your Instagram storefront from zero — content calendar shipped, reels live, DMs converting. Turn the feed into a sales channel.",
-    span: "lg:col-span-12",
+    span: "lg:col-span-6",
   },
 ];
 
