@@ -157,18 +157,12 @@ const Curriculum = () => {
           ))}
         </div>
 
-        {/* Phase cards — torn-edge brutalist (lime / gray / black) */}
-        <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-5">
-          {phases.map(({ id, name, icon: Icon, tagline, range, weeks }, i) => {
+        {/* Phase cards — portrait, compact */}
+        <div className="mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => {
             const LIME = "#B6FF1A";
             const GRAY = "#1F1F1F";
-            const LIGHT_GRAY = "#2A2A2A";
-            // Gray-dominant: all cards use gray panels, lime only as accent ink
-            const limeOnTop = true;
-            const topBg = GRAY;
-            const topInk = "#fff";
-            const bottomBg = LIGHT_GRAY;
-            const bottomInk = "#fff";
+            const LIGHT_GRAY = "#262626";
             const accent = LIME;
 
             const tornEdge =
@@ -177,20 +171,23 @@ const Curriculum = () => {
             return (
               <article
                 key={id}
-                className="group relative overflow-hidden bg-black border border-white/10 hover:border-white/25 transition-colors"
-                style={{ boxShadow: "10px 10px 0 0 rgba(0,0,0,0.5)" }}
+                className="group relative flex flex-col overflow-hidden bg-black border border-white/10 hover:border-white/25 transition-colors"
+                style={{
+                  aspectRatio: "3 / 4",
+                  boxShadow: "6px 6px 0 0 rgba(0,0,0,0.5)",
+                }}
               >
-                {/* TOP HALF */}
-                <div className="relative" style={{ background: topBg, color: topInk }}>
+                {/* TOP */}
+                <div className="relative" style={{ background: GRAY, color: "#fff" }}>
+                  {/* Ghost repeating name */}
                   <div
                     aria-hidden
-                    className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.10] leading-[0.9]"
-                    style={{ color: topInk }}
+                    className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.08] leading-[0.9]"
                   >
                     {[0, 1, 2].map((r) => (
                       <div
                         key={r}
-                        className="font-display italic uppercase text-[44px] tracking-[-0.04em] whitespace-nowrap"
+                        className="font-display italic uppercase text-[28px] tracking-[-0.04em] whitespace-nowrap text-white"
                         style={{ fontWeight: 700 }}
                       >
                         {(name + " ").repeat(20)}
@@ -198,42 +195,39 @@ const Curriculum = () => {
                     ))}
                   </div>
 
+                  {/* Phase sticker */}
                   <div
-                    className="absolute top-5 right-5 -rotate-3 z-10 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.25em] border-2"
-                    style={{
-                      background: limeOnTop ? "#000" : LIME,
-                      color: limeOnTop ? LIME : "#000",
-                      borderColor: limeOnTop ? "#000" : LIME,
-                    }}
+                    className="absolute top-3 right-3 -rotate-3 z-10 px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.22em] border"
+                    style={{ background: "#000", color: LIME, borderColor: "#000" }}
                   >
-                    PHASE {id}
+                    P{id}
                   </div>
 
-                  <div className="relative px-7 lg:px-9 pt-7 pb-12">
+                  <div className="relative px-4 pt-4 pb-5">
                     <div
-                      className="inline-block px-2 py-1 font-mono text-[10px] uppercase tracking-[0.3em] border"
+                      className="inline-block px-1.5 py-0.5 font-mono text-[9px] uppercase tracking-[0.25em] border"
                       style={{
-                        background: "rgba(0,0,0,0.08)",
-                        borderColor: limeOnTop ? "rgba(0,0,0,0.3)" : "rgba(182,255,26,0.4)",
-                        color: topInk,
+                        background: "rgba(0,0,0,0.2)",
+                        borderColor: "rgba(255,255,255,0.18)",
+                        color: "#fff",
                       }}
                     >
-                      ▮ {range}
+                      W {range.replace("Weeks ", "")}
                     </div>
 
                     <h3
-                      className="mt-4 font-display italic uppercase leading-[0.82] tracking-[-0.05em] text-[clamp(4rem,8vw,7rem)]"
-                      style={{ fontWeight: 800, color: topInk }}
+                      className="mt-3 font-display italic uppercase leading-[0.85] tracking-[-0.05em] text-[clamp(2.25rem,3.2vw,3rem)]"
+                      style={{ fontWeight: 800, color: "#fff" }}
                     >
                       {name}
                       <span style={{ color: accent }}>.</span>
                     </h3>
 
-                    <div className="mt-4 flex items-start gap-3 max-w-md">
-                      <Icon className="h-6 w-6 shrink-0 mt-1" strokeWidth={2.5} style={{ color: accent }} />
+                    <div className="mt-3 flex items-start gap-2">
+                      <Icon className="h-4 w-4 shrink-0 mt-[2px]" strokeWidth={2.5} style={{ color: accent }} />
                       <p
-                        className="font-display uppercase text-base lg:text-lg leading-tight tracking-tight"
-                        style={{ fontWeight: 700, color: topInk, opacity: 0.92 }}
+                        className="font-display uppercase text-[12px] leading-tight tracking-tight text-white/85"
+                        style={{ fontWeight: 700 }}
                       >
                         {tagline}
                       </p>
@@ -244,88 +238,68 @@ const Curriculum = () => {
                     aria-hidden
                     viewBox="0 0 1200 16"
                     preserveAspectRatio="none"
-                    className="block w-full h-[14px] -mb-px"
+                    className="block w-full h-[10px] -mb-px"
                   >
-                    <path d={tornEdge} fill={bottomBg} />
+                    <path d={tornEdge} fill={LIGHT_GRAY} />
                   </svg>
                 </div>
 
-                {/* BOTTOM HALF */}
+                {/* BOTTOM */}
                 <div
-                  className="relative px-7 lg:px-9 pt-6 pb-7"
-                  style={{ background: bottomBg, color: bottomInk }}
+                  className="relative flex flex-col flex-1 px-4 pt-3 pb-4"
+                  style={{ background: LIGHT_GRAY, color: "#fff" }}
                 >
-                  <div className="flex items-center gap-2">
-                    <span style={{ color: accent }} className="font-mono text-xs">▶▶</span>
-                    <span
-                      className="font-mono text-[10px] uppercase tracking-[0.3em]"
-                      style={{ color: limeOnTop ? "rgba(255,255,255,0.6)" : "rgba(0,0,0,0.7)" }}
-                    >
-                      Weekly drops · what ships
+                  <div className="flex items-center gap-1.5">
+                    <span style={{ color: accent }} className="font-mono text-[10px]">▶▶</span>
+                    <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-white/55">
+                      Drops
                     </span>
-                    <div
-                      className="h-px flex-1"
-                      style={{ background: limeOnTop ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.25)" }}
-                    />
+                    <div className="h-px flex-1 bg-white/15" />
                   </div>
 
-                  <ul className="mt-4 space-y-2">
-                    {weeks.map((wk) => {
-                      const rowBg = limeOnTop ? LIGHT_GRAY : "rgba(0,0,0,0.06)";
-                      const rowBorder = limeOnTop ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.18)";
-                      const qColor = limeOnTop ? "rgba(255,255,255,0.92)" : "#000";
-                      const oColor = limeOnTop ? LIME : "#000";
-                      return (
-                        <li
-                          key={wk.w}
-                          className="grid grid-cols-12 gap-3 items-center py-2.5 px-3 border"
-                          style={{ background: rowBg, borderColor: rowBorder }}
-                        >
-                          <span className="col-span-2">
-                            <span
-                              className="inline-block font-mono text-[10px] tracking-[0.15em] px-1.5 py-0.5 border-2"
-                              style={{
-                                background: limeOnTop ? LIME : "#000",
-                                color: limeOnTop ? "#000" : LIME,
-                                borderColor: limeOnTop ? LIME : "#000",
-                              }}
-                            >
-                              W{wk.w}
-                            </span>
-                          </span>
-                          <p className="col-span-7 text-[14px] leading-snug font-medium" style={{ color: qColor }}>
-                            {wk.q}
-                          </p>
+                  <ul className="mt-2.5 space-y-1.5 flex-1">
+                    {weeks.map((wk) => (
+                      <li
+                        key={wk.w}
+                        className="py-1.5 px-2 border bg-white/[0.03] border-white/10"
+                      >
+                        <div className="flex items-center justify-between gap-2">
                           <span
-                            className="col-span-3 text-right font-mono text-[9px] uppercase tracking-[0.18em] truncate font-bold"
-                            style={{ color: oColor }}
+                            className="inline-block font-mono text-[8px] tracking-[0.12em] px-1 py-px border"
+                            style={{ background: LIME, color: "#000", borderColor: LIME }}
+                          >
+                            W{wk.w}
+                          </span>
+                          <span
+                            className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-bold"
+                            style={{ color: accent }}
                           >
                             ↗ {wk.o}
                           </span>
-                        </li>
-                      );
-                    })}
+                        </div>
+                        <p className="mt-1 text-[11.5px] leading-snug text-white/85 font-medium">
+                          {wk.q}
+                        </p>
+                      </li>
+                    ))}
                   </ul>
 
-                  <div className="mt-5 flex items-end justify-between gap-4">
-                    <div className="flex gap-[2px] h-[28px] flex-1 max-w-[180px]">
-                      {Array.from({ length: 48 }).map((_, k) => (
+                  {/* Barcode footer */}
+                  <div className="mt-3 flex items-end justify-between gap-2">
+                    <div className="flex gap-[1.5px] h-[18px] flex-1 max-w-[100px]">
+                      {Array.from({ length: 32 }).map((_, k) => (
                         <span
                           key={k}
-                          className="block h-full"
+                          className="block h-full bg-white"
                           style={{
-                            width: (k * 13) % 4 === 0 ? 3 : 1,
-                            background: limeOnTop ? "#fff" : "#000",
-                            opacity: k % 3 === 0 ? 0.95 : 0.55,
+                            width: (k * 13) % 4 === 0 ? 2 : 1,
+                            opacity: k % 3 === 0 ? 0.95 : 0.5,
                           }}
                         />
                       ))}
                     </div>
-                    <div
-                      className="font-mono text-[9px] uppercase tracking-[0.3em]"
-                      style={{ color: limeOnTop ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.7)" }}
-                    >
-                      MU—{id}.{new Date().getFullYear()} · <span style={{ color: accent, fontWeight: 700 }}>● LIVE</span>
+                    <div className="font-mono text-[8px] uppercase tracking-[0.22em] text-white/45">
+                      MU·{id} <span style={{ color: accent, fontWeight: 700 }}>●</span>
                     </div>
                   </div>
                 </div>
