@@ -1,9 +1,6 @@
 import { Play } from "lucide-react";
 import heroImg from "@/assets/d2c-hero.jpg";
 
-const logos = [
-  "boAt", "Mamaearth", "WakeFit", "Sleepy Owl", "Plum", "Bombay Shaving Co", "The Souled Store", "Licious",
-];
 
 const Hero = () => {
   return (
@@ -66,21 +63,6 @@ const Hero = () => {
         </dl>
       </div>
 
-      {/* Logo strip — "trusted by" Shopify-style */}
-      <div className="relative border-t border-border/60 bg-background/60">
-        <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-4 sm:py-5">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mb-3">
-            India&apos;s D2C ecosystem in the room
-          </p>
-          <div className="flex flex-wrap items-center gap-x-5 sm:gap-x-7 gap-y-2">
-            {logos.map((l) => (
-              <span key={l} className="text-foreground/60 text-[13px] sm:text-sm lg:text-base font-display tracking-tight" style={{ fontWeight: 500 }}>
-                {l}
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
