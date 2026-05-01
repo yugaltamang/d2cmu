@@ -42,10 +42,10 @@ const phases = [
     id: "04",
     name: "Pitch Day",
     icon: Mic,
-    tagline: "Prove the model. Own the room.",
+    tagline: "Pitch your brand to founders & operators.",
     range: "Week 10",
     weeks: [
-      { w: "10", q: "Final showcase: pitch your brand to founders & operators.", o: "Investor pitch" },
+      { w: "10", q: "Final showcase.", o: "Investor pitch" },
     ],
   },
 ];
