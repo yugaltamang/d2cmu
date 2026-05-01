@@ -14,8 +14,8 @@ const cards = [
   {
     icon: TrendingUp,
     eyebrow: "02 / Customers & Revenue",
-    big: "100+",
-    bigSub: "orders · ₹1L+ revenue",
+    big: "₹1L+",
+    bigSub: "revenue · 100+ orders",
     title: "Real customers. Real revenue. Defended live.",
     body: "Live Meta & Google campaigns with real budget — your first 100 paying customers, then CAC, AOV & margin defended at the showcase in front of operators. Not projected. Owned by you.",
     span: "lg:col-span-5",
