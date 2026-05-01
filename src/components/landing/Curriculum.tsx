@@ -1,4 +1,5 @@
-import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
+import { Hammer, Rocket, TrendingUp, Mic } from "lucide-react";
+import pitchDayImg from "@/assets/pitch-day.jpg";
 
 const phases = [
   {
@@ -39,8 +40,8 @@ const phases = [
   },
   {
     id: "04",
-    name: "Defend",
-    icon: Shield,
+    name: "Pitch Day",
+    icon: Mic,
     tagline: "Prove the model. Own the room.",
     range: "Week 10",
     weeks: [
@@ -128,7 +129,7 @@ const Curriculum = () => {
               </p>
             </div>
             <p className="text-[13px] sm:text-[14px] text-black/75 leading-relaxed">
-              Build → Launch → Scale → Defend. Every weekend ends with something{" "}
+              Build → Launch → Scale → Pitch. Every weekend ends with something{" "}
               <span className="text-black font-bold">shipped, sold, or signed</span> — never a slide.
             </p>
           </div>
