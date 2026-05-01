@@ -1,54 +1,62 @@
 import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
 
-const phases = [
+const groups = [
   {
     id: "01",
-    name: "Build",
-    icon: Hammer,
-    tagline: "Find the wedge. Engineer the product.",
-    range: "Weeks 01 — 04",
-    tone: "blue",
-    weeks: [
-      { w: "01", q: "Identify & validate a high-potential D2C opportunity.", o: "Validated brief" },
-      { w: "02", q: "Select product, source efficiently, build unit economics.", o: "Margin model" },
-      { w: "03", q: "Define a differentiated brand strategy & positioning.", o: "Positioning" },
-      { w: "04", q: "Create brand identity & packaging that drives recall.", o: "Identity system" },
+    name: "Build & Launch",
+    range: "Weeks 01 — 06",
+    tagline: "Find the wedge. Engineer the product. Take real money.",
+    phases: [
+      {
+        id: "01",
+        name: "Build",
+        icon: Hammer,
+        tagline: "Find the wedge. Engineer the product.",
+        weeks: [
+          { w: "01", q: "Identify & validate a high-potential D2C opportunity.", o: "Validated brief" },
+          { w: "02", q: "Select product, source efficiently, build unit economics.", o: "Margin model" },
+          { w: "03", q: "Define a differentiated brand strategy & positioning.", o: "Positioning" },
+          { w: "04", q: "Create brand identity & packaging that drives recall.", o: "Identity system" },
+        ],
+      },
+      {
+        id: "02",
+        name: "Launch",
+        icon: Rocket,
+        tagline: "Go live. Take real money.",
+        weeks: [
+          { w: "05", q: "Build & launch a high-converting Shopify store.", o: "Live storefront" },
+          { w: "06", q: "Launch & scale on Amazon, Flipkart & quick commerce.", o: "Live listings" },
+        ],
+      },
     ],
   },
   {
     id: "02",
-    name: "Launch",
-    icon: Rocket,
-    tagline: "Go live. Take real money.",
-    range: "Weeks 05 — 06",
-    tone: "dark",
-    weeks: [
-      { w: "05", q: "Build & launch a high-converting Shopify store.", o: "Live storefront" },
-      { w: "06", q: "Launch & scale on Amazon, Flipkart & quick commerce.", o: "Live listings" },
-    ],
-  },
-  {
-    id: "03",
-    name: "Scale",
-    icon: TrendingUp,
-    tagline: "Drive demand. Move units.",
-    range: "Weeks 07 — 08",
-    tone: "dark",
-    weeks: [
-      { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
-      { w: "08", q: "Set up ops, fulfilment & customer experience that retains.", o: "CX + ops playbook" },
-    ],
-  },
-  {
-    id: "04",
-    name: "Defend",
-    icon: Shield,
-    tagline: "Prove the model. Own the room.",
-    range: "Weeks 09 — 10",
-    tone: "blue",
-    weeks: [
-      { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
-      { w: "10", q: "Final showcase: pitch your brand to founders & operators.", o: "Investor pitch" },
+    name: "Scale & Defend",
+    range: "Weeks 07 — 10",
+    tagline: "Drive demand. Move units. Prove the model. Own the room.",
+    phases: [
+      {
+        id: "03",
+        name: "Scale",
+        icon: TrendingUp,
+        tagline: "Drive demand. Move units.",
+        weeks: [
+          { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
+          { w: "08", q: "Set up ops, fulfilment & customer experience that retains.", o: "CX + ops playbook" },
+        ],
+      },
+      {
+        id: "04",
+        name: "Defend",
+        icon: Shield,
+        tagline: "Prove the model. Own the room.",
+        weeks: [
+          { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
+          { w: "10", q: "Final showcase: pitch your brand to founders & operators.", o: "Investor pitch" },
+        ],
+      },
     ],
   },
 ];
