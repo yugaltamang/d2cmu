@@ -192,6 +192,27 @@ const Curriculum = () => {
                   minHeight: isFinale ? 480 : undefined,
                 }}
               >
+                {/* Finale: grayscale pitch-day image on right half */}
+                {isFinale && (
+                  <div className="absolute inset-y-0 right-0 w-full lg:w-1/2 pointer-events-none" aria-hidden>
+                    <img
+                      src={pitchDayImg}
+                      alt=""
+                      loading="lazy"
+                      width={1280}
+                      height={896}
+                      className="absolute inset-0 h-full w-full object-cover grayscale contrast-110 opacity-50 lg:opacity-90"
+                    />
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background:
+                          "linear-gradient(90deg, hsl(0 0% 6%) 0%, hsl(0 0% 6% / 0.85) 35%, hsl(0 0% 6% / 0.35) 70%, hsl(0 0% 6% / 0.15) 100%)",
+                      }}
+                    />
+                  </div>
+                )}
+
                 {/* Top thin strip */}
                 <div
                   className="flex items-center justify-between px-4 py-2 font-sans text-[10px] uppercase tracking-[0.3em] font-bold"
