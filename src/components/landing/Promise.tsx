@@ -73,7 +73,7 @@ const Promise = () => {
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}
-              className={`${span} group relative rounded-[28px] overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
+              className={`${span} group relative overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
             >
               <div
                 aria-hidden
@@ -83,7 +83,7 @@ const Promise = () => {
 
               <div className="relative flex flex-col h-full min-h-[240px]">
                 <div className="flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-border/60 px-3 py-1.5">
+                  <div className="inline-flex items-center gap-2 border border-border/60 px-3 py-1.5">
                     <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
                     <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
                       {eyebrow}
