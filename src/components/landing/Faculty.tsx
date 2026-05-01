@@ -24,22 +24,22 @@ const Faculty = () => {
   const loop = [...faculty, ...faculty];
 
   return (
-    <section id="faculty" className="relative bg-background py-28 lg:py-40 border-t border-border/40 overflow-hidden">
+    <section id="faculty" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
-          className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
           Meet your secret weapon. <span className="text-foreground/45">Operators.</span>
         </h2>
-        <p className="mt-6 max-w-2xl text-lg text-foreground/65 leading-relaxed">
+        <p className="mt-4 max-w-2xl text-base text-foreground/65 leading-relaxed">
           Nine founders, brand-builders and growth operators behind India&apos;s most recognised D2C names.
           They lead sessions, review your build, and sit on your final pitch panel.
         </p>
       </div>
 
       {/* Marquee */}
-      <div className="relative group mt-14 lg:mt-20">
+      <div className="relative group mt-8 lg:mt-12">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-y-0 left-0 w-24 lg:w-40 z-10"
@@ -55,7 +55,7 @@ const Faculty = () => {
             {loop.map((f, i) => (
               <li
                 key={`${f.name}-${i}`}
-                className="shrink-0 w-[260px] lg:w-[300px] rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                className="shrink-0 w-[200px] lg:w-[230px] rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
               >
                 <div className="aspect-[4/5] overflow-hidden">
                   <img

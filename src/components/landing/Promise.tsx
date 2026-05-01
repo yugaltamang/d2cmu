@@ -50,11 +50,11 @@ const cards = [
 
 const Promise = () => {
   return (
-    <section id="outcomes" className="relative bg-background py-28 lg:py-40">
+    <section id="outcomes" className="relative bg-background py-16 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         {/* Shopify-style massive section header */}
         <h2
-          className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
           Sell everywhere people shop.{" "}
@@ -64,11 +64,11 @@ const Promise = () => {
         </h2>
 
         {/* Big rounded image-style cards */}
-        <div className="mt-16 lg:mt-24 grid lg:grid-cols-12 gap-4 lg:gap-5">
+        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-4 lg:gap-5">
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}
-              className={`${span} group relative rounded-[28px] overflow-hidden bg-card border border-border/60 p-8 lg:p-10 hover:border-primary/40 transition-colors`}
+              className={`${span} group relative rounded-[28px] overflow-hidden bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors`}
             >
               <div
                 aria-hidden
@@ -76,7 +76,7 @@ const Promise = () => {
                 style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.2), transparent)" }}
               />
 
-              <div className="relative flex flex-col h-full min-h-[320px]">
+              <div className="relative flex flex-col h-full min-h-[240px]">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center gap-2 rounded-full border border-border/60 px-3 py-1.5">
                     <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
@@ -87,14 +87,14 @@ const Promise = () => {
                   <ArrowUpRight className="h-5 w-5 text-foreground/30 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition" strokeWidth={1.5} />
                 </div>
 
-                <div className="mt-auto pt-12">
-                  <p className="font-display text-foreground text-[clamp(4rem,9vw,8rem)] leading-[0.85] tracking-[-0.05em]" style={{ fontWeight: 500 }}>
+                <div className="mt-auto pt-8">
+                  <p className="font-display text-foreground text-[clamp(3rem,6vw,5rem)] leading-[0.9] tracking-[-0.04em]" style={{ fontWeight: 500 }}>
                     {big}
                   </p>
                   <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50 mt-3">
                     {bigSub}
                   </p>
-                  <h3 className="mt-6 font-display text-2xl lg:text-[28px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
+                  <h3 className="mt-4 font-display text-xl lg:text-[22px] leading-tight text-foreground max-w-md" style={{ fontWeight: 500 }}>
                     {title}
                   </h3>
                   <p className="mt-3 text-[15px] text-foreground/65 leading-relaxed max-w-lg">

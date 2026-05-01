@@ -34,16 +34,16 @@ const faqs = [
 
 const FAQ = () => {
   return (
-    <section id="faq" className="bg-background py-28 lg:py-40 border-t border-border/40">
+    <section id="faq" className="bg-background py-16 lg:py-24 border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
         <div className="lg:col-span-5">
           <h2
-            className="font-display text-foreground text-[clamp(2.5rem,5.5vw,5rem)] leading-[0.98] tracking-[-0.04em]"
+            className="font-display text-foreground text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] tracking-[-0.035em]"
             style={{ fontWeight: 500 }}
           >
             Questions, <span className="text-violet">answered.</span>
           </h2>
-          <p className="mt-6 text-foreground/65 leading-relaxed text-lg max-w-md">
+          <p className="mt-4 text-foreground/65 leading-relaxed text-base max-w-md">
             Everything you need to know before you apply. Still curious? Drop us a line.
           </p>
         </div>
@@ -55,10 +55,10 @@ const FAQ = () => {
                 value={`item-${i}`}
                 className="border-b border-border/60 first:border-t"
               >
-                <AccordionTrigger className="py-6 text-left font-display text-lg lg:text-xl hover:no-underline" style={{ fontWeight: 500 }}>
+                <AccordionTrigger className="py-4 text-left font-display text-base lg:text-lg hover:no-underline" style={{ fontWeight: 500 }}>
                   {f.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-[15px] text-foreground/70 leading-relaxed pb-6 max-w-3xl">
+                <AccordionContent className="text-sm text-foreground/70 leading-relaxed pb-5 max-w-3xl">
                   {f.a}
                 </AccordionContent>
               </AccordionItem>

@@ -9,7 +9,7 @@ const details = [
 
 const CTA = () => {
   return (
-    <section id="apply" className="relative bg-background py-28 lg:py-40 border-t border-border/40 overflow-hidden">
+    <section id="apply" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 h-[600px]"
@@ -22,17 +22,17 @@ const CTA = () => {
             Cohort 01 / June 2026
           </p>
           <h2
-            className="mt-6 font-display text-foreground text-[clamp(3rem,8vw,8rem)] leading-[0.95] tracking-[-0.045em]"
+            className="mt-6 font-display text-foreground text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1] tracking-[-0.04em]"
             style={{ fontWeight: 500 }}
           >
             Build fast on{" "}
             <span className="text-violet">your idea.</span>
           </h2>
-          <p className="mt-8 max-w-xl text-lg text-foreground/70 leading-relaxed">
+          <p className="mt-5 max-w-xl text-base text-foreground/70 leading-relaxed">
             Limited seats, application-based. The next cohort begins June 2026 at the Masters&apos; Union campus in Gurugram.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3">
             <a href="#" className="btn-pill-light">
               Start your application
             </a>
@@ -42,14 +42,14 @@ const CTA = () => {
           </div>
         </div>
 
-        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
-              className="rounded-[24px] bg-card border border-border/60 p-7 hover:border-primary/40 transition-colors"
+              className="rounded-[24px] bg-card border border-border/60 p-5 hover:border-primary/40 transition-colors"
             >
               <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
-              <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
+              <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
                 {label}
               </p>
               <p className="mt-2 font-display text-xl text-foreground leading-snug" style={{ fontWeight: 500 }}>

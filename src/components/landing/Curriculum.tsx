@@ -51,23 +51,23 @@ const phases = [
 
 const Curriculum = () => {
   return (
-    <section id="curriculum" className="bg-background py-28 lg:py-40 border-t border-border/40">
+    <section id="curriculum" className="bg-background py-16 lg:py-24 border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
-          className="max-w-5xl font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
+          className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
           For anyone from idea to <span className="text-violet">income</span>.
         </h2>
-        <p className="mt-6 max-w-2xl text-lg text-foreground/65 leading-relaxed">
+        <p className="mt-4 max-w-2xl text-base text-foreground/65 leading-relaxed">
           Build → Launch → Scale → Defend. Four phases, ten weekends. Each phase ends with something shipped, sold, or signed.
         </p>
 
-        <div className="mt-16 lg:mt-20 grid lg:grid-cols-2 gap-4 lg:gap-5">
+        <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-4 lg:gap-5">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => (
             <article
               key={id}
-              className="rounded-[28px] bg-card border border-border/60 p-8 lg:p-10 hover:border-primary/40 transition-colors"
+              className="rounded-[28px] bg-card border border-border/60 p-6 lg:p-7 hover:border-primary/40 transition-colors"
             >
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/50">
@@ -81,12 +81,12 @@ const Curriculum = () => {
 
               <div className="mt-5 flex items-start gap-4">
                 <Icon className="h-7 w-7 text-primary mt-2" strokeWidth={1.75} />
-                <h3 className="font-display text-foreground text-5xl lg:text-6xl leading-none tracking-[-0.04em]" style={{ fontWeight: 500 }}>
+                <h3 className="font-display text-foreground text-4xl lg:text-5xl leading-none tracking-[-0.035em]" style={{ fontWeight: 500 }}>
                   {name}.
                 </h3>
               </div>
 
-              <p className="mt-5 font-display text-xl lg:text-2xl text-foreground/85 leading-snug" style={{ fontWeight: 500 }}>
+              <p className="mt-4 font-display text-lg lg:text-xl text-foreground/85 leading-snug" style={{ fontWeight: 500 }}>
                 {tagline}
               </p>
 

@@ -18,8 +18,8 @@ const cols = [
 const Footer = () => {
   return (
     <footer className="bg-background border-t border-border/60">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-20">
-        <div className="grid lg:grid-cols-12 gap-12">
+      <div className="mx-auto max-w-[1400px] px-6 lg:px-10 py-12">
+        <div className="grid lg:grid-cols-12 gap-8">
           <div className="lg:col-span-4">
             <a href="#" className="inline-flex items-center gap-2.5">
               <div className="h-8 w-8 rounded-md bg-primary text-primary-foreground grid place-items-center">
@@ -53,7 +53,7 @@ const Footer = () => {
           ))}
         </div>
 
-        <div className="mt-16 pt-8 border-t border-border/60 flex flex-wrap items-center justify-between gap-4 text-xs text-foreground/55">
+        <div className="mt-10 pt-6 border-t border-border/60 flex flex-wrap items-center justify-between gap-4 text-xs text-foreground/55">
           <p>&copy; Masters&apos; Union / D2C Immersion 2026</p>
           <p>Gurugram, India · Outcome-driven, by design.</p>
         </div>
