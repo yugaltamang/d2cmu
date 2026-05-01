@@ -1,4 +1,5 @@
 import { Calendar, Clock, MapPin, GraduationCap } from "lucide-react";
+import bg from "@/assets/bg-abstract-3.jpg";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs in-room" },
@@ -10,12 +11,11 @@ const details = [
 const CTA = () => {
   return (
     <section id="apply" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 h-[600px]"
-        style={{ background: "var(--gradient-spotlight)" }}
-      />
-
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+      </div>
       <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="max-w-5xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
