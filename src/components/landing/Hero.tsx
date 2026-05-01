@@ -1,14 +1,24 @@
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import heroImg from "@/assets/d2c-hero.jpg";
+import bgHero from "@/assets/bg-hero.jpg";
 
 const Hero = () => {
   return (
     <section className="relative overflow-hidden">
+      <img
+        src={bgHero}
+        alt=""
+        aria-hidden
+        width={1920}
+        height={1280}
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+      />
       <div
         aria-hidden
         className="absolute inset-x-0 -top-40 h-[520px]"
         style={{ background: "var(--gradient-spotlight)" }}
       />
+      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-16 lg:pb-20">
         <p className="mb-3 sm:mb-4">
