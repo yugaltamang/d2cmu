@@ -1,4 +1,5 @@
 import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
+import pitchDayImg from "@/assets/pitch-day.jpg";
 
 const phases = [
   {
@@ -37,17 +38,18 @@ const phases = [
     weeks: [
       { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
       { w: "08", q: "Set up ops, fulfilment & customer experience that retains.", o: "CX + ops playbook" },
+      { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
     ],
   },
   {
     id: "04",
-    name: "Defend",
+    name: "Pitch Day",
     icon: Shield,
     tagline: "Prove the model. Own the room.",
-    range: "Weeks 09 — 10",
+    range: "Week 10",
     tone: "blue",
+    image: pitchDayImg,
     weeks: [
-      { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
       { w: "10", q: "Final showcase: pitch your brand to founders & operators.", o: "Investor pitch" },
     ],
   },
