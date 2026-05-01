@@ -26,11 +26,9 @@ const Hero = () => {
             className="font-display text-foreground text-[clamp(2.5rem,6.5vw,6rem)] leading-[0.98] tracking-[-0.04em]"
             style={{ fontWeight: 500 }}
           >
-            Skip the case study.
+            B-schools <span className="text-foreground/55">teach</span> D2C.
             <br />
-            <span className="text-foreground/55">Ship the brand</span>
-            <br />
-            <span className="text-violet">India can&apos;t stop buying.</span>
+            We <span className="text-violet">ship</span> it.
           </h1>
 
           <p className="mt-5 max-w-xl text-base lg:text-lg text-foreground/75 leading-relaxed">
