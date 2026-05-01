@@ -49,26 +49,30 @@ const phases = [
   },
 ];
 
-// Editorial poster palette — paper white sheets on near-black canvas, hot orange accent.
-const PAPER = "hsl(40 30% 96%)";
-const INK = "hsl(0 0% 7%)";
-const ORANGE = "hsl(14 95% 55%)";
-const RULE = "hsl(0 0% 12%)";
+// Editorial SMM-feed palette — pure ink + paper + electric lime.
+const INK = "hsl(0 0% 6%)";
+const PAPER = "hsl(0 0% 96%)";
+const LIME = "hsl(75 95% 55%)";
 
-const Hairline = ({ className = "" }: { className?: string }) => (
-  <div className={`bg-[hsl(0_0%_15%)] ${className}`} style={{ height: 1 }} />
+// Scribble accent — hand-drawn marker squiggle
+const Scribble = ({ className = "", color = LIME }: { className?: string; color?: string }) => (
+  <svg viewBox="0 0 120 60" className={className} aria-hidden fill="none">
+    <path
+      d="M4 30 C 18 8, 32 52, 50 24 S 80 50, 96 22 S 118 38, 116 30"
+      stroke={color}
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+  </svg>
 );
 
-const PaperHairline = ({ className = "" }: { className?: string }) => (
-  <div className={`${className}`} style={{ height: 1, background: "hsl(0 0% 80%)" }} />
-);
-
-// Tiny crosshair register marks (poster style)
-const Crosshair = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 16 16" className={className} aria-hidden>
-    <line x1="8" y1="0" x2="8" y2="16" stroke="currentColor" strokeWidth="0.75" />
-    <line x1="0" y1="8" x2="16" y2="8" stroke="currentColor" strokeWidth="0.75" />
-    <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="0.75" fill="none" />
+// Burst / star sticker
+const Burst = ({ className = "", color = LIME }: { className?: string; color?: string }) => (
+  <svg viewBox="0 0 40 40" className={className} aria-hidden>
+    <polygon
+      points="20,2 23,15 36,12 26,22 38,28 24,27 27,40 20,30 13,40 16,27 2,28 14,22 4,12 17,15"
+      fill={color}
+    />
   </svg>
 );
 
@@ -77,196 +81,226 @@ const Curriculum = () => {
     <section
       id="curriculum"
       className="relative py-16 sm:py-24 lg:py-32 border-t border-border/40"
-      style={{ background: "hsl(0 0% 6%)" }}
+      style={{ background: "hsl(0 0% 88%)" }}
     >
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        {/* TOP META BAR — like the thin index strip on editorial posters */}
-        <div className="flex items-center gap-3 text-white/60">
-          <Crosshair className="h-3 w-3" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
-            MU / Index No. 010 — The 10-weekend system
+        {/* TOP META BAR — feed header */}
+        <div className="flex items-center justify-between gap-3 pb-4 border-b border-black/30">
+          <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-black font-bold">
+            ▣ MU · Curriculum Feed
           </span>
-          <div className="h-px flex-1" style={{ background: RULE }} />
-          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
-            Build · Launch · Scale · Defend
+          <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-black/60 font-semibold">
+            10-Weekend System / SS·26
           </span>
-          <Crosshair className="h-3 w-3" />
         </div>
 
         {/* MASSIVE EDITORIAL HEADLINE */}
-        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-4">
-          <div className="col-span-12 lg:col-span-9">
+        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-6 items-end">
+          <div className="col-span-12 lg:col-span-9 relative">
             <h2
-              className="font-sans uppercase text-white text-[clamp(2.5rem,11vw,9rem)] leading-[0.85] tracking-[-0.05em]"
-              style={{ fontWeight: 800 }}
+              className="font-sans uppercase text-black text-[clamp(2.5rem,10vw,8.5rem)] leading-[0.85] tracking-[-0.05em]"
+              style={{ fontWeight: 900 }}
             >
-              Idea
-              <span className="inline-block align-middle mx-3 sm:mx-5 h-[0.55em] w-[0.55em] rounded-full" style={{ background: ORANGE }} />
+              Idea{" "}
+              <span className="relative inline-block">
+                <span style={{ color: "hsl(0 0% 6%)", background: LIME, padding: "0 0.15em" }}>
+                  Friday
+                </span>
+              </span>
+              .
               <br />
-              Friday<span style={{ color: ORANGE }}>.</span>
-              <br />
-              Brand
-              <br />
-              Sunday<span style={{ color: ORANGE }}>.</span>
+              Brand{" "}
+              <span className="relative inline-block">
+                Sunday
+                <Scribble className="absolute -bottom-3 sm:-bottom-5 left-0 w-full h-[24px] sm:h-[40px]" />
+              </span>
+              .
             </h2>
+            <Burst className="absolute -top-4 -right-2 sm:top-2 sm:right-10 h-10 w-10 sm:h-14 sm:w-14 rotate-12" />
           </div>
-          <div className="col-span-12 lg:col-span-3 flex lg:flex-col justify-between lg:justify-end gap-4 lg:pb-3">
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/55">
+          <div className="col-span-12 lg:col-span-3 flex flex-col gap-3">
+            <div className="bg-black text-white px-4 py-3">
+              <p className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold" style={{ color: LIME }}>
                 ◷ 10 Weekends
               </p>
-              <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.3em] text-white/55">
-                Issue · MU/26
+              <p className="mt-1 font-sans text-[10px] uppercase tracking-[0.35em] text-white/70 font-semibold">
+                4 Phases · 1 Brand
               </p>
             </div>
-            <p className="text-[13px] sm:text-[14px] text-white/65 leading-relaxed max-w-[28ch]">
-              Build → Launch → Scale → Defend. Every weekend ends with something
-              <span className="text-white"> shipped, sold, or signed</span> — never a slide.
+            <p className="text-[13px] sm:text-[14px] text-black/75 leading-relaxed">
+              Build → Launch → Scale → Defend. Every weekend ends with something{" "}
+              <span className="text-black font-bold">shipped, sold, or signed</span> — never a slide.
             </p>
           </div>
         </div>
 
-        <Hairline className="mt-10 sm:mt-14" />
-
-        {/* PHASE INDEX BAR */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-[hsl(0_0%_15%)] border-b" style={{ borderColor: RULE }}>
+        {/* PHASE INDEX TILES — quick-jump strip like an Instagram feed row */}
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3">
           {phases.map((p) => (
             <a
               key={p.id}
               href={`#phase-${p.id}`}
-              className="group flex items-center gap-3 px-4 py-4 hover:bg-white/[0.03] transition-colors"
+              className="group relative bg-black hover:bg-[hsl(75_95%_55%)] transition-colors px-4 py-4 flex items-center justify-between"
             >
-              <span className="font-mono text-[10px] tracking-[0.3em] text-white/45">{p.id}</span>
-              <span className="font-sans uppercase text-white text-[15px] tracking-[-0.01em]" style={{ fontWeight: 700 }}>
-                {p.name}
-              </span>
-              <span className="ml-auto h-1.5 w-1.5 rounded-full" style={{ background: ORANGE }} />
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] tracking-[0.3em] text-white/55 group-hover:text-black/55 font-bold">
+                  {p.id}
+                </span>
+                <span className="font-sans uppercase text-white group-hover:text-black text-[18px] tracking-[-0.01em]" style={{ fontWeight: 800 }}>
+                  {p.name}
+                </span>
+              </div>
+              <span className="h-2 w-2 rounded-full" style={{ background: LIME }} />
             </a>
           ))}
         </div>
 
-        {/* POSTER GRID — paper sheets, asymmetric layout */}
-        <div className="mt-10 sm:mt-14 grid grid-cols-12 gap-4 sm:gap-5">
+        {/* FEED GRID — square SMM tiles */}
+        <div className="mt-8 sm:mt-10 grid grid-cols-12 gap-3 sm:gap-4">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks }, idx) => {
-            // Asymmetric poster layout: 01 tall-left, 02 short, 03 tall, 04 BIG finale wide
             const isFinale = idx === phases.length - 1;
-            const layout = [
-              "col-span-12 sm:col-span-6 lg:col-span-4",
-              "col-span-12 sm:col-span-6 lg:col-span-3",
-              "col-span-12 sm:col-span-6 lg:col-span-5",
-              "col-span-12", // finale full width
-            ][idx];
+            // Variant: 01 INK, 02 LIME, 03 PAPER, 04 INK BIG (finale)
+            const variant: "ink" | "lime" | "paper" = isFinale
+              ? "ink"
+              : idx === 0
+              ? "ink"
+              : idx === 1
+              ? "lime"
+              : "paper";
 
-            // Variant: orange dominant for 02; ink/black for finale; paper for 01,03
-            const isOrange = idx === 1;
-            const isInk = isFinale;
-            const surface = isOrange ? ORANGE : isInk ? INK : PAPER;
-            const text = isInk ? "hsl(40 30% 96%)" : INK;
-            const subtext = isInk ? "hsl(40 10% 70%)" : "hsl(0 0% 25%)";
-            const ruleColor = isInk ? "hsl(0 0% 22%)" : "hsl(0 0% 80%)";
+            const surface = variant === "lime" ? LIME : variant === "ink" ? INK : PAPER;
+            const text = variant === "ink" ? PAPER : INK;
+            const subtext = variant === "ink" ? "hsl(0 0% 65%)" : variant === "lime" ? "hsl(0 0% 15%)" : "hsl(0 0% 35%)";
+            const accent = variant === "lime" ? INK : LIME;
+            const ruleColor = variant === "ink" ? "hsl(0 0% 18%)" : variant === "lime" ? "hsl(0 0% 12%)" : "hsl(0 0% 75%)";
+
+            // Layout — finale spans full width, others span 4/12
+            const layout = isFinale
+              ? "col-span-12"
+              : "col-span-12 sm:col-span-6 lg:col-span-4";
 
             return (
               <article
                 key={id}
                 id={`phase-${id}`}
-                className={`${layout} relative overflow-hidden border`}
+                className={`${layout} relative overflow-hidden`}
                 style={{
                   background: surface,
                   color: text,
-                  borderColor: isInk ? "hsl(0 0% 18%)" : "hsl(0 0% 80%)",
-                  minHeight: isFinale ? 420 : 520,
+                  aspectRatio: isFinale ? "auto" : "1 / 1.05",
+                  minHeight: isFinale ? 480 : undefined,
                 }}
               >
-                {/* Top URL bar (poster meta) */}
+                {/* Top thin strip */}
                 <div
-                  className="flex items-center justify-between px-4 py-2 font-mono text-[9px] uppercase tracking-[0.3em]"
+                  className="flex items-center justify-between px-4 py-2 font-sans text-[10px] uppercase tracking-[0.3em] font-bold"
                   style={{ borderBottom: `1px solid ${ruleColor}`, color: subtext }}
                 >
-                  <span>www.mu.school / phase-{id}</span>
-                  <span className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: isOrange ? INK : ORANGE }} />
+                  <span>@mu.school / phase·{id}</span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
                     {range}
                   </span>
                 </div>
 
-                {/* VERTICAL LABEL on left edge */}
+                {/* Floating burst sticker — top right */}
+                {(variant === "ink" || variant === "paper") && (
+                  <Burst
+                    className="absolute top-12 right-4 h-8 w-8 rotate-12"
+                    color={LIME}
+                  />
+                )}
+
+                {/* Vertical phase ribbon — left edge */}
                 <div
-                  className="absolute left-0 top-10 bottom-10 w-8 flex items-center justify-center"
-                  style={{ borderRight: `1px solid ${ruleColor}` }}
+                  className="absolute left-0 top-10 bottom-10 w-7 flex items-center justify-center"
+                  style={{ background: variant === "lime" ? INK : variant === "ink" ? LIME : INK }}
                 >
                   <span
-                    className="font-mono text-[10px] uppercase tracking-[0.4em]"
-                    style={{ writingMode: "vertical-rl", transform: "rotate(180deg)", color: subtext }}
+                    className="font-sans text-[10px] uppercase tracking-[0.4em] font-bold"
+                    style={{
+                      writingMode: "vertical-rl",
+                      transform: "rotate(180deg)",
+                      color: variant === "ink" ? INK : PAPER,
+                    }}
                   >
-                    Phase {id} · {name}
+                    Phase · {id}
                   </span>
                 </div>
 
-                <div className={`relative pl-12 pr-5 sm:pr-7 pt-6 pb-5 ${isFinale ? "lg:grid lg:grid-cols-12 lg:gap-8" : "flex flex-col h-[calc(100%-34px)]"}`}>
-                  {/* HEADLINE BLOCK */}
-                  <div className={isFinale ? "lg:col-span-6" : ""}>
+                <div className={`relative pl-12 pr-5 sm:pr-7 pt-6 pb-14 h-[calc(100%-34px)] flex flex-col ${isFinale ? "lg:grid lg:grid-cols-12 lg:gap-10 lg:pb-16" : ""}`}>
+                  {/* HEADLINE */}
+                  <div className={isFinale ? "lg:col-span-7" : ""}>
                     <div className="flex items-center gap-2">
-                      <span
-                        className="font-mono text-[10px] uppercase tracking-[0.3em]"
-                        style={{ color: subtext }}
-                      >
+                      <span className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold" style={{ color: subtext }}>
                         {id} / {name}
                       </span>
-                      <span className="h-1 w-1 rounded-full" style={{ background: isOrange ? INK : ORANGE }} />
-                      <span className="font-mono text-[10px] uppercase tracking-[0.3em]" style={{ color: subtext }}>
-                        SS·26
-                      </span>
+                      <span className="h-1 w-6" style={{ background: accent }} />
                     </div>
 
-                    {/* The HUGE poster word */}
                     <h3
-                      className="mt-4 font-sans uppercase leading-[0.82] tracking-[-0.05em]"
+                      className="mt-4 font-sans uppercase leading-[0.85] tracking-[-0.045em]"
                       style={{
-                        fontWeight: 800,
-                        fontSize: isFinale ? "clamp(3.5rem, 9vw, 7.5rem)" : "clamp(2.5rem, 5vw, 4.25rem)",
+                        fontWeight: 900,
+                        fontSize: isFinale ? "clamp(3.5rem, 10vw, 8rem)" : "clamp(2.5rem, 4.5vw, 4rem)",
                         color: text,
                       }}
                     >
-                      {name}
-                      <span style={{ color: isOrange ? INK : ORANGE }}>!</span>
+                      {variant === "lime" ? (
+                        <>
+                          {name}
+                          <span style={{ color: INK }}>!</span>
+                        </>
+                      ) : (
+                        <>
+                          <span style={{ background: accent, color: variant === "ink" ? INK : PAPER, padding: "0 0.12em" }}>
+                            {name}
+                          </span>
+                          <span style={{ color: accent }}>!</span>
+                        </>
+                      )}
                     </h3>
 
                     <p
-                      className="mt-4 font-sans uppercase tracking-[-0.01em] leading-[1.05] max-w-[18ch]"
+                      className="mt-5 font-sans uppercase tracking-[-0.01em] leading-[1.1] max-w-[20ch]"
                       style={{
-                        fontWeight: 700,
-                        fontSize: isFinale ? "clamp(1.25rem, 1.8vw, 1.75rem)" : "1rem",
+                        fontWeight: 800,
+                        fontSize: isFinale ? "clamp(1.25rem, 1.8vw, 1.875rem)" : "0.95rem",
                         color: text,
                       }}
                     >
                       {tagline}
                     </p>
 
-                    <div className="mt-5 inline-flex items-center gap-2 px-2.5 py-1 border" style={{ borderColor: ruleColor }}>
-                      <Icon className="h-3.5 w-3.5" strokeWidth={2} style={{ color: isOrange ? INK : ORANGE }} />
-                      <span className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: subtext }}>
+                    <div className="mt-5 inline-flex items-center gap-2 px-2.5 py-1.5 border-2" style={{ borderColor: text }}>
+                      <Icon className="h-3.5 w-3.5" strokeWidth={2.5} style={{ color: accent }} />
+                      <span className="font-sans text-[10px] uppercase tracking-[0.3em] font-bold" style={{ color: text }}>
                         {range}
                       </span>
                     </div>
 
                     {isFinale && (
-                      <div className="hidden lg:block mt-8">
-                        <p className="font-mono text-[10px] uppercase tracking-[0.4em]" style={{ color: ORANGE }}>
+                      <div className="hidden lg:block mt-8 relative">
+                        <Scribble className="absolute -top-2 -left-2 w-24 h-12 opacity-80" color={LIME} />
+                        <p className="relative font-sans text-[11px] uppercase tracking-[0.4em] font-bold" style={{ color: LIME }}>
                           ★ Showcase Day · Live
                         </p>
-                        <p className="mt-2 text-[14px] leading-relaxed max-w-[36ch]" style={{ color: text }}>
+                        <p className="mt-3 text-[14px] leading-relaxed max-w-[40ch]" style={{ color: text }}>
                           Final pitch — your brand, your numbers, defended live in front of{" "}
-                          <span style={{ fontWeight: 700 }}>founders & operators</span>.
+                          <span style={{ background: LIME, color: INK, padding: "0 0.2em", fontWeight: 800 }}>
+                            founders & operators
+                          </span>
+                          .
                         </p>
                       </div>
                     )}
                   </div>
 
                   {/* DROPS LIST */}
-                  <div className={isFinale ? "lg:col-span-6 mt-8 lg:mt-0" : "mt-auto pt-6"}>
+                  <div className={isFinale ? "lg:col-span-5 mt-8 lg:mt-0" : "mt-auto pt-6"}>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="font-mono text-[10px] uppercase tracking-[0.35em]" style={{ color: subtext }}>
-                        ▸ Drops · Weekend Output
+                      <span className="font-sans text-[10px] uppercase tracking-[0.35em] font-bold" style={{ color: subtext }}>
+                        ▸ Weekend Drops
                       </span>
                       <div className="h-px flex-1" style={{ background: ruleColor }} />
                     </div>
@@ -275,30 +309,30 @@ const Curriculum = () => {
                       {weeks.map((wk, i) => (
                         <li
                           key={wk.w}
-                          className="grid grid-cols-12 gap-3 py-2.5"
+                          className="grid grid-cols-12 gap-2 py-2"
                           style={{ borderTop: i === 0 ? "none" : `1px solid ${ruleColor}` }}
                         >
-                          <div className="col-span-2 sm:col-span-1">
+                          <div className="col-span-2">
                             <span
-                              className="inline-block font-mono text-[10px] tracking-[0.1em] px-1.5 py-0.5"
+                              className="inline-block font-mono text-[10px] tracking-[0.05em] px-1.5 py-0.5 font-bold"
                               style={{
-                                background: isOrange ? INK : isInk ? ORANGE : INK,
-                                color: isOrange ? ORANGE : isInk ? INK : PAPER,
+                                background: accent,
+                                color: variant === "lime" ? PAPER : INK,
                               }}
                             >
                               W{wk.w}
                             </span>
                           </div>
                           <p
-                            className="col-span-7 sm:col-span-8 text-[12.5px] sm:text-[13px] leading-snug"
+                            className="col-span-10 sm:col-span-7 text-[12px] sm:text-[12.5px] leading-snug"
                             style={{ color: text }}
                           >
                             {wk.q}
                           </p>
-                          <div className="col-span-3 text-right">
+                          <div className="col-span-12 sm:col-span-3 sm:text-right">
                             <span
-                              className="font-mono text-[9px] uppercase tracking-[0.2em]"
-                              style={{ color: isOrange ? INK : ORANGE, fontWeight: 700 }}
+                              className="font-sans text-[9px] uppercase tracking-[0.2em] font-bold"
+                              style={{ color: accent === LIME ? (variant === "lime" ? INK : LIME) : INK }}
                             >
                               ↗ {wk.o}
                             </span>
@@ -309,27 +343,30 @@ const Curriculum = () => {
 
                     {isFinale && (
                       <div className="lg:hidden mt-6 pt-5" style={{ borderTop: `1px solid ${ruleColor}` }}>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.4em]" style={{ color: ORANGE }}>
+                        <p className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold" style={{ color: LIME }}>
                           ★ Showcase Day · Live
                         </p>
                         <p className="mt-2 text-[13px] leading-relaxed" style={{ color: text }}>
                           Final pitch — your brand, your numbers, defended live in front of{" "}
-                          <span style={{ fontWeight: 700 }}>founders & operators</span>.
+                          <span style={{ background: LIME, color: INK, padding: "0 0.2em", fontWeight: 800 }}>
+                            founders & operators
+                          </span>
+                          .
                         </p>
                       </div>
                     )}
                   </div>
                 </div>
 
-                {/* Bottom footer bar */}
+                {/* Bottom strip */}
                 <div
-                  className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 py-2 font-mono text-[9px] uppercase tracking-[0.3em]"
+                  className="absolute bottom-0 left-0 right-0 flex items-center justify-between px-4 py-2 font-sans text-[9px] uppercase tracking-[0.3em] font-bold"
                   style={{ borderTop: `1px solid ${ruleColor}`, color: subtext, background: surface }}
                 >
                   <span>MU · {id} / 04</span>
-                  <span className="flex items-center gap-2">
+                  <span className="flex items-center gap-1.5">
                     {name}
-                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: isOrange ? INK : ORANGE }} />
+                    <span className="h-1.5 w-1.5 rounded-full" style={{ background: accent }} />
                   </span>
                 </div>
               </article>
@@ -337,16 +374,14 @@ const Curriculum = () => {
           })}
         </div>
 
-        {/* BOTTOM META STRIP */}
-        <div className="mt-10 flex items-center gap-3 text-white/50">
-          <Crosshair className="h-3 w-3" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
-            End of system · 10 weekends · 4 phases
+        {/* BOTTOM FEED FOOTER */}
+        <div className="mt-10 pt-4 border-t border-black/30 flex items-center justify-between">
+          <span className="font-sans text-[11px] uppercase tracking-[0.4em] text-black font-bold">
+            ▣ Curriculum Feed
           </span>
-          <div className="h-px flex-1" style={{ background: RULE }} />
-          <span className="h-1.5 w-1.5 rounded-full" style={{ background: ORANGE }} />
-          <span className="font-mono text-[10px] uppercase tracking-[0.35em]">
+          <span className="flex items-center gap-2 font-sans text-[11px] uppercase tracking-[0.4em] text-black font-bold">
             Shipped · Sold · Signed
+            <span className="h-2 w-2 rounded-full" style={{ background: LIME }} />
           </span>
         </div>
       </div>
