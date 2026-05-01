@@ -57,10 +57,10 @@ const Curriculum = () => {
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
-          For anyone from idea to <span className="text-violet">income</span>.
+          Idea on Friday. <span className="text-violet">Brand by Sunday.</span> Repeat ten times.
         </h2>
         <p className="mt-4 max-w-2xl text-base text-foreground/65 leading-relaxed">
-          Build → Launch → Scale → Defend. Four phases, ten weekends. Each phase ends with something shipped, sold, or signed.
+          Build → Launch → Scale → Defend. Every weekend ends with something shipped, sold, or signed — never a slide.
         </p>
 
         <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-4 lg:gap-5">

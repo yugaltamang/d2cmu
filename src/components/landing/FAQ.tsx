@@ -41,10 +41,10 @@ const FAQ = () => {
             className="font-display text-foreground text-[clamp(2rem,4.5vw,3.5rem)] leading-[1] tracking-[-0.035em]"
             style={{ fontWeight: 500 }}
           >
-            Questions, <span className="text-violet">answered.</span>
+            The fine print, <span className="text-violet">in plain words.</span>
           </h2>
           <p className="mt-4 text-foreground/65 leading-relaxed text-base max-w-md">
-            Everything you need to know before you apply. Still curious? Drop us a line.
+            Everything you&apos;d ask before sending an application. Still curious? Write to us.
           </p>
         </div>
         <div className="lg:col-span-7">
