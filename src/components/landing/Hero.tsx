@@ -1,100 +1,93 @@
-import { ArrowUpRight, Sparkles } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import heroImg from "@/assets/d2c-hero.jpg";
-import bgHero from "@/assets/bg-hero.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden">
-      <img
-        src={bgHero}
-        alt=""
+    <section className="relative overflow-hidden bg-background">
+      {/* Soft spotlight */}
+      <div
         aria-hidden
-        width={1920}
-        height={1280}
-        className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-70"
+        className="absolute inset-x-0 -top-40 h-[680px] pointer-events-none"
+        style={{ background: "var(--gradient-spotlight)" }}
       />
       <div
         aria-hidden
-        className="absolute inset-x-0 -top-40 h-[520px]"
-        style={{ background: "var(--gradient-spotlight)" }}
+        className="absolute -bottom-40 right-0 h-[520px] w-[520px] rounded-full pointer-events-none"
+        style={{ background: "radial-gradient(closest-side, hsl(var(--mu-cyan) / 0.18), transparent)" }}
       />
-      <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-16 lg:pt-24 pb-16 lg:pb-20">
-        <p className="mb-3 sm:mb-4">
-          <span className="inline-block bg-foreground text-background px-3 py-1.5 font-mono text-[11px] font-medium uppercase tracking-[0.18em] sm:text-xs">
-            Cohort 01 · Starts June 2026 · Masters' Union, Gurugram
+      <div className="relative mx-auto max-w-[1280px] px-6 lg:px-12 pt-20 lg:pt-28 pb-20 lg:pb-28">
+        {/* Eyebrow tag */}
+        <div className="flex items-center gap-3">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-card/60 backdrop-blur px-3 py-1 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            Cohort 01 · Applications open
           </span>
-        </p>
+        </div>
 
-        <div className="mt-8 grid lg:grid-cols-12 gap-10 lg:gap-12 items-end">
-          <div className="lg:col-span-8 animate-fade-up" style={{ animationDelay: "80ms" }}>
-            <h1 className="font-display text-[clamp(3rem,8vw,7.5rem)] leading-[1.02] tracking-[-0.03em] text-balance text-foreground" style={{ fontWeight: 300 }}>
-              Don't study D2C.
-              <br />
-              Ship a brand
-              <br />
-              that <span className="text-violet italic">sells.</span>
-            </h1>
+        {/* Headline — Shopify-scale */}
+        <h1
+          className="mt-8 font-display text-foreground text-balance"
+          style={{
+            fontWeight: 300,
+            fontSize: "clamp(3.25rem, 9vw, 9rem)",
+            lineHeight: 0.95,
+            letterSpacing: "-0.035em",
+          }}
+        >
+          Don't study D2C.
+          <br />
+          <span className="text-violet italic">Build</span> a brand
+          <br />
+          that sells.
+        </h1>
 
-            <p className="mt-8 max-w-2xl text-base lg:text-lg text-muted-foreground text-pretty leading-relaxed">
-              A 10-weekend immersion by Masters' Union. You walk in with an idea.
-              You walk out with a live D2C brand — product sourced, Shopify store
-              live, ads running, and a pitch ready for founders & operators.
+        {/* Subhead + CTA — Shopify two-column under-hero */}
+        <div className="mt-10 lg:mt-14 grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="lg:col-span-6">
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed text-pretty max-w-xl">
+              A 10-weekend immersion by Masters' Union. You walk in with an idea —
+              walk out with a live D2C brand. Product sourced. Shopify store live.
+              Ads running. Pitched to founders.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
                 href="#apply"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-6 py-3 font-sans text-sm font-medium tracking-tight hover:brightness-110 transition"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-7 py-3.5 font-sans text-sm font-semibold tracking-tight hover:brightness-110 transition shadow-card"
               >
-                Reserve your seat
+                Start free trial
                 <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
               <a
                 href="#curriculum"
-                className="inline-flex items-center gap-2 rounded-full border border-foreground px-6 py-3 font-sans text-sm font-medium tracking-tight text-foreground hover:bg-foreground hover:text-background transition-colors"
+                className="inline-flex items-center gap-2 rounded-full border border-foreground/30 px-7 py-3.5 font-sans text-sm font-semibold tracking-tight text-foreground hover:border-foreground transition-colors"
               >
-                ▷ See what you'll build
+                Talk to admissions
               </a>
             </div>
-
-            <dl className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 max-w-2xl border-t border-border/60 pt-6">
-              {[
-                { n: "10", l: "Weekends" },
-                { n: "9", l: "Sessions · 18 hrs" },
-                { n: "1", l: "Live brand shipped" },
-                { n: "9", l: "Operator-faculty" },
-              ].map((s) => (
-                <div key={s.l} className="flex flex-col">
-                  <dt className="font-display font-light text-3xl lg:text-4xl leading-none text-foreground">
-                    {s.n}
-                  </dt>
-                  <dd className="mt-2 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground">
-                    {s.l}
-                  </dd>
-                </div>
-              ))}
-            </dl>
+            <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.2em] text-muted-foreground">
+              Application-based · Limited seats · Starts June 2026
+            </p>
           </div>
 
-          <div className="lg:col-span-4 animate-scale-in" style={{ animationDelay: "200ms" }}>
-            <div className="relative">
-              <div className="absolute -top-3 -left-3 z-10 bg-primary text-primary-foreground text-[10px] font-mono uppercase tracking-widest px-3 py-1.5 inline-flex items-center gap-1.5 rounded-full">
-                <Sparkles className="h-3 w-3" /> Outcome-first
-              </div>
-              <div className="relative overflow-hidden rounded-[2rem] bg-card border border-border shadow-editorial">
-                <img
-                  src={heroImg}
-                  alt="A premium D2C brand mock-up: product, packaging and a Shopify checkout"
-                  width={1536}
-                  height={1280}
-                  className="w-full h-[420px] object-cover opacity-95"
-                />
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-background via-background/80 to-transparent">
-                  <p className="text-muted-foreground text-[10px] font-mono uppercase tracking-widest">Final Showcase</p>
-                  <p className="text-foreground font-display font-semibold text-xl mt-1 leading-tight">Pitch your live brand to founders & operators.</p>
-                </div>
+          {/* Big editorial image */}
+          <div className="lg:col-span-6">
+            <div className="relative rounded-[2rem] overflow-hidden border border-border bg-card shadow-editorial">
+              <img
+                src={heroImg}
+                alt="A premium D2C brand: product, packaging and Shopify checkout"
+                width={1536}
+                height={1280}
+                className="w-full h-[360px] lg:h-[460px] object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+                  Final Showcase · Week 10
+                </p>
+                <p className="mt-1 font-display font-light text-2xl leading-tight text-foreground">
+                  Pitch your live brand to founders &amp; operators.
+                </p>
               </div>
             </div>
           </div>
