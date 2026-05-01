@@ -265,24 +265,63 @@ const Curriculum = () => {
                           </span>
                         </div>
                         <ul className="space-y-1.5">
-                          {weeks.map((wk) => (
-                            <li
-                              key={wk.w}
-                              className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
-                            >
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="inline-block font-mono text-[9px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
-                                  W{wk.w}
-                                </span>
-                                <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
-                                  ↗ {wk.o}
-                                </span>
-                              </div>
-                              <p className="mt-1 text-[12px] leading-snug text-foreground/80">
-                                {wk.q}
-                              </p>
-                            </li>
-                          ))}
+                          {weeks.map((wk) => {
+                            const isFinale = wk.w === "10";
+                            if (isFinale) {
+                              return (
+                                <li
+                                  key={wk.w}
+                                  className="relative overflow-hidden mt-1 p-3 rounded-lg border border-primary/50 bg-primary/10 ring-1 ring-primary/30"
+                                >
+                                  <div
+                                    aria-hidden
+                                    className="absolute -top-10 -right-10 h-32 w-32 rounded-full opacity-60 blur-2xl pointer-events-none"
+                                    style={{ background: "radial-gradient(closest-side, hsl(var(--primary) / 0.45), transparent)" }}
+                                  />
+                                  <div className="relative flex items-center justify-between gap-2">
+                                    <div className="flex items-center gap-1.5">
+                                      <span className="inline-block font-mono text-[10px] tracking-[0.12em] px-2 py-0.5 rounded-sm bg-primary text-primary-foreground font-bold">
+                                        W{wk.w}
+                                      </span>
+                                      <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-primary font-bold">
+                                        ★ Finale
+                                      </span>
+                                    </div>
+                                    <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
+                                      ↗ {wk.o}
+                                    </span>
+                                  </div>
+                                  <p
+                                    className="relative mt-2 font-display text-[15px] sm:text-[16px] leading-tight tracking-tight text-foreground"
+                                    style={{ fontWeight: 600 }}
+                                  >
+                                    Final Showcase.
+                                  </p>
+                                  <p className="relative mt-1 text-[12px] leading-snug text-foreground/80">
+                                    {wk.q}
+                                  </p>
+                                </li>
+                              );
+                            }
+                            return (
+                              <li
+                                key={wk.w}
+                                className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
+                              >
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="inline-block font-mono text-[9px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
+                                    W{wk.w}
+                                  </span>
+                                  <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
+                                    ↗ {wk.o}
+                                  </span>
+                                </div>
+                                <p className="mt-1 text-[12px] leading-snug text-foreground/80">
+                                  {wk.q}
+                                </p>
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                     ))}
