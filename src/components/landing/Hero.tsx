@@ -55,16 +55,6 @@ const Hero = () => {
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-12 lg:pb-16">
-        {/* Top meta strip */}
-        <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/20">
-          <span className="font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white">
-            ▣ Cohort 01 · June 2026
-          </span>
-          <span className="hidden sm:inline font-sans text-[11px] uppercase tracking-[0.4em] font-bold text-white/60">
-            Masters' Union · Gurugram
-          </span>
-        </div>
-
         <div className="mt-10 sm:mt-14 relative">
           <h1
             className="font-sans uppercase text-[hsl(var(--paper))] text-[clamp(2.5rem,11vw,9.5rem)] leading-[0.85] tracking-[-0.05em]"
