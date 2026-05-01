@@ -147,9 +147,9 @@ const Curriculum = () => {
           <span className="text-white">shipped, sold, or signed</span> — never a slide.
         </p>
 
-        {/* Phase chips row */}
+        {/* Group chips row */}
         <div className="mt-6 sm:mt-10 flex flex-wrap gap-2 sm:gap-2.5">
-          {phases.map((p) => (
+          {groups.flatMap((g) => g.phases).map((p) => (
             <span
               key={p.id}
               className="rounded-full px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-white border border-white/15"
@@ -163,61 +163,72 @@ const Curriculum = () => {
           ))}
         </div>
 
-        {/* Phase cards — portrait, compact, themed */}
-        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => {
+        {/* Combined group cards — 2 broader cards, each holding two phases */}
+        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+          {groups.map((group) => {
             const tornEdge =
               "M0,8 L40,2 L70,12 L110,4 L150,14 L190,6 L230,12 L270,3 L310,11 L350,5 L390,13 L430,4 L470,10 L510,2 L550,12 L590,6 L630,14 L670,4 L710,10 L750,3 L790,12 L830,5 L870,11 L910,3 L950,12 L990,6 L1030,14 L1070,4 L1110,10 L1150,3 L1200,12 L1200,0 L0,0 Z";
 
             return (
               <article
-                key={id}
-                className="group relative flex flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                key={group.id}
+                className="group relative flex flex-col overflow-hidden rounded-[20px] sm:rounded-[28px] bg-card border border-border/60 hover:border-primary/40 transition-colors"
               >
-                {/* TOP */}
+                {/* TOP — group header */}
                 <div className="relative bg-secondary text-foreground">
-                  {/* Ghost repeating name */}
                   <div
                     aria-hidden
                     className="absolute inset-0 overflow-hidden pointer-events-none select-none opacity-[0.06] leading-[0.9]"
                   >
-                    {[0, 1, 2].map((r) => (
+                    {[0, 1, 2, 3].map((r) => (
                       <div
                         key={r}
-                        className="font-display italic uppercase text-[28px] tracking-[-0.04em] whitespace-nowrap text-foreground"
+                        className="font-display italic uppercase text-[44px] tracking-[-0.04em] whitespace-nowrap text-foreground"
                         style={{ fontWeight: 700 }}
                       >
-                        {(name + " ").repeat(20)}
+                        {(group.name + " · ").repeat(12)}
                       </div>
                     ))}
                   </div>
 
-                  {/* Phase sticker */}
-                  <div className="absolute top-3 right-3 -rotate-3 z-10 px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.22em] rounded-full bg-background/80 text-primary border border-border/60">
-                    P{id}
+                  <div className="absolute top-4 right-4 -rotate-3 z-10 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.22em] rounded-full bg-background/80 text-primary border border-border/60">
+                    G{group.id}
                   </div>
 
-                  <div className="relative px-4 pt-4 pb-5">
-                    <div className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.25em] rounded-full bg-background/40 border border-border/60 text-foreground/70">
-                      W {range.replace("Weeks ", "")}
+                  <div className="relative px-5 sm:px-7 pt-5 sm:pt-7 pb-6 sm:pb-8">
+                    <div className="inline-block px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.25em] rounded-full bg-background/40 border border-border/60 text-foreground/70">
+                      {group.range}
                     </div>
 
                     <h3
-                      className="mt-3 font-display uppercase leading-[0.9] tracking-[-0.04em] text-[clamp(2rem,3vw,2.75rem)] text-foreground"
+                      className="mt-3 sm:mt-4 font-display uppercase leading-[0.9] tracking-[-0.04em] text-[clamp(2.25rem,4vw,3.75rem)] text-foreground"
                       style={{ fontWeight: 600 }}
                     >
-                      {name}
+                      {group.name}
                       <span className="text-primary">.</span>
                     </h3>
 
-                    <div className="mt-3 flex items-start gap-2">
-                      <Icon className="h-4 w-4 shrink-0 mt-[2px] text-primary" strokeWidth={1.75} />
-                      <p
-                        className="font-display text-[12.5px] leading-tight tracking-tight text-foreground/80"
-                        style={{ fontWeight: 500 }}
-                      >
-                        {tagline}
-                      </p>
+                    <p
+                      className="mt-3 max-w-md font-display text-[14px] sm:text-[15px] leading-snug tracking-tight text-foreground/80"
+                      style={{ fontWeight: 500 }}
+                    >
+                      {group.tagline}
+                    </p>
+
+                    {/* Sub-phase pill row */}
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {group.phases.map(({ id, name, icon: Icon }) => (
+                        <span
+                          key={id}
+                          className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 bg-background/50 border border-border/60 text-foreground/85"
+                        >
+                          <Icon className="h-3.5 w-3.5 text-primary" strokeWidth={1.75} />
+                          <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-foreground/55">
+                            P{id}
+                          </span>
+                          <span className="text-[12px] font-medium">{name}</span>
+                        </span>
+                      ))}
                     </div>
                   </div>
 
@@ -231,41 +242,56 @@ const Curriculum = () => {
                   </svg>
                 </div>
 
-                {/* BOTTOM */}
-                <div className="relative flex flex-col flex-1 px-4 pt-3 pb-4 bg-card text-foreground">
+                {/* BOTTOM — sub-phase columns with weeks */}
+                <div className="relative flex flex-col flex-1 px-5 sm:px-7 pt-4 pb-5 bg-card text-foreground">
                   <div className="flex items-center gap-1.5">
                     <span className="font-mono text-[10px] text-primary">▶▶</span>
-                    <span className="font-mono text-[8px] uppercase tracking-[0.25em] text-foreground/50">
+                    <span className="font-mono text-[9px] uppercase tracking-[0.25em] text-foreground/50">
                       Drops
                     </span>
                     <div className="h-px flex-1 bg-border/60" />
                   </div>
 
-                  <ul className="mt-2.5 space-y-1.5 flex-1">
-                    {weeks.map((wk) => (
-                      <li
-                        key={wk.w}
-                        className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
-                      >
-                        <div className="flex items-center justify-between gap-2">
-                          <span className="inline-block font-mono text-[8px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
-                            W{wk.w}
+                  <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 flex-1">
+                    {group.phases.map(({ id, name, icon: Icon, weeks }) => (
+                      <div key={id} className="flex flex-col">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Icon className="h-4 w-4 text-primary" strokeWidth={1.75} />
+                          <span className="font-mono text-[9px] uppercase tracking-[0.22em] text-foreground/55">
+                            P{id}
                           </span>
-                          <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
-                            ↗ {wk.o}
+                          <span className="font-display text-[14px] text-foreground" style={{ fontWeight: 600 }}>
+                            {name}
                           </span>
                         </div>
-                        <p className="mt-1 text-[11.5px] leading-snug text-foreground/80">
-                          {wk.q}
-                        </p>
-                      </li>
+                        <ul className="space-y-1.5">
+                          {weeks.map((wk) => (
+                            <li
+                              key={wk.w}
+                              className="py-1.5 px-2 rounded-md border border-border/60 bg-background/40"
+                            >
+                              <div className="flex items-center justify-between gap-2">
+                                <span className="inline-block font-mono text-[9px] tracking-[0.12em] px-1.5 py-px rounded-sm bg-primary text-primary-foreground">
+                                  W{wk.w}
+                                </span>
+                                <span className="font-mono text-[8px] uppercase tracking-[0.15em] truncate font-semibold text-primary">
+                                  ↗ {wk.o}
+                                </span>
+                              </div>
+                              <p className="mt-1 text-[12px] leading-snug text-foreground/80">
+                                {wk.q}
+                              </p>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
 
                   {/* Barcode footer */}
-                  <div className="mt-3 flex items-end justify-between gap-2">
-                    <div className="flex gap-[1.5px] h-[16px] flex-1 max-w-[100px]">
-                      {Array.from({ length: 32 }).map((_, k) => (
+                  <div className="mt-4 flex items-end justify-between gap-2">
+                    <div className="flex gap-[1.5px] h-[16px] flex-1 max-w-[140px]">
+                      {Array.from({ length: 40 }).map((_, k) => (
                         <span
                           key={k}
                           className="block h-full bg-foreground/70"
@@ -276,8 +302,8 @@ const Curriculum = () => {
                         />
                       ))}
                     </div>
-                    <div className="font-mono text-[8px] uppercase tracking-[0.22em] text-foreground/40">
-                      MU·{id} <span className="text-primary font-bold">●</span>
+                    <div className="font-mono text-[9px] uppercase tracking-[0.22em] text-foreground/40">
+                      MU·G{group.id} <span className="text-primary font-bold">●</span>
                     </div>
                   </div>
                 </div>
