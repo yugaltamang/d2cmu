@@ -241,8 +241,9 @@ const Curriculum = () => {
                         src={image}
                         alt={`${name} — final showcase`}
                         loading="lazy"
-                        width={768}
-                        height={1024}
+                        decoding="async"
+                        width={896}
+                        height={1200}
                         className="absolute inset-0 w-full h-full object-cover grayscale"
                       />
                       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />

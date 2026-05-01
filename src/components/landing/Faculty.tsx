@@ -28,7 +28,7 @@ const Faculty = () => {
   return (
     <section id="faculty" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-30" />
+        <img src={bg} alt="" loading="lazy" decoding="async" width={1920} height={1280} className="h-full w-full object-cover opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-background via-background/75 to-background" />
       </div>
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">

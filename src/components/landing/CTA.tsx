@@ -12,7 +12,7 @@ const CTA = () => {
   return (
     <section id="apply" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-35" />
+        <img src={bg} alt="" loading="lazy" decoding="async" width={1920} height={1280} className="h-full w-full object-cover opacity-35" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/40" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
       </div>
