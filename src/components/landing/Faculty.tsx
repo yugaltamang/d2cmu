@@ -7,6 +7,7 @@ import pranay from "@/assets/faculty/pranay-jindal.webp";
 import upamanyu from "@/assets/faculty/upamanyu-chatterjee.webp";
 import alok from "@/assets/faculty/alok-srivastava.webp";
 import mohit from "@/assets/faculty/mohit-gulati.webp";
+import bg from "@/assets/bg-abstract-2.jpg";
 
 const faculty = [
   { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
@@ -25,7 +26,11 @@ const Faculty = () => {
 
   return (
     <section id="faculty" className="relative bg-background py-16 lg:py-24 border-t border-border/40 overflow-hidden">
-      <div className="mx-auto max-w-[1400px] px-6 lg:px-10">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img src={bg} alt="" loading="lazy" width={1920} height={1280} className="h-full w-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/75 to-background" />
+      </div>
+      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
         <h2
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
