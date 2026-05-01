@@ -121,7 +121,7 @@
     to { transform: translateX(-50%); }
   }
 
-  .text-violet { color: hsl(var(--primary)); }
+  .text-violet { color: hsl(var(--primary)); font-family: var(--font-display); font-weight: 300; }
   .bg-violet { background-color: hsl(var(--primary)); }
 
   .tape {
