@@ -67,6 +67,9 @@ const Faculty = () => {
                     src={f.photo}
                     alt={`${f.name}, ${f.role}`}
                     loading="lazy"
+                    decoding="async"
+                    width={460}
+                    height={575}
                     className="h-full w-full object-cover grayscale-[0.15] hover:grayscale-0 transition"
                   />
                 </div>
