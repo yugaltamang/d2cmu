@@ -1,9 +1,6 @@
 import { Play } from "lucide-react";
 import heroImg from "@/assets/d2c-hero.jpg";
 
-const logos = [
-  "boAt", "Mamaearth", "WakeFit", "Sleepy Owl", "Plum", "Bombay Shaving Co", "The Souled Store", "Licious",
-];
 
 const Hero = () => {
   return (
