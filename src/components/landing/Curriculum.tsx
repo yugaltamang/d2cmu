@@ -155,17 +155,38 @@ const Curriculum = () => {
           ))}
         </div>
 
-        {/* Phase cards — portrait, compact, themed */}
-        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {phases.map(({ id, name, icon: Icon, tagline, range, weeks }) => {
+        {/* Phase cards — portrait, compact, themed. Last card (Defend) is the FINALE — wider + featured. */}
+        <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 lg:grid-cols-7 gap-3 sm:gap-4">
+          {phases.map(({ id, name, icon: Icon, tagline, range, weeks }, idx) => {
             const tornEdge =
               "M0,8 L40,2 L70,12 L110,4 L150,14 L190,6 L230,12 L270,3 L310,11 L350,5 L390,13 L430,4 L470,10 L510,2 L550,12 L590,6 L630,14 L670,4 L710,10 L750,3 L790,12 L830,5 L870,11 L910,3 L950,12 L990,6 L1030,14 L1070,4 L1110,10 L1150,3 L1200,12 L1200,0 L0,0 Z";
+            const isFinale = idx === phases.length - 1;
 
             return (
               <article
                 key={id}
-                className="group relative flex flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] bg-card border border-border/60 hover:border-primary/40 transition-colors"
+                className={`group relative flex flex-col overflow-hidden rounded-[18px] sm:rounded-[24px] border transition-colors ${
+                  isFinale
+                    ? "lg:col-span-3 col-span-2 bg-card border-primary/50 shadow-[0_0_0_1px_hsl(var(--primary)/0.25),0_30px_80px_-30px_hsl(var(--primary)/0.45)]"
+                    : "lg:col-span-2 bg-card border-border/60 hover:border-primary/40"
+                }`}
               >
+                {isFinale && (
+                  <>
+                    <div
+                      aria-hidden
+                      className="absolute inset-0 pointer-events-none opacity-80"
+                      style={{
+                        background:
+                          "radial-gradient(80% 60% at 100% 0%, hsl(var(--primary) / 0.18), transparent 60%), radial-gradient(60% 60% at 0% 100%, hsl(165 80% 45% / 0.14), transparent 60%)",
+                      }}
+                    />
+                    <div className="absolute top-3 left-3 z-20 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary text-primary-foreground font-mono text-[9px] uppercase tracking-[0.28em] shadow-md">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary-foreground animate-pulse" />
+                      Finale
+                    </div>
+                  </>
+                )}
                 {/* TOP */}
                 <div className="relative bg-secondary text-foreground">
                   {/* Ghost repeating name */}
