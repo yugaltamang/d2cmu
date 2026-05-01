@@ -24,7 +24,7 @@ const Hero = () => {
               <br />
               Ship a brand
               <br />
-              that <span className="font-display font-light italic text-violet">sells.</span>
+              that <span className="text-violet italic">sells.</span>
             </h1>
 
             <p className="mt-8 max-w-2xl text-base lg:text-lg text-muted-foreground text-pretty leading-relaxed">

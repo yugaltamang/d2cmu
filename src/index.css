@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
-@import './assets/fonts/fonts.css';
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -51,8 +50,8 @@
 
     --radius: 1.25rem;
 
-    --font-display: 'Ivy Presto Display', 'Times New Roman', serif;
-    --font-sans: 'DM Sans', 'Inter', system-ui, sans-serif;
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
     --sidebar-background: 150 25% 8%;
@@ -75,9 +74,8 @@
     font-family: var(--font-sans);
   }
   h1, h2, h3, h4 {
-    font-family: var(--font-sans);
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
   }
 }
 
@@ -100,7 +98,7 @@
     to { transform: translateX(-50%); }
   }
 
-  .text-violet { color: hsl(var(--primary)); font-family: var(--font-display); font-weight: 300; }
+  .text-violet { color: hsl(var(--primary)); }
   .bg-violet { background-color: hsl(var(--primary)); }
 
   .tape {
