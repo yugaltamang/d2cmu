@@ -53,7 +53,7 @@ const Promise = () => {
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
-          Five things you walk out with.{" "}
+          Four things you walk out with.{" "}
           <span className="text-foreground/45">
             Not a slide deck. A live brand, real revenue, customers you earned.
           </span>
