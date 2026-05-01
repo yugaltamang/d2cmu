@@ -168,7 +168,7 @@
     background-clip: text;
     color: transparent;
     font-family: var(--font-display);
-    font-weight: 400;
+    font-weight: 200;
   }
 
   .bg-violet { background: var(--mu-gradient); }
