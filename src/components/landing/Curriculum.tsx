@@ -157,127 +157,154 @@ const Curriculum = () => {
           ))}
         </div>
 
-        {/* Phase cards */}
+        {/* Phase cards — brutalist neon */}
         <div className="mt-10 lg:mt-12 grid lg:grid-cols-2 gap-5">
-          {phases.map(({ id, name, icon: Icon, tagline, range, weeks, tone }) => {
-            const isBlue = tone === "blue";
-            const cardBg = isBlue ? BLUE : "#0F1A2E";
-            const cardBorder = isBlue ? "rgba(255,255,255,0.18)" : "rgba(255,255,255,0.10)";
-            const subText = isBlue ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.65)";
-            const mutedText = isBlue ? "rgba(255,255,255,0.75)" : "rgba(255,255,255,0.5)";
-            const divider = isBlue ? "rgba(255,255,255,0.22)" : "rgba(255,255,255,0.12)";
-            const accent = isBlue ? LIME : LIME;
+          {phases.map(({ id, name, icon: Icon, tagline, range, weeks, tone }, i) => {
+            // alternate violet / lime accent per card
+            const isViolet = i % 2 === 0;
+            const NEON_VIOLET = "#7C3AED";
+            const NEON_LIME = "#C6F24E";
+            const accent = isViolet ? NEON_VIOLET : NEON_LIME;
+            const accentInk = isViolet ? "#FFFFFF" : "#000000";
+            const tiltClass = i % 2 === 0 ? "lg:-rotate-[0.6deg]" : "lg:rotate-[0.6deg]";
 
             return (
               <article
                 key={id}
-                className="rounded-[32px] p-7 lg:p-9 transition-transform hover:-translate-y-1"
+                className={`group relative overflow-hidden bg-black ${tiltClass} transition-transform hover:rotate-0 hover:-translate-y-1`}
                 style={{
-                  background: cardBg,
-                  border: `1px solid ${cardBorder}`,
-                  boxShadow: isBlue
-                    ? "0 30px 80px -30px rgba(31,91,255,0.55)"
-                    : "0 30px 80px -40px rgba(0,0,0,0.6)",
+                  border: `1.5px solid ${accent}`,
+                  boxShadow: `8px 8px 0 0 ${accent}`,
                 }}
               >
-                {/* Top row: phase pill + range */}
-                <div className="flex items-center justify-between">
-                  <span
-                    className="inline-flex items-center gap-2 rounded-full px-3 py-1.5"
-                    style={{
-                      background: isBlue ? "rgba(0,0,0,0.18)" : "rgba(255,255,255,0.06)",
-                      color: "#fff",
-                    }}
-                  >
-                    <span
-                      className="h-1.5 w-1.5 rounded-full"
-                      style={{ background: accent }}
-                    />
-                    <span className="font-mono text-[10px] uppercase tracking-[0.3em]">
-                      Phase {id}
-                    </span>
-                  </span>
-                  <span
-                    className="font-mono text-[10px] uppercase tracking-[0.3em]"
-                    style={{ color: mutedText }}
-                  >
-                    {range}
-                  </span>
-                </div>
+                {/* Grain / noise overlay */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-[0.18]"
+                  style={{
+                    backgroundImage:
+                      "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.7'/></svg>\")",
+                  }}
+                />
 
-                {/* Phase name — huge, mixed sans + italic serif period */}
-                <div className="mt-7 flex items-end gap-4">
-                  <div
-                    className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl"
-                    style={{
-                      background: isBlue ? "rgba(0,0,0,0.18)" : "rgba(31,91,255,0.18)",
-                    }}
-                  >
-                    <Icon
-                      className="h-7 w-7"
-                      strokeWidth={1.75}
-                      style={{ color: isBlue ? "#fff" : LIME }}
-                    />
-                  </div>
-                  <h3
-                    className="font-sans text-white text-5xl lg:text-6xl leading-none tracking-[-0.04em]"
-                    style={{ fontWeight: 600 }}
+                {/* Vertical mega text on right edge */}
+                <div
+                  aria-hidden
+                  className="absolute -right-2 top-6 bottom-6 flex items-center pointer-events-none select-none"
+                  style={{ writingMode: "vertical-rl" }}
+                >
+                  <span
+                    className="font-display italic uppercase leading-none tracking-[-0.04em] text-[120px] lg:text-[160px] opacity-[0.10]"
+                    style={{ color: accent, fontWeight: 700 }}
                   >
                     {name}
-                    <span
-                      className="font-serif italic font-normal"
-                      style={{ color: accent }}
-                    >
-                      .
-                    </span>
-                  </h3>
+                  </span>
                 </div>
 
-                {/* Tagline */}
-                <p
-                  className="mt-6 font-sans text-xl lg:text-[22px] leading-snug"
-                  style={{ color: subText, fontWeight: 500 }}
+                {/* Barcode strip top */}
+                <div
+                  aria-hidden
+                  className="absolute top-0 left-0 right-0 h-[14px] flex gap-[2px] px-6 pt-[3px] opacity-80"
                 >
-                  {tagline}
-                </p>
-
-                {/* Week list */}
-                <ul
-                  className="mt-8 border-t"
-                  style={{ borderColor: divider }}
-                >
-                  {weeks.map((wk) => (
-                    <li
-                      key={wk.w}
-                      className="grid grid-cols-12 gap-3 py-4 items-baseline border-b"
-                      style={{ borderColor: divider }}
-                    >
-                      <span className="col-span-2">
-                        <span
-                          className="inline-block rounded-full px-2.5 py-1 font-mono text-[10px] tracking-[0.2em]"
-                          style={{
-                            background: isBlue ? "rgba(0,0,0,0.22)" : "rgba(255,255,255,0.06)",
-                            color: "#fff",
-                          }}
-                        >
-                          W{wk.w}
-                        </span>
-                      </span>
-                      <p
-                        className="col-span-7 text-[15px] leading-snug"
-                        style={{ color: subText }}
-                      >
-                        {wk.q}
-                      </p>
-                      <span
-                        className="col-span-3 text-right font-mono text-[10px] uppercase tracking-[0.2em]"
-                        style={{ color: accent }}
-                      >
-                        {wk.o}
-                      </span>
-                    </li>
+                  {Array.from({ length: 60 }).map((_, k) => (
+                    <span
+                      key={k}
+                      style={{
+                        width: (k * 7) % 4 === 0 ? 3 : 1,
+                        background: k % 5 === 0 ? accent : "#fff",
+                        opacity: k % 3 === 0 ? 0.9 : 0.5,
+                      }}
+                      className="block h-full"
+                    />
                   ))}
-                </ul>
+                </div>
+
+                {/* Sticker — rotated phase id */}
+                <div
+                  className="absolute top-7 right-7 -rotate-6 z-10 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.25em]"
+                  style={{
+                    background: accent,
+                    color: accentInk,
+                    boxShadow: "3px 3px 0 0 #000",
+                  }}
+                >
+                  ▮ Phase {id}
+                </div>
+
+                <div className="relative p-7 lg:p-9 pt-10">
+                  {/* Range — taped label */}
+                  <div className="inline-block px-2 py-1 bg-white/90 text-black font-mono text-[10px] uppercase tracking-[0.3em] -rotate-1">
+                    {range}
+                  </div>
+
+                  {/* Phase name — chunky condensed display */}
+                  <h3
+                    className="mt-5 font-display italic uppercase text-white leading-[0.85] tracking-[-0.04em] text-[clamp(3.5rem,7vw,5.5rem)]"
+                    style={{ fontWeight: 700 }}
+                  >
+                    {name}
+                    <span style={{ color: accent }}>.</span>
+                  </h3>
+
+                  {/* Icon + tagline row */}
+                  <div className="mt-5 flex items-start gap-3">
+                    <Icon
+                      className="h-6 w-6 shrink-0 mt-1"
+                      strokeWidth={2.25}
+                      style={{ color: accent }}
+                    />
+                    <p
+                      className="font-display uppercase text-lg lg:text-xl leading-tight tracking-tight text-white/90"
+                      style={{ fontWeight: 600 }}
+                    >
+                      {tagline}
+                    </p>
+                  </div>
+
+                  {/* Divider with bracket marks */}
+                  <div className="mt-7 flex items-center gap-2">
+                    <span style={{ color: accent }} className="font-mono text-xs">▶</span>
+                    <div className="h-px flex-1" style={{ background: accent, opacity: 0.5 }} />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
+                      Weekly drops
+                    </span>
+                    <div className="h-px w-8" style={{ background: accent, opacity: 0.5 }} />
+                  </div>
+
+                  {/* Week list — brutalist rows */}
+                  <ul className="mt-5 space-y-2">
+                    {weeks.map((wk, idx) => (
+                      <li
+                        key={wk.w}
+                        className="grid grid-cols-12 gap-3 items-center py-2.5 px-3 bg-white/[0.03] border border-white/10 hover:border-white/30 transition-colors"
+                      >
+                        <span className="col-span-2 flex items-center gap-1.5">
+                          <span
+                            className="font-mono text-[9px] tracking-[0.15em] px-1.5 py-0.5"
+                            style={{ background: accent, color: accentInk }}
+                          >
+                            W{wk.w}
+                          </span>
+                        </span>
+                        <p className="col-span-7 text-[14px] leading-snug text-white/85 font-medium">
+                          {wk.q}
+                        </p>
+                        <span
+                          className="col-span-3 text-right font-mono text-[9px] uppercase tracking-[0.18em] truncate"
+                          style={{ color: accent }}
+                        >
+                          ↗ {wk.o}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* Footer serial */}
+                  <div className="mt-6 flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.3em] text-white/40">
+                    <span>SER/MU—{id}.{new Date().getFullYear()}</span>
+                    <span style={{ color: accent }}>● LIVE</span>
+                  </div>
+                </div>
               </article>
             );
           })}
