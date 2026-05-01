@@ -75,9 +75,9 @@ const Curriculum = () => {
         }}
       />
 
-      <div className="relative mx-auto max-w-[1400px] px-6 lg:px-10">
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Eyebrow pill */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-4 py-1.5">
+        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5">
           <span className="h-1.5 w-1.5 rounded-full" style={{ background: LIME }} />
           <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/70">
             The 10-weekend system
@@ -86,7 +86,7 @@ const Curriculum = () => {
 
         {/* Massive heading — sans display with italic serif accents, lime underline */}
         <h2
-          className="mt-6 max-w-[20ch] font-sans text-white text-[clamp(2.5rem,6.4vw,5.75rem)] leading-[0.95] tracking-[-0.04em]"
+          className="mt-5 sm:mt-6 max-w-[20ch] font-sans text-white text-[clamp(2rem,8vw,5.75rem)] leading-[1] tracking-[-0.04em]"
           style={{ fontWeight: 600 }}
         >
           Idea on{" "}
