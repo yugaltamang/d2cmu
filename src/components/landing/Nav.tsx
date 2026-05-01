@@ -13,10 +13,10 @@ const Nav = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-[hsl(var(--paper))] text-[hsl(var(--ink))] border-b-2 border-[hsl(var(--ink))]">
+    <header className="absolute top-0 inset-x-0 z-50 text-[hsl(var(--paper))]">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 h-14 sm:h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2 group">
-          <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto" />
+          <img src={muLogo} alt="Masters' Union" className="h-7 sm:h-8 w-auto invert" />
         </a>
 
         <nav className="hidden md:flex items-center gap-1 text-[12px] uppercase tracking-[0.2em] font-bold">
@@ -24,7 +24,7 @@ const Nav = () => {
             <a
               key={l.href}
               href={l.href}
-              className="px-3 py-1.5 hover:bg-[hsl(var(--ink))] hover:text-[hsl(var(--lime))] transition-colors"
+              className="px-3 py-1.5 text-[hsl(var(--paper))]/85 hover:text-[hsl(var(--lime))] transition-colors"
             >
               {l.label}
             </a>
@@ -34,7 +34,7 @@ const Nav = () => {
         <div className="flex items-center gap-2">
           <a
             href="#"
-            className="hidden sm:inline-flex items-center px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] font-bold hover:bg-[hsl(var(--ink))] hover:text-[hsl(var(--lime))] transition-colors"
+            className="hidden sm:inline-flex items-center px-3 py-1.5 text-[11px] uppercase tracking-[0.2em] font-bold text-[hsl(var(--paper))]/85 hover:text-[hsl(var(--lime))] transition-colors"
           >
             Log in
           </a>
@@ -47,7 +47,7 @@ const Nav = () => {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center h-9 w-9 border-2 border-[hsl(var(--ink))] text-[hsl(var(--ink))] hover:bg-[hsl(var(--ink))] hover:text-[hsl(var(--lime))] transition"
+            className="md:hidden inline-flex items-center justify-center h-9 w-9 border-2 border-[hsl(var(--paper))] text-[hsl(var(--paper))] hover:bg-[hsl(var(--paper))] hover:text-[hsl(var(--ink))] transition"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -56,14 +56,14 @@ const Nav = () => {
 
       {/* Mobile drawer */}
       {open && (
-        <nav className="md:hidden border-t-2 border-[hsl(var(--ink))] bg-[hsl(var(--paper))]">
+        <nav className="md:hidden border-t border-white/15 bg-[hsl(155_60%_7%)]/95 backdrop-blur">
           <ul className="px-4 sm:px-6 py-2 flex flex-col">
             {links.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-[13px] uppercase tracking-[0.2em] font-bold border-b border-[hsl(var(--ink))]/20 last:border-0 hover:text-[hsl(var(--ink))]"
+                  className="block py-3 text-[13px] uppercase tracking-[0.2em] font-bold text-[hsl(var(--paper))]/85 border-b border-white/15 last:border-0 hover:text-[hsl(var(--lime))]"
                 >
                   {l.label}
                 </a>
