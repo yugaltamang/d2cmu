@@ -25,11 +25,10 @@ const CTA = () => {
             className="mt-6 font-display text-foreground text-[clamp(2.25rem,5.5vw,4.5rem)] leading-[1] tracking-[-0.04em]"
             style={{ fontWeight: 500 }}
           >
-            Build fast on{" "}
-            <span className="text-violet">your idea.</span>
+            Stop reading. <br /><span className="text-violet">Start selling.</span>
           </h2>
           <p className="mt-5 max-w-xl text-base text-foreground/70 leading-relaxed">
-            Limited seats, application-based. The next cohort begins June 2026 at the Masters&apos; Union campus in Gurugram.
+            Limited seats. Application-based. Cohort 01 begins June 2026 at the Masters&apos; Union campus, Gurugram.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">

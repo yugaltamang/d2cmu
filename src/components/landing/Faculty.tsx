@@ -30,11 +30,10 @@ const Faculty = () => {
           className="max-w-5xl font-display text-foreground text-[clamp(2rem,4.8vw,4rem)] leading-[1] tracking-[-0.035em]"
           style={{ fontWeight: 500 }}
         >
-          Meet your secret weapon. <span className="text-foreground/45">Operators.</span>
+          Taught by the people who&apos;ve <span className="text-violet">actually done it.</span>
         </h2>
         <p className="mt-4 max-w-2xl text-base text-foreground/65 leading-relaxed">
-          Nine founders, brand-builders and growth operators behind India&apos;s most recognised D2C names.
-          They lead sessions, review your build, and sit on your final pitch panel.
+          Nine founders and operators behind India&apos;s biggest D2C names. They lead sessions, review your build, and sit on your pitch panel — no theorists, no professors.
         </p>
       </div>
 
