@@ -51,12 +51,11 @@ const Hero = () => {
         </div>
 
         {/* Stats strip — Shopify-style flat */}
-        <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-x-4 sm:gap-x-6 gap-y-5 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
+        <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-5 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
           {[
             { n: "10", l: "Weekends" },
             { n: "9", l: "Sessions · 18 hrs" },
             { n: "1", l: "Live brand shipped" },
-            { n: "9", l: "Operator-faculty" },
           ].map((s) => (
             <div key={s.l} className="flex flex-col">
               <dt className="font-display text-2xl sm:text-3xl lg:text-4xl leading-none text-foreground" style={{ fontWeight: 500 }}>
