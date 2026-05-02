@@ -39,7 +39,7 @@ const Faculty = () => {
           Taught by the people who&apos;ve <span className="text-violet">actually done it.</span>
         </h2>
         <p className="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base text-foreground/65 leading-relaxed">
-          Nine founders and operators behind India&apos;s biggest D2C names. They lead sessions, review your build, and sit on your pitch panel — no theorists, no professors.
+          A deep pool of founders and operators who&apos;ve actually built brands from zero — backing India&apos;s biggest D2C names. They lead sessions, review your build, and sit on your pitch panel — no theorists, no professors.
         </p>
       </div>
 
