@@ -1,5 +1,5 @@
 import { Hammer, Rocket, TrendingUp, Shield } from "lucide-react";
-import pitchDayImg from "@/assets/pitch-day.webp";
+import pitchDayImg from "@/assets/pitch-day.png";
 
 const phases = [
   {
@@ -243,11 +243,11 @@ const Curriculum = () => {
                         loading="lazy"
                         decoding="async"
                         width={896}
-                        height={1200}
-                        className="absolute inset-0 w-full h-full object-cover grayscale"
+                        height={1216}
+                        className="absolute inset-0 w-full h-full object-contain object-bottom mix-blend-luminosity opacity-90"
                       />
-                      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                      <p className="absolute inset-x-0 bottom-0 p-3 font-display uppercase text-white text-[15px] sm:text-[17px] leading-[0.95] tracking-[-0.02em]" style={{ fontWeight: 800 }}>
+                      <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent pointer-events-none" />
+                      <p className="absolute inset-x-0 bottom-0 p-3 font-display uppercase text-foreground text-[15px] sm:text-[17px] leading-[0.95] tracking-[-0.02em]" style={{ fontWeight: 800 }}>
                         Pitch your brand to founders &amp; operators.
                       </p>
                     </div>
