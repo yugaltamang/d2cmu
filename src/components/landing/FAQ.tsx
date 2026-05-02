@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Who teaches the cohort?",
-    a: "9 operators, founders and brand builders from India's leading D2C ecosystem. They lead sessions, review your build each weekend, and sit on your final pitch panel.",
+    a: "A deep pool of operators, founders and brand builders who've actually built brands from India's leading D2C ecosystem. They lead sessions, review your build each weekend, and sit on your final pitch panel.",
   },
   {
     q: "What is the time commitment?",
