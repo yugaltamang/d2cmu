@@ -244,7 +244,7 @@ const Curriculum = () => {
                         decoding="async"
                         width={896}
                         height={1216}
-                        className="absolute inset-0 w-full h-full object-contain object-bottom mix-blend-luminosity opacity-90"
+                        className="absolute inset-0 w-full h-full object-contain object-bottom"
                       />
                       <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent pointer-events-none" />
                       <p className="absolute inset-x-0 bottom-0 p-3 font-display uppercase text-foreground text-[15px] sm:text-[17px] leading-[0.95] tracking-[-0.02em]" style={{ fontWeight: 800 }}>
