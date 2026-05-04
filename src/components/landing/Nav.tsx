@@ -6,7 +6,9 @@ const links: { label: string; href: string }[] = [
   { label: "Outcomes", href: "#outcomes" },
   { label: "Curriculum", href: "#curriculum" },
   { label: "Faculty", href: "#faculty" },
+  { label: "Fees", href: "#fees" },
   { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#get-in-touch" },
 ];
 
 const Nav = () => {
