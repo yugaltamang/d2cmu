@@ -57,7 +57,7 @@ const Footer = () => {
         {/* Top: logo + nav columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
-            <a href="#" className="inline-flex items-center" aria-label="Masters' Union home">
+            <a href={BASE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center" aria-label="Masters' Union home">
               <img
                 src={muLogo}
                 alt="Masters' Union"
@@ -73,17 +73,25 @@ const Footer = () => {
           {cols.map((col) => (
             <div key={col.title} className="min-w-0">
               <h3 className="text-sm font-semibold tracking-wide text-foreground mb-4">
-                {col.title}
+                {col.titleHref ? (
+                  <a href={col.titleHref} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">
+                    {col.title}
+                  </a>
+                ) : (
+                  col.title
+                )}
               </h3>
               {col.links.length > 0 && (
                 <ul className="space-y-3">
                   {col.links.map((link) => (
-                    <li key={link}>
+                    <li key={link.label}>
                       <a
-                        href="#"
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-sm text-foreground/65 hover:text-foreground transition-colors"
                       >
-                        {link}
+                        {link.label}
                       </a>
                     </li>
                   ))}
@@ -97,10 +105,12 @@ const Footer = () => {
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 pt-8 border-t border-border/10">
           <div>
             <div className="flex items-center gap-5">
-              {socials.map(({ Icon, label }) => (
+              {socials.map(({ Icon, label, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="text-foreground/70 hover:text-foreground transition-colors"
                 >
