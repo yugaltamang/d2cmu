@@ -49,7 +49,7 @@ const Nav = () => {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-border/60 text-foreground/80 hover:text-foreground hover:bg-foreground/5 transition"
+            className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-border/60 text-foreground/80 hover:text-foreground hover:bg-foreground/5 transition"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
