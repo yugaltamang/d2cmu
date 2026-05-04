@@ -30,9 +30,9 @@ const Fees = () => {
               Programme Fees
             </p>
             <h2 className="text-2xl sm:text-3xl font-light leading-[1.1] tracking-tight">
-              Transparent.{" "}
+              An investment{" "}
               <span className="italic" style={{ color: ACCENT }}>
-                Milestone-based.
+                that pays you back.
               </span>
             </h2>
           </div>
