@@ -26,6 +26,8 @@ const faculty = [
 
 const Faculty = () => {
   const scrollerRef = useRef<HTMLUListElement>(null);
+  const dirRef = useRef<0 | 1 | -1>(0);
+  const rafRef = useRef<number | null>(null);
 
   const scrollBy = (dir: 1 | -1) => {
     const el = scrollerRef.current;
@@ -33,6 +35,32 @@ const Faculty = () => {
     const amount = Math.max(el.clientWidth * 0.8, 240);
     el.scrollBy({ left: dir * amount, behavior: "smooth" });
   };
+
+  const startAuto = (dir: 1 | -1) => {
+    dirRef.current = dir;
+    if (rafRef.current != null) return;
+    const speed = 1.5; // px per frame
+    const tick = () => {
+      const el = scrollerRef.current;
+      if (!el || dirRef.current === 0) {
+        rafRef.current = null;
+        return;
+      }
+      el.scrollLeft += dirRef.current * speed;
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+  };
+
+  const stopAuto = () => {
+    dirRef.current = 0;
+    if (rafRef.current != null) {
+      cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    }
+  };
+
+  useEffect(() => () => stopAuto(), []);
 
   return (
     <section id="faculty" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
