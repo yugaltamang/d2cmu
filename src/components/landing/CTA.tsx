@@ -4,7 +4,7 @@ import bg from "@/assets/bg-abstract-3.webp";
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs" },
   { icon: Calendar, label: "Start", value: "June 2026" },
-  { icon: MapPin, label: "Format", value: "Masters' Union, Gurugram" },
+  { icon: MapPin, label: "Format", value: "In-Person" },
   { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree" },
 ];
 
