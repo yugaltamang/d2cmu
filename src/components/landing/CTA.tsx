@@ -6,7 +6,7 @@ const details = [
   { icon: Calendar, label: "Start", value: "July 2026" },
   { icon: MapPin, label: "Format", value: "In-Person" },
   { icon: Building2, label: "Venue", value: "Masters' Union Campus, Gurgaon" },
-  { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree & Above" },
+  { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree & above" },
 ];
 
 const CTA = () => {
