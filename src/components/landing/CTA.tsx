@@ -20,7 +20,7 @@ const CTA = () => {
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="max-w-5xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
-            Cohort 01 / June 2026
+            COHORT 01 / JULY 2026
           </p>
           <h2
             className="mt-5 sm:mt-6 font-display text-foreground text-[clamp(2rem,7vw,4.5rem)] leading-[1.05] tracking-[-0.04em]"
@@ -29,7 +29,7 @@ const CTA = () => {
             Stop reading. <br /><span className="text-violet">Start selling.</span>
           </h2>
           <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-foreground/70 leading-relaxed">
-            Limited seats. Application-based. Cohort 01 begins June 2026 at the Masters&apos; Union campus, Gurugram.
+            Limited seats. Application-based. Cohort 01 begins July 2026 at the Masters&apos; Union campus, Gurugram.
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
