@@ -1,4 +1,5 @@
 import Nav from "@/components/landing/Nav";
+import MobileNav from "@/components/landing/MobileNav";
 import Hero from "@/components/landing/Hero";
 
 import Promise from "@/components/landing/Promise";
@@ -12,7 +13,7 @@ import Footer from "@/components/landing/Footer";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pb-[60px] lg:pb-0">
       <Nav />
       <Hero />
       <Promise />
@@ -23,6 +24,7 @@ const Index = () => {
       <CTA />
       <GetInTouch />
       <Footer />
+      <MobileNav />
     </main>
   );
 };
