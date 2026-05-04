@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import saksham from "@/assets/faculty/saksham-kotiya.webp";
 import swarup from "@/assets/faculty/swarup-potta.webp";
@@ -23,72 +23,14 @@ const faculty = [
   { name: "Mohit Gulati", role: "Brand Builder", photo: mohit },
 ];
 
-// Duplicate the list so the marquee can loop seamlessly
-const loop = [...faculty, ...faculty];
-
 const Faculty = () => {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const offsetRef = useRef(0); // current translateX in px (negative)
-  const rafRef = useRef<number | null>(null);
-  const lastTsRef = useRef<number | null>(null);
-  const [paused, setPaused] = useState(false);
-  const pausedRef = useRef(false);
-  pausedRef.current = paused;
+  const scrollerRef = useRef<HTMLDivElement>(null);
 
-  // Animate the track with requestAnimationFrame.
-  // We translate by -halfWidth and wrap to 0 to create a seamless loop.
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const SPEED = 40; // px per second
-
-    const tick = (ts: number) => {
-      if (lastTsRef.current == null) lastTsRef.current = ts;
-      const dt = (ts - lastTsRef.current) / 1000;
-      lastTsRef.current = ts;
-
-      if (!pausedRef.current) {
-        const half = track.scrollWidth / 2;
-        if (half > 0) {
-          let next = offsetRef.current - SPEED * dt;
-          if (-next >= half) next += half; // wrap seamlessly
-          offsetRef.current = next;
-          track.style.transform = `translate3d(${next}px, 0, 0)`;
-        }
-      }
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-
-    const onVis = () => setPaused(document.hidden);
-    document.addEventListener("visibilitychange", onVis);
-
-    return () => {
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = null;
-      lastTsRef.current = null;
-      document.removeEventListener("visibilitychange", onVis);
-    };
-  }, []);
-
-  // Arrow nudges shift the offset directly with a smooth transition
-  const nudge = (dir: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const step = 280; // approx one card + gap
-    const half = track.scrollWidth / 2;
-    let next = offsetRef.current - dir * step;
-    // Keep inside the [-half, 0] range so loop stays seamless
-    if (-next >= half) next += half;
-    if (next > 0) next -= half;
-    offsetRef.current = next;
-    track.style.transition = "transform 500ms cubic-bezier(0.22, 1, 0.36, 1)";
-    track.style.transform = `translate3d(${next}px, 0, 0)`;
-    window.setTimeout(() => {
-      if (track) track.style.transition = "";
-    }, 520);
+  const scrollBy = (dir: 1 | -1) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const step = el.clientWidth * 0.8;
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
 
   return (
@@ -110,50 +52,21 @@ const Faculty = () => {
       </div>
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        <div className="flex items-end justify-between gap-6 flex-wrap">
-          <div>
-            <h2
-              className="max-w-5xl font-display text-foreground text-[clamp(1.75rem,6vw,4rem)] leading-[1.05] tracking-[-0.035em]"
-              style={{ fontWeight: 500 }}
-            >
-              Taught by the people who&apos;ve <span className="text-violet">actually done it.</span>
-            </h2>
-            <p className="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base text-foreground/65 leading-relaxed">
-              A deep pool of founders and operators who&apos;ve actually built brands from zero — backing India&apos;s biggest D2C names. They lead sessions, review your build, and sit on your pitch panel — no theorists, no professors.
-            </p>
-          </div>
-
-          <div className="hidden sm:flex items-center gap-2">
-            <button
-              type="button"
-              aria-label="Scroll left"
-              onClick={() => nudge(-1)}
-              className="grid place-items-center h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
-            >
-              <ChevronLeft className="h-5 w-5" strokeWidth={2} />
-            </button>
-            <button
-              type="button"
-              aria-label="Scroll right"
-              onClick={() => nudge(1)}
-              className="grid place-items-center h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
-            >
-              <ChevronRight className="h-5 w-5" strokeWidth={2} />
-            </button>
-          </div>
+        <div>
+          <h2
+            className="max-w-5xl font-display text-foreground text-[clamp(1.75rem,6vw,4rem)] leading-[1.05] tracking-[-0.035em]"
+            style={{ fontWeight: 500 }}
+          >
+            Taught by the people who&apos;ve <span className="text-violet">actually done it.</span>
+          </h2>
+          <p className="mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base text-foreground/65 leading-relaxed">
+            A deep pool of founders and operators who&apos;ve actually built brands from zero — backing India&apos;s biggest D2C names. They lead sessions, review your build, and sit on your pitch panel — no theorists, no professors.
+          </p>
         </div>
       </div>
 
-      {/* Marquee */}
-      <div
-        className="relative mt-6 sm:mt-8 lg:mt-12 overflow-hidden"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
-        onTouchStart={() => setPaused(true)}
-        onTouchEnd={() => setPaused(false)}
-        onFocus={() => setPaused(true)}
-        onBlur={() => setPaused(false)}
-      >
+      {/* Carousel */}
+      <div className="relative mt-6 sm:mt-8 lg:mt-12">
         {/* Edge fades (visual only) */}
         <div
           aria-hidden
@@ -166,14 +79,32 @@ const Faculty = () => {
           style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
         />
 
-        <div
-          ref={trackRef}
-          className="flex gap-4 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 w-max will-change-transform"
+        {/* Inner arrows */}
+        <button
+          type="button"
+          aria-label="Scroll left"
+          onClick={() => scrollBy(-1)}
+          className="hidden sm:grid place-items-center absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
         >
-          {loop.map((f, i) => (
+          <ChevronLeft className="h-5 w-5" strokeWidth={2} />
+        </button>
+        <button
+          type="button"
+          aria-label="Scroll right"
+          onClick={() => scrollBy(1)}
+          className="hidden sm:grid place-items-center absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
+        >
+          <ChevronRight className="h-5 w-5" strokeWidth={2} />
+        </button>
+
+        <div
+          ref={scrollerRef}
+          className="flex gap-4 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {faculty.map((f, i) => (
             <div
               key={`${f.name}-${i}`}
-              className="shrink-0 w-[160px] sm:w-[210px] lg:w-[240px] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
+              className="snap-start shrink-0 w-[160px] sm:w-[210px] lg:w-[240px] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
