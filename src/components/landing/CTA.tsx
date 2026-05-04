@@ -1,10 +1,11 @@
-import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-react";
+import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight, Building2 } from "lucide-react";
 import bg from "@/assets/bg-abstract-3.webp";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs" },
   { icon: Calendar, label: "Start", value: "July 2026" },
   { icon: MapPin, label: "Format", value: "In-Person" },
+  { icon: Building2, label: "Venue", value: "Masters' Union Campus, Gurgaon" },
   { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree & Above" },
 ];
 
@@ -39,7 +40,7 @@ const CTA = () => {
           </div>
         </div>
 
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <div className="mt-10 sm:mt-12 grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
