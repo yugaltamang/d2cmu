@@ -1,6 +1,6 @@
-const BOTTLE = "#0B3B2E";
-const BOTTLE_DEEP = "#072A20";
-const BOTTLE_SOFT = "#0F4A3A";
+const BOTTLE = "#062119";
+const BOTTLE_DEEP = "#03130E";
+const BOTTLE_SOFT = "#0A2E23";
 const CREAM = "#F3EFE6";
 const ACCENT = "#C9A24B";
 
