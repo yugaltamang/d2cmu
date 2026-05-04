@@ -13,7 +13,11 @@ const GetInTouch = () => {
     <section
       id="get-in-touch"
       className="relative py-16 sm:py-20 lg:py-28"
-      style={{ backgroundColor: BOTTLE, color: CREAM }}
+      style={{
+        color: CREAM,
+        backgroundColor: BOTTLE,
+        backgroundImage: `radial-gradient(ellipse 90% 70% at 78% 8%, ${BOTTLE_SOFT} 0%, transparent 55%), linear-gradient(135deg, ${BOTTLE_DEEP} 0%, ${BOTTLE} 45%, ${BOTTLE_SOFT} 100%)`,
+      }}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
