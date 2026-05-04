@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import muLogo from "@/assets/mu-logo.svg";
 
