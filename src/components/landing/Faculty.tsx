@@ -56,6 +56,63 @@ const Faculty = () => {
     el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
 
+  // Auto-scroll: continuously moves right, pauses on hover/focus/touch
+  const pausedRef = useRef(false);
+  const rafRef = useRef<number | null>(null);
+  const lastTsRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    const SPEED = 30; // px per second
+    const tick = (ts: number) => {
+      if (lastTsRef.current == null) lastTsRef.current = ts;
+      const dt = (ts - lastTsRef.current) / 1000;
+      lastTsRef.current = ts;
+
+      if (!pausedRef.current) {
+        const max = el.scrollWidth - el.clientWidth;
+        if (max > 0) {
+          let next = el.scrollLeft + SPEED * dt;
+          if (next >= max - 0.5) next = 0; // loop back
+          el.scrollLeft = next;
+        }
+      }
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+
+    const pause = () => { pausedRef.current = true; };
+    const resume = () => { pausedRef.current = false; lastTsRef.current = null; };
+
+    el.addEventListener("mouseenter", pause);
+    el.addEventListener("mouseleave", resume);
+    el.addEventListener("focusin", pause);
+    el.addEventListener("focusout", resume);
+    el.addEventListener("touchstart", pause, { passive: true });
+    el.addEventListener("touchend", resume);
+    const onVis = () => { if (document.hidden) pause(); else resume(); };
+    document.addEventListener("visibilitychange", onVis);
+
+    return () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+      lastTsRef.current = null;
+      el.removeEventListener("mouseenter", pause);
+      el.removeEventListener("mouseleave", resume);
+      el.removeEventListener("focusin", pause);
+      el.removeEventListener("focusout", resume);
+      el.removeEventListener("touchstart", pause);
+      el.removeEventListener("touchend", resume);
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, []);
+
+  const pauseAuto = () => { pausedRef.current = true; };
+  const resumeAuto = () => { pausedRef.current = false; lastTsRef.current = null; };
+
   return (
     <section
       id="faculty"
