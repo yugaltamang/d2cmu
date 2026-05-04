@@ -38,7 +38,7 @@ const Fees = () => {
           </div>
 
           {/* Inline fee row */}
-          <div className="flex-1 grid grid-cols-3 gap-px rounded-xl overflow-hidden border"
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-3 gap-px rounded-xl overflow-hidden border w-full"
             style={{
               borderColor: "rgba(243,239,230,0.14)",
               backgroundColor: "rgba(243,239,230,0.10)",
@@ -47,20 +47,22 @@ const Fees = () => {
             {rows.map((row) => (
               <div
                 key={row.label}
-                className="px-4 py-4 sm:px-5 sm:py-5"
+                className="flex sm:block items-baseline justify-between gap-3 px-4 py-3.5 sm:px-5 sm:py-5"
                 style={{ backgroundColor: BOTTLE_DEEP }}
               >
-                <p
-                  className="text-[10px] uppercase tracking-[0.2em]"
-                  style={{ color: `${CREAM}99` }}
-                >
-                  {row.label}
-                </p>
-                <p className="mt-1.5 text-xl sm:text-2xl font-light tracking-tight">
+                <div className="min-w-0">
+                  <p
+                    className="text-[10px] uppercase tracking-[0.2em]"
+                    style={{ color: `${CREAM}99` }}
+                  >
+                    {row.label}
+                  </p>
+                  <p className="hidden sm:block mt-1 text-[11px]" style={{ color: `${CREAM}70` }}>
+                    {row.note}
+                  </p>
+                </div>
+                <p className="text-xl sm:text-2xl font-light tracking-tight whitespace-nowrap sm:mt-1.5">
                   {row.amount}
-                </p>
-                <p className="mt-1 text-[11px]" style={{ color: `${CREAM}70` }}>
-                  {row.note}
                 </p>
               </div>
             ))}
