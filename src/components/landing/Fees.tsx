@@ -36,82 +36,83 @@ const Fees = () => {
         color: CREAM,
       }}
     >
-      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-20 sm:py-28">
-        <div className="max-w-2xl">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-12 sm:py-14 lg:py-16">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-8">
+          <div className="max-w-xl">
+            <p
+              className="text-[10px] uppercase tracking-[0.22em] mb-2"
+              style={{ color: ACCENT }}
+            >
+              Programme Fees
+            </p>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-light leading-[1.1] tracking-tight">
+              Invest in a programme{" "}
+              <span className="italic" style={{ color: ACCENT }}>
+                built for outcomes.
+              </span>
+            </h2>
+          </div>
           <p
-            className="text-xs uppercase tracking-[0.22em] mb-4"
-            style={{ color: ACCENT }}
-          >
-            Programme Fees
-          </p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.05] tracking-tight">
-            Invest in a programme{" "}
-            <span className="italic" style={{ color: ACCENT }}>
-              built for outcomes.
-            </span>
-          </h2>
-          <p
-            className="mt-6 text-base sm:text-lg max-w-xl"
-            style={{ color: `${CREAM}cc` }}
+            className="text-sm max-w-sm"
+            style={{ color: `${CREAM}b3` }}
           >
             Transparent fee structure, payable in milestones across the programme.
           </p>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3">
           {items.map(({ Icon, label, amount, note }) => (
             <div
               key={label}
-              className="rounded-2xl p-7 border backdrop-blur-sm transition-colors"
+              className="rounded-xl p-5 border backdrop-blur-sm flex items-start gap-4"
               style={{
                 backgroundColor: "rgba(255,255,255,0.04)",
                 borderColor: "rgba(243,239,230,0.14)",
               }}
             >
               <Icon
-                className="h-6 w-6 mb-6"
+                className="h-5 w-5 mt-1 shrink-0"
                 strokeWidth={1.5}
                 style={{ color: ACCENT }}
               />
-              <p
-                className="text-xs uppercase tracking-[0.18em]"
-                style={{ color: `${CREAM}99` }}
-              >
-                {label}
-              </p>
-              <p className="mt-2 text-3xl sm:text-4xl font-light tracking-tight">
-                {amount}
-              </p>
-              <p className="mt-3 text-sm" style={{ color: `${CREAM}b3` }}>
-                {note}
-              </p>
+              <div className="min-w-0">
+                <p
+                  className="text-[10px] uppercase tracking-[0.18em]"
+                  style={{ color: `${CREAM}99` }}
+                >
+                  {label}
+                </p>
+                <p className="mt-1 text-2xl font-light tracking-tight">
+                  {amount}
+                </p>
+                <p className="mt-1 text-xs" style={{ color: `${CREAM}99` }}>
+                  {note}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Total */}
         <div
-          className="mt-6 rounded-2xl p-7 sm:p-9 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border"
+          className="mt-3 rounded-xl px-5 py-4 sm:px-6 sm:py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 border"
           style={{
             backgroundColor: CREAM,
             color: BOTTLE_DEEP,
             borderColor: "rgba(243,239,230,0.14)",
           }}
         >
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] opacity-70">
+          <div className="flex items-baseline gap-3 flex-wrap">
+            <p className="text-[10px] uppercase tracking-[0.2em] opacity-70">
               Total Fees
             </p>
-            <p className="mt-2 text-4xl sm:text-5xl font-light tracking-tight">
+            <p className="text-2xl sm:text-3xl font-light tracking-tight">
               ₹7,00,500{" "}
-              <span className="text-base sm:text-lg opacity-60 align-middle">
-                + GST
-              </span>
+              <span className="text-sm opacity-60 align-middle">+ GST</span>
             </p>
           </div>
-          <p className="text-sm sm:text-base max-w-sm opacity-75">
-            Inclusive of application, admission and tuition. Scholarships and
-            financing options available on request.
+          <p className="text-xs sm:text-sm max-w-sm opacity-70">
+            Scholarships and financing options available on request.
           </p>
         </div>
       </div>
