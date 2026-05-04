@@ -70,12 +70,12 @@ const Faculty = () => {
         {/* Edge fades (visual only) */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 z-10"
+          className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-10 z-10"
           style={{ background: "linear-gradient(to right, hsl(var(--background)), transparent)" }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 z-10"
+          className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-10 z-10"
           style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
         />
 
