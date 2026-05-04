@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import saksham from "@/assets/faculty/saksham-kotiya.webp";
 import swarup from "@/assets/faculty/swarup-potta.webp";
