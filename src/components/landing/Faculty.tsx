@@ -82,14 +82,18 @@ const Faculty = () => {
 
       {/* Carousel */}
       <div className="relative mt-6 sm:mt-8 lg:mt-12">
+        {/* Left hover zone (auto-scroll) */}
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 lg:w-40 z-10"
+          onMouseEnter={() => startAuto(-1)}
+          onMouseLeave={stopAuto}
+          className="absolute inset-y-0 left-0 w-12 sm:w-24 lg:w-40 z-10"
           style={{ background: "linear-gradient(to right, hsl(var(--background)), transparent)" }}
         />
+        {/* Right hover zone (auto-scroll) */}
         <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 lg:w-40 z-10"
+          onMouseEnter={() => startAuto(1)}
+          onMouseLeave={stopAuto}
+          className="absolute inset-y-0 right-0 w-12 sm:w-24 lg:w-40 z-10"
           style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
         />
 
@@ -97,6 +101,8 @@ const Faculty = () => {
           type="button"
           aria-label="Scroll left"
           onClick={() => scrollBy(-1)}
+          onMouseEnter={() => startAuto(-1)}
+          onMouseLeave={stopAuto}
           className="hidden sm:grid place-items-center absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-colors backdrop-blur"
         >
           <ChevronLeft className="h-5 w-5" strokeWidth={2} />
@@ -105,6 +111,8 @@ const Faculty = () => {
           type="button"
           aria-label="Scroll right"
           onClick={() => scrollBy(1)}
+          onMouseEnter={() => startAuto(1)}
+          onMouseLeave={stopAuto}
           className="hidden sm:grid place-items-center absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-colors backdrop-blur"
         >
           <ChevronRight className="h-5 w-5" strokeWidth={2} />
@@ -112,7 +120,7 @@ const Faculty = () => {
 
         <ul
           ref={scrollerRef}
-          className="flex gap-3 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-3 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 overflow-x-auto snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
         >
           {faculty.map((f, i) => (
             <li
