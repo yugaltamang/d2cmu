@@ -50,11 +50,11 @@ const Footer = () => {
               <img
                 src={muLogo}
                 alt="Masters' Union"
-                width={140}
-                height={28}
+                width={220}
+                height={44}
                 loading="lazy"
                 decoding="async"
-                className="h-7 sm:h-8 w-auto invert"
+                className="h-12 sm:h-14 w-auto invert"
               />
             </a>
           </div>
