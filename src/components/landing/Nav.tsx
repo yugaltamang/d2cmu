@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 import muLogo from "@/assets/mu-logo.svg";
 
 const links: { label: string; href: string }[] = [
@@ -21,15 +20,14 @@ const Nav = () => {
           <img src={muLogo} alt="Masters' Union" width={140} height={28} decoding="async" className="h-6 sm:h-7 w-auto invert" />
         </a>
 
-        <nav className="hidden md:flex items-center gap-1 text-[15px] text-foreground/85">
+        <nav className="hidden md:flex items-center gap-1 text-[14px] text-foreground/85">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full hover:bg-foreground/5 transition"
+              className="inline-flex items-center px-3 py-1.5 rounded-full hover:bg-foreground/5 transition"
             >
               {l.label}
-              <ChevronDown className="h-3.5 w-3.5 text-foreground/40" strokeWidth={2} />
             </a>
           ))}
         </nav>
