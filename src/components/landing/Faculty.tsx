@@ -12,8 +12,8 @@ import mohit from "@/assets/faculty/mohit-gulati.webp";
 import bg from "@/assets/bg-abstract-2.webp";
 
 const faculty = [
-  { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
   { name: "Swarup Potta", role: "Brand Strategy", photo: swarup },
+  { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
   { name: "Shubham Jain", role: "Performance Mktg", photo: shubham },
   { name: "Mansi Khandelwal", role: "Ecommerce Lead", photo: mansi },
   { name: "Ankit Aggarwal", role: "Growth", photo: ankit },
@@ -70,12 +70,12 @@ const Faculty = () => {
         {/* Edge fades (visual only) */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 z-10"
+          className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-10 z-10"
           style={{ background: "linear-gradient(to right, hsl(var(--background)), transparent)" }}
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-20 z-10"
+          className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-10 z-10"
           style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
         />
 
