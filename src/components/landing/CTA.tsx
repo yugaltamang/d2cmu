@@ -2,7 +2,7 @@ import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight } from "lucide-rea
 import bg from "@/assets/bg-abstract-3.webp";
 
 const details = [
-  { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs in-room" },
+  { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs" },
   { icon: Calendar, label: "Start", value: "June 2026" },
   { icon: MapPin, label: "Format", value: "Masters' Union, Gurugram" },
   { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree" },
