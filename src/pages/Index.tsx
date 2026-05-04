@@ -6,6 +6,7 @@ import Curriculum from "@/components/landing/Curriculum";
 import Faculty from "@/components/landing/Faculty";
 import FAQ from "@/components/landing/FAQ";
 import CTA from "@/components/landing/CTA";
+import GetInTouch from "@/components/landing/GetInTouch";
 import Footer from "@/components/landing/Footer";
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
       <Faculty />
       <FAQ />
       <CTA />
+      <GetInTouch />
       <Footer />
     </main>
   );
