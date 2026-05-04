@@ -88,7 +88,7 @@ const Curriculum = () => {
 
         {/* Massive heading — sans display with italic serif accents, lime underline */}
         <h2
-          className="mt-5 sm:mt-6 max-w-[20ch] font-sans text-white text-[clamp(2rem,8vw,5.75rem)] leading-[1] tracking-[-0.04em]"
+          className="mt-5 sm:mt-6 max-w-[20ch] font-sans text-white text-[clamp(1.875rem,8vw,5.75rem)] leading-[1] tracking-[-0.04em] break-words"
           style={{ fontWeight: 600 }}
         >
           Idea on{" "}
