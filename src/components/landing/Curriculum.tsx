@@ -137,7 +137,7 @@ const Curriculum = () => {
         </h2>
 
         <p className="mt-6 sm:mt-8 max-w-2xl text-[15px] sm:text-[17px] text-white/70 leading-relaxed">
-          Build → Launch → Scale → Defend. Every weekend ends with something{" "}
+          Build → Launch → Scale → Pitch. Every weekend ends with something{" "}
           <span className="text-white">shipped, sold, or signed</span> — never a slide.
         </p>
 
