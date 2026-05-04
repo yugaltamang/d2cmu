@@ -1,4 +1,4 @@
-import { Play, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import heroImg from "@/assets/d2c-hero.webp";
 
 
@@ -42,10 +42,7 @@ const Hero = () => {
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
             </a>
             <a href="#curriculum" className="btn-pill-ghost !py-2.5 !px-5 !text-sm justify-center sm:justify-start">
-              <span className="grid place-items-center h-5 w-5 rounded-full bg-foreground/15">
-                <Play className="h-2.5 w-2.5 fill-current" />
-              </span>
-              Why we built this
+              View Curriculum
             </a>
           </div>
         </div>
