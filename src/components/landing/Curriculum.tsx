@@ -137,7 +137,7 @@ const Curriculum = () => {
         </h2>
 
         <p className="mt-6 sm:mt-8 max-w-2xl text-[15px] sm:text-[17px] text-white/70 leading-relaxed">
-          Build → Launch → Scale → Defend. Every weekend ends with something{" "}
+          Build → Launch → Scale → Pitch. Every weekend ends with something{" "}
           <span className="text-white">shipped, sold, or signed</span> — never a slide.
         </p>
 
@@ -193,7 +193,7 @@ const Curriculum = () => {
 
                   <div className="relative px-4 pt-4 pb-5">
                     <div className="inline-block px-2 py-0.5 font-mono text-[9px] uppercase tracking-[0.25em] rounded-full bg-background/40 border border-border/60 text-foreground/70">
-                      {range.startsWith("Weeks") ? `W ${range.replace("Weeks ", "")}` : range.startsWith("Week") ? `W ${range.replace("Week ", "")}` : range}
+                      {range.startsWith("Weeks") ? `WEEK ${range.replace("Weeks ", "")}` : range.startsWith("Week") ? `WEEK ${range.replace("Week ", "")}` : range}
                     </div>
 
                     <h3
