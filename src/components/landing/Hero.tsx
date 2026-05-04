@@ -52,7 +52,7 @@ const Hero = () => {
           {[
             { n: "10", l: "Weekends", sub: "Saturday – Sunday" },
             { n: "9", l: "Sessions · 18 hrs", sub: "2 hours every day" },
-            { n: "1", l: "Live brand shipped" },
+            { n: "1", l: "Live brand shipped", sub: "Real customers" },
           ].map((s) => (
             <div key={s.l} className="flex flex-col">
               <dt className="font-display text-2xl sm:text-3xl lg:text-4xl leading-none text-foreground" style={{ fontWeight: 500 }}>
