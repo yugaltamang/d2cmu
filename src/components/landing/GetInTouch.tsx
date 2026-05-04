@@ -1,5 +1,4 @@
 import { Mail, Phone, Clock, ArrowUpRight } from "lucide-react";
-import getInTouchImg from "@/assets/get-in-touch.jpg";
 
 // Bottle green palette (scoped to this section)
 const BOTTLE = "#0B3B2E";
