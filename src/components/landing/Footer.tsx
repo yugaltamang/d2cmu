@@ -118,7 +118,7 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-border/10 flex flex-wrap items-center justify-between gap-3 text-xs text-foreground/55">
           <p>Copyright @ 2026 Masters&apos; Union</p>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <a href="#" className="hover:text-foreground">Privacy Policy</a>
             <a href="#" className="hover:text-foreground">Terms &amp; Conditions</a>
             <a href="#" className="hover:text-foreground">Cookie Policy</a>
