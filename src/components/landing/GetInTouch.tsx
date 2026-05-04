@@ -5,13 +5,13 @@ const BOTTLE = "#0B3B2E";
 const BOTTLE_DEEP = "#072A20";
 const BOTTLE_SOFT = "#0F4A3A";
 const CREAM = "#F3EFE6";
-const ACCENT = "#C9A24B"; // muted gold accent
+const ACCENT = "#C9A24B";
 
 const GetInTouch = () => {
   return (
     <section
       id="get-in-touch"
-      className="relative py-10 sm:py-12 lg:py-[4.25rem]"
+      className="relative py-10 sm:py-12 lg:py-14"
       style={{
         color: CREAM,
         backgroundColor: BOTTLE,
@@ -19,9 +19,9 @@ const GetInTouch = () => {
       }}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        <div className="grid lg:grid-cols-1 gap-10 lg:gap-16 items-center">
-          {/* Right — Content */}
-          <div className="order-1 lg:order-2">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          {/* Left — Heading */}
+          <div className="lg:col-span-5">
             <p
               className="font-mono text-[10px] uppercase tracking-[0.3em]"
               style={{ color: `${CREAM}99` }}
@@ -29,128 +29,95 @@ const GetInTouch = () => {
               Admissions Office
             </p>
             <h2
-              className="mt-4 sm:mt-5 font-display text-[clamp(2rem,6vw,4rem)] leading-[1.05] tracking-[-0.04em]"
+              className="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] leading-[1.05] tracking-[-0.03em]"
               style={{ fontWeight: 500, color: CREAM }}
             >
               Get in{" "}
               <span
                 className="font-display italic"
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontStyle: "italic",
-                  fontWeight: 300,
-                  color: ACCENT,
-                }}
+                style={{ fontStyle: "italic", fontWeight: 300, color: ACCENT }}
               >
                 Touch
               </span>
             </h2>
             <p
-              className="mt-4 max-w-lg text-sm sm:text-base leading-relaxed"
-              style={{ color: `${CREAM}CC` }}
+              className="mt-3 max-w-md text-sm leading-relaxed"
+              style={{ color: `${CREAM}b3` }}
             >
-              Have questions about the programme, eligibility, or admissions process? Our team is here to help — reach out and we&apos;ll get back to you shortly.
+              Questions about the programme, eligibility, or admissions? Our team is here to help.
             </p>
+            <a
+              href="mailto:executive.admissions@mastersunion.org"
+              className="mt-5 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm transition-colors group"
+              style={{ backgroundColor: CREAM, color: BOTTLE_DEEP, fontWeight: 500 }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = ACCENT;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = CREAM;
+              }}
+            >
+              Talk to admissions
+              <ArrowUpRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                strokeWidth={2.25}
+              />
+            </a>
+          </div>
 
-            <ul className="mt-8 sm:mt-10 space-y-5">
-              <li className="flex items-start gap-4">
-                <span
-                  className="grid place-items-center h-11 w-11 shrink-0 rounded-full"
-                  style={{ backgroundColor: BOTTLE_SOFT, color: CREAM }}
-                >
-                  <Mail className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <div>
-                  <p
-                    className="font-mono text-[10px] uppercase tracking-[0.25em]"
-                    style={{ color: `${CREAM}99` }}
-                  >
-                    Email ID
-                  </p>
-                  <a
-                    href="mailto:executive.admissions@mastersunion.org"
-                    className="mt-1 block text-base sm:text-lg transition-colors"
-                    style={{ fontWeight: 500, color: CREAM }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
-                  >
-                    executive.admissions@mastersunion.org
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-4">
-                <span
-                  className="grid place-items-center h-11 w-11 shrink-0 rounded-full"
-                  style={{ backgroundColor: BOTTLE_SOFT, color: CREAM }}
-                >
-                  <Phone className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <div>
-                  <p
-                    className="font-mono text-[10px] uppercase tracking-[0.25em]"
-                    style={{ color: `${CREAM}99` }}
-                  >
-                    Mobile no.
-                  </p>
-                  <a
-                    href="tel:+919899741741"
-                    className="mt-1 block text-base sm:text-lg transition-colors"
-                    style={{ fontWeight: 500, color: CREAM }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
-                  >
-                    +91 9899-741-741
-                  </a>
-                </div>
-              </li>
-
-              <li className="flex items-start gap-4">
-                <span
-                  className="grid place-items-center h-11 w-11 shrink-0 rounded-full"
-                  style={{ backgroundColor: BOTTLE_SOFT, color: CREAM }}
-                >
-                  <Clock className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <div>
-                  <p
-                    className="font-mono text-[10px] uppercase tracking-[0.25em]"
-                    style={{ color: `${CREAM}99` }}
-                  >
-                    Working Hours
-                  </p>
-                  <p
-                    className="mt-1 text-base sm:text-lg"
-                    style={{ fontWeight: 500, color: CREAM }}
-                  >
-                    Monday – Saturday, 11:00 am – 7:00 pm IST
-                  </p>
-                </div>
-              </li>
-            </ul>
-
-            <div className="mt-10">
+          {/* Right — Contact grid */}
+          <ul className="lg:col-span-7 grid sm:grid-cols-3 gap-3">
+            <li
+              className="rounded-xl p-4 border flex flex-col gap-2"
+              style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
+            >
+              <Mail className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
+                Email
+              </p>
               <a
                 href="mailto:executive.admissions@mastersunion.org"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm sm:text-base transition-colors group"
-                style={{ backgroundColor: CREAM, color: BOTTLE_DEEP, fontWeight: 500 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = ACCENT;
-                  e.currentTarget.style.color = BOTTLE_DEEP;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = CREAM;
-                  e.currentTarget.style.color = BOTTLE_DEEP;
-                }}
+                className="text-sm leading-snug break-all transition-colors"
+                style={{ fontWeight: 500, color: CREAM }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
               >
-                Talk to admissions
-                <ArrowUpRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  strokeWidth={2.25}
-                />
+                executive.admissions@mastersunion.org
               </a>
-            </div>
-          </div>
+            </li>
+
+            <li
+              className="rounded-xl p-4 border flex flex-col gap-2"
+              style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
+            >
+              <Phone className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
+                Mobile
+              </p>
+              <a
+                href="tel:+919899741741"
+                className="text-sm transition-colors"
+                style={{ fontWeight: 500, color: CREAM }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
+                onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
+              >
+                +91 9899-741-741
+              </a>
+            </li>
+
+            <li
+              className="rounded-xl p-4 border flex flex-col gap-2"
+              style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
+            >
+              <Clock className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
+                Hours
+              </p>
+              <p className="text-sm leading-snug" style={{ fontWeight: 500, color: CREAM }}>
+                Mon – Sat<br />11:00 am – 7:00 pm IST
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     </section>
