@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import saksham from "@/assets/faculty/saksham-kotiya.webp";
+
 import swarup from "@/assets/faculty/swarup-potta.webp";
 import shubham from "@/assets/faculty/shubham-jain.webp";
 import mansi from "@/assets/faculty/mansi-khandelwal.webp";
