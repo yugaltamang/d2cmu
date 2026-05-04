@@ -45,7 +45,7 @@ const Nav = () => {
           >
             Log in
           </a>
-          {/* Apply CTA only on desktop — mobile/tablet uses the bottom MobileNav */}
+          {/* Apply CTA only on desktop - mobile/tablet uses the bottom MobileNav */}
           <a
             href="#apply"
             className="hidden lg:inline-flex btn-pill-light group !py-2 !px-4 !text-[14px] whitespace-nowrap"

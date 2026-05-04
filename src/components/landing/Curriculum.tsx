@@ -7,7 +7,7 @@ const phases = [
     name: "Build",
     icon: Hammer,
     tagline: "Find the wedge. Engineer the product.",
-    range: "Weeks 01 — 04",
+    range: "Weeks 01 - 04",
     tone: "blue",
     weeks: [
       { w: "01", q: "Identify & validate a high-potential D2C opportunity.", o: "Validated brief" },
@@ -21,7 +21,7 @@ const phases = [
     name: "Launch",
     icon: Rocket,
     tagline: "Go live. Take real money.",
-    range: "Weeks 05 — 06",
+    range: "Weeks 05 - 06",
     tone: "dark",
     weeks: [
       { w: "05", q: "Build & launch a high-converting Shopify store.", o: "Live storefront" },
@@ -33,7 +33,7 @@ const phases = [
     name: "Scale",
     icon: TrendingUp,
     tagline: "Drive demand. Move units.",
-    range: "Weeks 07 — 08",
+    range: "Weeks 07 - 08",
     tone: "dark",
     weeks: [
       { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
@@ -55,7 +55,7 @@ const phases = [
   },
 ];
 
-// Local theme tokens — aligned with the site's bottle-green + Shopify lime palette.
+// Local theme tokens - aligned with the site's bottle-green + Shopify lime palette.
 const BLUE = "hsl(165 80% 45%)"; // emerald accent (kept name for compat)
 const NAVY = "hsl(165 25% 4%)"; // matches --background
 const LIME = "hsl(96 75% 55%)"; // matches --primary
@@ -86,7 +86,7 @@ const Curriculum = () => {
           </span>
         </div>
 
-        {/* Massive heading — sans display with italic serif accents, lime underline */}
+        {/* Massive heading - sans display with italic serif accents, lime underline */}
         <h2
           className="mt-5 sm:mt-6 max-w-[20ch] font-sans text-white text-[clamp(1.875rem,8vw,5.75rem)] leading-[1] tracking-[-0.04em] break-words"
           style={{ fontWeight: 600 }}
@@ -138,7 +138,7 @@ const Curriculum = () => {
 
         <p className="mt-6 sm:mt-8 max-w-2xl text-[15px] sm:text-[17px] text-white/70 leading-relaxed">
           Build → Launch → Scale → Pitch. Every weekend ends with something{" "}
-          <span className="text-white">shipped, sold, or signed</span> — never a slide.
+          <span className="text-white">shipped, sold, or signed</span> - never a slide.
         </p>
 
         {/* Phase chips row */}
@@ -157,7 +157,7 @@ const Curriculum = () => {
           ))}
         </div>
 
-        {/* Phase cards — portrait, compact, themed */}
+        {/* Phase cards - portrait, compact, themed */}
         <div className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-4">
           {phases.map(({ id, name, icon: Icon, tagline, range, weeks, image }: any) => {
             const tornEdge =
@@ -239,7 +239,7 @@ const Curriculum = () => {
                     <div className="relative mt-2.5 flex-1 overflow-hidden rounded-md border border-border/60 bg-background/40 min-h-[220px]">
                       <img
                         src={image}
-                        alt={`${name} — final showcase`}
+                        alt={`${name} - final showcase`}
                         loading="lazy"
                         decoding="async"
                         width={896}

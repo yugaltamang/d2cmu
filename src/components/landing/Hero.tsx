@@ -33,7 +33,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base lg:text-lg text-foreground/75 leading-relaxed">
-            Ten weekends. One live D2C brand — sourced, branded, on Shopify, with paid ads running and real customers in your CRM.
+            Ten weekends. One live D2C brand - sourced, branded, on Shopify, with paid ads running and real customers in your CRM.
           </p>
 
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
@@ -47,10 +47,10 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Stats strip — Shopify-style flat */}
+        {/* Stats strip - Shopify-style flat */}
         <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-3 gap-x-3 sm:gap-x-6 gap-y-4 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
           {[
-            { n: "10", l: "Weekends", sub: "Saturday – Sunday" },
+            { n: "10", l: "Weekends", sub: "Saturday - Sunday" },
             { n: "9", l: "Sessions · 18 hrs", sub: "2 hours every day" },
             { n: "1", l: "Live brand shipped", sub: "Real customers" },
           ].map((s) => (

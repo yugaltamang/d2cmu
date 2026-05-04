@@ -8,7 +8,7 @@ const cards = [
     big: "35",
     bigSub: "days to live",
     title: "Live Shopify store, taking real orders.",
-    body: "By Week 5 your store is live on a custom domain — products listed, payments wired, checkout tested. Not a Figma. A URL you can share.",
+    body: "By Week 5 your store is live on a custom domain - products listed, payments wired, checkout tested. Not a Figma. A URL you can share.",
     span: "lg:col-span-6",
   },
   {
@@ -17,7 +17,7 @@ const cards = [
     big: "₹1L+",
     bigSub: "revenue · 100+ orders",
     title: "Real customers. Real revenue. ",
-    body: "Live Meta & Google campaigns with real budget — your first 100 paying customers, then CAC, AOV & margin defended at the showcase in front of operators. Not projected. Owned by you.",
+    body: "Live Meta & Google campaigns with real budget - your first 100 paying customers, then CAC, AOV & margin defended at the showcase in front of operators. Not projected. Owned by you.",
     span: "lg:col-span-6",
   },
   {
@@ -35,7 +35,7 @@ const cards = [
     big: "1K+",
     bigSub: "followers earned",
     title: "Instagram brand store with a real audience.",
-    body: "Build your Instagram storefront from zero — content calendar shipped, reels live, DMs converting. Turn the feed into a sales channel.",
+    body: "Build your Instagram storefront from zero - content calendar shipped, reels live, DMs converting. Turn the feed into a sales channel.",
     span: "lg:col-span-6",
   },
 ];

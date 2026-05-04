@@ -20,7 +20,7 @@ const GetInTouch = () => {
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          {/* Left — Heading */}
+          {/* Left - Heading */}
           <div className="lg:col-span-5">
             <p
               className="font-mono text-[10px] uppercase tracking-[0.3em]"
@@ -48,7 +48,7 @@ const GetInTouch = () => {
             </p>
           </div>
 
-          {/* Right — Contact grid */}
+          {/* Right - Contact grid */}
           <ul className="lg:col-span-7 grid sm:grid-cols-3 gap-3">
             <li
               className="rounded-xl p-4 border flex flex-col gap-2"
@@ -97,7 +97,7 @@ const GetInTouch = () => {
                 Hours
               </p>
               <p className="text-sm leading-snug" style={{ fontWeight: 500, color: CREAM }}>
-                Mon – Sat<br />11:00 am – 7:00 pm IST
+                Mon - Sat<br />11:00 am - 7:00 pm IST
               </p>
             </li>
           </ul>
