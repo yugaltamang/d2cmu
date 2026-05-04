@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
 
         {/* Stats strip — Shopify-style flat */}
-        <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-4 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
+        <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-3 gap-x-3 sm:gap-x-6 gap-y-4 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
           {[
             { n: "10", l: "Weekends", sub: "Saturday – Sunday" },
             { n: "9", l: "Sessions · 18 hrs", sub: "2 hours every day" },
