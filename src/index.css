@@ -178,20 +178,20 @@
     display: inline-flex; align-items: center; justify-content: center;
     height: 1.75rem; width: 1.75rem;
     border-radius: 9999px;
-    background: hsl(165 30% 6%);
-    color: hsl(0 0% 100%);
+    background: #03130E; /* dark bottle green */
+    color: #F3EFE6;
     transition: transform .25s ease, background .2s ease;
   }
   .btn-pill-light:hover {
-    background: hsl(165 30% 6%);
-    color: hsl(0 0% 100%);
+    background: #03130E;
+    color: #F3EFE6;
     transform: translateY(-1px);
     box-shadow: 0 8px 24px -10px hsl(165 30% 6% / 0.5);
   }
   .btn-pill-light:hover > svg,
   .btn-pill-light:hover > .arrow {
-    background: hsl(0 0% 100%);
-    color: hsl(165 30% 6%);
+    background: #F3EFE6;
+    color: #03130E;
     transform: translate(2px, -2px);
   }
   .btn-pill-light:active { transform: translateY(0); }
