@@ -46,7 +46,7 @@ const Footer = () => {
         {/* Top: logo + nav columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
           <div className="col-span-2 sm:col-span-3 lg:col-span-1">
-            <a href="#" className="inline-flex items-center">
+            <a href="#" className="inline-flex items-center" aria-label="Masters' Union home">
               <img
                 src={muLogo}
                 alt="Masters' Union"
@@ -54,8 +54,7 @@ const Footer = () => {
                 height={28}
                 loading="lazy"
                 decoding="async"
-              className="h-8 w-auto invert brightness-0 contrast-100"
-              style={{ filter: "invert(1) brightness(2)" }}
+                className="h-7 sm:h-8 w-auto invert"
               />
             </a>
           </div>
