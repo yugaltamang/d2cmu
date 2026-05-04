@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import saksham from "@/assets/faculty/saksham-kotiya.webp";
+
 import swarup from "@/assets/faculty/swarup-potta.webp";
 import shubham from "@/assets/faculty/shubham-jain.webp";
 import mansi from "@/assets/faculty/mansi-khandelwal.webp";
@@ -12,7 +12,6 @@ import mohit from "@/assets/faculty/mohit-gulati.webp";
 import bg from "@/assets/bg-abstract-2.webp";
 
 const faculty = [
-  { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
   { name: "Swarup Potta", role: "Brand Strategy", photo: swarup },
   { name: "Shubham Jain", role: "Performance Mktg", photo: shubham },
   { name: "Mansi Khandelwal", role: "Ecommerce Lead", photo: mansi },
