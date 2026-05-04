@@ -19,25 +19,7 @@ const GetInTouch = () => {
       }}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left — Image */}
-          <div className="order-2 lg:order-1">
-            <div
-              className="relative overflow-hidden rounded-[20px] sm:rounded-[28px] aspect-[4/5] sm:aspect-[5/6]"
-              style={{ backgroundColor: BOTTLE_DEEP }}
-            >
-              <img
-                src={getInTouchImg}
-                alt="Get in touch with the D2C admissions team"
-                loading="lazy"
-                decoding="async"
-                width={1080}
-                height={1350}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          </div>
-
+        <div className="grid lg:grid-cols-1 gap-10 lg:gap-16 items-center">
           {/* Right — Content */}
           <div className="order-1 lg:order-2">
             <p
