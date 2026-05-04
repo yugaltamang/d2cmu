@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-12 lg:pb-16">
         <div className="max-w-4xl">
           <h1
-            className="font-display text-foreground text-[clamp(2rem,8vw,6rem)] leading-[1] tracking-[-0.04em]"
+            className="font-display text-foreground text-[clamp(1.875rem,8vw,6rem)] leading-[1] tracking-[-0.04em] break-words"
             style={{ fontWeight: 500 }}
           >
             B-schools <span className="text-foreground/55">teach</span> D2C.
@@ -48,7 +48,7 @@ const Hero = () => {
         </div>
 
         {/* Stats strip — Shopify-style flat */}
-        <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-5 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
+        <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-1 xs:grid-cols-3 sm:grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-4 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
           {[
             { n: "10", l: "Weekends", sub: "Saturday – Sunday" },
             { n: "9", l: "Sessions · 18 hrs", sub: "2 hours every day" },
