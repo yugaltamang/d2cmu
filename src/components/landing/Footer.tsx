@@ -1,42 +1,53 @@
 import { Twitter, Instagram, Linkedin, Youtube, MapPin, Mail } from "lucide-react";
 import muLogo from "@/assets/mu-logo.svg";
 
+const BASE = "https://mastersunion.org";
+
 const cols = [
   {
     title: "About us",
-    links: ["Experiences At The Union"],
+    titleHref: `${BASE}/about-us`,
+    links: [{ label: "Experiences At The Union", href: `${BASE}/experiences-at-the-union` }],
   },
   {
     title: "Careers",
+    titleHref: `${BASE}/careers`,
     links: [],
   },
   {
     title: "Academics",
-    links: ["Postgraduate Programme", "Undergraduate Programme", "Executive Programme"],
+    links: [
+      { label: "Postgraduate Programme", href: `${BASE}/postgraduate-programme` },
+      { label: "Undergraduate Programme", href: `${BASE}/undergraduate-programme` },
+      { label: "Executive Programme", href: `${BASE}/executive-programme` },
+    ],
   },
   {
     title: "Innovation",
-    links: ["Student Entrepreneurship", "Faculty Research"],
+    links: [
+      { label: "Student Entrepreneurship", href: `${BASE}/student-entrepreneurship` },
+      { label: "Faculty Research", href: `${BASE}/faculty-research` },
+    ],
   },
   {
     title: "Other Links",
     links: [
-      "For Companies",
-      "Jobs",
-      "Become A Master",
-      "Events",
-      "Blog",
-      "Policies and Resources",
-      "Alumni",
+      { label: "For Companies", href: `${BASE}/for-companies` },
+      { label: "Jobs", href: `${BASE}/jobs` },
+      { label: "Become A Master", href: `${BASE}/become-a-master` },
+      { label: "Events", href: `${BASE}/events` },
+      { label: "Blog", href: `${BASE}/blog` },
+      { label: "Policies and Resources", href: `${BASE}/policies-and-resources` },
+      { label: "Alumni", href: `${BASE}/alumni` },
     ],
   },
 ];
 
 const socials = [
-  { Icon: Twitter, label: "Twitter" },
-  { Icon: Instagram, label: "Instagram" },
-  { Icon: Linkedin, label: "LinkedIn" },
-  { Icon: Youtube, label: "YouTube" },
+  { Icon: Twitter, label: "Twitter", href: "https://twitter.com/mastersunion_" },
+  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mastersunion.co/" },
+  { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/school/mastersunion/" },
+  { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@MastersUnion" },
 ];
 
 const Footer = () => {
