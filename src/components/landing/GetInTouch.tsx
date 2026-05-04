@@ -1,4 +1,4 @@
-import { Mail, Phone, Clock, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, Clock } from "lucide-react";
 
 // Bottle green palette (scoped to this section)
 const BOTTLE = "#062119";
