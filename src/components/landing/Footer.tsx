@@ -86,19 +86,7 @@ const Footer = () => {
         {/* Middle: accreditations + contact */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 pt-8 border-t border-border/10">
           <div>
-            <h4 className="text-sm font-semibold mb-5">Accreditations/Memberships</h4>
-            <div className="flex items-center gap-5 flex-wrap">
-              <span className="text-xs font-bold tracking-wider text-foreground/80 px-3 py-2 rounded border border-border/20">
-                EFMD GLOBAL
-              </span>
-              <span className="text-xs font-bold tracking-wider text-foreground/80 px-3 py-2 rounded border border-border/20">
-                AACSB
-              </span>
-              <span className="text-xs font-bold tracking-wider text-foreground/80 px-3 py-2 rounded border border-border/20">
-                BSIS IMPACT
-              </span>
-            </div>
-            <div className="mt-6 flex items-center gap-5">
+            <div className="flex items-center gap-5">
               {socials.map(({ Icon, label }) => (
                 <a
                   key={label}
