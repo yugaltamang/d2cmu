@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import saksham from "@/assets/faculty/saksham-kotiya.webp";
 import swarup from "@/assets/faculty/swarup-potta.webp";
@@ -15,7 +15,6 @@ const faculty = [
   { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
   { name: "Swarup Potta", role: "Brand Strategy", photo: swarup },
   { name: "Shubham Jain", role: "Performance Mktg", photo: shubham },
-  
   { name: "Mansi Khandelwal", role: "Ecommerce Lead", photo: mansi },
   { name: "Ankit Aggarwal", role: "Growth", photo: ankit },
   { name: "Pranay Jindal", role: "Founder", photo: pranay },
@@ -28,8 +27,33 @@ const Faculty = () => {
   const scrollerRef = useRef<HTMLUListElement>(null);
   const dirRef = useRef<0 | 1 | -1>(0);
   const rafRef = useRef<number | null>(null);
+  const [progress, setProgress] = useState(0);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(true);
 
-  const scrollBy = (dir: 1 | -1) => {
+  const updateProgress = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const max = el.scrollWidth - el.clientWidth;
+    const p = max > 0 ? el.scrollLeft / max : 0;
+    setProgress(p);
+    setCanLeft(el.scrollLeft > 2);
+    setCanRight(el.scrollLeft < max - 2);
+  };
+
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    updateProgress();
+    el.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    return () => {
+      el.removeEventListener("scroll", updateProgress);
+      window.removeEventListener("resize", updateProgress);
+    };
+  }, []);
+
+  const scrollByCards = (dir: 1 | -1) => {
     const el = scrollerRef.current;
     if (!el) return;
     const amount = Math.max(el.clientWidth * 0.8, 240);
@@ -39,7 +63,7 @@ const Faculty = () => {
   const startAuto = (dir: 1 | -1) => {
     dirRef.current = dir;
     if (rafRef.current != null) return;
-    const speed = 1.5; // px per frame
+    const speed = 1.8; // px per frame
     const tick = () => {
       const el = scrollerRef.current;
       if (!el || dirRef.current === 0) {
@@ -81,39 +105,43 @@ const Faculty = () => {
       </div>
 
       {/* Carousel */}
-      <div className="relative mt-6 sm:mt-8 lg:mt-12">
+      <div className="relative mt-6 sm:mt-8 lg:mt-12 group">
         {/* Left hover zone (auto-scroll) */}
         <div
           onMouseEnter={() => startAuto(-1)}
           onMouseLeave={stopAuto}
-          className="absolute inset-y-0 left-0 w-12 sm:w-24 lg:w-40 z-10"
+          className="absolute inset-y-0 left-0 w-16 sm:w-28 lg:w-44 z-10 cursor-w-resize"
           style={{ background: "linear-gradient(to right, hsl(var(--background)), transparent)" }}
+          aria-hidden
         />
         {/* Right hover zone (auto-scroll) */}
         <div
           onMouseEnter={() => startAuto(1)}
           onMouseLeave={stopAuto}
-          className="absolute inset-y-0 right-0 w-12 sm:w-24 lg:w-40 z-10"
+          className="absolute inset-y-0 right-0 w-16 sm:w-28 lg:w-44 z-10 cursor-e-resize"
           style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
+          aria-hidden
         />
 
         <button
           type="button"
           aria-label="Scroll left"
-          onClick={() => scrollBy(-1)}
+          onClick={() => scrollByCards(-1)}
           onMouseEnter={() => startAuto(-1)}
           onMouseLeave={stopAuto}
-          className="hidden sm:grid place-items-center absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-colors backdrop-blur"
+          disabled={!canLeft}
+          className="hidden sm:grid place-items-center absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ChevronLeft className="h-5 w-5" strokeWidth={2} />
         </button>
         <button
           type="button"
           aria-label="Scroll right"
-          onClick={() => scrollBy(1)}
+          onClick={() => scrollByCards(1)}
           onMouseEnter={() => startAuto(1)}
           onMouseLeave={stopAuto}
-          className="hidden sm:grid place-items-center absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-20 h-10 w-10 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-colors backdrop-blur"
+          disabled={!canRight}
+          className="hidden sm:grid place-items-center absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur disabled:opacity-30 disabled:cursor-not-allowed"
         >
           <ChevronRight className="h-5 w-5" strokeWidth={2} />
         </button>
@@ -141,6 +169,14 @@ const Faculty = () => {
             </li>
           ))}
         </ul>
+
+        {/* Progress bar */}
+        <div className="relative mx-auto mt-6 sm:mt-8 h-px w-[60%] max-w-[420px] bg-border/60">
+          <div
+            className="absolute top-1/2 -translate-y-1/2 h-[2px] bg-primary transition-[width] duration-150"
+            style={{ width: `${Math.max(8, progress * 100)}%` }}
+          />
+        </div>
       </div>
     </section>
   );
