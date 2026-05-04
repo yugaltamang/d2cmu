@@ -54,7 +54,8 @@ const Footer = () => {
                 height={28}
                 loading="lazy"
                 decoding="async"
-                className="h-8 w-auto"
+              className="h-8 w-auto invert brightness-0 contrast-100"
+              style={{ filter: "invert(1) brightness(2)" }}
               />
             </a>
           </div>
