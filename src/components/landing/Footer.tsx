@@ -54,7 +54,7 @@ const Footer = () => {
                 height={28}
                 loading="lazy"
                 decoding="async"
-                className="h-8 w-auto invert"
+                className="h-8 w-auto"
               />
             </a>
           </div>
