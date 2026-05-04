@@ -7,7 +7,7 @@ const cols = [
   {
     title: "About us",
     titleHref: `${BASE}/about-us`,
-    links: [{ label: "Experiences At The Union", href: `${BASE}/experiences-at-the-union` }],
+    links: [{ label: "Experiences At The Union", href: `${BASE}/experiencesatmastersunion` }],
   },
   {
     title: "Careers",
@@ -17,16 +17,16 @@ const cols = [
   {
     title: "Academics",
     links: [
-      { label: "Postgraduate Programme", href: `${BASE}/postgraduate-programme` },
-      { label: "Undergraduate Programme", href: `${BASE}/undergraduate-programme` },
-      { label: "Executive Programme", href: `${BASE}/executive-programme` },
+      { label: "Postgraduate Programme", href: `${BASE}/pgp-technology-and-business-management` },
+      { label: "Undergraduate Programme", href: `${BASE}/ug-technology-and-business-management` },
+      { label: "Executive Programme", href: `${BASE}/pgp-rise-general-management` },
     ],
   },
   {
     title: "Innovation",
     links: [
       { label: "Student Entrepreneurship", href: `${BASE}/student-entrepreneurship` },
-      { label: "Faculty Research", href: `${BASE}/faculty-research` },
+      { label: "Faculty Research", href: `${BASE}/innovation-faculty-research` },
     ],
   },
   {
