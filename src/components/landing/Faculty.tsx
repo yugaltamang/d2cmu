@@ -118,12 +118,6 @@ const Faculty = () => {
                   draggable={false}
                 />
               </div>
-              <div className="p-3 sm:p-4">
-                <p className="text-sm sm:text-base text-foreground" style={{ fontWeight: 500 }}>
-                  {f.name}
-                </p>
-                <p className="mt-0.5 text-xs sm:text-sm text-foreground/60">{f.role}</p>
-              </div>
             </div>
           ))}
         </div>
