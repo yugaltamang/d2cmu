@@ -11,7 +11,7 @@ const GetInTouch = () => {
   return (
     <section
       id="get-in-touch"
-      className="relative py-16 sm:py-20 lg:py-28"
+      className="relative py-10 sm:py-12 lg:py-[4.25rem]"
       style={{
         color: CREAM,
         backgroundColor: BOTTLE,
