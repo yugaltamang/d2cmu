@@ -50,8 +50,8 @@ const Hero = () => {
         {/* Stats strip — Shopify-style flat */}
         <dl className="mt-8 sm:mt-10 lg:mt-12 grid grid-cols-3 gap-x-4 sm:gap-x-6 gap-y-5 max-w-3xl border-t border-border/40 pt-5 sm:pt-6">
           {[
-            { n: "10", l: "Weekends" },
-            { n: "9", l: "Sessions · 18 hrs" },
+            { n: "10", l: "Weekends", sub: "Saturday – Sunday" },
+            { n: "9", l: "Sessions · 18 hrs", sub: "2 hours every day" },
             { n: "1", l: "Live brand shipped" },
           ].map((s) => (
             <div key={s.l} className="flex flex-col">
@@ -59,6 +59,9 @@ const Hero = () => {
                 {s.n}
               </dt>
               <dd className="mt-2 text-xs lg:text-sm text-foreground/60">{s.l}</dd>
+              {s.sub && (
+                <dd className="mt-1 text-[11px] lg:text-xs text-foreground/45">{s.sub}</dd>
+              )}
             </div>
           ))}
         </dl>
