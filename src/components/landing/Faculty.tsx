@@ -23,60 +23,38 @@ const faculty = [
   { name: "Mohit Gulati", role: "Brand Builder", photo: mohit },
 ];
 
+// Duplicate the list so the marquee can loop seamlessly
+const loop = [...faculty, ...faculty];
+
 const Faculty = () => {
-  const scrollerRef = useRef<HTMLUListElement>(null);
-  const [canLeft, setCanLeft] = useState(false);
-  const [canRight, setCanRight] = useState(true);
-
-  const updateArrows = () => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    setCanLeft(el.scrollLeft > 4);
-    setCanRight(el.scrollLeft < max - 4);
-  };
-
-  useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    updateArrows();
-    el.addEventListener("scroll", updateArrows, { passive: true });
-    window.addEventListener("resize", updateArrows);
-    return () => {
-      el.removeEventListener("scroll", updateArrows);
-      window.removeEventListener("resize", updateArrows);
-    };
-  }, []);
-
-  const scrollByCards = (dir: 1 | -1) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const card = el.querySelector("li");
-    const step = card ? (card as HTMLElement).offsetWidth + 24 : el.clientWidth * 0.8;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
-
-  // Auto-scroll: continuously moves right, pauses on hover/focus/touch
-  const pausedRef = useRef(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const offsetRef = useRef(0); // current translateX in px (negative)
   const rafRef = useRef<number | null>(null);
   const lastTsRef = useRef<number | null>(null);
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(false);
+  pausedRef.current = paused;
 
+  // Animate the track with requestAnimationFrame.
+  // We translate by -halfWidth and wrap to 0 to create a seamless loop.
   useEffect(() => {
-    const el = scrollerRef.current;
-    if (!el) return;
+    const track = trackRef.current;
+    if (!track) return;
 
-    const SPEED = 30; // px per second
+    const SPEED = 40; // px per second
+
     const tick = (ts: number) => {
       if (lastTsRef.current == null) lastTsRef.current = ts;
       const dt = (ts - lastTsRef.current) / 1000;
       lastTsRef.current = ts;
 
       if (!pausedRef.current) {
-        const max = el.scrollWidth - el.clientWidth;
-        if (max > 0) {
-          let next = el.scrollLeft + SPEED * dt;
-          if (next >= max - 0.5) next = 0; // loop back
-          el.scrollLeft = next;
+        const half = track.scrollWidth / 2;
+        if (half > 0) {
+          let next = offsetRef.current - SPEED * dt;
+          if (-next >= half) next += half; // wrap seamlessly
+          offsetRef.current = next;
+          track.style.transform = `translate3d(${next}px, 0, 0)`;
         }
       }
       rafRef.current = requestAnimationFrame(tick);
@@ -84,34 +62,34 @@ const Faculty = () => {
 
     rafRef.current = requestAnimationFrame(tick);
 
-    const pause = () => { pausedRef.current = true; };
-    const resume = () => { pausedRef.current = false; lastTsRef.current = null; };
-
-    el.addEventListener("mouseenter", pause);
-    el.addEventListener("mouseleave", resume);
-    el.addEventListener("focusin", pause);
-    el.addEventListener("focusout", resume);
-    el.addEventListener("touchstart", pause, { passive: true });
-    el.addEventListener("touchend", resume);
-    const onVis = () => { if (document.hidden) pause(); else resume(); };
+    const onVis = () => setPaused(document.hidden);
     document.addEventListener("visibilitychange", onVis);
 
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = null;
       lastTsRef.current = null;
-      el.removeEventListener("mouseenter", pause);
-      el.removeEventListener("mouseleave", resume);
-      el.removeEventListener("focusin", pause);
-      el.removeEventListener("focusout", resume);
-      el.removeEventListener("touchstart", pause);
-      el.removeEventListener("touchend", resume);
       document.removeEventListener("visibilitychange", onVis);
     };
   }, []);
 
-  const pauseAuto = () => { pausedRef.current = true; };
-  const resumeAuto = () => { pausedRef.current = false; lastTsRef.current = null; };
+  // Arrow nudges shift the offset directly with a smooth transition
+  const nudge = (dir: 1 | -1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const step = 280; // approx one card + gap
+    const half = track.scrollWidth / 2;
+    let next = offsetRef.current - dir * step;
+    // Keep inside the [-half, 0] range so loop stays seamless
+    if (-next >= half) next += half;
+    if (next > 0) next -= half;
+    offsetRef.current = next;
+    track.style.transition = "transform 500ms cubic-bezier(0.22, 1, 0.36, 1)";
+    track.style.transform = `translate3d(${next}px, 0, 0)`;
+    window.setTimeout(() => {
+      if (track) track.style.transition = "";
+    }, 520);
+  };
 
   return (
     <section
@@ -149,18 +127,16 @@ const Faculty = () => {
             <button
               type="button"
               aria-label="Scroll left"
-              onClick={() => scrollByCards(-1)}
-              disabled={!canLeft}
-              className="grid place-items-center h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur disabled:opacity-30 disabled:cursor-not-allowed"
+              onClick={() => nudge(-1)}
+              className="grid place-items-center h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
             >
               <ChevronLeft className="h-5 w-5" strokeWidth={2} />
             </button>
             <button
               type="button"
               aria-label="Scroll right"
-              onClick={() => scrollByCards(1)}
-              disabled={!canRight}
-              className="grid place-items-center h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur disabled:opacity-30 disabled:cursor-not-allowed"
+              onClick={() => nudge(1)}
+              className="grid place-items-center h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
             >
               <ChevronRight className="h-5 w-5" strokeWidth={2} />
             </button>
@@ -168,9 +144,17 @@ const Faculty = () => {
         </div>
       </div>
 
-      {/* Carousel */}
-      <div className="relative mt-6 sm:mt-8 lg:mt-12">
-        {/* Edge fades (visual only, non-interactive) */}
+      {/* Marquee */}
+      <div
+        className="relative mt-6 sm:mt-8 lg:mt-12 overflow-hidden"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onTouchStart={() => setPaused(true)}
+        onTouchEnd={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
+      >
+        {/* Edge fades (visual only) */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-20 z-10"
@@ -182,14 +166,14 @@ const Faculty = () => {
           style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
         />
 
-        <ul
-          ref={scrollerRef}
-          className="flex gap-4 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+        <div
+          ref={trackRef}
+          className="flex gap-4 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 w-max will-change-transform"
         >
-          {faculty.map((f, i) => (
-            <li
+          {loop.map((f, i) => (
+            <div
               key={`${f.name}-${i}`}
-              className="snap-start shrink-0 w-[160px] sm:w-[210px] lg:w-[240px] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
+              className="shrink-0 w-[160px] sm:w-[210px] lg:w-[240px] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
@@ -200,6 +184,7 @@ const Faculty = () => {
                   width={460}
                   height={575}
                   className="h-full w-full object-cover grayscale-[0.15] hover:grayscale-0 transition"
+                  draggable={false}
                 />
               </div>
               <div className="p-3 sm:p-4">
@@ -208,9 +193,9 @@ const Faculty = () => {
                 </p>
                 <p className="mt-0.5 text-xs sm:text-sm text-foreground/60">{f.role}</p>
               </div>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
