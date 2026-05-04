@@ -13,6 +13,7 @@ const rows = [
 const Fees = () => {
   return (
     <section
+      id="fees"
       className="relative overflow-hidden"
       style={{
         background: `radial-gradient(ellipse 90% 70% at 78% 8%, ${BOTTLE_SOFT} 0%, transparent 55%), linear-gradient(135deg, ${BOTTLE_DEEP} 0%, ${BOTTLE} 45%, ${BOTTLE_SOFT} 100%)`,
