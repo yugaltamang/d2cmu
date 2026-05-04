@@ -41,7 +41,7 @@ const socials = [
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="bg-background text-foreground border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-14 pb-8">
         {/* Top: logo + nav columns */}
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-10">
@@ -54,14 +54,14 @@ const Footer = () => {
                 height={28}
                 loading="lazy"
                 decoding="async"
-                className="h-8 w-auto invert"
+                className="h-8 w-auto"
               />
             </a>
           </div>
 
           {cols.map((col) => (
             <div key={col.title} className="min-w-0">
-              <h3 className="text-sm font-semibold tracking-wide text-background mb-4">
+              <h3 className="text-sm font-semibold tracking-wide text-foreground mb-4">
                 {col.title}
               </h3>
               {col.links.length > 0 && (
@@ -70,7 +70,7 @@ const Footer = () => {
                     <li key={link}>
                       <a
                         href="#"
-                        className="text-sm text-background/65 hover:text-background transition-colors"
+                        className="text-sm text-foreground/65 hover:text-foreground transition-colors"
                       >
                         {link}
                       </a>
@@ -83,17 +83,17 @@ const Footer = () => {
         </div>
 
         {/* Middle: accreditations + contact */}
-        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 pt-8 border-t border-background/10">
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 pt-8 border-t border-border/10">
           <div>
             <h4 className="text-sm font-semibold mb-5">Accreditations/Memberships</h4>
             <div className="flex items-center gap-5 flex-wrap">
-              <span className="text-xs font-bold tracking-wider text-background/80 px-3 py-2 rounded border border-background/20">
+              <span className="text-xs font-bold tracking-wider text-foreground/80 px-3 py-2 rounded border border-border/20">
                 EFMD GLOBAL
               </span>
-              <span className="text-xs font-bold tracking-wider text-background/80 px-3 py-2 rounded border border-background/20">
+              <span className="text-xs font-bold tracking-wider text-foreground/80 px-3 py-2 rounded border border-border/20">
                 AACSB
               </span>
-              <span className="text-xs font-bold tracking-wider text-background/80 px-3 py-2 rounded border border-background/20">
+              <span className="text-xs font-bold tracking-wider text-foreground/80 px-3 py-2 rounded border border-border/20">
                 BSIS IMPACT
               </span>
             </div>
@@ -103,7 +103,7 @@ const Footer = () => {
                   key={label}
                   href="#"
                   aria-label={label}
-                  className="text-background/70 hover:text-background transition-colors"
+                  className="text-foreground/70 hover:text-foreground transition-colors"
                 >
                   <Icon className="h-4 w-4" strokeWidth={1.75} />
                 </a>
@@ -111,7 +111,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="lg:justify-self-end space-y-4 text-sm text-background/80">
+          <div className="lg:justify-self-end space-y-4 text-sm text-foreground/80">
             <p className="flex items-start gap-3">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0" strokeWidth={1.75} />
               <span>
@@ -120,7 +120,7 @@ const Footer = () => {
             </p>
             <p className="flex items-center gap-3">
               <Mail className="h-4 w-4 shrink-0" strokeWidth={1.75} />
-              <a href="mailto:info@mastersunion.org" className="hover:text-background">
+              <a href="mailto:info@mastersunion.org" className="hover:text-foreground">
                 info@mastersunion.org
               </a>
             </p>
@@ -128,12 +128,12 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-background/10 flex flex-wrap items-center justify-between gap-3 text-xs text-background/55">
+        <div className="mt-10 pt-6 border-t border-border/10 flex flex-wrap items-center justify-between gap-3 text-xs text-foreground/55">
           <p>Copyright @ 2026 Masters&apos; Union</p>
           <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-background">Privacy Policy</a>
-            <a href="#" className="hover:text-background">Terms &amp; Conditions</a>
-            <a href="#" className="hover:text-background">Cookie Policy</a>
+            <a href="#" className="hover:text-foreground">Privacy Policy</a>
+            <a href="#" className="hover:text-foreground">Terms &amp; Conditions</a>
+            <a href="#" className="hover:text-foreground">Cookie Policy</a>
           </div>
         </div>
       </div>
