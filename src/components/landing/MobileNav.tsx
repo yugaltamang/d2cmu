@@ -2,14 +2,21 @@ import { useState } from "react";
 import { ArrowUpRight, X, Menu, Target, BookOpen, Users, Wallet, HelpCircle, Phone, TrendingUp } from "lucide-react";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
-const navItems = [
+type NavItem = {
+  label: string;
+  href: string;
+  Icon: typeof TrendingUp;
+  action?: "apply";
+};
+
+const navItems: NavItem[] = [
   { label: "Outcomes", href: "#outcomes", Icon: TrendingUp },
   { label: "Curriculum", href: "#curriculum", Icon: BookOpen },
   { label: "Faculty", href: "#faculty", Icon: Users },
   { label: "Fees", href: "#fees", Icon: Wallet },
   { label: "FAQ", href: "#faq", Icon: HelpCircle },
   { label: "Contact", href: "#get-in-touch", Icon: Phone },
-  { label: "Apply", href: "#apply", Icon: Target, action: "apply" as const },
+  { label: "Apply", href: "#apply", Icon: Target, action: "apply" },
 ];
 
 const MobileNav = () => {
