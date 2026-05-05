@@ -45,17 +45,28 @@ const MUVFund = () => {
   };
 
   return (
-    <section className="relative bg-background text-foreground border-t border-border/40">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-12 sm:py-16 lg:py-20 flex flex-col gap-10">
+    <section
+      className="relative border-t border-border/40 overflow-hidden"
+      style={{ background: "hsl(165 25% 4%)", color: "white" }}
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none opacity-60"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 80% 0%, hsl(96 75% 55% / 0.18), transparent 60%), radial-gradient(50% 40% at 0% 100%, hsl(165 80% 45% / 0.15), transparent 60%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-12 sm:py-16 lg:py-20 flex flex-col gap-10">
         {/* Eyebrow */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-border/40 pb-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-white/10 pb-6">
           <div className="flex items-center gap-3">
             <span className="h-2.5 w-2.5 rounded-full bg-primary" />
             <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary">
               Your first cheque · Masters' Union Ventures Fund
             </span>
           </div>
-          <span className="hidden md:block font-mono text-[10px] uppercase tracking-[0.2em] text-foreground/40">
+          <span className="hidden md:block font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
             MUV / 2024
           </span>
         </div>
@@ -64,13 +75,13 @@ const MUVFund = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-end">
           <div className="lg:col-span-7">
             <h2
-              className="font-display text-foreground text-[clamp(1.75rem,4vw,3.25rem)] leading-[1] tracking-[-0.035em]"
+              className="font-display text-white text-[clamp(1.75rem,4vw,3.25rem)] leading-[1] tracking-[-0.035em]"
               style={{ fontWeight: 500 }}
             >
               Get access to{" "}
               <span className="text-primary">Masters' Union</span> Ventures Fund — where top student founders get their first cheque.
             </h2>
-            <p className="mt-6 max-w-xl text-[15px] sm:text-base text-foreground/55 leading-relaxed font-light">
+            <p className="mt-6 max-w-xl text-[15px] sm:text-base text-white/55 leading-relaxed font-light">
               Pitch directly at the end of the program. Standout brands get evaluated for early-stage capital — no decks lost in inboxes.
             </p>
           </div>
@@ -81,7 +92,7 @@ const MUVFund = () => {
                 key={d.file}
                 href={d.file}
                 onClick={(e) => onCtaClick(e, d.file, d.filename)}
-                className="group flex items-center justify-between gap-4 border border-border/60 hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300 px-5 py-4 cursor-pointer"
+                className="group flex items-center justify-between gap-4 border border-white/15 bg-white/[0.03] text-white hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300 px-5 py-4 cursor-pointer"
               >
                 <div className="flex flex-col">
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100 mb-1">
