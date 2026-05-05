@@ -64,18 +64,8 @@ const Curriculum = () => {
   return (
     <section
       id="curriculum"
-      className="relative py-12 sm:py-20 lg:py-28 border-t border-border/40"
-      style={{ background: NAVY }}
+      className="relative py-12 sm:py-20 lg:py-28 bg-transparent"
     >
-      {/* Soft blue glow */}
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-60"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 80% 0%, hsl(96 75% 55% / 0.18), transparent 60%), radial-gradient(50% 40% at 0% 100%, hsl(165 80% 45% / 0.15), transparent 60%)",
-        }}
-      />
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         {/* Eyebrow pill */}
