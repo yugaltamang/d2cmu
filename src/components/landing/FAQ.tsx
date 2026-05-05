@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "Will I actually have a live store and live ads?",
-    a: "Yes. Storefront goes live in Week 5. Marketplace listings in Week 6. Performance campaigns in Week 7. Real money, real customers, real data.",
+    a: "Yes. Storefront goes live in Week 3. Performance campaigns in Week 5. Marketplace listings in Week 6. Real money, real customers, real data.",
   },
   {
     q: "Who can apply?",
