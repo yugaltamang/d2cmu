@@ -42,7 +42,7 @@ const CTA = () => {
           </div>
         </div>
 
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
+        <div className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
