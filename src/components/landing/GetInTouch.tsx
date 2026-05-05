@@ -60,7 +60,7 @@ const GetInTouch = () => {
               </p>
               <a
                 href="mailto:executive.admissions@mastersunion.org"
-                className="text-sm leading-snug break-all transition-colors"
+                className="text-[12px] sm:text-[13px] leading-snug whitespace-nowrap transition-colors"
                 style={{ fontWeight: 500, color: CREAM }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
                 onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
