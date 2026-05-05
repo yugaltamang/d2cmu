@@ -49,7 +49,7 @@ const GetInTouch = () => {
           </div>
 
           {/* Right - Contact grid */}
-          <ul className="lg:col-span-7 grid sm:grid-cols-4 gap-3">
+          <ul className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <li
               className="rounded-xl p-4 border flex flex-col gap-2 min-w-0 sm:col-span-2"
               style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
