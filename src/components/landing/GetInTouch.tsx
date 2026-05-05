@@ -51,7 +51,7 @@ const GetInTouch = () => {
           {/* Right - Contact grid */}
           <ul className="lg:col-span-7 grid sm:grid-cols-3 gap-3">
             <li
-              className="rounded-xl p-4 border flex flex-col gap-2"
+              className="rounded-xl p-4 border flex flex-col gap-2 min-w-0 sm:col-span-2 lg:col-span-1"
               style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
             >
               <Mail className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
@@ -60,7 +60,7 @@ const GetInTouch = () => {
               </p>
               <a
                 href="mailto:executive.admissions@mastersunion.org"
-                className="text-[12px] sm:text-[13px] leading-snug whitespace-nowrap transition-colors"
+                className="block text-[clamp(11px,1.05vw,14px)] leading-snug whitespace-nowrap overflow-hidden text-ellipsis transition-colors"
                 style={{ fontWeight: 500, color: CREAM }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
                 onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
