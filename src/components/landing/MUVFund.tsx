@@ -97,25 +97,6 @@ const MUVFund = () => {
           </div>
         </div>
 
-        {/* Footer micro-info */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-border/40 pt-6 font-mono text-[10px] uppercase tracking-[0.2em]">
-          <div className="flex flex-col gap-1.5">
-            <span className="text-primary">Eligibility</span>
-            <span className="text-foreground/45">Cohort founders</span>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <span className="text-primary">Stage</span>
-            <span className="text-foreground/45">Pre-seed</span>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <span className="text-primary">Focus</span>
-            <span className="text-foreground/45">D2C · Consumer</span>
-          </div>
-          <div className="flex flex-col gap-1.5">
-            <span className="text-primary">Status</span>
-            <span className="text-foreground/45">Actively deploying</span>
-          </div>
-        </div>
       </div>
 
       <ApplyWidgetModal
