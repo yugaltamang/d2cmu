@@ -7,7 +7,7 @@ const ACCENT = "#C9A24B";
 const rows = [
   { label: "Application", amount: "₹500", note: "One-time" },
   { label: "Admission", amount: "₹50,000", note: "On offer acceptance" },
-  { label: "Tuition", amount: "₹6,00,000", note: "Across the programme" },
+  { label: "Tuition", amount: "₹4,50,000", note: "Across the programme" },
 ];
 
 const Fees = () => {
@@ -81,10 +81,7 @@ const Fees = () => {
               Total
             </p>
             <p className="text-2xl sm:text-3xl font-light tracking-tight">
-              ₹7,00,500
-              <span className="ml-1.5 text-xs opacity-60 align-middle">
-                + GST
-              </span>
+              ₹5,00,000
             </p>
           </div>
         </div>
