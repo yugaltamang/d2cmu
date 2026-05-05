@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ArrowUpRight, X, Menu, Target, BookOpen, Users, Wallet, HelpCircle, Phone, TrendingUp } from "lucide-react";
+import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const navItems = [
   { label: "Outcomes", href: "#outcomes", Icon: TrendingUp },
@@ -8,11 +9,12 @@ const navItems = [
   { label: "Fees", href: "#fees", Icon: Wallet },
   { label: "FAQ", href: "#faq", Icon: HelpCircle },
   { label: "Contact", href: "#get-in-touch", Icon: Phone },
-  { label: "Apply", href: "#apply", Icon: Target },
+  { label: "Apply", href: "#apply", Icon: Target, action: "apply" as const },
 ];
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { open: openApply } = useApplyWidget();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
@@ -20,6 +22,15 @@ const MobileNav = () => {
     if (el) {
       const y = el.getBoundingClientRect().top + window.scrollY - 20;
       window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (item: (typeof navItems)[number]) => {
+    if (item.action === "apply") {
+      setIsOpen(false);
+      openApply();
+    } else {
+      scrollTo(item.href);
     }
   };
 
@@ -58,14 +69,15 @@ const MobileNav = () => {
                 {isOpen ? "Close" : "Menu"}
               </span>
             </button>
-            <a
-              href="#apply"
+            <button
+              type="button"
+              onClick={openApply}
               className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium group"
               style={{ backgroundColor: "#F3EFE6", color: "#03130E" }}
             >
               Apply Now
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
-            </a>
+            </button>
           </div>
         </div>
       </div>
