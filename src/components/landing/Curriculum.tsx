@@ -10,10 +10,10 @@ const phases = [
     range: "Weeks 01 - 04",
     tone: "blue",
     weeks: [
-      { w: "01", q: "Identify & validate a high-potential D2C opportunity.", o: "Validated brief" },
-      { w: "02", q: "Select product, source efficiently, build unit economics.", o: "Margin model" },
-      { w: "03", q: "Define a differentiated brand strategy & positioning.", o: "Positioning" },
-      { w: "04", q: "Create brand identity & packaging that drives recall.", o: "Identity system" },
+      { w: "01", q: "Identify and validate a high-potential D2C opportunity.", o: "Validated idea" },
+      { w: "02", q: "Select product, finalize sourcing, and understand supply chain basics.", o: "Product & sourcing" },
+      { w: "03", q: "Define brand positioning and build a live Shopify store.", o: "Brand & store" },
+      { w: "04", q: "Set up logistics, fulfillment, and build strong unit economics.", o: "Operations & unit economics" },
     ],
   },
   {
@@ -24,8 +24,8 @@ const phases = [
     range: "Weeks 05 - 06",
     tone: "dark",
     weeks: [
-      { w: "05", q: "Build & launch a high-converting Shopify store.", o: "Live storefront" },
-      { w: "06", q: "Launch & scale on Amazon, Flipkart & quick commerce.", o: "Live listings" },
+      { w: "05", q: "Set up Meta ads and launch initial campaigns.", o: "Performance marketing (launch)" },
+      { w: "06", q: "Start and scale on Amazon and Flipkart.", o: "Marketplace strategy" },
     ],
   },
   {
@@ -33,12 +33,12 @@ const phases = [
     name: "Scale",
     icon: TrendingUp,
     tagline: "Drive demand. Move units.",
-    range: "Weeks 07 - 08",
+    range: "Weeks 07 - 09",
     tone: "dark",
     weeks: [
-      { w: "07", q: "Drive demand via Meta, Google & creator-led performance.", o: "Live campaigns" },
-      { w: "08", q: "Set up ops, fulfilment & customer experience that retains.", o: "CX + ops playbook" },
-      { w: "09", q: "Scale sustainably with the right growth & retention levers.", o: "Growth model" },
+      { w: "07", q: "Optimize ads, leverage influencers, and scale campaigns.", o: "Marketing scale-up" },
+      { w: "08", q: "Improve CAC, LTV, and build retention through CRM channels.", o: "Retention & growth" },
+      { w: "09", q: "Build pitch deck and prepare for investor conversations.", o: "Investor readiness" },
     ],
   },
   {
