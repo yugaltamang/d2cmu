@@ -3,32 +3,26 @@ import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
 const WIDGET_ID = "d6d5c302-1fec-4e05-b8ed-b3415fd66985";
-const WIDGET_SRC = "https://cdn.mastersunion.org/widget/iframe.js";
+const WIDGET_BASE = "https://widget.mastersunion.org/widget";
+const ALLOWED_ORIGINS = [
+  "https://mastersunion.org",
+  "https://widget.mastersunion.org",
+];
 
-declare global {
-  interface Window {
-    LoadWidget?: new (id: string) => unknown;
+const buildWidgetSrc = () => {
+  const params = new URLSearchParams(window.location.search);
+  try {
+    params.append("widgetHostURL", window.top?.location.href ?? window.location.href);
+  } catch {
+    params.append("widgetHostURL", window.location.href);
   }
-}
-
-const loadScript = () =>
-  new Promise<void>((resolve, reject) => {
-    if (window.LoadWidget) return resolve();
-    const existing = document.querySelector<HTMLScriptElement>(
-      `script[src="${WIDGET_SRC}"]`,
-    );
-    if (existing) {
-      existing.addEventListener("load", () => resolve());
-      existing.addEventListener("error", () => reject());
-      return;
-    }
-    const s = document.createElement("script");
-    s.src = WIDGET_SRC;
-    s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => reject();
-    document.body.appendChild(s);
-  });
+  try {
+    params.append("parentReferrer", document.referrer || window.location.href);
+  } catch {
+    params.append("parentReferrer", window.location.href);
+  }
+  return `${WIDGET_BASE}/${WIDGET_ID}?${params.toString()}`;
+};
 
 interface Props {
   open: boolean;
@@ -38,23 +32,26 @@ interface Props {
 const ApplyWidgetModal = ({ open, onClose }: Props) => {
   useEffect(() => {
     if (!open) return;
-    let cancelled = false;
-    loadScript()
-      .then(() => {
-        if (cancelled) return;
-        try {
-          if (window.LoadWidget) new window.LoadWidget(WIDGET_ID);
-        } catch (e) {
-          console.error("Widget init failed", e);
-        }
-      })
-      .catch(() => console.error("Failed to load widget script"));
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    const onMessage = (e: MessageEvent) => {
+      if (!ALLOWED_ORIGINS.includes(e.origin)) return;
+      const data = e.data as { type?: string; url?: string; height?: number; widgetId?: string };
+      if (!data || typeof data !== "object") return;
+      if (data.type === "REDIRECT" && data.url) window.location.href = data.url;
+      if ((data.type === "DOWNLOAD" || data.type === "OPEN_URL") && data.url) {
+        window.open(data.url, "_blank");
+      }
+      if (data.type === "RESIZE" && data.height && data.widgetId) {
+        const el = document.getElementById(data.widgetId) as HTMLIFrameElement | null;
+        if (el) el.style.height = `${data.height}px`;
+      }
+    };
     document.addEventListener("keydown", onKey);
+    window.addEventListener("message", onMessage);
     document.body.style.overflow = "hidden";
     return () => {
-      cancelled = true;
       document.removeEventListener("keydown", onKey);
+      window.removeEventListener("message", onMessage);
       document.body.style.overflow = "";
     };
   }, [open, onClose]);
@@ -79,8 +76,12 @@ const ApplyWidgetModal = ({ open, onClose }: Props) => {
         <iframe
           id={WIDGET_ID}
           title="Apply"
+          src={buildWidgetSrc()}
           width="100%"
-          height="640"
+          height={640}
+          frameBorder={0}
+          allow="autoplay; camera; microphone; fullscreen; display-capture"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-downloads"
           className="block w-full bg-card"
         />
       </div>
