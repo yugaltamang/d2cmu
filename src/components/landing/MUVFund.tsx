@@ -45,18 +45,7 @@ const MUVFund = () => {
   };
 
   return (
-    <section
-      className="relative border-t border-border/40 overflow-hidden"
-      style={{ background: "hsl(165 25% 4%)", color: "white" }}
-    >
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none opacity-60"
-        style={{
-          background:
-            "radial-gradient(60% 50% at 80% 0%, hsl(96 75% 55% / 0.18), transparent 60%), radial-gradient(50% 40% at 0% 100%, hsl(165 80% 45% / 0.15), transparent 60%)",
-        }}
-      />
+    <section className="relative overflow-hidden bg-transparent text-white">
       <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-12 sm:py-16 lg:py-20 flex flex-col gap-10">
         {/* Eyebrow */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-white/10 pb-6">
