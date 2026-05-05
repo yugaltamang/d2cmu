@@ -19,9 +19,24 @@ const Index = () => {
       <Nav />
       <Hero />
       <Promise />
-      <Curriculum />
-      <Immersions />
-      <MUVFund />
+      <div
+        className="relative border-t border-border/40 overflow-hidden"
+        style={{ background: "hsl(165 25% 4%)" }}
+      >
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none opacity-60"
+          style={{
+            background:
+              "radial-gradient(40% 25% at 80% 5%, hsl(96 75% 55% / 0.18), transparent 70%), radial-gradient(35% 20% at 0% 35%, hsl(165 80% 45% / 0.15), transparent 70%), radial-gradient(40% 25% at 90% 70%, hsl(96 75% 55% / 0.12), transparent 70%)",
+          }}
+        />
+        <div className="relative">
+          <Curriculum />
+          <Immersions />
+          <MUVFund />
+        </div>
+      </div>
       <Faculty />
       <Fees />
       <FAQ />
