@@ -60,7 +60,7 @@ const Promise = () => {
         </h2>
 
         {/* Big rounded image-style cards */}
-        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-5">
+        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-5">
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
             <article
               key={eyebrow}
