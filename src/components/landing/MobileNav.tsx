@@ -32,7 +32,7 @@ const MobileNav = () => {
     }
   };
 
-  const handleNavClick = (item: (typeof navItems)[number]) => {
+  const handleNavClick = (item: NavItem) => {
     if (item.action === "apply") {
       setIsOpen(false);
       openApply();
