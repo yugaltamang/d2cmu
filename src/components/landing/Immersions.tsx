@@ -35,7 +35,7 @@ const Immersions = () => {
               2 Real-World Business Immersions
             </span>
             <h3
-              className="font-display text-foreground text-xl sm:text-2xl lg:text-[26px] leading-tight tracking-tight"
+              className="font-display text-white text-xl sm:text-2xl lg:text-[26px] leading-tight tracking-tight"
               style={{ fontWeight: 500 }}
             >
               Industry visits — built into the program.
@@ -43,23 +43,23 @@ const Immersions = () => {
           </div>
 
           {/* Right: 2 visit chips */}
-          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-border/60">
+          <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
             {visits.map(({ icon: Icon, label, sub }) => (
               <div
                 key={label}
                 className="flex items-center gap-4 px-5 sm:px-6 py-5 sm:py-6"
               >
-                <div className="shrink-0 h-11 w-11 rounded-md border border-border/60 bg-background flex items-center justify-center">
+                <div className="shrink-0 h-11 w-11 rounded-md border border-white/15 bg-white/[0.04] flex items-center justify-center">
                   <Icon className="h-5 w-5 text-primary" strokeWidth={1.75} />
                 </div>
                 <div className="min-w-0">
                   <p
-                    className="font-display text-foreground text-[15px] sm:text-base leading-tight"
+                    className="font-display text-white text-[15px] sm:text-base leading-tight"
                     style={{ fontWeight: 500 }}
                   >
                     {label}
                   </p>
-                  <p className="mt-1 text-xs text-foreground/55 leading-snug">
+                  <p className="mt-1 text-xs text-white/55 leading-snug">
                     {sub}
                   </p>
                 </div>
