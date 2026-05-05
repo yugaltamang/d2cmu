@@ -18,7 +18,7 @@ const MUVFund = () => {
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 border border-primary/30 px-3 py-1.5">
                 <Sparkles className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-                  YOUR FIRST CHEQUE · MASTERS' UNION VENTURE FUND
+                  YOUR FIRST CHEQUE · MASTERS' UNION VENTURES FUND
                 </span>
               </div>
               <h2
@@ -32,7 +32,7 @@ const MUVFund = () => {
                 </span>
               </h2>
               <p className="mt-4 text-[15px] sm:text-[16px] text-foreground/65 leading-relaxed max-w-xl">
-                Pitch directly to the MUV Fund at the end of the program. Standout brands get evaluated for early-stage capital — no decks lost in inboxes.
+                Pitch directly at the end of the program. Standout brands get evaluated for early-stage capital — no decks lost in inboxes.
               </p>
             </div>
 
@@ -47,7 +47,7 @@ const MUVFund = () => {
                     PDF · 1 of 2
                   </div>
                   <div className="mt-1 font-display text-foreground text-[16px] sm:text-[17px]" style={{ fontWeight: 500 }}>
-                    Download MUV Prospectus
+                    Download Masters' Union Ventures Fund's Prospectus
                   </div>
                 </div>
                 <Download className="h-5 w-5 text-primary group-hover:-translate-y-0.5 transition" strokeWidth={2} />
