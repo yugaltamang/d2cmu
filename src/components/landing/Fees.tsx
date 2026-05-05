@@ -6,7 +6,7 @@ const ACCENT = "#C9A24B";
 
 const rows = [
   { label: "Application", amount: "₹500", note: "One-time" },
-  { label: "Admission", amount: "₹1,00,000", note: "On offer acceptance" },
+  { label: "Admission", amount: "₹50,000", note: "On offer acceptance" },
   { label: "Tuition", amount: "₹6,00,000", note: "Across the programme" },
 ];
 
