@@ -15,11 +15,22 @@ const visits = [
 
 const Immersions = () => {
   return (
-    <section className="relative bg-background border-t border-border/40">
-      <div className="mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-10 sm:py-14">
-        <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 border border-border/60 rounded-xl overflow-hidden">
+    <section
+      className="relative border-t border-border/40 overflow-hidden"
+      style={{ background: "hsl(165 25% 4%)" }}
+    >
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none opacity-60"
+        style={{
+          background:
+            "radial-gradient(60% 50% at 80% 0%, hsl(96 75% 55% / 0.18), transparent 60%), radial-gradient(50% 40% at 0% 100%, hsl(165 80% 45% / 0.15), transparent 60%)",
+        }}
+      />
+      <div className="relative mx-auto max-w-[1400px] px-6 sm:px-10 lg:px-16 py-10 sm:py-14">
+        <div className="flex flex-col lg:flex-row lg:items-stretch gap-6 border border-white/15 rounded-xl overflow-hidden bg-white/[0.03]">
           {/* Left label */}
-          <div className="lg:w-[36%] bg-secondary px-6 sm:px-8 py-6 lg:py-8 flex flex-col justify-center">
+          <div className="lg:w-[36%] px-6 sm:px-8 py-6 lg:py-8 flex flex-col justify-center bg-white/[0.04]">
             <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-primary mb-2">
               2 Real-World Business Immersions
             </span>
