@@ -5,7 +5,7 @@ const cards = [
   {
     icon: Store,
     eyebrow: "01 / Storefront",
-    big: "35",
+    big: "21",
     bigSub: "days to live",
     title: "Live Shopify store, taking real orders.",
     body: "By Week 5 your store is live on a custom domain - products listed, payments wired, checkout tested. Not a Figma. A URL you can share.",
