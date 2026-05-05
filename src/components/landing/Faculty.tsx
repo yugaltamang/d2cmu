@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import saksham from "@/assets/faculty/saksham-kotiya.webp";
 import swarup from "@/assets/faculty/swarup-potta.webp";
 import shubham from "@/assets/faculty/shubham-jain.webp";
-import mansi from "@/assets/faculty/mansi-khandelwal.webp";
+
 import ankit from "@/assets/faculty/ankit-aggarwal.webp";
 import pranay from "@/assets/faculty/pranay-jindal.webp";
 import upamanyu from "@/assets/faculty/upamanyu-chatterjee.webp";
@@ -15,7 +15,7 @@ const faculty = [
   { name: "Swarup Potta", role: "Brand Strategy", photo: swarup },
   { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
   { name: "Shubham Jain", role: "Performance Mktg", photo: shubham },
-  { name: "Mansi Khandelwal", role: "Ecommerce Lead", photo: mansi },
+  
   { name: "Ankit Aggarwal", role: "Growth", photo: ankit },
   { name: "Pranay Jindal", role: "Founder", photo: pranay },
   { name: "Upamanyu Chatterjee", role: "Operator", photo: upamanyu },
