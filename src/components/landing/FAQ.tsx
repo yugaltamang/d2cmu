@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What is the time commitment?",
-    a: "10 weekends across ~10 weeks at the Masters' Union campus in Gurugram, plus async work between sessions. Plan for 40 hours InClass and 4 to 6 hours of building per week.",
+    a: "10 weekends across ~10 weeks at the Masters' Union campus in Gurugram, plus async work between sessions. Plan for 40 hours in the classroom and 4 to 6 hours of building per week.",
   },
   {
     q: "Will I actually have a live store and live ads?",
