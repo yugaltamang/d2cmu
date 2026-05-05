@@ -288,9 +288,9 @@ const Curriculum = () => {
                         />
                       ))}
                     </div>
-                    <div className="font-mono text-[8px] uppercase tracking-[0.22em] text-foreground/40">
-                      MU·{id} <span className="text-primary font-bold">●</span>
-                    </div>
+                  <div className="font-mono text-[8px] uppercase tracking-[0.22em] text-foreground/40">
+                    <span className="text-primary font-bold">●</span>
+                  </div>
                   </div>
                 </div>
               </article>
