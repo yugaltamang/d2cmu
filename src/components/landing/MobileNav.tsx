@@ -98,15 +98,15 @@ const MobileNav = () => {
               className="grid grid-cols-3 gap-px"
               style={{ backgroundColor: "rgba(243,239,230,0.10)" }}
             >
-              {navItems.map(({ label, href, Icon }) => (
+              {navItems.map((item) => (
                 <button
-                  key={href}
-                  onClick={() => scrollTo(href)}
+                  key={item.label}
+                  onClick={() => handleNavClick(item)}
                   className="flex flex-col items-center gap-1.5 text-[11px] font-semibold transition-all py-4 px-2 active:scale-95"
                   style={{ backgroundColor: "#03130E", color: "#F3EFE6" }}
                 >
-                  <Icon className="h-4 w-4 opacity-60 shrink-0" strokeWidth={1.75} style={{ color: "#C9A24B" }} />
-                  <span>{label}</span>
+                  <item.Icon className="h-4 w-4 opacity-60 shrink-0" strokeWidth={1.75} style={{ color: "#C9A24B" }} />
+                  <span>{item.label}</span>
                 </button>
               ))}
             </nav>
