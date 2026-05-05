@@ -1,18 +1,27 @@
 import { useState } from "react";
 import { ArrowUpRight, X, Menu, Target, BookOpen, Users, Wallet, HelpCircle, Phone, TrendingUp } from "lucide-react";
+import { useApplyWidget } from "@/hooks/useApplyWidget";
 
-const navItems = [
+type NavItem = {
+  label: string;
+  href: string;
+  Icon: typeof TrendingUp;
+  action?: "apply";
+};
+
+const navItems: NavItem[] = [
   { label: "Outcomes", href: "#outcomes", Icon: TrendingUp },
   { label: "Curriculum", href: "#curriculum", Icon: BookOpen },
   { label: "Faculty", href: "#faculty", Icon: Users },
   { label: "Fees", href: "#fees", Icon: Wallet },
   { label: "FAQ", href: "#faq", Icon: HelpCircle },
   { label: "Contact", href: "#get-in-touch", Icon: Phone },
-  { label: "Apply", href: "#apply", Icon: Target },
+  { label: "Apply", href: "#apply", Icon: Target, action: "apply" },
 ];
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { open: openApply } = useApplyWidget();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
@@ -20,6 +29,15 @@ const MobileNav = () => {
     if (el) {
       const y = el.getBoundingClientRect().top + window.scrollY - 20;
       window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (item: NavItem) => {
+    if (item.action === "apply") {
+      setIsOpen(false);
+      openApply();
+    } else {
+      scrollTo(item.href);
     }
   };
 
@@ -58,14 +76,15 @@ const MobileNav = () => {
                 {isOpen ? "Close" : "Menu"}
               </span>
             </button>
-            <a
-              href="#apply"
+            <button
+              type="button"
+              onClick={openApply}
               className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium group"
               style={{ backgroundColor: "#F3EFE6", color: "#03130E" }}
             >
               Apply Now
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -86,15 +105,15 @@ const MobileNav = () => {
               className="grid grid-cols-3 gap-px"
               style={{ backgroundColor: "rgba(243,239,230,0.10)" }}
             >
-              {navItems.map(({ label, href, Icon }) => (
+              {navItems.map((item) => (
                 <button
-                  key={href}
-                  onClick={() => scrollTo(href)}
+                  key={item.label}
+                  onClick={() => handleNavClick(item)}
                   className="flex flex-col items-center gap-1.5 text-[11px] font-semibold transition-all py-4 px-2 active:scale-95"
                   style={{ backgroundColor: "#03130E", color: "#F3EFE6" }}
                 >
-                  <Icon className="h-4 w-4 opacity-60 shrink-0" strokeWidth={1.75} style={{ color: "#C9A24B" }} />
-                  <span>{label}</span>
+                  <item.Icon className="h-4 w-4 opacity-60 shrink-0" strokeWidth={1.75} style={{ color: "#C9A24B" }} />
+                  <span>{item.label}</span>
                 </button>
               ))}
             </nav>
