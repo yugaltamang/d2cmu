@@ -12,7 +12,7 @@ const visits = [
   {
     icon: Boxes,
     label: "Fulfillment & Supply Chain Center",
-    sub: "Inside the warehouses that move D2C",
+    sub: "Visit Amazon FBA or Shiprocket warehouse",
     image: fulfillmentImg,
   },
 ];
