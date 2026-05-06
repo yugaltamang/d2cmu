@@ -3,7 +3,7 @@ import bg from "@/assets/bg-abstract-3.webp";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const details = [
-  { icon: Clock, label: "Duration", value: "10 Weekends · 18 hrs" },
+  { icon: Clock, label: "Duration", value: "10 Weekends · 40 hrs" },
   { icon: Calendar, label: "Start", value: "July 2026" },
   { icon: MapPin, label: "Format", value: "In-Person" },
   { icon: Building2, label: "Venue", value: "Masters' Union Campus, Gurgaon" },
