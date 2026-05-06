@@ -51,8 +51,8 @@ const MUVFund = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-white/10 pb-6">
           <div className="flex items-center gap-3">
             <span className="h-2.5 w-2.5 rounded-full bg-primary" />
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-primary">
-              Your first cheque · Masters' Union Ventures Fund
+            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-white/60">
+              Your first cheque · Masters' Union <span className="text-primary">Ventures Fund</span>
             </span>
           </div>
           <span className="hidden md:block font-mono text-[10px] uppercase tracking-[0.2em] text-white/40">
