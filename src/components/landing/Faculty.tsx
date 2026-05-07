@@ -1,26 +1,18 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import saksham from "@/assets/faculty/saksham-kotiya.webp";
-import swarup from "@/assets/faculty/swarup-potta.webp";
-import shubham from "@/assets/faculty/shubham-jain.webp";
-
-import ankit from "@/assets/faculty/ankit-aggarwal.webp";
-import pranay from "@/assets/faculty/pranay-jindal.webp";
-import upamanyu from "@/assets/faculty/upamanyu-chatterjee.webp";
-import alok from "@/assets/faculty/alok-srivastava.webp";
-import mohit from "@/assets/faculty/mohit-gulati.webp";
+import saksham from "@/assets/faculty/saksham-kotiya-new.png";
+import arjun from "@/assets/faculty/arjun-vaidya.png";
+import ishaan from "@/assets/faculty/ishaan-suri.png";
+import bipin from "@/assets/faculty/bipin-kalra.png";
+import sumit from "@/assets/faculty/sumit-vijapure.png";
 import bg from "@/assets/bg-abstract-2.webp";
 
 const faculty = [
-  { name: "Swarup Potta", role: "Brand Strategy", photo: swarup },
-  { name: "Saksham Kotiya", role: "D2C Operator", photo: saksham },
-  { name: "Shubham Jain", role: "Performance Mktg", photo: shubham },
-  
-  { name: "Ankit Aggarwal", role: "Growth", photo: ankit },
-  { name: "Pranay Jindal", role: "Founder", photo: pranay },
-  { name: "Upamanyu Chatterjee", role: "Operator", photo: upamanyu },
-  { name: "Alok Srivastava", role: "Supply Chain", photo: alok },
-  { name: "Mohit Gulati", role: "Brand Builder", photo: mohit },
+  { name: "Saksham Kotiya", role: "Head Entrepreneurship & Investment", photo: saksham },
+  { name: "Arjun Vaidya", role: "Partner, V3 Ventures", photo: arjun },
+  { name: "Ishaan Suri", role: "Founder, Ecom Edge", photo: ishaan },
+  { name: "Bipin Kalra", role: "Shopify Expert", photo: bipin },
+  { name: "Sumit Vijapure", role: "Amazon Operator", photo: sumit },
 ];
 
 const Faculty = () => {
