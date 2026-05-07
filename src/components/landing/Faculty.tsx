@@ -1,8 +1,8 @@
-import saksham from "@/assets/faculty/saksham-kotiya-new.png";
-import arjun from "@/assets/faculty/arjun-vaidya.png";
-import ishaan from "@/assets/faculty/ishaan-suri.png";
-import bipin from "@/assets/faculty/bipin-kalra.png";
-import sumit from "@/assets/faculty/sumit-vijapure.png";
+import saksham from "@/assets/faculty/saksham-kotiya-new.webp";
+import arjun from "@/assets/faculty/arjun-vaidya.webp";
+import ishaan from "@/assets/faculty/ishaan-suri.webp";
+import bipin from "@/assets/faculty/bipin-kalra.webp";
+import sumit from "@/assets/faculty/sumit-vijapure.webp";
 import bg from "@/assets/bg-abstract-2.webp";
 
 const faculty = [
