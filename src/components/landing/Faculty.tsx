@@ -1,5 +1,3 @@
-import { useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import saksham from "@/assets/faculty/saksham-kotiya-new.png";
 import arjun from "@/assets/faculty/arjun-vaidya.png";
 import ishaan from "@/assets/faculty/ishaan-suri.png";
@@ -16,15 +14,6 @@ const faculty = [
 ];
 
 const Faculty = () => {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-
-  const scrollBy = (dir: 1 | -1) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    const step = el.clientWidth * 0.8;
-    el.scrollBy({ left: dir * step, behavior: "smooth" });
-  };
-
   return (
     <section
       id="faculty"
@@ -55,48 +44,12 @@ const Faculty = () => {
             A deep pool of founders and operators who&apos;ve actually built brands from zero - backing India&apos;s biggest D2C names. They lead sessions, review your build, and sit on your pitch panel - no theorists, no professors.
           </p>
         </div>
-      </div>
 
-      {/* Carousel */}
-      <div className="relative mt-6 sm:mt-8 lg:mt-12">
-        {/* Edge fades (visual only) */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 w-6 sm:w-10 z-10"
-          style={{ background: "linear-gradient(to right, hsl(var(--background)), transparent)" }}
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 w-6 sm:w-10 z-10"
-          style={{ background: "linear-gradient(to left, hsl(var(--background)), transparent)" }}
-        />
-
-        {/* Inner arrows */}
-        <button
-          type="button"
-          aria-label="Scroll left"
-          onClick={() => scrollBy(-1)}
-          className="hidden sm:grid place-items-center absolute left-3 lg:left-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
-        >
-          <ChevronLeft className="h-5 w-5" strokeWidth={2} />
-        </button>
-        <button
-          type="button"
-          aria-label="Scroll right"
-          onClick={() => scrollBy(1)}
-          className="hidden sm:grid place-items-center absolute right-3 lg:right-6 top-1/2 -translate-y-1/2 z-20 h-11 w-11 rounded-full bg-card/90 border border-border/60 text-foreground hover:border-primary/60 hover:text-primary transition-all backdrop-blur"
-        >
-          <ChevronRight className="h-5 w-5" strokeWidth={2} />
-        </button>
-
-        <div
-          ref={scrollerRef}
-          className="flex gap-4 sm:gap-5 lg:gap-6 py-2 px-4 sm:px-6 lg:px-10 overflow-x-auto scroll-smooth snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        >
+        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
           {faculty.map((f, i) => (
             <div
               key={`${f.name}-${i}`}
-              className="snap-start shrink-0 w-[160px] sm:w-[210px] lg:w-[240px] rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
+              className="rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
             >
               <div className="aspect-[4/5] overflow-hidden">
                 <img
@@ -109,6 +62,14 @@ const Faculty = () => {
                   className="h-full w-full object-cover grayscale-[0.15] hover:grayscale-0 transition"
                   draggable={false}
                 />
+              </div>
+              <div className="p-3 sm:p-4">
+                <div className="text-foreground text-sm sm:text-base font-medium leading-tight">
+                  {f.name}
+                </div>
+                <div className="mt-1 text-xs sm:text-sm text-foreground/60 leading-snug">
+                  {f.role}
+                </div>
               </div>
             </div>
           ))}
