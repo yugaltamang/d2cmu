@@ -45,13 +45,13 @@ const Faculty = () => {
           </p>
         </div>
 
-        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6">
+        <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
           {faculty.map((f, i) => (
             <div
               key={`${f.name}-${i}`}
-              className="rounded-[18px] sm:rounded-[24px] overflow-hidden bg-card border border-border/60 hover:border-primary/40 transition-colors"
+              className="group relative overflow-hidden bg-card border border-border/60 hover:border-primary/60 transition-all duration-300"
             >
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden relative">
                 <img
                   src={f.photo}
                   alt={`${f.name}, ${f.role}`}
@@ -59,15 +59,16 @@ const Faculty = () => {
                   decoding="async"
                   width={460}
                   height={575}
-                  className="h-full w-full object-cover grayscale-[0.15] hover:grayscale-0 transition"
+                  className="h-full w-full object-cover grayscale-[0.2] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
                   draggable={false}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
               </div>
-              <div className="p-3 sm:p-4">
-                <div className="text-foreground text-sm sm:text-base font-medium leading-tight">
+              <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 border-l-2 border-primary/0 group-hover:border-primary transition-all duration-300">
+                <div className="text-foreground text-sm sm:text-base font-medium leading-tight tracking-tight">
                   {f.name}
                 </div>
-                <div className="mt-1 text-xs sm:text-sm text-foreground/60 leading-snug">
+                <div className="mt-1 text-[10px] sm:text-[11px] text-primary uppercase tracking-[0.12em] leading-snug font-semibold">
                   {f.role}
                 </div>
               </div>
