@@ -5,11 +5,31 @@ import { useApplyWidget } from "@/hooks/useApplyWidget";
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends · 40 hrs" },
   { icon: Calendar, label: "Start", value: "August 2026" },
-// ...
+  { icon: MapPin, label: "Format", value: "Online / In-Person Weekend Classes" },
+  { icon: Building2, label: "Venue", value: "Masters' Union Campus, Gurgaon" },
+  { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree & above" },
+];
+
+const CTA = () => {
+  const { open } = useApplyWidget();
+  return (
+    <section id="apply" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
+      <div aria-hidden className="absolute inset-0 pointer-events-none">
+        <img src={bg} alt="" loading="lazy" decoding="async" width={1920} height={1280} className="h-full w-full object-cover opacity-35" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/70 to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background" />
+      </div>
+      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+        <div className="max-w-5xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
             COHORT 01 / AUGUST 2026
           </p>
-// ...
+          <h2
+            className="mt-5 sm:mt-6 font-display text-foreground text-[clamp(2rem,7vw,4.5rem)] leading-[1.05] tracking-[-0.04em]"
+            style={{ fontWeight: 500 }}
+          >
+            Stop reading. <br /><span className="text-violet">Start selling.</span>
+          </h2>
           <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-foreground/70 leading-relaxed">
             Limited seats. Application-based. Cohort 01 begins August 2026 at the Masters&apos; Union campus, Gurugram.
           </p>
