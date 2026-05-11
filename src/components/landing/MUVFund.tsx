@@ -93,7 +93,6 @@ const MUVFund = () => {
                 </span>
                 <ArrowRight className="absolute right-5 top-1/2 -translate-y-1/2 h-5 w-5 shrink-0 group-hover:translate-x-1 transition-transform" strokeWidth={1.75} />
               </a>
-              </a>
             ))}
           </div>
         </div>
