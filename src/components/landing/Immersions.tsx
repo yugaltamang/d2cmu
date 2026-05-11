@@ -31,7 +31,7 @@ const Immersions = () => {
               className="font-display text-white text-xl sm:text-2xl lg:text-[26px] leading-tight tracking-tight max-w-2xl"
               style={{ fontWeight: 500 }}
             >
-              Industry visits — built into the program.
+              Industry visits - built into the program.
             </h3>
           </div>
 
