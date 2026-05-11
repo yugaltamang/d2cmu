@@ -3,7 +3,7 @@ import bg from "@/assets/bg-abstract-3.webp";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const details = [
-  { icon: Clock, label: "Duration", value: "10 Weekends · 40 hrs" },
+  { icon: Clock, label: "Duration", value: "10 Weekends\n40 hours" },
   { icon: Calendar, label: "Start", value: "August 2026" },
   { icon: MapPin, label: "Format", value: "Online / In-Person Weekend Classes" },
   { icon: Building2, label: "Venue", value: "Masters' Union Campus, Gurgaon" },
@@ -52,7 +52,7 @@ const CTA = () => {
               <p className="mt-3 sm:mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
                 {label}
               </p>
-              <p className="mt-2 font-display text-base sm:text-xl text-foreground leading-snug" style={{ fontWeight: 500 }}>
+              <p className="mt-2 font-display text-base sm:text-xl text-foreground leading-snug whitespace-pre-line" style={{ fontWeight: 500 }}>
                 {value}
               </p>
             </div>
