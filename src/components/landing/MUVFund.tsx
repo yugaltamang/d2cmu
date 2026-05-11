@@ -6,7 +6,7 @@ const DOWNLOAD_WIDGET_ID = "060aa4ca-31f5-4f53-b6de-e303dfcde1d8";
 
 const downloads = [
   {
-    eyebrow: "Available now / PDF",
+    eyebrow: "",
     label: "Download Fund Prospectus",
     file: "/downloads/MUV-Prospectus.pdf",
     filename: "MUV-Prospectus.pdf",
