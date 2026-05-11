@@ -52,7 +52,7 @@ const CTA = () => {
               <p className="mt-3 sm:mt-4 font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/55">
                 {label}
               </p>
-              <p className="mt-2 font-display text-base sm:text-xl text-foreground leading-snug" style={{ fontWeight: 500 }}>
+              <p className="mt-2 font-display text-base sm:text-xl text-foreground leading-snug whitespace-pre-line" style={{ fontWeight: 500 }}>
                 {value}
               </p>
             </div>
