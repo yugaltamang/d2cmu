@@ -35,7 +35,7 @@ const Hero = () => {
           </h1>
 
           <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base lg:text-lg text-foreground/75 leading-relaxed">
-            Ten weekends. One live D2C brand - sourced, branded, on Shopify, with paid ads running and real customers in your CRM.
+            Ten weekends. One live D2C brand - built from scratch, launched on Shopify, backed by paid ads, and acquiring real customers into your CRM.
           </p>
 
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
