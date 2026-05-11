@@ -71,7 +71,7 @@ const MUVFund = () => {
               <span className="text-primary">Masters' Union</span> Ventures Fund — where top student founders get their first cheque.
             </h2>
             <p className="mt-6 max-w-xl text-[15px] sm:text-base text-white/55 leading-relaxed font-light">
-              Pitch directly at the end of the program. Standout brands get evaluated for early-stage capital — no decks lost in inboxes.
+              Pitch directly at the end of the program. Standout brands get evaluated for early-stage capital - no decks lost in inboxes.
             </p>
           </div>
 
