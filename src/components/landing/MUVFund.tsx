@@ -12,7 +12,7 @@ const downloads = [
     filename: "MUV-Prospectus.pdf",
   },
   {
-    eyebrow: "Research / PDF",
+    eyebrow: "",
     label: "Download Entrepreneurship Report",
     file: "/downloads/MU-Entrepreneurship-Report.pdf",
     filename: "MU-Entrepreneurship-Report.pdf",
