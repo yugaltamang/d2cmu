@@ -81,17 +81,18 @@ const MUVFund = () => {
                 key={d.file}
                 href={d.file}
                 onClick={(e) => onCtaClick(e, d.file, d.filename)}
-                className="group flex flex-col items-center justify-center text-center gap-1 border border-white/15 bg-white/[0.03] text-white hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300 px-5 py-4 cursor-pointer"
+                className="group relative flex flex-col items-center justify-center text-center gap-1 border border-white/15 bg-white/[0.03] text-white hover:bg-primary hover:text-primary-foreground hover:border-primary transition-colors duration-300 px-5 py-4 cursor-pointer"
               >
                 {d.eyebrow && (
                   <span className="font-mono text-[10px] uppercase tracking-[0.2em] opacity-60 group-hover:opacity-100">
                     {d.eyebrow}
                   </span>
                 )}
-                <span className="inline-flex items-center gap-2 font-display text-base sm:text-lg uppercase tracking-tight" style={{ fontWeight: 500 }}>
+                <span className="font-display text-base sm:text-lg uppercase tracking-tight" style={{ fontWeight: 500 }}>
                   {d.label}
-                  <ArrowRight className="h-5 w-5 shrink-0 group-hover:translate-x-1 transition-transform" strokeWidth={1.75} />
                 </span>
+                <ArrowRight className="absolute right-5 top-1/2 -translate-y-1/2 h-5 w-5 shrink-0 group-hover:translate-x-1 transition-transform" strokeWidth={1.75} />
+              </a>
               </a>
             ))}
           </div>
