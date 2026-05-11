@@ -24,7 +24,7 @@ const phases = [
     range: "Weeks 05 - 06",
     tone: "dark",
     weeks: [
-      { w: "05", q: "Set up Meta ads and launch initial campaigns.", o: "Performance marketing (launch)" },
+      { w: "05", q: "Set up Meta ads and launch initial campaigns.", o: "Performance marketing" },
       { w: "06", q: "Start and scale on Amazon and Flipkart.", o: "Marketplace strategy" },
     ],
   },
