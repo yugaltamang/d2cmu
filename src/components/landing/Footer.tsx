@@ -44,8 +44,8 @@ const cols = [
 ];
 
 const socials = [
-  { Icon: Twitter, label: "Twitter", href: "https://twitter.com/mastersunion_" },
-  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/mastersunion.co/" },
+  { Icon: Twitter, label: "Twitter", href: "https://twitter.com/themastersunion" },
+  { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/masters.union/" },
   { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/school/mastersunion/" },
   { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@MastersUnion" },
 ];
