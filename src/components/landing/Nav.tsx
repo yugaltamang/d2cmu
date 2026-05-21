@@ -41,12 +41,6 @@ const Nav = () => {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href="#"
-            className="hidden lg:inline-flex items-center px-3 py-1.5 text-[14px] text-foreground/80 hover:text-foreground transition"
-          >
-            Log in
-          </a>
           {/* Apply CTA only on desktop - mobile/tablet uses the bottom MobileNav */}
           <button
             type="button"
