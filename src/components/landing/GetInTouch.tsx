@@ -97,7 +97,7 @@ const GetInTouch = () => {
                 Hours
               </p>
               <p className="text-sm leading-snug" style={{ fontWeight: 500, color: CREAM }}>
-                Mon - Sat<br />11:00 am - 7:00 pm IST
+                Mon - Sat<br />9:00 am - 9:00 pm IST
               </p>
             </li>
           </ul>
