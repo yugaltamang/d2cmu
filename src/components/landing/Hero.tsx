@@ -43,10 +43,10 @@ const Hero = () => {
               Start your brand
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
             </button>
-            <a href="#curriculum" className="hidden sm:inline-flex btn-pill-ghost !py-2.5 !px-5 !text-sm justify-center sm:justify-start">
+            <a href="#curriculum" className="max-sm:!hidden btn-pill-ghost !py-2.5 !px-5 !text-sm justify-center sm:justify-start">
               View Curriculum
             </a>
-            <a href="tel:+919899741741" className="sm:hidden btn-pill-ghost !py-2.5 !px-5 !text-sm justify-center">
+            <a href="tel:+919899741741" className="sm:!hidden btn-pill-ghost !py-2.5 !px-5 !text-sm justify-center">
               Call Now
             </a>
           </div>
