@@ -1,23 +1,18 @@
 import { useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play } from "lucide-react";
 
 const VIDEO_URL =
   "https://files.mastersunion.link/MU_Student_Entreprenuership_Video.mp4#t=0";
 
 const VideoBreather = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [started, setStarted] = useState(false);
 
-  const toggle = () => {
+  const start = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) {
-      v.play();
-      setPlaying(true);
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
+    v.play();
+    setStarted(true);
   };
 
   return (
@@ -65,16 +60,14 @@ const VideoBreather = () => {
               className="absolute inset-0 h-full w-full object-cover"
               playsInline
               preload="metadata"
-              controls={playing}
-              onPause={() => setPlaying(false)}
-              onPlay={() => setPlaying(true)}
+              controls={started}
             />
 
-            {/* Overlay (hidden when playing) */}
-            {!playing && (
+            {/* Overlay (hidden once started) */}
+            {!started && (
               <button
                 type="button"
-                onClick={toggle}
+                onClick={start}
                 aria-label="Play video"
                 className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-black/70 via-black/20 to-black/40 transition-colors"
               >
