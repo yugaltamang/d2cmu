@@ -111,7 +111,7 @@ const VideoBreather = () => {
               className="rounded-xl border border-white/10 bg-white/[0.03] px-3 sm:px-5 py-3 sm:py-4"
             >
               <div
-                className="font-display text-white text-xl sm:text-3xl leading-none tracking-tight"
+                className="font-display text-white text-xl sm:text-2xl leading-none tracking-tight"
                 style={{ fontWeight: 700 }}
               >
                 {s.k}
