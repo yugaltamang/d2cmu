@@ -97,29 +97,6 @@ const VideoBreather = () => {
           </div>
         </div>
 
-        {/* Stat strip */}
-        <div className="mt-6 sm:mt-8 grid grid-cols-3 gap-3 sm:gap-6">
-          {[
-            { k: "50+", v: "Student brands launched" },
-            { k: "₹2Cr+", v: "Combined revenue" },
-            { k: "10", v: "Weekends to live" },
-          ].map((s) => (
-            <div
-              key={s.v}
-              className="rounded-xl border border-white/10 bg-white/[0.03] px-3 sm:px-5 py-3 sm:py-4"
-            >
-              <div
-                className="font-display text-white text-xl sm:text-2xl leading-none tracking-tight"
-                style={{ fontWeight: 700 }}
-              >
-                {s.k}
-              </div>
-              <div className="mt-1 text-[10px] sm:text-xs text-white/60 leading-snug">
-                {s.v}
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );
