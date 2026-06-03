@@ -6,18 +6,13 @@ const VIDEO_URL =
 
 const VideoBreather = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [started, setStarted] = useState(false);
 
-  const toggle = () => {
+  const start = () => {
     const v = videoRef.current;
     if (!v) return;
-    if (v.paused) {
-      v.play();
-      setPlaying(true);
-    } else {
-      v.pause();
-      setPlaying(false);
-    }
+    v.play();
+    setStarted(true);
   };
 
   return (
