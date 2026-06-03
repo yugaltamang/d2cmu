@@ -20,6 +20,7 @@ const Index = () => {
       <Nav />
       <Hero />
       <Promise />
+      <VideoBreather />
       <div
         className="relative border-t border-border/40 overflow-hidden"
         style={{ background: "hsl(165 25% 4%)" }}
