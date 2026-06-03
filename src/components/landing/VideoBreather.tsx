@@ -60,16 +60,14 @@ const VideoBreather = () => {
               className="absolute inset-0 h-full w-full object-cover"
               playsInline
               preload="metadata"
-              controls={playing}
-              onPause={() => setPlaying(false)}
-              onPlay={() => setPlaying(true)}
+              controls={started}
             />
 
-            {/* Overlay (hidden when playing) */}
-            {!playing && (
+            {/* Overlay (hidden once started) */}
+            {!started && (
               <button
                 type="button"
-                onClick={toggle}
+                onClick={start}
                 aria-label="Play video"
                 className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-black/70 via-black/20 to-black/40 transition-colors"
               >
