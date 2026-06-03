@@ -3,6 +3,7 @@ import MobileNav from "@/components/landing/MobileNav";
 import Hero from "@/components/landing/Hero";
 
 import Promise from "@/components/landing/Promise";
+import VideoBreather from "@/components/landing/VideoBreather";
 import Curriculum from "@/components/landing/Curriculum";
 import MUVFund from "@/components/landing/MUVFund";
 import Immersions from "@/components/landing/Immersions";
@@ -19,6 +20,7 @@ const Index = () => {
       <Nav />
       <Hero />
       <Promise />
+      <VideoBreather />
       <div
         className="relative border-t border-border/40 overflow-hidden"
         style={{ background: "hsl(165 25% 4%)" }}
