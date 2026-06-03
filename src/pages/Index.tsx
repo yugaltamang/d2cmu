@@ -3,6 +3,7 @@ import MobileNav from "@/components/landing/MobileNav";
 import Hero from "@/components/landing/Hero";
 
 import Promise from "@/components/landing/Promise";
+import VideoBreather from "@/components/landing/VideoBreather";
 import Curriculum from "@/components/landing/Curriculum";
 import MUVFund from "@/components/landing/MUVFund";
 import Immersions from "@/components/landing/Immersions";
