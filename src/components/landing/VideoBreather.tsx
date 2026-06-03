@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Play, Pause } from "lucide-react";
+import { Play } from "lucide-react";
 
 const VIDEO_URL =
   "https://files.mastersunion.link/MU_Student_Entreprenuership_Video.mp4#t=0";
