@@ -46,8 +46,8 @@ const VideoBreather = () => {
           </p>
         </div>
 
-        {/* Video frame */}
-        <div className="relative mt-8 sm:mt-10 group">
+        {/* Video frame — compact */}
+        <div className="relative mt-8 sm:mt-10 group mx-auto max-w-3xl">
           {/* Glow */}
           <div
             aria-hidden
@@ -78,9 +78,9 @@ const VideoBreather = () => {
                 aria-label="Play video"
                 className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-gradient-to-t from-black/70 via-black/20 to-black/40 transition-colors"
               >
-                <span className="relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-2xl transition-transform group-hover:scale-105">
+                <span className="relative flex h-12 w-12 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-2xl transition-transform group-hover:scale-105">
                   <span className="absolute inset-0 rounded-full bg-primary/40 animate-ping" />
-                  <Play className="relative h-8 w-8 sm:h-10 sm:w-10 ml-1" fill="currentColor" />
+                  <Play className="relative h-5 w-5 sm:h-6 sm:w-6 ml-0.5" fill="currentColor" />
                 </span>
                 <span className="font-mono text-[10px] sm:text-xs uppercase tracking-[0.3em] text-white/90">
                   Play the showreel · 2 min
