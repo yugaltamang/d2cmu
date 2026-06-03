@@ -42,9 +42,7 @@ const VideoBreather = () => {
             <span className="text-primary">cash register</span>.
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-[14px] sm:text-[15px] text-white/70 leading-relaxed">
-            Watch Masters' Union students turn weekend ideas into{" "}
-            <span className="text-white">live D2C brands</span> — shipping
-            products, running ads, and closing real revenue.
+            Where ambition meets execution, products find their market & builders become brand founders.
           </p>
         </div>
 
