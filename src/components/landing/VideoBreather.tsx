@@ -22,24 +22,26 @@ const VideoBreather = () => {
 
   return (
     <section className="relative py-12 sm:py-20 lg:py-24 bg-transparent">
-      <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5">
-          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-          <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/70">
-            Real founders · Real brands
-          </span>
+        <div className="flex justify-center">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/70">
+              Real founders · Real brands
+            </span>
+          </div>
         </div>
 
-        <div className="mt-5 sm:mt-6 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
+        <div className="mt-4 sm:mt-5 text-center">
           <h2
-            className="font-sans text-white text-[clamp(1.75rem,6vw,4.25rem)] leading-[1] tracking-[-0.04em] max-w-[18ch]"
+            className="font-sans text-white text-[clamp(1.6rem,4.2vw,2.75rem)] leading-[1.05] tracking-[-0.03em]"
             style={{ fontWeight: 600 }}
           >
             From classroom to{" "}
             <span className="text-primary">cash register</span>.
           </h2>
-          <p className="max-w-md text-[15px] sm:text-[17px] text-white/70 leading-relaxed">
+          <p className="mx-auto mt-3 max-w-xl text-[14px] sm:text-[15px] text-white/70 leading-relaxed">
             Watch Masters' Union students turn weekend ideas into{" "}
             <span className="text-white">live D2C brands</span> — shipping
             products, running ads, and closing real revenue.
@@ -47,7 +49,7 @@ const VideoBreather = () => {
         </div>
 
         {/* Video frame — compact */}
-        <div className="relative mt-8 sm:mt-10 group mx-auto max-w-3xl">
+        <div className="relative mt-6 sm:mt-8 group">
           {/* Glow */}
           <div
             aria-hidden
@@ -109,7 +111,7 @@ const VideoBreather = () => {
               className="rounded-xl border border-white/10 bg-white/[0.03] px-3 sm:px-5 py-3 sm:py-4"
             >
               <div
-                className="font-display text-white text-xl sm:text-3xl leading-none tracking-tight"
+                className="font-display text-white text-xl sm:text-2xl leading-none tracking-tight"
                 style={{ fontWeight: 700 }}
               >
                 {s.k}
