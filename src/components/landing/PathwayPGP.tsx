@@ -46,12 +46,13 @@ const PathwayPGP = () => {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-14 sm:py-20">
         {/* Heading */}
         <div className="max-w-3xl">
-          <p
-            className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] mb-5"
-            style={{ color: ACCENT }}
-          >
-            A Structured Pathway to PGP TBM
-          </p>
+          {/* Eyebrow pill */}
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5 mb-5">
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: ACCENT }} />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em]" style={{ color: `${CREAM}B0` }}>
+              A Structured Pathway to PGP TBM
+            </span>
+          </div>
           <h2
             className="font-display text-[clamp(2rem,4.8vw,4rem)] leading-[1.05] tracking-[-0.035em]"
             style={{ fontWeight: 500, color: CREAM }}
