@@ -42,9 +42,9 @@ const Index = () => {
       </div>
       <Faculty />
       <Fees />
-      <PathwayPGP />
       <FAQ />
       <CTA />
+      <PathwayPGP />
       <GetInTouch />
       <Footer />
       <MobileNav />
