@@ -37,6 +37,14 @@ const FAQ = () => {
     <section id="faq" className="bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 grid lg:grid-cols-12 gap-8 lg:gap-16">
         <div className="lg:col-span-5">
+          {/* Eyebrow pill */}
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/15 px-3 sm:px-4 py-1.5 mb-5">
+            <span className="h-1.5 w-1.5 rounded-full" style={{ background: "hsl(96 75% 55%)" }} />
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/70">
+              FAQ
+            </span>
+          </div>
+
           <h2
             className="font-display text-foreground text-[clamp(1.75rem,5.5vw,3.5rem)] leading-[1.05] tracking-[-0.035em]"
             style={{ fontWeight: 500 }}
