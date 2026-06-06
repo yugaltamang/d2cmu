@@ -11,7 +11,7 @@ const cards = [
     num: "02",
     title: "100% Fee Credit",
     sub: "Investment carries forward",
-    body: "100% of your D2C Bootcamp fee adjusted against PGP TBM tuition upon admission.",
+    body: "100% of your D2C Bootcamp fee adjusted against PGP TBM tuition upon admission and enrolment.",
   },
   {
     num: "03",
@@ -112,7 +112,7 @@ const PathwayPGP = () => {
         <ul className="mt-8 space-y-2 text-[12px] leading-relaxed text-white/50">
           <li className="flex gap-2"><span aria-hidden>·</span><span>Placement statistics refer to the full-time PGP TBM programme.</span></li>
           <li className="flex gap-2"><span aria-hidden>·</span><span>Completion of the D2C Brand Bootcamp does not guarantee admission to PGP TBM or PGP TBM YLC. Admission is subject to the standard selection process.</span></li>
-          <li className="flex gap-2"><span aria-hidden>·</span><span>100% of your D2C Bootcamp fee is adjusted against PGP TBM tuition upon admission and enrollment.</span></li>
+          <li className="flex gap-2"><span aria-hidden>·</span><span>100% of your D2C Bootcamp fee is adjusted against PGP TBM tuition upon admission and enrolment.</span></li>
         </ul>
       </div>
     </section>
