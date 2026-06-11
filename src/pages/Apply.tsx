@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import Nav from "@/components/landing/Nav";
