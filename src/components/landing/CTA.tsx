@@ -1,6 +1,6 @@
 import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight, Building2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import bg from "@/assets/bg-abstract-3.webp";
-import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends\n40 hours" },
@@ -11,7 +11,6 @@ const details = [
 ];
 
 const CTA = () => {
-  const { open } = useApplyWidget();
   return (
     <section id="apply" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -35,10 +34,10 @@ const CTA = () => {
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
-            <button type="button" onClick={open} className="btn-pill-light group justify-center sm:justify-start">
+            <Link to="/apply" className="btn-pill-light group justify-center sm:justify-start">
               Start your brand
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
-            </button>
+            </Link>
           </div>
         </div>
 
