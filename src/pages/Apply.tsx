@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import Nav from "@/components/landing/Nav";
@@ -26,9 +26,38 @@ const buildWidgetSrc = () => {
   return `${WIDGET_BASE}/${WIDGET_ID}?${params.toString()}`;
 };
 
+const ALLOWED_ORIGINS = [
+  "https://mastersunion.org",
+  "https://widget.mastersunion.org",
+];
+
 const Apply = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      if (!ALLOWED_ORIGINS.includes(e.origin)) return;
+      const data = e.data as { type?: string; url?: string; height?: number; widgetId?: string };
+      if (!data || typeof data !== "object") return;
+      const type = (data.type || "").toUpperCase();
+
+      if (type === "REDIRECT" && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      if ((type === "DOWNLOAD" || type === "OPEN_URL") && data.url) {
+        window.open(data.url, "_blank");
+        return;
+      }
+      if (type === "RESIZE" && data.height && data.widgetId) {
+        const el = document.getElementById(data.widgetId) as HTMLIFrameElement | null;
+        if (el) el.style.height = `${data.height}px`;
+      }
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
 
   const start = () => {
     const v = videoRef.current;
