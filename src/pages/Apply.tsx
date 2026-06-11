@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import Nav from "@/components/landing/Nav";
+import MobileNav from "@/components/landing/MobileNav";
 import Footer from "@/components/landing/Footer";
 
 const VIDEO_URL =
