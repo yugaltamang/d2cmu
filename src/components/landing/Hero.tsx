@@ -41,10 +41,10 @@ const Hero = () => {
           </p>
 
           <div className="mt-6 sm:mt-7 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
-            <Link to="/apply" className="btn-pill-light !py-2.5 !px-5 !text-sm group justify-center sm:justify-start">
+            <button type="button" onClick={open} className="btn-pill-light !py-2.5 !px-5 !text-sm group justify-center sm:justify-start">
               Start your D2C brand
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
-            </Link>
+            </button>
             <a href="#curriculum" className="max-sm:!hidden btn-pill-ghost !py-2.5 !px-5 !text-sm justify-center sm:justify-start">
               View Curriculum
             </a>
