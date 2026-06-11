@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { open: openWidget } = useApplyWidget();
+  const { open: openApply } = useApplyWidget();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
@@ -32,13 +32,9 @@ const MobileNav = () => {
     }
   };
 
-  const openApply = () => {
-    setIsOpen(false);
-    openWidget();
-  };
-
   const handleNavClick = (item: NavItem) => {
     if (item.action === "apply") {
+      setIsOpen(false);
       openApply();
     } else {
       scrollTo(item.href);
