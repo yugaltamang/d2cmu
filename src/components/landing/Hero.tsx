@@ -1,6 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import heroImg from "@/assets/d2c-hero.webp";
+import { useApplyWidget } from "@/hooks/useApplyWidget";
+
+
 
 
 const Hero = () => {
