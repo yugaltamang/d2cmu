@@ -6,6 +6,7 @@ import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 
 const Hero = () => {
+  const { open } = useApplyWidget();
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Background image with heavy overlay (Shopify-style cinematic hero) */}
