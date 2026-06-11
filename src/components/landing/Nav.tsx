@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import muLogo from "@/assets/mu-logo.svg";
-import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const links: { label: string; href: string }[] = [
   { label: "Outcomes", href: "#outcomes" },
