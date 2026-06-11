@@ -123,6 +123,7 @@ const Apply = () => {
         </div>
       </div>
       <Footer />
+      <MobileNav />
     </main>
   );
 };
