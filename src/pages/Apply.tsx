@@ -46,7 +46,7 @@ const Apply = () => {
           Back
         </Link>
 
-        <div className="mt-6 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left: Video */}
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
@@ -106,19 +106,17 @@ const Apply = () => {
           </div>
 
           {/* Right: Apply widget */}
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-2xl h-full flex">
             <iframe
               id={WIDGET_ID}
               title="Apply"
               src={buildWidgetSrc()}
-              width="100%"
-              height={820}
-              frameBorder={0}
               allow="autoplay; camera; microphone; fullscreen; display-capture"
               sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-downloads"
-              className="block w-full bg-transparent"
+              className="block w-full h-full min-h-[600px] bg-transparent border-0"
             />
           </div>
+
         </div>
       </div>
       <Footer />
