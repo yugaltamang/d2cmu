@@ -106,19 +106,17 @@ const Apply = () => {
           </div>
 
           {/* Right: Apply widget */}
-          <div className="overflow-hidden rounded-2xl">
+          <div className="overflow-hidden rounded-2xl h-full flex">
             <iframe
               id={WIDGET_ID}
               title="Apply"
               src={buildWidgetSrc()}
-              width="100%"
-              height={820}
-              frameBorder={0}
               allow="autoplay; camera; microphone; fullscreen; display-capture"
               sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-downloads"
-              className="block w-full bg-transparent"
+              className="block w-full h-full min-h-[600px] bg-transparent border-0"
             />
           </div>
+
         </div>
       </div>
       <Footer />
