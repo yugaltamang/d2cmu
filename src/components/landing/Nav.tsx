@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
-import { Link } from "react-router-dom";
 import muLogo from "@/assets/mu-logo.svg";
+import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const links: { label: string; href: string }[] = [
   { label: "Outcomes", href: "#outcomes" },
@@ -12,6 +12,7 @@ const links: { label: string; href: string }[] = [
 ];
 
 const Nav = () => {
+  const { open } = useApplyWidget();
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md bg-background/70 border-b border-border/40">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
@@ -41,13 +42,14 @@ const Nav = () => {
 
         <div className="flex items-center gap-2">
           {/* Apply CTA only on desktop - mobile/tablet uses the bottom MobileNav */}
-          <Link
-            to="/apply"
+          <button
+            type="button"
+            onClick={open}
             className="hidden lg:inline-flex btn-pill-light group !py-2 !px-4 !text-[14px] whitespace-nowrap"
           >
             Start your D2C brand
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
-          </Link>
+          </button>
         </div>
       </div>
     </header>

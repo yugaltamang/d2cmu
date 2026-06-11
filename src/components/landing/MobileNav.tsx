@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import { ArrowUpRight, X, Menu, Target, BookOpen, Users, Wallet, HelpCircle, Phone, TrendingUp } from "lucide-react";
+import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 type NavItem = {
   label: string;
@@ -21,7 +21,7 @@ const navItems: NavItem[] = [
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
+  const { open: openWidget } = useApplyWidget();
 
   const scrollTo = (href: string) => {
     setIsOpen(false);
@@ -34,7 +34,7 @@ const MobileNav = () => {
 
   const openApply = () => {
     setIsOpen(false);
-    navigate("/apply");
+    openWidget();
   };
 
   const handleNavClick = (item: NavItem) => {
