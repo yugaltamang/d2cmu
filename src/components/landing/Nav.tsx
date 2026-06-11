@@ -45,7 +45,7 @@ const Nav = () => {
             to="/apply"
             className="hidden lg:inline-flex btn-pill-light group !py-2 !px-4 !text-[14px] whitespace-nowrap"
           >
-            Start your brand
+            Start your D2C brand
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
           </Link>
         </div>

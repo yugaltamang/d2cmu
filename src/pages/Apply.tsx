@@ -55,10 +55,10 @@ const Apply = () => {
               className="mt-4 font-display text-foreground text-[clamp(1.75rem,4.5vw,3rem)] leading-[1.05] tracking-[-0.03em]"
               style={{ fontWeight: 500 }}
             >
-              Start your <span className="text-violet">brand</span>.
+              Start your <span className="text-violet">D2C brand</span>.
             </h1>
             <p className="mt-3 max-w-md text-sm sm:text-base text-foreground/70 leading-relaxed">
-              Watch the showreel, then apply on the right. Limited seats, application-based.
+              Ten weekends. One live D2C brand - built from scratch, launched on Shopify, backed by paid ads, and acquiring real customers into your CRM.
             </p>
 
             <div className="relative mt-6 group">
