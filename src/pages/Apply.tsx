@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import Footer from "@/components/landing/Footer";
 
 const VIDEO_URL =
   "https://files.mastersunion.link/MU_Student_Entreprenuership_Video.mp4#t=0";
@@ -120,6 +121,7 @@ const Apply = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
