@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import { ArrowLeft, Play } from "lucide-react";
 import { Link } from "react-router-dom";
+import Nav from "@/components/landing/Nav";
+import MobileNav from "@/components/landing/MobileNav";
 import Footer from "@/components/landing/Footer";
 
 const VIDEO_URL =
@@ -36,7 +38,8 @@ const Apply = () => {
   };
 
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground pb-[60px] lg:pb-0">
+      <Nav />
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 py-6 sm:py-10">
         <Link
           to="/"
@@ -120,6 +123,7 @@ const Apply = () => {
         </div>
       </div>
       <Footer />
+      <MobileNav />
     </main>
   );
 };
