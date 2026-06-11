@@ -1,10 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImg from "@/assets/d2c-hero.webp";
-import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 
 const Hero = () => {
-  const { open } = useApplyWidget();
   return (
     <section className="relative overflow-hidden bg-background">
       {/* Background image with heavy overlay (Shopify-style cinematic hero) */}
