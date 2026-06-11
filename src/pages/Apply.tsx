@@ -121,6 +121,7 @@ const Apply = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main>
   );
 };
