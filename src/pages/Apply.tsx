@@ -46,7 +46,7 @@ const Apply = () => {
           Back
         </Link>
 
-        <div className="mt-6 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="mt-6 sm:mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {/* Left: Video */}
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
