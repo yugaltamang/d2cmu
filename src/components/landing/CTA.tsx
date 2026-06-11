@@ -11,7 +11,6 @@ const details = [
 ];
 
 const CTA = () => {
-  const { open } = useApplyWidget();
   return (
     <section id="apply" className="relative bg-background py-12 sm:py-16 lg:py-24 border-t border-border/40 overflow-hidden">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
