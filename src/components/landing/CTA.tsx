@@ -34,10 +34,10 @@ const CTA = () => {
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
-            <button type="button" onClick={open} className="btn-pill-light group justify-center sm:justify-start">
+            <Link to="/apply" className="btn-pill-light group justify-center sm:justify-start">
               Start your brand
               <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
-            </button>
+            </Link>
           </div>
         </div>
 
