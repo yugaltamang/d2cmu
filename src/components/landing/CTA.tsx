@@ -1,6 +1,6 @@
 import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight, Building2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import bg from "@/assets/bg-abstract-3.webp";
-import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends\n40 hours" },
