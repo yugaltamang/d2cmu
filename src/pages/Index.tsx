@@ -11,6 +11,7 @@ import Faculty from "@/components/landing/Faculty";
 import FAQ from "@/components/landing/FAQ";
 import Fees from "@/components/landing/Fees";
 import PathwayPGP from "@/components/landing/PathwayPGP";
+import BrandHook from "@/components/landing/BrandHook";
 import CTA from "@/components/landing/CTA";
 import GetInTouch from "@/components/landing/GetInTouch";
 import Footer from "@/components/landing/Footer";
