@@ -82,12 +82,6 @@ const BrandHook = () => {
               </button>
             )}
 
-            {/* Corner badge */}
-            <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 pointer-events-none">
-              <span className="rounded-full bg-black/60 backdrop-blur border border-white/15 px-3 py-1 font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-white">
-                <span className="text-primary">●</span> Start Building
-              </span>
-            </div>
           </div>
         </div>
       </div>
