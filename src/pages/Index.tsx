@@ -47,6 +47,7 @@ const Index = () => {
       <CTA />
       <PathwayPGP />
       <VideoBreather />
+      <BrandHook />
       <GetInTouch />
       <Footer />
       <MobileNav />
