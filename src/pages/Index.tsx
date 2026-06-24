@@ -22,6 +22,7 @@ const Index = () => {
       <Nav />
       <Hero />
       <Promise />
+      <BrandHook />
       
       <div
         className="relative border-t border-border/40 overflow-hidden"
