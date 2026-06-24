@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
 import { Play } from "lucide-react";
 import d2cHookAsset from "@/assets/d2c-hook.mp4.asset.json";
+import d2cPosterAsset from "@/assets/d2c-poster.jpg.asset.json";
 
 const VIDEO_URL = d2cHookAsset.url;
+const POSTER_URL = d2cPosterAsset.url;
 
 const BrandHook = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
