@@ -58,6 +58,7 @@ const BrandHook = () => {
             <video
               ref={videoRef}
               src={VIDEO_URL}
+              poster={POSTER_URL}
               className="absolute inset-0 h-full w-full object-cover"
               playsInline
               preload="metadata"
