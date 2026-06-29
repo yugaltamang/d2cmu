@@ -109,7 +109,7 @@ const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, onSubmi
           height={640}
           frameBorder={0}
           allow="autoplay; camera; microphone; fullscreen; display-capture"
-          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-downloads"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-downloads"
           className="block w-full bg-card"
         />
       </div>
