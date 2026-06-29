@@ -53,9 +53,21 @@ const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, onSubmi
         return;
       }
 
-      if (type === "REDIRECT" && data.url) window.location.href = data.url;
-      if ((type === "DOWNLOAD" || type === "OPEN_URL") && data.url) {
-        window.open(data.url, "_blank");
+      const isSafeHttpUrl = (raw?: string) => {
+        if (!raw) return false;
+        try {
+          const u = new URL(raw, window.location.href);
+          return u.protocol === "https:" || u.protocol === "http:";
+        } catch {
+          return false;
+        }
+      };
+
+      if (type === "REDIRECT" && isSafeHttpUrl(data.url)) {
+        window.location.href = data.url as string;
+      }
+      if ((type === "DOWNLOAD" || type === "OPEN_URL") && isSafeHttpUrl(data.url)) {
+        window.open(data.url as string, "_blank", "noopener,noreferrer");
       }
       if (type === "RESIZE" && data.height && data.widgetId) {
         const el = document.getElementById(data.widgetId) as HTMLIFrameElement | null;
@@ -97,7 +109,7 @@ const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, onSubmi
           height={640}
           frameBorder={0}
           allow="autoplay; camera; microphone; fullscreen; display-capture"
-          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation allow-downloads"
+          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation allow-downloads"
           className="block w-full bg-card"
         />
       </div>
