@@ -9,11 +9,22 @@ const BrandHook = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [started, setStarted] = useState(false);
 
-  const start = () => {
+  const start = async () => {
     const v = videoRef.current;
     if (!v) return;
-    v.play();
     setStarted(true);
+    try {
+      v.muted = false;
+      await v.play();
+    } catch (err) {
+      console.warn("[BrandHook] play() failed, retrying muted:", err);
+      try {
+        v.muted = true;
+        await v.play();
+      } catch (err2) {
+        console.error("[BrandHook] video could not start:", err2);
+      }
+    }
   };
 
   return (
