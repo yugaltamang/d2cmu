@@ -111,7 +111,8 @@ type ChartTooltipContentProps = React.ComponentProps<"div"> & {
   indicator?: "line" | "dot" | "dashed";
 };
 
-const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContentProps>(
+const ChartTooltipContent = (React.forwardRef as any)(
+  (
     {
       active,
       payload,
@@ -126,8 +127,8 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
       color,
       nameKey,
       labelKey,
-    },
-    ref,
+    }: ChartTooltipContentProps,
+    ref: React.ForwardedRef<HTMLDivElement>,
   ) => {
     const { config } = useChart();
 
@@ -171,10 +172,10 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
       >
         {!nestLabel ? tooltipLabel : null}
         <div className="grid gap-1.5">
-          {payload.map((item, index) => {
+          {payload.map((item: any, index: number) => {
             const key = `${nameKey || item.name || item.dataKey || "value"}`;
             const itemConfig = getPayloadConfigFromPayload(config, item, key);
-            const indicatorColor = color || item.payload.fill || item.color;
+            const indicatorColor = color || item.payload?.fill || item.color;
 
             return (
               <div
@@ -233,7 +234,7 @@ const ChartTooltipContent = React.forwardRef<HTMLDivElement, ChartTooltipContent
       </div>
     );
   },
-);
+) as React.ForwardRefExoticComponent<ChartTooltipContentProps & React.RefAttributes<HTMLDivElement>>;
 ChartTooltipContent.displayName = "ChartTooltip";
 
 const ChartLegend = RechartsPrimitive.Legend;
