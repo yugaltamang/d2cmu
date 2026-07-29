@@ -100,7 +100,7 @@ type ChartTooltipContentProps = React.ComponentProps<"div"> & {
     fill?: string;
   }>;
   label?: string;
-  labelFormatter?: (label: string, payload: any[]) => React.ReactNode;
+  labelFormatter?: (label: React.ReactNode, payload: any[]) => React.ReactNode;
   labelClassName?: string;
   formatter?: (value: any, name: string, props: any, index: number, payload: any) => React.ReactNode;
   color?: string;
