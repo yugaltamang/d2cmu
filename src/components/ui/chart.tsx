@@ -237,6 +237,8 @@ const ChartTooltipContent = (React.forwardRef as any)(
 ) as React.ForwardRefExoticComponent<ChartTooltipContentProps & React.RefAttributes<HTMLDivElement>>;
 ChartTooltipContent.displayName = "ChartTooltip";
 
+const ChartLegend = RechartsPrimitive.Legend;
+
 type ChartLegendPayload = {
   value?: string;
   dataKey?: string;
