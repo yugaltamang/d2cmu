@@ -112,8 +112,7 @@ const ChartTooltipContent = React.forwardRef<
     hideIndicator?: boolean;
     indicator?: "line" | "dot" | "dashed";
   }
->
-  (
+>(
     {
       active,
       payload,
