@@ -2,25 +2,36 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
-const DEFAULT_WIDGET_ID = "d6d5c302-1fec-4e05-b8ed-b3415fd66985";
+const DEFAULT_WIDGET_ID = "b0cddaa6-f31f-4be3-be9d-7494e1137ca5";
 const WIDGET_BASE = "https://widget.mastersunion.org/widget";
+const WIDGET_V2_RUNTIME = "https://widgets-v2.mastersunion.org";
+const WIDGET_V2_API = "https://api-v2.mastersunion.org";
 const ALLOWED_ORIGINS = [
   "https://mastersunion.org",
   "https://widget.mastersunion.org",
+  "https://widgets-v2.mastersunion.org",
 ];
 
-const buildWidgetSrc = (widgetId: string) => {
+const currentHref = () => {
+  try {
+    return window.top?.location.href ?? window.location.href;
+  } catch {
+    return window.location.href;
+  }
+};
+
+const buildWidgetSrc = (widgetId: string, version: "v1" | "v2") => {
   const params = new URLSearchParams(window.location.search);
-  try {
-    params.append("widgetHostURL", window.top?.location.href ?? window.location.href);
-  } catch {
-    params.append("widgetHostURL", window.location.href);
+  if (version === "v2") {
+    params.set("w", widgetId);
+    params.set("api", WIDGET_V2_API);
+    params.set("ref", currentHref());
+    params.set("referrer", document.referrer || "");
+    params.set("fit", "fill");
+    return `${WIDGET_V2_RUNTIME}/?${params.toString()}`;
   }
-  try {
-    params.append("parentReferrer", document.referrer || window.location.href);
-  } catch {
-    params.append("parentReferrer", window.location.href);
-  }
+  params.append("widgetHostURL", currentHref());
+  params.append("parentReferrer", document.referrer || window.location.href);
   return `${WIDGET_BASE}/${widgetId}?${params.toString()}`;
 };
 
@@ -28,11 +39,13 @@ interface Props {
   open: boolean;
   onClose: () => void;
   widgetId?: string;
+  /** Which widget runtime hosts this widget. */
+  version?: "v1" | "v2";
   /** Called after the widget reports a successful submission. */
   onSubmitted?: () => void;
 }
 
-const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, onSubmitted }: Props) => {
+const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, version = "v2", onSubmitted }: Props) => {
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -104,7 +117,7 @@ const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, onSubmi
         <iframe
           id={widgetId}
           title="Apply"
-          src={buildWidgetSrc(widgetId)}
+          src={buildWidgetSrc(widgetId, version)}
           width="100%"
           height={640}
           frameBorder={0}

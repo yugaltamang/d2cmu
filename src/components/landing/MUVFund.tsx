@@ -103,6 +103,7 @@ const MUVFund = () => {
         open={pending !== null}
         onClose={() => setPending(null)}
         widgetId={DOWNLOAD_WIDGET_ID}
+        version="v1"
         onSubmitted={handleSubmitted}
       />
     </section>
