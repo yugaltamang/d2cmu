@@ -117,7 +117,7 @@ const ApplyWidgetModal = ({ open, onClose, widgetId = DEFAULT_WIDGET_ID, version
         <iframe
           id={widgetId}
           title="Apply"
-          src={buildWidgetSrc(widgetId)}
+          src={buildWidgetSrc(widgetId, version)}
           width="100%"
           height={640}
           frameBorder={0}
