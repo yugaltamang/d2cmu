@@ -30,7 +30,7 @@ const CTA = () => {
             Stop reading. <br /><span className="text-violet">Start selling.</span>
           </h2>
           <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-foreground/70 leading-relaxed">
-            Limited seats. Application-based. Cohort 01 at the Masters&apos; Union campus, Gurugram.
+            Limited seats. Application-based.
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
