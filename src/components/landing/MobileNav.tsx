@@ -82,7 +82,7 @@ const MobileNav = () => {
               className="inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium group"
               style={{ backgroundColor: "#F3EFE6", color: "#03130E" }}
             >
-              Apply Now
+              Join the waitlist
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" strokeWidth={2.25} />
             </button>
           </div>
