@@ -21,7 +21,7 @@ const CTA = () => {
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="max-w-5xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
-            COHORT 01
+            The D2C Cohort
           </p>
           <h2
             className="mt-5 sm:mt-6 font-display text-foreground text-[clamp(2rem,7vw,4.5rem)] leading-[1.05] tracking-[-0.04em]"
