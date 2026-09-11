@@ -1,10 +1,9 @@
-import { Calendar, Clock, MapPin, GraduationCap, ArrowUpRight, Building2 } from "lucide-react";
+import { Clock, MapPin, GraduationCap, ArrowUpRight, Building2 } from "lucide-react";
 import bg from "@/assets/bg-abstract-3.webp";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const details = [
   { icon: Clock, label: "Duration", value: "10 Weekends\n40 hours" },
-  { icon: Calendar, label: "Start", value: "September 2026" },
   { icon: MapPin, label: "Format", value: "Online / In-Person Weekend Classes" },
   { icon: Building2, label: "Venue", value: "Masters' Union Campus, Gurgaon" },
   { icon: GraduationCap, label: "Eligibility", value: "Undergraduate degree & above" },
@@ -22,7 +21,7 @@ const CTA = () => {
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="max-w-5xl">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/55">
-            COHORT 01 / AUGUST 2026
+            COHORT 01
           </p>
           <h2
             className="mt-5 sm:mt-6 font-display text-foreground text-[clamp(2rem,7vw,4.5rem)] leading-[1.05] tracking-[-0.04em]"
@@ -31,7 +30,7 @@ const CTA = () => {
             Stop reading. <br /><span className="text-violet">Start selling.</span>
           </h2>
           <p className="mt-4 sm:mt-5 max-w-xl text-sm sm:text-base text-foreground/70 leading-relaxed">
-            Limited seats. Application-based. Cohort 01 begins September 2026 at the Masters&apos; Union campus, Gurugram.
+            Limited seats. Application-based. Cohort 01 at the Masters&apos; Union campus, Gurugram.
           </p>
 
           <div className="mt-5 sm:mt-6 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3">
@@ -42,7 +41,7 @@ const CTA = () => {
           </div>
         </div>
 
-        <div className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4 lg:gap-5">
+        <div className="mt-10 sm:mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {details.map(({ icon: Icon, label, value }) => (
             <div
               key={label}
