@@ -23,7 +23,7 @@ const Nav = () => {
             width={1484}
             height={300}
             decoding="async"
-            className="h-9 sm:h-10 lg:h-11 w-auto invert"
+            className="h-9 sm:h-10 lg:h-11 w-auto"
           />
         </a>
 
