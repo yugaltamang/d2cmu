@@ -1,5 +1,5 @@
 import { Twitter, Instagram, Linkedin, Youtube, MapPin, Mail } from "lucide-react";
-import muLogo from "@/assets/mu-logo.svg";
+import muLogo from "@/assets/mu-logo-official.svg";
 
 const BASE = "https://mastersunion.org";
 
@@ -61,8 +61,8 @@ const Footer = () => {
               <img
                 src={muLogo}
                 alt="Masters' Union"
-                width={220}
-                height={44}
+                width={1484}
+                height={300}
                 loading="lazy"
                 decoding="async"
                 className="h-12 sm:h-14 w-auto invert"

@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import muLogo from "@/assets/mu-logo.svg";
+import muLogo from "@/assets/mu-logo-official.svg";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const links: { label: string; href: string }[] = [
@@ -20,8 +20,8 @@ const Nav = () => {
           <img
             src={muLogo}
             alt="Masters' Union"
-            width={180}
-            height={36}
+            width={1484}
+            height={300}
             decoding="async"
             className="h-9 sm:h-10 lg:h-11 w-auto invert"
           />
