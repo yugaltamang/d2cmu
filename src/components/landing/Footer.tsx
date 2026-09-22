@@ -1,5 +1,5 @@
 import { Twitter, Instagram, Linkedin, Youtube, MapPin, Mail } from "lucide-react";
-import muLogo from "@/assets/mu-logo-official.svg";
+import muLogo from "@/assets/mu-logo.svg";
 
 const BASE = "https://mastersunion.org";
 

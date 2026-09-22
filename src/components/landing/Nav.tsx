@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import muLogo from "@/assets/mu-logo-official.svg";
+import muLogo from "@/assets/mu-logo.svg";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const links: { label: string; href: string }[] = [
