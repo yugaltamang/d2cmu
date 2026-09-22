@@ -1,5 +1,5 @@
 import { Twitter, Instagram, Linkedin, Youtube, MapPin, Mail } from "lucide-react";
-import muLogoAsset from "@/assets/mu-logo-light.png.asset.json";
+import muLogo from "@/assets/mu-logo-official.svg";
 
 const BASE = "https://mastersunion.org";
 
@@ -59,7 +59,7 @@ const Footer = () => {
           <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-1">
             <a href={BASE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center" aria-label="Masters' Union home">
               <img
-                src={muLogoAsset.url}
+                src={muLogo}
                 alt="Masters' Union"
                 width={1484}
                 height={300}

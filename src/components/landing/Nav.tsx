@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import muLogoAsset from "@/assets/mu-logo-light.png.asset.json";
+import muLogo from "@/assets/mu-logo-official.svg";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const links: { label: string; href: string }[] = [
@@ -18,7 +18,7 @@ const Nav = () => {
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex items-center justify-between">
         <a href="https://mastersunion.org/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 group" aria-label="Masters' Union home">
           <img
-            src={muLogoAsset.url}
+            src={muLogo}
             alt="Masters' Union"
             width={1484}
             height={300}
