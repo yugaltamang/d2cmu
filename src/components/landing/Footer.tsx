@@ -65,7 +65,7 @@ const Footer = () => {
                 height={300}
                 loading="lazy"
                 decoding="async"
-                className="h-12 sm:h-14 w-auto invert"
+                className="h-12 sm:h-14 w-auto"
               />
             </a>
           </div>
