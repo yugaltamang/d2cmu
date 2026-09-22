@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 import { X } from "lucide-react";
 
-const DEFAULT_WIDGET_ID = "5f532622-2ed7-4cdb-b787-996c4af0075f";
+const DEFAULT_WIDGET_ID = "b0cddaa6-f31f-4be3-be9d-7494e1137ca5";
 const WIDGET_BASE = "https://widget.mastersunion.org/widget";
 const WIDGET_V2_RUNTIME = "https://widgets-v2.mastersunion.org";
 const WIDGET_V2_API = "https://api-v2.mastersunion.org";
