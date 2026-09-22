@@ -1,5 +1,5 @@
 import { Twitter, Instagram, Linkedin, Youtube, MapPin, Mail } from "lucide-react";
-import muLogo from "@/assets/mu-logo.svg";
+import muLogo from "@/assets/mu-logo-light.png";
 
 const BASE = "https://mastersunion.org";
 
@@ -65,7 +65,7 @@ const Footer = () => {
                 height={300}
                 loading="lazy"
                 decoding="async"
-                className="h-12 sm:h-14 w-auto brightness-0 invert"
+                className="h-12 sm:h-14 w-auto"
               />
             </a>
           </div>
