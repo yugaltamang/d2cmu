@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import muLogo from "@/assets/mu-logo.svg";
+import muLogo from "@/assets/mu-logo-light.png";
 import { useApplyWidget } from "@/hooks/useApplyWidget";
 
 const links: { label: string; href: string }[] = [
@@ -23,7 +23,7 @@ const Nav = () => {
             width={1484}
             height={300}
             decoding="async"
-            className="h-9 sm:h-10 lg:h-11 w-auto brightness-0 invert"
+            className="h-9 sm:h-10 lg:h-11 w-auto"
           />
         </a>
 
