@@ -117,14 +117,14 @@ const GetInTouch = () => {
 
             <hr className="my-5 sm:my-6 border-0 h-px" style={{ backgroundColor: DIVIDER }} />
 
-            <div className="grid gap-4 sm:grid-cols-2 sm:gap-6">
+            <div className="grid gap-4 sm:grid-cols-[1.4fr_1fr] sm:gap-6">
               <div className="flex items-center gap-3 min-w-0">
                 <IconDisc>
                   <Mail className="h-[17px] w-[17px]" strokeWidth={1.6} style={{ color: INK }} />
                 </IconDisc>
                 <a
                   href="mailto:executive.admissions@mastersunion.org"
-                  className="block text-[13px] sm:text-sm leading-snug break-all transition-colors"
+                  className="block text-[13px] sm:text-sm leading-snug break-words transition-colors"
                   style={{ fontWeight: 500, color: INK }}
                   onMouseEnter={(e) => (e.currentTarget.style.color = WA_GREEN_DEEP)}
                   onMouseLeave={(e) => (e.currentTarget.style.color = INK)}
