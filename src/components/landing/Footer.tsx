@@ -55,7 +55,7 @@ const Footer = () => {
     <footer className="bg-background text-foreground border-t border-border/40">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-14 pb-8">
         {/* Top: logo + nav columns */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-[260px_repeat(5,minmax(0,1fr))] gap-8 lg:gap-10">
           <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-1">
             <a href={BASE} target="_blank" rel="noopener noreferrer" className="inline-flex items-center" aria-label="Masters' Union home">
               <img
@@ -65,7 +65,7 @@ const Footer = () => {
                 height={300}
                 loading="lazy"
                 decoding="async"
-                className="h-12 sm:h-14 w-auto"
+                className="w-full max-w-[260px] h-auto"
               />
             </a>
           </div>
