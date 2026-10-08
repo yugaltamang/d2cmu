@@ -12,7 +12,6 @@ const ACCENT = "#C9A24B";
 const COMMUNITY_URL = "https://chat.whatsapp.com/CA86PochfwSJdhMF6n2wv2";
 const WA_GREEN = "#1EAA5D";
 const WA_GREEN_DEEP = "#0F7A41";
-const WA_INK = "#1E232A";
 const WA_MUTED = "#596573";
 
 const WhatsAppIcon = ({ className }: { className?: string }) => (
@@ -29,13 +28,13 @@ const GetInTouch = () => {
       style={{
         color: CREAM,
         backgroundColor: BOTTLE,
-        backgroundImage: `radial-gradient(ellipse 90% 70% at 78% 8%, ${BOTTLE_SOFT} 0%, transparent 55%), linear-gradient(135deg, ${BOTTLE_DEEP} 0%, ${BOTTLE} 45%, ${BOTTLE_SOFT} 100%)`,
+        backgroundImage: `radial-gradient(ellipse 90% 70% at 22% 8%, ${BOTTLE_SOFT} 0%, transparent 55%), linear-gradient(135deg, ${BOTTLE_DEEP} 0%, ${BOTTLE} 45%, ${BOTTLE_SOFT} 100%)`,
       }}
     >
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center">
-          {/* Left - Heading + WhatsApp community */}
-          <div className="lg:col-span-5">
+          {/* Left - Heading + contact tiles */}
+          <div className="lg:col-span-7">
             <p
               className="font-mono text-[10px] uppercase tracking-[0.3em]"
               style={{ color: `${CREAM}99` }}
@@ -61,9 +60,65 @@ const GetInTouch = () => {
               Questions about the programme, eligibility, or admissions? Our team is here to help.
             </p>
 
-            {/* WhatsApp community QR card */}
+            {/* Contact grid */}
+            <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <li
+                className="rounded-xl p-4 border flex flex-col gap-2 min-w-0 sm:col-span-2"
+                style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
+              >
+                <Mail className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
+                  Email
+                </p>
+                <a
+                  href="mailto:executive.admissions@mastersunion.org"
+                  className="block text-sm leading-snug whitespace-nowrap transition-colors"
+                  style={{ fontWeight: 500, color: CREAM }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
+                >
+                  executive.admissions@mastersunion.org
+                </a>
+              </li>
+
+              <li
+                className="rounded-xl p-4 border flex flex-col gap-2"
+                style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
+              >
+                <Phone className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
+                  Mobile
+                </p>
+                <a
+                  href="tel:+919899741741"
+                  className="text-sm transition-colors"
+                  style={{ fontWeight: 500, color: CREAM }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
+                >
+                  +91 9899-741-741
+                </a>
+              </li>
+
+              <li
+                className="rounded-xl p-4 border flex flex-col gap-2"
+                style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
+              >
+                <Clock className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
+                <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
+                  Hours
+                </p>
+                <p className="text-sm leading-snug" style={{ fontWeight: 500, color: CREAM }}>
+                  Mon - Sat<br />9:00 am - 9:00 pm IST
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          {/* Right - WhatsApp community QR card */}
+          <div className="lg:col-span-5 flex lg:justify-end">
             <div
-              className="mt-6 max-w-sm rounded-2xl p-5"
+              className="w-full max-w-sm rounded-2xl p-5"
               style={{ backgroundColor: CREAM, boxShadow: "0 18px 40px -20px rgba(0,0,0,0.7)" }}
             >
               <div className="flex items-center gap-3">
@@ -115,60 +170,6 @@ const GetInTouch = () => {
               </p>
             </div>
           </div>
-
-          {/* Right - Contact grid */}
-          <ul className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <li
-              className="rounded-xl p-4 border flex flex-col gap-2 min-w-0 sm:col-span-2"
-              style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
-            >
-              <Mail className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
-                Email
-              </p>
-              <a
-                href="mailto:executive.admissions@mastersunion.org"
-                className="block text-sm leading-snug whitespace-nowrap transition-colors"
-                style={{ fontWeight: 500, color: CREAM }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
-              >
-                executive.admissions@mastersunion.org
-              </a>
-            </li>
-
-            <li
-              className="rounded-xl p-4 border flex flex-col gap-2"
-              style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
-            >
-              <Phone className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
-                Mobile
-              </p>
-              <a
-                href="tel:+919899741741"
-                className="text-sm transition-colors"
-                style={{ fontWeight: 500, color: CREAM }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = ACCENT)}
-                onMouseLeave={(e) => (e.currentTarget.style.color = CREAM)}
-              >
-                +91 9899-741-741
-              </a>
-            </li>
-
-            <li
-              className="rounded-xl p-4 border flex flex-col gap-2"
-              style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "rgba(243,239,230,0.14)" }}
-            >
-              <Clock className="h-5 w-5" strokeWidth={1.75} style={{ color: ACCENT }} />
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em]" style={{ color: `${CREAM}99` }}>
-                Hours
-              </p>
-              <p className="text-sm leading-snug" style={{ fontWeight: 500, color: CREAM }}>
-                Mon - Sat<br />9:00 am - 9:00 pm IST
-              </p>
-            </li>
-          </ul>
         </div>
       </div>
     </section>
