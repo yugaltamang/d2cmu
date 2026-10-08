@@ -1,5 +1,5 @@
 import { Mail, Phone, Clock } from "lucide-react";
-import qrAsset from "@/assets/whatsapp-qr.png.asset.json";
+import qrUrl from "@/assets/whatsapp-qr.png";
 
 // Bottle green palette (scoped to this section)
 const BOTTLE = "#062119";
@@ -97,7 +97,7 @@ const GetInTouch = () => {
                 aria-label="Join the Masters' Union D2C WhatsApp community"
               >
                 <img
-                  src={qrAsset.url}
+                  src={qrUrl}
                   alt="QR code to join the Masters' Union D2C WhatsApp community"
                   width={200}
                   height={200}
