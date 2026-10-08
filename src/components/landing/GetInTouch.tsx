@@ -169,8 +169,12 @@ const GetInTouch = () => {
             }}
           >
             {/* watermark bubble, cropped bottom-right */}
-            <WhatsAppIcon className="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44" />
-            <span className="pointer-events-none absolute -bottom-10 -right-10 h-44 w-44 opacity-[0.08]" style={{ color: WA_GREEN }} />
+            <span
+              className="pointer-events-none absolute -bottom-10 -right-8 h-44 w-44"
+              style={{ color: WA_GREEN, opacity: 0.09 }}
+            >
+              <WhatsAppIcon className="h-full w-full" />
+            </span>
 
             <div className="relative flex items-start gap-3">
               <span
