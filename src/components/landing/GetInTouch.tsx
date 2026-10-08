@@ -96,7 +96,7 @@ const GetInTouch = () => {
         <div className="grid gap-5 lg:grid-cols-12 lg:gap-6">
           {/* ---------- Contact card ---------- */}
           <div
-            className="lg:col-span-7 rounded-[24px] p-6 sm:p-8 lg:p-9"
+            className="lg:col-span-7 flex flex-col justify-center rounded-[24px] p-6 sm:p-8 lg:p-9"
             style={{
               backgroundColor: CARD,
               boxShadow: "0 24px 60px -34px rgba(18,40,25,0.45)",
@@ -157,6 +157,10 @@ const GetInTouch = () => {
                 Working Hours - Monday - Saturday, 9 AM - 9 PM IST
               </p>
             </div>
+
+            <p className="mt-5 max-w-md text-[13px] leading-relaxed sm:text-sm" style={{ color: MUTED }}>
+              Questions about the programme, eligibility, or admissions? Our team is glad to help.
+            </p>
           </div>
 
           {/* ---------- WhatsApp community card ---------- */}
