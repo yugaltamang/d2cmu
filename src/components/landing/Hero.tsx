@@ -27,15 +27,15 @@ const Hero = () => {
         <div className="max-w-4xl">
           {/* Eyebrow - gradient hairline pill, scales so it always stays on one line */}
           <span
-            aria-hidden
             className="mb-3 sm:mb-5 inline-flex rounded-full p-px"
             style={{ backgroundImage: "var(--mu-gradient)" }}
           >
             <span className="flex items-center gap-1.5 sm:gap-2.5 rounded-full bg-background/85 px-2.5 py-1 backdrop-blur-sm sm:px-3.5 sm:py-1.5">
-              <span className="relative flex h-1.5 w-1.5 shrink-0 items-center justify-center sm:h-2 sm:w-2">
+              <span aria-hidden className="relative flex h-1.5 w-1.5 shrink-0 items-center justify-center sm:h-2 sm:w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50" />
                 <span className="bg-violet relative inline-flex h-1.5 w-1.5 shrink-0 rounded-full sm:h-2 sm:w-2" />
               </span>
+
               <p className="whitespace-nowrap text-[clamp(0.42rem,1.7vw,0.58rem)] font-semibold uppercase tracking-[0.13em] text-foreground/85 sm:tracking-[0.2em]">
                 PG Diploma in <span className="mu-gradient-ink">D2C</span> Brand Entrepreneurship
               </p>
