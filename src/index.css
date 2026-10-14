@@ -259,6 +259,16 @@
     background: var(--mu-gradient);
   }
 
+  /* Gradient ink — keeps the parent's font, weight and case */
+  .mu-gradient-ink {
+    background: var(--mu-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+  }
+
+
   /* Rainbow underline */
   .mu-underline-rainbow {
     background-image: var(--mu-gradient);
