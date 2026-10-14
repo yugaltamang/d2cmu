@@ -25,6 +25,14 @@ const Hero = () => {
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-12 lg:pb-16">
         <div className="max-w-4xl">
+          {/* Eyebrow - scales with viewport so it always stays on one line */}
+          <div className="mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
+            <span aria-hidden className="mu-divider-gradient w-5 sm:w-8 shrink-0" />
+            <p className="whitespace-nowrap text-[clamp(0.5rem,2.1vw,0.7rem)] font-semibold uppercase tracking-[0.16em] text-foreground/70">
+              PG Diploma in D2C Brand Entrepreneurship
+            </p>
+          </div>
+
           <h1
             className="font-display text-foreground text-[clamp(1.875rem,8vw,6rem)] leading-[1] tracking-[-0.04em] break-words"
             style={{ fontWeight: 500 }}
