@@ -25,13 +25,23 @@ const Hero = () => {
 
       <div className="relative mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10 pt-10 sm:pt-14 lg:pt-20 pb-10 sm:pb-12 lg:pb-16">
         <div className="max-w-4xl">
-          {/* Eyebrow - scales with viewport so it always stays on one line */}
-          <div className="mb-3 sm:mb-4 flex items-center gap-2 sm:gap-3">
-            <span aria-hidden className="mu-divider-gradient w-5 sm:w-8 shrink-0" />
-            <p className="whitespace-nowrap text-[clamp(0.5rem,2.1vw,0.7rem)] font-semibold uppercase tracking-[0.16em] text-foreground/70">
-              PG Diploma in D2C Brand Entrepreneurship
-            </p>
-          </div>
+          {/* Eyebrow - gradient hairline pill, scales so it always stays on one line */}
+          <span
+            className="mb-3 sm:mb-5 inline-flex rounded-full p-px"
+            style={{ backgroundImage: "var(--mu-gradient)" }}
+          >
+            <span className="flex items-center gap-1.5 sm:gap-2.5 rounded-full bg-background/85 px-2.5 py-1 backdrop-blur-sm sm:px-3.5 sm:py-1.5">
+              <span aria-hidden className="relative flex h-1.5 w-1.5 shrink-0 items-center justify-center sm:h-2 sm:w-2">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50" />
+                <span className="bg-violet relative inline-flex h-1.5 w-1.5 shrink-0 rounded-full sm:h-2 sm:w-2" />
+              </span>
+
+              <p className="whitespace-nowrap text-[clamp(0.42rem,1.7vw,0.58rem)] font-semibold uppercase tracking-[0.13em] text-foreground/85 sm:tracking-[0.2em]">
+                PG Diploma in <span className="mu-gradient-ink">D2C</span> Brand Entrepreneurship
+              </p>
+            </span>
+          </span>
+
 
           <h1
             className="font-display text-foreground text-[clamp(1.875rem,8vw,6rem)] leading-[1] tracking-[-0.04em] break-words"
