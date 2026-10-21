@@ -122,7 +122,7 @@ const FAQ = () => {
                       style={{ background: "hsl(96 75% 55%)" }}
                     />
                     <span
-                      className="font-display text-sm lg:text-base text-foreground"
+                      className="font-display text-sm lg:text-base text-foreground transition-colors duration-200 group-data-[state=open]/acc:text-primary"
                       style={{ fontWeight: 500 }}
                     >
                       {group.category}
