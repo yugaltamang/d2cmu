@@ -103,41 +103,59 @@ const FAQ = () => {
             The fine print, <span className="text-violet">in plain words.</span>
           </h2>
           <p className="mt-3 sm:mt-4 text-foreground/65 leading-relaxed text-sm sm:text-base max-w-md">
-            Everything you&apos;d ask before sending an application, sorted by what people
-            actually ask us. Still curious? Write to us.
+            Everything you&apos;d ask before sending an application. Pick a topic to see the
+            questions. Still curious? Write to us.
           </p>
         </div>
-        <div className="lg:col-span-7 space-y-8 lg:space-y-10">
-          {faqGroups.map((group, gi) => (
-            <div key={group.category}>
-              <div className="mb-2 flex items-center gap-3">
-                <span
-                  className="h-1.5 w-1.5 shrink-0 rounded-full"
-                  style={{ background: "hsl(96 75% 55%)" }}
-                />
-                <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/55">
-                  {group.category}
-                </span>
-                <span className="h-px flex-1 bg-border/50" />
-              </div>
-              <Accordion type="single" collapsible>
-                {group.items.map((f, i) => (
-                  <AccordionItem
-                    key={i}
-                    value={`g${gi}-item-${i}`}
-                    className="border-b border-border/60 first:border-t"
-                  >
-                    <AccordionTrigger className="py-4 text-left font-display text-base lg:text-lg hover:no-underline" style={{ fontWeight: 500 }}>
-                      {f.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-foreground/70 leading-relaxed pb-5 max-w-3xl">
-                      {f.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          ))}
+        <div className="lg:col-span-7">
+          <Accordion type="single" collapsible>
+            {faqGroups.map((group, gi) => (
+              <AccordionItem
+                key={group.category}
+                value={`cat-${gi}`}
+                className="border-b border-border/60 first:border-t"
+              >
+                <AccordionTrigger className="py-4 hover:no-underline">
+                  <span className="flex flex-1 items-center gap-3">
+                    <span
+                      className="h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{ background: "hsl(96 75% 55%)" }}
+                    />
+                    <span
+                      className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/70"
+                      style={{ fontWeight: 500 }}
+                    >
+                      {group.category}
+                    </span>
+                    <span className="h-px flex-1 bg-border/50" />
+                    <span className="shrink-0 font-mono text-[10px] text-foreground/35">
+                      {group.items.length}
+                    </span>
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-3">
+                  <div className="pl-3 sm:pl-5">
+                    <Accordion type="single" collapsible>
+                      {group.items.map((f, i) => (
+                        <AccordionItem
+                          key={i}
+                          value={`cat-${gi}-item-${i}`}
+                          className="border-b border-border/40 first:border-t"
+                        >
+                          <AccordionTrigger className="py-3.5 text-left font-display text-sm lg:text-base hover:no-underline" style={{ fontWeight: 500 }}>
+                            {f.q}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-sm text-foreground/70 leading-relaxed pb-4 max-w-3xl">
+                            {f.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </div>
     </section>
