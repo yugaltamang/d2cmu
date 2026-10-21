@@ -59,6 +59,12 @@ const Promise = () => {
           </span>
         </h2>
 
+        <p className="mt-4 sm:mt-5 max-w-2xl text-[11px] sm:text-[13px] leading-relaxed text-foreground/45">
+          Every number above came from founders who did the work. Your store, your revenue and your
+          customers will scale with the hours you actually put in.
+        </p>
+
+
         {/* Big rounded image-style cards */}
         <div className="mt-8 sm:mt-10 lg:mt-14 grid grid-cols-1 md:grid-cols-12 gap-4 lg:gap-5">
           {cards.map(({ icon: Icon, eyebrow, big, bigSub, title, body, span }) => (
