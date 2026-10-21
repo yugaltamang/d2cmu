@@ -30,6 +30,34 @@ const faqs = [
     q: "Who can apply?",
     a: "Undergraduates and working professionals interested in entrepreneurship, marketing or consumer brands. No prior startup experience required.",
   },
+  {
+    q: "Does everyone get to pitch to investors?",
+    a: "Week 10 has a structured pitch process: an initial screening round, then shortlisted participants pitch to investors and VCs. You don't need a live product or revenue - ideation-stage ideas can pitch too.",
+  },
+  {
+    q: "Will the programme introduce me to VCs and angel investors?",
+    a: "The formal route is the Week 10 pitch. Several Masters and session leaders are themselves VCs and fund leaders, and you can build connections through Mentor Union and LinkedIn - but direct introductions outside the pitch process aren't guaranteed.",
+  },
+  {
+    q: "Who pays for inventory, ads, store setup and other business costs?",
+    a: "You do. Product research, sampling, manufacturing, inventory, Shopify and domain costs, ad budgets, influencer collaborations, packaging, shipping and fulfilment are borne by the participant and are not included in the programme fee.",
+  },
+  {
+    q: "How much extra budget should I plan beyond the fee?",
+    a: "There's no single number - it depends on your product category, inventory decisions and marketing strategy. A small-range brand with limited ads costs very differently from one needing heavy manufacturing. Plan an execution budget separately from the programme fee.",
+  },
+  {
+    q: "Are the advertised milestones (live store in 21 days, ₹1L+ revenue, 100+ orders) guaranteed?",
+    a: "No. They are goals to work towards, not assured results. Outcomes depend on your category, pricing, resources and execution - and on the effort you put in.",
+  },
+  {
+    q: "What if I don't hit those targets?",
+    a: "There's no penalty. The focus is on learning to build, test assumptions and make informed decisions. Commercial outcomes depend on factors beyond the curriculum.",
+  },
+  {
+    q: "How much one-to-one mentorship do I get?",
+    a: "Three layers: three 30-minute Mentor Union sessions, a planned connect with a Masters' Union alumnus who's built a D2C brand, and uncapped calls with the programme's EIR, Saloni Gupta.",
+  },
 ];
 
 const FAQ = () => {
