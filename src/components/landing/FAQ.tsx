@@ -115,21 +115,21 @@ const FAQ = () => {
                 value={`cat-${gi}`}
                 className="border-b border-border/60 first:border-t"
               >
-                <AccordionTrigger className="py-4 hover:no-underline">
+                <AccordionTrigger className="group/acc py-4 hover:no-underline">
                   <span className="flex flex-1 items-center gap-3">
                     <span
                       className="h-1.5 w-1.5 shrink-0 rounded-full"
                       style={{ background: "hsl(96 75% 55%)" }}
                     />
                     <span
-                      className="font-display text-sm lg:text-base text-foreground"
+                      className="font-display text-sm lg:text-base text-foreground transition-colors duration-200 group-data-[state=open]/acc:text-primary"
                       style={{ fontWeight: 500 }}
                     >
                       {group.category}
                     </span>
                     <span className="h-px flex-1 bg-border/50" />
                     <span
-                      className="shrink-0 font-display text-xs text-foreground/35"
+                      className="shrink-0 font-display text-xs text-foreground/35 transition-colors duration-200 group-data-[state=open]/acc:text-primary/70"
                       style={{ fontWeight: 500 }}
                     >
                       {group.items.length}
