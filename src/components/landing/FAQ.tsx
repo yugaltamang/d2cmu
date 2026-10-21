@@ -122,13 +122,16 @@ const FAQ = () => {
                       style={{ background: "hsl(96 75% 55%)" }}
                     />
                     <span
-                      className="font-mono text-[10px] uppercase tracking-[0.28em] text-foreground/70"
+                      className="font-display text-sm lg:text-base text-foreground"
                       style={{ fontWeight: 500 }}
                     >
                       {group.category}
                     </span>
                     <span className="h-px flex-1 bg-border/50" />
-                    <span className="shrink-0 font-mono text-[10px] text-foreground/35">
+                    <span
+                      className="shrink-0 font-display text-xs text-foreground/35"
+                      style={{ fontWeight: 500 }}
+                    >
                       {group.items.length}
                     </span>
                   </span>
