@@ -166,7 +166,7 @@ const GetInTouch = () => {
                 className="mt-3 text-center text-[11px] leading-relaxed sm:text-xs"
                 style={{ color: WA_MUTED }}
               >
-                Scan this QR code using the WhatsApp camera to join our community
+                Scan this QR code using the camera to join our community
               </p>
             </div>
           </div>
