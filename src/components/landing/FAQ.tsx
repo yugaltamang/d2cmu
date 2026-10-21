@@ -115,7 +115,7 @@ const FAQ = () => {
                 value={`cat-${gi}`}
                 className="border-b border-border/60 first:border-t"
               >
-                <AccordionTrigger className="py-4 hover:no-underline">
+                <AccordionTrigger className="group/acc py-4 hover:no-underline">
                   <span className="flex flex-1 items-center gap-3">
                     <span
                       className="h-1.5 w-1.5 shrink-0 rounded-full"
