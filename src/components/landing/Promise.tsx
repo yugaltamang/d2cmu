@@ -60,9 +60,10 @@ const Promise = () => {
         </h2>
 
         <p className="mt-4 sm:mt-5 max-w-2xl text-[11px] sm:text-[13px] leading-relaxed text-foreground/45">
-          Every number above came from founders who did the work. Your store, your revenue and your
-          customers will scale with the hours you actually put in.
+          Outcomes are not guaranteed. Every number above came from founders who put in the work -
+          your store, your revenue and your customers will scale with the hours you actually ship.
         </p>
+
 
 
         {/* Big rounded image-style cards */}
