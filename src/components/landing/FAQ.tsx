@@ -10,7 +10,7 @@ type FaqGroup = { category: string; items: Faq[] };
 
 const faqGroups: FaqGroup[] = [
   {
-    category: "The programme",
+    category: "How does the programme work?",
     items: [
       {
         q: "What does outcome-driven really mean?",
@@ -35,7 +35,7 @@ const faqGroups: FaqGroup[] = [
     ],
   },
   {
-    category: "Your brand & budget",
+    category: "What will it cost me to build?",
     items: [
       {
         q: "Will I actually have a live store and live ads?",
@@ -52,7 +52,7 @@ const faqGroups: FaqGroup[] = [
     ],
   },
   {
-    category: "Outcomes & support",
+    category: "What am I actually guaranteed?",
     items: [
       {
         q: "Are the advertised milestones (live store in 21 days, ₹1L+ revenue, 100+ orders) guaranteed?",
@@ -69,7 +69,7 @@ const faqGroups: FaqGroup[] = [
     ],
   },
   {
-    category: "Pitch Day & investors",
+    category: "How do I reach investors?",
     items: [
       {
         q: "Does everyone get to pitch to investors?",
@@ -103,8 +103,8 @@ const FAQ = () => {
             The fine print, <span className="text-violet">in plain words.</span>
           </h2>
           <p className="mt-3 sm:mt-4 text-foreground/65 leading-relaxed text-sm sm:text-base max-w-md">
-            Everything you&apos;d ask before sending an application. Pick a topic to see the
-            questions. Still curious? Write to us.
+            Everything you&apos;d ask before sending an application. Pick one to see the
+            answers. Still curious? Write to us.
           </p>
         </div>
         <div className="lg:col-span-7">
