@@ -37,7 +37,7 @@ const Hero = () => {
               </span>
 
               <p className="whitespace-nowrap text-[clamp(0.42rem,1.7vw,0.58rem)] font-semibold uppercase tracking-[0.13em] text-foreground/85 sm:tracking-[0.2em]">
-                PG Diploma in <span className="mu-gradient-ink">D2C</span> Brand Entrepreneurship
+                <span className="mu-gradient-ink">D2C</span> Brand Bootcamp
               </p>
             </span>
           </span>
