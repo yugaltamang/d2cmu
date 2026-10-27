@@ -161,6 +161,7 @@
     box-shadow: none;
     font-weight: 600;
   }
+  .campus-tour-tab[data-state="inactive"] { color: hsl(var(--foreground) / 0.65); }
   .campus-visit-button { background: hsl(var(--campus-ink)); color: hsl(var(--campus-surface)); }
   .campus-visit-button:hover { background: hsl(var(--campus-ink) / 0.9); }
 
