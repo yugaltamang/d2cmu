@@ -43,13 +43,19 @@ const CampusTour = () => {
   };
 
   return (
-    <section id="campus" ref={sectionRef} aria-labelledby="campus-heading" className="campus-tour-section border-b border-border py-12 sm:py-16 lg:py-20">
+    <section id="campus" ref={sectionRef} aria-labelledby="campus-heading" className="campus-tour-section border-t border-border/40 py-12 sm:py-16 lg:py-24">
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
-        <div className="flex flex-col items-start justify-between gap-[18px] md:flex-row md:items-center md:gap-8">
-          <h2 id="campus-heading" className="campus-tour-heading max-w-3xl font-display text-[28px] font-medium leading-tight tracking-normal sm:text-4xl lg:text-[42px]">
-            World-class Campus in the <span className="font-semibold">Heart of Gurugram</span>
-          </h2>
-          <Button asChild className="campus-visit-button h-11 shrink-0 rounded-full px-5">
+        <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end md:gap-8">
+          <div className="max-w-3xl">
+            <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1.5 sm:px-4">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden="true" />
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-foreground/70">Our campus</span>
+            </div>
+            <h2 id="campus-heading" className="campus-tour-heading font-display text-[28px] font-medium leading-[1.05] tracking-normal sm:text-[40px] lg:text-[56px]">
+              World-class Campus in the <span className="text-violet">Heart of Gurugram</span>
+            </h2>
+          </div>
+          <Button asChild className="btn-pill-light h-auto shrink-0">
             <a href="https://mastersunion.org/book-a-campus-tour" target="_blank" rel="noopener noreferrer">
               Book a Visit <ArrowUpRight aria-hidden="true" />
             </a>
@@ -58,9 +64,9 @@ const CampusTour = () => {
 
         <Tabs value={activeTour} onValueChange={changeTour} className="mt-8 w-full">
           <div className="overflow-x-auto rounded-lg">
-            <TabsList aria-label="Campus locations" className="campus-tour-tabs flex h-auto w-max min-w-full justify-between gap-6 rounded-lg px-5 py-4 lg:gap-8 lg:px-[30px]">
+            <TabsList aria-label="Campus locations" className="campus-tour-tabs flex h-auto w-max min-w-full justify-between gap-4 rounded-lg border border-border px-4 py-3 lg:gap-8 lg:px-6">
               {tours.map((tour) => (
-                <TabsTrigger key={tour.id} value={tour.id} className="campus-tour-tab min-h-11 shrink-0 rounded-none px-1 py-2 text-sm tracking-normal lg:text-base">
+                <TabsTrigger key={tour.id} value={tour.id} className="campus-tour-tab min-h-11 shrink-0 rounded-none px-1 py-2 font-display text-sm font-medium tracking-normal lg:text-base">
                   {tour.label}
                 </TabsTrigger>
               ))}
