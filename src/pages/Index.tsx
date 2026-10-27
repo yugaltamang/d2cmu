@@ -10,6 +10,7 @@ import Immersions from "@/components/landing/Immersions";
 import Faculty from "@/components/landing/Faculty";
 import FAQ from "@/components/landing/FAQ";
 import Fees from "@/components/landing/Fees";
+import CampusTour from "@/components/landing/CampusTour";
 import PathwayPGP from "@/components/landing/PathwayPGP";
 import BrandHook from "@/components/landing/BrandHook";
 import CTA from "@/components/landing/CTA";
@@ -44,6 +45,7 @@ const Index = () => {
       </div>
       <Faculty />
       <Fees />
+      <CampusTour />
       <FAQ />
       <CTA />
       <PathwayPGP />
