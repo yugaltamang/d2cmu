@@ -97,6 +97,11 @@
     --mu-gradient: linear-gradient(91deg, #84CC16 -6%, #4ADE80 47%, #10B981 100%);
     --shadow-editorial: 0 30px 80px -30px hsl(96 75% 30% / 0.55);
     --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.4), 0 18px 40px -24px hsl(96 75% 20% / 0.6);
+    --campus-surface: var(--foreground);
+    --campus-ink: var(--mu-black);
+    --campus-tabs: 0 0% 94%;
+    --campus-tab-gradient: linear-gradient(102deg, #39b6d8 0%, #f7d344 50%, #e38330 100%);
+    --campus-section-background: linear-gradient(to bottom, hsl(var(--campus-surface)) 50%, hsl(var(--background)) 50%);
 
     --font-display: 'IvyPresto Display', 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
     --font-sans: 'Inter', system-ui, sans-serif;
@@ -144,6 +149,21 @@
 }
 
 @layer utilities {
+  .campus-tour-section { background: var(--campus-section-background); }
+  .campus-tour-heading { color: hsl(var(--campus-ink)); }
+  .campus-tour-tabs { background: hsl(var(--campus-tabs)); }
+  .campus-tour-tab { color: hsl(var(--campus-ink)); }
+  .campus-tour-tab[data-state="active"] {
+    background: var(--campus-tab-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    box-shadow: none;
+    font-weight: 600;
+  }
+  .campus-visit-button { background: hsl(var(--campus-ink)); color: hsl(var(--campus-surface)); }
+  .campus-visit-button:hover { background: hsl(var(--campus-ink) / 0.9); }
+
   /* Shopify-style: display = sans, tight tracking, medium weight */
   .font-display { font-family: var(--font-sans); font-weight: 500; letter-spacing: -0.035em; }
   .font-sans { font-family: var(--font-sans); }
