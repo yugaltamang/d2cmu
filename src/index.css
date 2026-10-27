@@ -97,11 +97,11 @@
     --mu-gradient: linear-gradient(91deg, #84CC16 -6%, #4ADE80 47%, #10B981 100%);
     --shadow-editorial: 0 30px 80px -30px hsl(96 75% 30% / 0.55);
     --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.4), 0 18px 40px -24px hsl(96 75% 20% / 0.6);
-    --campus-surface: var(--foreground);
-    --campus-ink: var(--mu-black);
-    --campus-tabs: 0 0% 94%;
-    --campus-tab-gradient: linear-gradient(102deg, #39b6d8 0%, #f7d344 50%, #e38330 100%);
-    --campus-section-background: linear-gradient(to bottom, hsl(var(--campus-surface)) 50%, hsl(var(--background)) 50%);
+    --campus-surface: var(--background);
+    --campus-ink: var(--foreground);
+    --campus-tabs: var(--secondary);
+    --campus-tab-gradient: var(--mu-gradient);
+    --campus-section-background: hsl(var(--background));
 
     --font-display: 'IvyPresto Display', 'Iowan Old Style', 'Georgia', 'Times New Roman', serif;
     --font-sans: 'Inter', system-ui, sans-serif;
